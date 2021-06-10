@@ -1,0 +1,265 @@
+/*-----------------------For Mobile Phones-------------------*/
+:root {
+  --retro: "Press Start 2P", cursive;
+  --robo: "Roboto", sans-serif;
+  --blue: #06aed5;
+  --blue-2: #039cc2;
+  --pink: #f039f0;
+  --pink-2: #de7cd3;
+  --orange: #f07246;
+  --yellow: #ffd117;
+  --yellow-2: #f1c929;
+  --green: #22f0c6;
+  --gradient: linear-gradient(35deg, var(--pink), var(--blue));
+  --white: #ffffff;
+  --black: rgba(0, 0, 0, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*--------------------------Intro screen--------------------------*/
+body {
+  background: var(--blue);
+  font-family: var(--robo);
+}
+
+.intro-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 60px;
+  text-align: center;
+  font-family: var(--retro);
+  color: var(--pink);
+  text-shadow: 5px 5px var(--black);
+  margin: 50px 0px;
+  animation: text-shadow-pop-top 2s both;
+}
+
+@keyframes text-shadow-pop-top {
+  0% {
+    text-shadow: 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555,
+      0 0 #555, 0 0 #555;
+    transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 -1px #555, 0 -2px #555, 0 -3px #555, 0 -4px #555, 0 -5px #555,
+      0 -6px #555, 0 -7px #555, 0 -8px #555;
+    transform: translateY(8px);
+  }
+}
+
+.subtitle {
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+  font-family: var(--retro);
+  color: var(--yellow);
+  margin-top: -40px;
+  line-height: 1.5rem;
+  padding: 5px;
+}
+
+button,
+.start-btn {
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  border: 0;
+  background-color: var(--blue-2);
+  padding: 10px;
+  color: var(--yellow);
+  font-family: var(--retro);
+  font-weight: 120;
+  font-size: 16px;
+  line-height: 1;
+  transition: 0.3s;
+  margin: 130px auto;
+  border-radius: 10px;
+}
+
+.start-btn {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+  transition: 0.3s;
+  margin: 110px 30px;
+  display: none;
+}
+
+button:hover,
+button:focus {
+  border: 2px solid var(--pink);
+  box-shadow: 0 0 6px var(--white);
+  outline: none;
+}
+
+.codepen {
+  color: var(--pink-2);
+  font-family: var(--retro);
+  text-align: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: -10px;
+  text-shadow: 1px 1px black;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--pink-2);
+  text-decoration: none;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+/*--------------------------Intro screen 1--------------------------*/
+.hidden {
+  display: none;
+}
+
+.text-info {
+  color: var(--pink-2);
+  background-color: var(--blue-2);
+  text-shadow: 1px 1px black;
+  font-family: var(--retro);
+  font-size: 12px;
+  line-height: 1.2rem;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.next-btn {
+  margin-top: 20px;
+}
+
+/*--------------------------Intro screen 2--------------------------*/
+
+.btns {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-2.intro2 {
+  margin-top: 20px;
+}
+
+.intro-options {
+  flex-direction: column;
+}
+
+.show1,
+.show2 {
+  display: none;
+  font-family: var(--retro);
+  color: var(--pink);
+  background-color: var(--blue-2);
+  text-shadow: 1px 1px black;
+  font-size: 12px;
+  line-height: 1.2rem;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.show2 {
+  color: var(--pink-2);
+}
+
+.image.intro2 {
+  display: none;
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+/*--------------------------Intro screen 3--------------------------*/
+
+.image.intro3 {
+  display: none;
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+/*--------------------------Intro screen 4--------------------------*/
+
+.form {
+  display: none;
+  background-color: var(--blue-2);
+  margin: 10px auto 0px auto;
+  line-height: 1.2rem;
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: -30px;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+input {
+  background-color: var(--pink);
+  color: var(--yellow-2);
+  text-align: center;
+  font-family: var(--retro);
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+/*--------------------------Intro screen 4--------------------------*/
+
+.loading {
+  font-size: 6vw;
+  text-align: center;
+  background-color: var(--blue);
+  margin-top: 150px;
+  animation: text-shadow-pop-top 1.5s infinite both;
+}
+
+/*--------------Questions--------*/
+
+.timer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*---------------------*/
+
+@keyframes text-shadow-pop-top {
+  0% {
+    text-shadow: 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555, 0 0 #555,
+      0 0 #555, 0 0 #555;
+    transform: translateY(0);
+  }
+  100% {
+    text-shadow: 0 -1px #555, 0 -2px #555, 0 -3px #555, 0 -4px #555, 0 -5px #555,
+      0 -6px #555, 0 -7px #555, 0 -8px #555;
+    transform: translateY(8px);
+  }
+}
+
+/*-------------For Tablets/desktop-----------*/
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 150px;
+  }
+}

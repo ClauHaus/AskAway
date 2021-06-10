@@ -290,7 +290,7 @@ const dataOne = [
   },
   {
     id: 36,
-    question: `what is the german word for taking pleasure in others pain?`,
+    question: `What is the german word for taking pleasure in others pain?`,
     answerA: ["Verkehrsmittel", false],
     answerB: ["Schadenfreude", true],
     answerC: ["Feldschlösschen", false],
@@ -322,7 +322,7 @@ const dataOne = [
   },
   {
     id: 40,
-    question: ``,
+    question: `Which is the fastest land's animal in the world`,
     answerA: ["Pronghorn Antelope", false],
     answerB: ["Thomson's Gazelle", false],
     answerC: ["Cheetah", true],
@@ -338,7 +338,7 @@ const dataOne = [
   },
   {
     id: 42,
-    question: ``,
+    question: `Who painted the Sistine Chapel`,
     answerA: ["Michelangelo", true],
     answerB: ["Leonardo da Vinci", false],
     answerC: ["Raphael", false],
@@ -394,8 +394,8 @@ const dataOne = [
   },
   {
     id: 49,
-    question: `John Jones`,
-    answerA: ["", false],
+    question: `What is the alter-ego of the DC comics character "Superman"`,
+    answerA: ["John Jones", false],
     answerB: ["Bruce Wayne", false],
     answerC: ["Arthur Curry", false],
     answerD: ["Clark Kent", true],

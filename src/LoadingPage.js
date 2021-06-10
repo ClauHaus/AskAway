@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "./context";
 
 const LoadingPage = () => {
@@ -10,7 +10,7 @@ const LoadingPage = () => {
     }, 1000); //PASARLO A 5000!
     return () => clearTimeout(timeOut);
     // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut
-  }, []);
+  }, [nextPageThree, loadingPage, questionsOne]); //Revisar estas dependencies, en caso de error quitarlas y solo queda un warning
 
   return (
     <section className="container-back-loading">

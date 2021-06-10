@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import HowTo from "./HowTo";
 import { useGlobalContext } from "./context";
 

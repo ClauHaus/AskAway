@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-
 const reducer = (state, action) => {
   if (action.type === "OPEN_OPTIONS") {
     return { ...state, options: true };

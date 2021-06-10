@@ -16,10 +16,16 @@ const QuestionsOne = () => {
   const [cursor, setCursor] = useState("pointer");
   const [events, setEvents] = useState("auto");
   const newName = JSON.parse(localStorage.getItem("newName"));
-  const [data, setData] = useState(dataOne);
-  const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente
+  // Esta funcion es para que haga un sort de los elementos del array
+  const shuffle = () => {
+    const result = dataOne.sort(() => Math.random() - 0.5);
+    return result;
+  };
+  const [data, setData] = useState(shuffle);
+  const first = 0;
+  const [index, setIndex] = useState(first); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente
 
-  const random = Math.floor(Math.random() * data.length);
+  // const random = Math.floor(Math.random() * data.length);
   // console.log(random);
 
   const highScore = (points) => {
@@ -58,7 +64,7 @@ const QuestionsOne = () => {
         setTimer("TIME OUT");
         setCursor("not-allowed");
         setEvents("none");
-        openModal(); //revisar y armar una funcion
+        // openModal(); //revisar y armar una funcion
       }
       // ingresar ifs y mas funcionalidad aca
     }, 1000);
@@ -68,7 +74,9 @@ const QuestionsOne = () => {
   //Se hacen los cambios de color en botones y fondo con un delay para pasar a la siguiente pregunta
   const changeTimeout = () => {
     let timeout = setTimeout(() => {
-      setIndex(Math.floor(Math.random() * data.length));
+      setIndex(index + 1);
+      // setData([...data, data.splice(0, 1)]); //es por aca
+      // setData([data.shift(), ...data]); //es por aca
       setChangeA("answers");
       setChangeB("answers");
       setChangeC("answers");

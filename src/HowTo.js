@@ -10,13 +10,13 @@ import { useGlobalContext } from "./context";
 
 const HowTo = () => {
   const { closeModal } = useGlobalContext();
-  const [data, setData] = useState(howToData);
+  const data = howToData;
   const [index, setIndex] = useState(0);
   return (
     <div className="modal-container">
       <div className="modal-overlay show-modal">
         {data.map((item, itemIndex) => {
-          const { id, text, title, icon } = item;
+          const { text, title, icon } = item;
           let position = "nextSlide";
           if (itemIndex === index) {
             position = "activeSlide";

@@ -7,16 +7,8 @@ import Options from "./Options";
 import { useGlobalContext } from "./context";
 
 const Title = () => {
-  const {
-    options,
-    modal,
-    nextPageTest,
-    title,
-    form,
-    openModal,
-    openOptions,
-    nextPage,
-  } = useGlobalContext();
+  const { options, modal, nextPageTest, title, form, openModal, openOptions } =
+    useGlobalContext();
   return (
     <>
       <section className="container-back">

@@ -22,8 +22,9 @@ const QuestionsOne = () => {
     return result;
   };
   const [data, setData] = useState(shuffle);
-  const first = 0;
-  const [index, setIndex] = useState(first); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente
+  const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente
+
+  console.log(data.length);
 
   // const random = Math.floor(Math.random() * data.length);
   // console.log(random);

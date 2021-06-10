@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+AskAway
+
+How much do you know about stuff?
+
+This is my first React project in where i try to apply what i learnt about hooks. Any kind of feedback is welcome, and obviously if you spot any bugs let me know ASAP so i can fix it. I hope you enjoy it!
+
+Claudio
+
 ## Available Scripts
 
 In the project directory, you can run:

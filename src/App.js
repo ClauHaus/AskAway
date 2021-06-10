@@ -6,7 +6,7 @@ import LoadingPage from "./LoadingPage";
 import QuestionsOne from "./QuestionsOne";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 import { useGlobalContext } from "./context";
-console.log("hello");
+
 function App() {
   const { title, form, formContinue, loadingPage, questionsOne } =
     useGlobalContext();

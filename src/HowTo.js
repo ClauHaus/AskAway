@@ -8,10 +8,6 @@ import {
 import howToData from "./howToData";
 import { useGlobalContext } from "./context";
 
-const eraseMe = () => {
-  console.log("hello world");
-};
-
 const HowTo = () => {
   const { closeModal } = useGlobalContext();
   const [data, setData] = useState(howToData);

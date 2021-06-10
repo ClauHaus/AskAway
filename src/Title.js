@@ -24,7 +24,7 @@ const Title = () => {
           <button className="btn btn-change " onClick={openOptions}>
             <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
           </button>
-          <h1 className="title title-back">Hola Claudio!</h1>
+          <h1 className="title title-back">ask away</h1>
           {/* <div className="title-underline"></div> */}
           <h5 className="title">How much do you know about stuff?</h5>
           <div className="title-image-container">

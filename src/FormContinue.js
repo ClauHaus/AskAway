@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import HowTo from "./HowTo";
 import { useGlobalContext } from "./context";
 
-console.log("hello wolrd");
-
 const FormContinue = () => {
   const { modal, openModal, nextPageTwo, formContinue, loadingPage } =
     useGlobalContext();

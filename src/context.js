@@ -13,8 +13,6 @@ const initialState = {
   questionsOne: false,
 };
 
-console.log("checking");
-
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 

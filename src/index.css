@@ -968,7 +968,7 @@ input {
   /* align-items:center; */
   /* width: 55%; */
   /* height: 100px; */
-  margin: 20px auto;
+  margin: 10px auto;
   font-size: 18px;
 }
 
@@ -995,7 +995,7 @@ input {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 15px auto;
+  margin: 10px auto;
 }
 
 .answers-right {
@@ -1012,7 +1012,7 @@ input {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 15px auto;
+  margin: 10px auto;
   -webkit-animation: jello-vertical 0.9s both;
   animation: jello-vertical 0.9s both;
 }
@@ -1106,7 +1106,7 @@ input {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 15px auto;
+  margin: 10px auto;
   -webkit-animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }

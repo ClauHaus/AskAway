@@ -24,8 +24,6 @@ const QuestionsOne = () => {
   const [data, setData] = useState(shuffle);
   const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente
 
-  console.log(data.length);
-
   // const random = Math.floor(Math.random() * data.length);
   // console.log(random);
 
@@ -76,8 +74,6 @@ const QuestionsOne = () => {
   const changeTimeout = () => {
     let timeout = setTimeout(() => {
       setIndex(index + 1);
-      // setData([...data, data.splice(0, 1)]); //es por aca
-      // setData([data.shift(), ...data]); //es por aca
       setChangeA("answers");
       setChangeB("answers");
       setChangeC("answers");
@@ -94,8 +90,14 @@ const QuestionsOne = () => {
           <li>Level 1</li>
           <li>{newName}</li>
         </ul>
-        {data.map((item, questionIndex) => {
+        {/* //ARMAR ACA EL MODAL QUE LEVANTE LOS PUNTOS QUE SE HICIERON HASTA EL MOMENTO + MAS EL BOTON QUE NOS PERMITA CONTINUAR y etc, hay que diseñar todo esto */}
+        {index >= 10 ? <h1 className="black">ya tu chave</h1> : ""}
+        {/* Con el metodo de slice lo que hacemos es darle un punto de partida al array "0" y le indicamos que llegue hasta el elemento "10" (en este caso es el 9 IMPORTANTE es 0-index) y es a ese resultado que se mapea // tambien se puede armar como una const por fuera */}
+        {data.slice(0, 10).map((item, questionIndex) => {
           const { id, question, answerA, answerB, answerC, answerD } = item;
+          if (index >= 10) {
+            <h1 className="black">Bien papa!</h1>;
+          }
           // console.log(answerA);
           // console.log(answerA[1]);
           // Es importante que al "abrir" el array a cada elemento ademas le demos una "posicion", en este caso "questionIndex"

@@ -686,7 +686,7 @@ p.modal-text {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: -30px;
+  margin-top: -35px;
 }
 
 .title-howto {
@@ -711,6 +711,10 @@ p.modal-text {
   margin: 20px auto 10px auto;
   font-size: 2rem;
   width: 50px;
+}
+
+.black {
+  background-color: black;
 }
 
 /*OPTIONS*/

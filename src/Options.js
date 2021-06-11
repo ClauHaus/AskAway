@@ -12,15 +12,15 @@ const Options = () => {
           <button className="btn close-modal-btn" onClick={closeOptions}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
-          <h1 className="title-options title-options-back">Settings</h1>
-          <h3 className="title-options-sub">Languages</h3>
+          <h3 className="title-options title-options-back">Settings</h3>
+          <h4 className="title-options-sub">Languages</h4>
           <ul className="options-items">
             <input type="checkbox" defaultChecked />
             <li className="options-settings">English</li>
             <input type="checkbox" />
             <li className="options-settings">Spanish</li>
           </ul>
-          <h3 className="title-options-sub">Themes</h3>
+          <h4 className="title-options-sub">Themes</h4>
           <ul className="options-items">
             <input type="checkbox" defaultChecked />
             <li className="options-settings">Light</li>

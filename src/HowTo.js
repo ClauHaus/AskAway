@@ -38,9 +38,7 @@ const HowTo = () => {
               <button className="btn close-modal-btn" onClick={closeModal}>
                 <FontAwesomeIcon icon={faTimes} />
               </button>
-              <h3 className="title-howto">
-                <b>{title}</b>
-              </h3>
+              <h3 className="title-howto title-options-back">{title}</h3>
               <div className="icon-howto">{icon}</div>
               <p className="modal-text">{text}</p>
               <div className="btn-container-howto">

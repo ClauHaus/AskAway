@@ -626,19 +626,19 @@ Modal
 */
 .modal-overlay {
   position: relative;
-  width: 80vw;
+  width: 85vw;
   height: 82vh;
   padding: 1rem 1rem;
   margin: auto;
   background: rgba(0, 0, 0, 0.92);
   border-radius: 10px;
   display: grid;
-  place-items: center;
+  /* place-items: center; */
   transition: var(--transition);
   visibility: hidden;
   z-index: -1;
-  top: -20px;
-  right: 20px;
+  top: -30px;
+  right: 32px;
 }
 
 /* OPEN/CLOSE MODAL */
@@ -686,16 +686,15 @@ p.modal-text {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .title-howto {
-  color: var(--primary-300);
+  color: var(--primary-600);
   display: flex;
   justify-content: center;
   margin: 10px;
   padding: 10px;
-  text-decoration: underline var(--primary-300);
 }
 
 .icon-howto {
@@ -721,7 +720,7 @@ p.modal-text {
 }
 
 .title-options {
-  color: rgba(0, 0, 0, 0.92);
+  color: var(--primary-600);
   text-align: center;
 }
 
@@ -731,8 +730,8 @@ p.modal-text {
 
 .title-options-back {
   background: #ecf0f3;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 8px;
+  margin-top: 10px;
   border-radius: 20px;
   box-shadow: inset 10px 10px 10px #bec1c4, inset -10px -10px 10px white;
 }

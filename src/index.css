@@ -428,7 +428,7 @@ body {
 }
 
 p {
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   max-width: 40em;
 }
 
@@ -686,7 +686,7 @@ p.modal-text {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* margin-top: 30px; */
+  margin-top: -30px;
 }
 
 .title-howto {
@@ -708,7 +708,7 @@ p.modal-text {
   transition: var(--transtion);
   display: flex;
   justify-content: center;
-  margin: 10px auto 10px auto;
+  margin: 20px auto 10px auto;
   font-size: 2rem;
   width: 50px;
 }
@@ -731,7 +731,7 @@ p.modal-text {
 .title-options-back {
   background: #ecf0f3;
   padding: 8px;
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 20px;
   box-shadow: inset 10px 10px 10px #bec1c4, inset -10px -10px 10px white;
 }
@@ -840,6 +840,11 @@ input {
 
 .form-text {
   color: var(--primary-600);
+}
+
+.formContinue-text {
+  /* margin-bottom: 1.5rem; */
+  max-width: 40em;
 }
 /* alert */
 
@@ -959,13 +964,12 @@ input {
   box-shadow: var(--shadow-1);
   transition: var(--transtion);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   /* align-items:center; */
-  width: 55%;
-  /* width: 100px;
-  height: 100px; */
+  /* width: 55%; */
+  /* height: 100px; */
   margin: 20px auto;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .top-information {

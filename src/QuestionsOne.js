@@ -93,7 +93,6 @@ const QuestionsOne = () => {
         <ul className="top-information">
           <li>Level 1</li>
           <li>{newName}</li>
-          <li>Score: {score}</li>
         </ul>
         {data.map((item, questionIndex) => {
           const { id, question, answerA, answerB, answerC, answerD } = item;
@@ -116,7 +115,10 @@ const QuestionsOne = () => {
           return (
             <article key={id} className={position}>
               <div className="title title-back question">{question}</div>
-              <div className="timer">{count ? timer : "Ready?"}</div>
+              <div className="timer">
+                <div>{count ? timer : "Ready?"}</div>
+                <div>Score: {score}</div>
+              </div>
               <ul>
                 <li>
                   <button

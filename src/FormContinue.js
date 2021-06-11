@@ -13,18 +13,18 @@ const FormContinue = () => {
     <section className="container-back">
       <div className="container">
         <article className="form-text">
-          <p>
+          <p className="formContinue-text">
             Welcome <b>{newName} </b>to Ask Away! We will put your {newAge}{" "}
             years of hard obtained knowledge to the most defying challenges.
           </p>
-          <p>
+          <p className="formContinue-text">
             If you have any doubts about the rules or instructions of this game,
             we highly recommend you to check on the "How To play" section.
           </p>
           <button className="btn btn-title center-item" onClick={openModal}>
             How to play
           </button>
-          <p>
+          <p className="formContinue-text">
             Now everything is set to wonder us with your mental speed and sharp
             mind and see how well you represent {newCountry}. Let's begin!
           </p>

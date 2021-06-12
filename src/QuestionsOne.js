@@ -12,7 +12,6 @@ const QuestionsOne = () => {
   const [changeD, setChangeD] = useState("answers");
   const [container, setContainer] = useState("container");
   const { openModal } = useGlobalContext();
-  // const [answers, setAnswers] = useState(false);
   const [cursor, setCursor] = useState("pointer");
   const [events, setEvents] = useState("auto");
   const newName = JSON.parse(localStorage.getItem("newName"));
@@ -22,10 +21,18 @@ const QuestionsOne = () => {
     return result;
   };
   const [data, setData] = useState(shuffle);
-  const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente
 
-  // const random = Math.floor(Math.random() * data.length);
-  // console.log(random);
+  const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente-UPDATE IMPORTANTE, no es necesario realizar esa modificacion porque con el metodo sort tenemos el mismo resultado
+
+  // const generador = () => {
+  //   const result = data[`${index}`].answers.sort(() => Math.random() - 0.5);
+  //   return result;
+  // };
+
+  // const [respuestas, setRespuestas] = useState(data[`${index}`].answers);
+  // // console.log(respuestas);
+
+  // console.log(data[`${index}`].answers);
 
   const highScore = (points) => {
     if (score >= 1) {
@@ -44,9 +51,6 @@ const QuestionsOne = () => {
 
   // Aparecen en diferentes tiempos el reloj y el resto de los elementos
   useEffect(() => {
-    // setTimeout(() => {
-    //   setAnswers(true);
-    // }, 1000);
     setTimeout(() => {
       setCount(true);
     }, 2000);
@@ -90,16 +94,20 @@ const QuestionsOne = () => {
           <li>Level 1</li>
           <li>{newName}</li>
         </ul>
-        {/* //ARMAR ACA EL MODAL QUE LEVANTE LOS PUNTOS QUE SE HICIERON HASTA EL MOMENTO + MAS EL BOTON QUE NOS PERMITA CONTINUAR y etc, hay que diseñar todo esto */}
-        {index >= 10 ? <h1 className="black">ya tu chave</h1> : ""}
+        {/* //ARMAR ACA EL MODAL QUE LEVANTE LOS PUNTOS QUE SE HICIERON HASTA EL MOMENTO + MAS EL BOTON QUE NOS PERMITA CONTINUAR y etc, hay que diseñar todo esto , lo podemos hacer como un component diferente o directamente armarlos debajo de este ternary operator*/}
+        {index >= 10 ? (
+          <h1 className="title title-back question">You did it!</h1>
+        ) : (
+          ""
+        )}
+
         {/* Con el metodo de slice lo que hacemos es darle un punto de partida al array "0" y le indicamos que llegue hasta el elemento "10" (en este caso es el 9 IMPORTANTE es 0-index) y es a ese resultado que se mapea // tambien se puede armar como una const por fuera */}
         {data.slice(0, 10).map((item, questionIndex) => {
-          const { id, question, answerA, answerB, answerC, answerD } = item;
-          if (index >= 10) {
-            <h1 className="black">Bien papa!</h1>;
-          }
-          // console.log(answerA);
-          // console.log(answerA[1]);
+          const { id, question, answers } = item;
+          // console.log(answers[0][0]); //answer
+          // console.log(answers[0][1]); //true/false
+          // dataOne.sort(() => Math.random() - 0.5);
+
           // Es importante que al "abrir" el array a cada elemento ademas le demos una "posicion", en este caso "questionIndex"
 
           // Aca le vamos a dar dependiendo de dicha posicion a cada elemento una clase, dependiendo si esta activo o no, en el caso de que el questionIndex sea el mismo que el index ( que esta declarado con un state-value arriba), ese se va a "ver" y el resto quedara invisible hasta que se cambie el index.
@@ -107,12 +115,6 @@ const QuestionsOne = () => {
           if (questionIndex === index) {
             position = "activeslide";
           }
-          // if (
-          //   questionIndex === index - 1 ||
-          //   (index === 0 && questionIndex === actualQuestion.length - 1)
-          // ) {
-          //   position = "lastSlide";
-          // }
 
           return (
             <article key={id} className={position}>
@@ -132,17 +134,22 @@ const QuestionsOne = () => {
                     className={changeA}
                     style={{ cursor: cursor, pointerEvents: events }}
                     onClick={() =>
-                      answerA[1]
+                      answers[0][1]
                         ? (setChangeA("answers-right"),
                           highScore(score + 5),
                           setContainer("container-right"),
-                          changeTimeout())
+                          changeTimeout(),
+                          index < 9
+                            ? data[`${index + 1}`].answers.sort(
+                                () => Math.random() - 0.5
+                              )
+                            : null)
                         : (setChangeA("answers-wrong"),
                           highScore(score - 2),
                           setContainer("container-wrong"))
                     }
                   >
-                    {answerA}
+                    {answers[0][0]}
                   </button>
                 </li>
                 <li>
@@ -150,17 +157,22 @@ const QuestionsOne = () => {
                     className={changeB}
                     style={{ cursor: cursor, pointerEvents: events }}
                     onClick={() =>
-                      answerB[1]
+                      answers[1][1]
                         ? (setChangeB("answers-right"),
                           highScore(score + 5),
                           setContainer("container-right"),
-                          changeTimeout())
+                          changeTimeout(),
+                          index < 9
+                            ? data[`${index + 1}`].answers.sort(
+                                () => Math.random() - 0.5
+                              )
+                            : null)
                         : (setChangeB("answers-wrong"),
                           highScore(score - 2),
                           setContainer("container-wrong"))
                     }
                   >
-                    {answerB}
+                    {answers[1][0]}
                   </button>
                 </li>
                 <li>
@@ -168,17 +180,22 @@ const QuestionsOne = () => {
                     className={changeC}
                     style={{ cursor: cursor, pointerEvents: events }}
                     onClick={() =>
-                      answerC[1]
+                      answers[2][0]
                         ? (setChangeC("answers-right"),
                           highScore(score + 5),
                           setContainer("container-right"),
-                          changeTimeout())
+                          changeTimeout(),
+                          index < 9
+                            ? data[`${index + 1}`].answers.sort(
+                                () => Math.random() - 0.5
+                              )
+                            : null)
                         : (setChangeC("answers-wrong"),
                           highScore(score - 2),
                           setContainer("container-wrong"))
                     }
                   >
-                    {answerC}
+                    {answers[2][0]}
                   </button>
                 </li>
                 <li>
@@ -186,17 +203,22 @@ const QuestionsOne = () => {
                     className={changeD}
                     style={{ cursor: cursor, pointerEvents: events }}
                     onClick={() =>
-                      answerD[1]
+                      answers[3][0]
                         ? (setChangeD("answers-right"),
                           highScore(score + 5),
                           setContainer("container-right"),
-                          changeTimeout())
+                          changeTimeout(),
+                          index < 9
+                            ? data[`${index + 1}`].answers.sort(
+                                () => Math.random() - 0.5
+                              )
+                            : null)
                         : (setChangeD("answers-wrong"),
                           highScore(score - 2),
                           setContainer("container-wrong"))
                     }
                   >
-                    {answerD}
+                    {answers[3][0]}
                   </button>
                 </li>
               </ul>
@@ -207,8 +229,5 @@ const QuestionsOne = () => {
     </section>
   );
 };
-
-//USAR useReF PARA CAMBIAR STYLES DE ELEMENTOS ejemplo
-// useRef(container)  <div ref={container}></div>
 
 export default QuestionsOne;

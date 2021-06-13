@@ -954,7 +954,7 @@ input {
   width: 90vw;
   /* height: 85vh; */
   max-width: var(--fixed-width);
-  background: var(--primary-100);
+  background-image: url("https://theabbie.github.io/blog/assets/official-whatsapp-background-image.jpg ");
   border-radius: 10px;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   padding: 0.2rem 1rem 0.5rem 1rem;
@@ -1039,6 +1039,7 @@ input {
   cursor: pointer;
   color: var(--primary-600);
   background: white;
+  opacity: 0.9;
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -1054,6 +1055,7 @@ input {
 .answers-right {
   cursor: pointer;
   color: white;
+  opacity: 0.9;
   background: #155724;
   border: transparent;
   border-radius: var(--borderRadius);
@@ -1149,6 +1151,7 @@ input {
   cursor: not-allowed;
   color: white;
   background: #842029;
+  opacity: 0.9;
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);

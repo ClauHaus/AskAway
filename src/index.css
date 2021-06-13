@@ -949,6 +949,18 @@ input {
 
 /*-------------------QUESTIONS-----------------*/
 
+.container-question {
+  position: relative;
+  width: 90vw;
+  /* height: 85vh; */
+  max-width: var(--fixed-width);
+  background: var(--primary-100);
+  border-radius: 10px;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  padding: 0.2rem 1rem 0.5rem 1rem;
+  margin: 0.5rem auto;
+}
+
 .question {
   /* display: flex; */
   font-size: 18px;
@@ -982,7 +994,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: -5px auto;
+  margin: 0px auto;
 }
 
 .score {
@@ -1025,8 +1037,8 @@ input {
 }
 .answers {
   cursor: pointer;
-  color: var(--primary-700);
-  background: var(--primary-100);
+  color: var(--primary-600);
+  background: white;
   border: transparent;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
@@ -1064,16 +1076,16 @@ input {
     transform: scale3d(1, 1, 1);
   }
   30% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
+    -webkit-transform: scale3d(0.75, 1.1, 1);
+    transform: scale3d(0.75, 1.1, 1);
   }
   40% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
+    -webkit-transform: scale3d(1.1, 0.75, 1);
+    transform: scale3d(1.1, 0.75, 1);
   }
   50% {
-    -webkit-transform: scale3d(0.85, 1.15, 1);
-    transform: scale3d(0.85, 1.15, 1);
+    -webkit-transform: scale3d(0.85, 1.1, 1);
+    transform: scale3d(0.85, 1.1, 1);
   }
   65% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
@@ -1095,16 +1107,16 @@ input {
     transform: scale3d(1, 1, 1);
   }
   30% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
+    -webkit-transform: scale3d(0.75, 1.1, 1);
+    transform: scale3d(0.75, 1.1, 1);
   }
   40% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
+    -webkit-transform: scale3d(1.1, 0.75, 1);
+    transform: scale3d(1.1, 0.75, 1);
   }
   50% {
-    -webkit-transform: scale3d(0.85, 1.15, 1);
-    transform: scale3d(0.85, 1.15, 1);
+    -webkit-transform: scale3d(0.85, 1.1, 1);
+    transform: scale3d(0.85, 1.1, 1);
   }
   65% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
@@ -1122,7 +1134,7 @@ input {
 
 .container-right {
   position: relative;
-  width: 80vw;
+  width: 90vw;
   /* height: 85vh; */
   max-width: var(--fixed-width);
   background: #7cdf93;
@@ -1154,7 +1166,7 @@ input {
 
 .container-wrong {
   position: relative;
-  width: 80vw;
+  width: 90vw;
   /* height: 85vh; */
   max-width: var(--fixed-width);
   background: #d75b65;

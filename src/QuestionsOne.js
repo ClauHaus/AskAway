@@ -10,7 +10,7 @@ const QuestionsOne = () => {
   const [changeB, setChangeB] = useState("answers");
   const [changeC, setChangeC] = useState("answers");
   const [changeD, setChangeD] = useState("answers");
-  const [container, setContainer] = useState("container");
+  const [container, setContainer] = useState("container-question");
   const { openModal } = useGlobalContext();
   const [cursor, setCursor] = useState("pointer");
   const [events, setEvents] = useState("auto");
@@ -82,14 +82,20 @@ const QuestionsOne = () => {
       setChangeB("answers");
       setChangeC("answers");
       setChangeD("answers");
-      setContainer("container");
+      setContainer("container-question");
     }, 1500);
     return () => clearTimeout(timeout);
   };
 
   return (
-    <section className="container-back" style={{ width: "95%", left: "2%" }}>
-      <div className={container} style={{ width: "90vw" }}>
+    <section
+      className="container-back"
+      style={{
+        width: "95%",
+        left: "2%",
+      }}
+    >
+      <div className={container}>
         <ul className=" top-information top">
           <li>Level 1</li>
           <li>Normal</li>

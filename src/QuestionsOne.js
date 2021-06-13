@@ -3,7 +3,7 @@ import { useGlobalContext } from "./context";
 import dataOne from "./questions";
 
 const QuestionsOne = () => {
-  const [timer, setTimer] = useState(10000); //60
+  const [timer, setTimer] = useState(1000); //60
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(10);
   const [changeA, setChangeA] = useState("answers");
@@ -88,11 +88,16 @@ const QuestionsOne = () => {
   };
 
   return (
-    <section className="container-back">
-      <div className={container}>
-        <ul className="top-information">
+    <section className="container-back" style={{ width: "95%", left: "2%" }}>
+      <div className={container} style={{ width: "90vw" }}>
+        <ul className=" top-information top">
           <li>Level 1</li>
+          <li>Normal</li>
           <li>{newName}</li>
+        </ul>
+        <ul className="top-information bottom">
+          <li>Question: {index}/10</li>
+          <li>HiScore: {score}</li>
         </ul>
         {/* //ARMAR ACA EL MODAL QUE LEVANTE LOS PUNTOS QUE SE HICIERON HASTA EL MOMENTO + MAS EL BOTON QUE NOS PERMITA CONTINUAR y etc, hay que diseñar todo esto , lo podemos hacer como un component diferente o directamente armarlos debajo de este ternary operator*/}
         {index >= 10 ? (
@@ -118,15 +123,10 @@ const QuestionsOne = () => {
 
           return (
             <article key={id} className={position}>
-              <div
-                className="title title-back question"
-                style={{ padding: "5px" }}
-              >
-                {question}
-              </div>
-              <div className="timer">
-                <div>{count ? timer : "Ready?"}</div>
-                <div>Score: {score}</div>
+              <div className="title title-back question">{question}</div>
+              <div className="container-timer">
+                <div className="score">Score: {score}/25</div>
+                <div className="timer">{count ? timer : "Ready?"}</div>
               </div>
               <ul>
                 <li>
@@ -141,7 +141,7 @@ const QuestionsOne = () => {
                           changeTimeout(),
                           index < 9
                             ? data[`${index + 1}`].answers.sort(
-                                () => Math.random() - 0.5
+                                () => Math.random() - 1
                               )
                             : null)
                         : (setChangeA("answers-wrong"),
@@ -164,7 +164,7 @@ const QuestionsOne = () => {
                           changeTimeout(),
                           index < 9
                             ? data[`${index + 1}`].answers.sort(
-                                () => Math.random() - 0.5
+                                () => Math.random() - 1
                               )
                             : null)
                         : (setChangeB("answers-wrong"),
@@ -180,14 +180,14 @@ const QuestionsOne = () => {
                     className={changeC}
                     style={{ cursor: cursor, pointerEvents: events }}
                     onClick={() =>
-                      answers[2][0]
+                      answers[2][1]
                         ? (setChangeC("answers-right"),
                           highScore(score + 5),
                           setContainer("container-right"),
                           changeTimeout(),
                           index < 9
                             ? data[`${index + 1}`].answers.sort(
-                                () => Math.random() - 0.5
+                                () => Math.random() - 1
                               )
                             : null)
                         : (setChangeC("answers-wrong"),
@@ -203,14 +203,14 @@ const QuestionsOne = () => {
                     className={changeD}
                     style={{ cursor: cursor, pointerEvents: events }}
                     onClick={() =>
-                      answers[3][0]
+                      answers[3][1]
                         ? (setChangeD("answers-right"),
                           highScore(score + 5),
                           setContainer("container-right"),
                           changeTimeout(),
                           index < 9
                             ? data[`${index + 1}`].answers.sort(
-                                () => Math.random() - 0.5
+                                () => Math.random() - 1
                               )
                             : null)
                         : (setChangeD("answers-wrong"),

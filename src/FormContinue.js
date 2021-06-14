@@ -11,7 +11,7 @@ const FormContinue = () => {
   // console.log(result);
   return (
     <section className="container-back">
-      <div className="container" style={{ minHeight: "70vh" }}>
+      <div className="container">
         <article className="form-text">
           <p className="formContinue-text">
             Welcome <b>{newName} </b>to Ask Away! We will put your {newAge}{" "}
@@ -32,6 +32,7 @@ const FormContinue = () => {
 
         <button
           className="btn btn-title center-item"
+          style={{ marginTop: "30px" }}
           onClick={() => nextPageTwo(formContinue, loadingPage)}
         >
           Continue

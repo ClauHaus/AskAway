@@ -527,7 +527,7 @@ ul {
 }
 
 .container-back-loading {
-  height: 80%;
+  min-height: 77%;
   position: absolute;
   top: 1.5%;
   left: 5%;
@@ -542,9 +542,10 @@ ul {
 .container-loading {
   position: relative;
   width: 80vw;
-  height: 75vh;
+  min-height: 71vh;
   max-width: var(--fixed-width);
-  background: var(--white);
+  background-image: linear-gradient(to right, #3204fdba, #9907facc),
+    url("https://media.tenor.com/images/4461271a1424a7fa2110431965c41ff1/tenor.gif ");
   /* border-radius: 10px; */
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   padding: 1rem 1rem;
@@ -672,7 +673,7 @@ Modal
 .modal-overlay {
   position: relative;
   width: 90vw;
-  height: 90vh;
+  min-height: 75vh;
   padding: 1rem 1rem;
   margin: auto;
   background: rgba(0, 0, 0, 0.92);
@@ -824,7 +825,9 @@ p.modal-text {
   max-width: var(--fixed-width);
   /* height: 80vh; */
   position: relative;
-  background: var(--white);
+  /* background: var(--white); */
+  background-image: linear-gradient(to right, #3204fdba, #9907facc),
+    url("https://media.tenor.com/images/4461271a1424a7fa2110431965c41ff1/tenor.gif ");
   /* border-radius: 10px; */
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   padding: 1rem 2.5rem 1rem 2.5rem;
@@ -929,6 +932,13 @@ input {
 .loading {
   margin: 100px auto 20px auto;
 }
+
+.loading-items {
+  color: white;
+  font-size: 20px;
+  margin: 30px 0px 0px 30px;
+}
+
 /* title */
 
 .title {
@@ -1021,6 +1031,7 @@ h5.title {
 .container-question {
   position: relative;
   width: 90vw;
+  min-height: 74vh;
   /* height: 85vh; */
   max-width: var(--fixed-width);
   background-image: linear-gradient(to right, #3204fdba, #9907facc),
@@ -1028,15 +1039,16 @@ h5.title {
   /* border-radius: 10px; */
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   padding: 0.2rem 1rem 0.5rem 1rem;
-  margin: 0.5rem auto;
+  margin: 0px auto;
 }
 
 .question {
   /* display: flex; */
-  font-size: 18px;
+  font-family: var(--bodyRetro);
+  font-size: 22px;
   margin-top: -16px;
-  height: 110px;
-  padding: 10px;
+  height: 120px;
+  padding: 5px;
 }
 
 .timer {
@@ -1046,7 +1058,7 @@ h5.title {
   border-bottom-right-radius: 50%;
   border-bottom-left-radius: 50%;
   letter-spacing: var(--letterSpacing);
-  padding: 0.375rem 0.75rem;
+  padding: 0.275rem 0.75rem;
   box-shadow: var(--shadow-1);
   transition: var(--transtion);
   display: flex;
@@ -1054,7 +1066,7 @@ h5.title {
   align-items: center;
   border-top-color: var(--primary-500);
   margin: 0px auto 0px auto;
-  font-size: 16px;
+  font-size: 18px;
   width: 45%;
 }
 
@@ -1075,13 +1087,13 @@ h5.title {
   /* border-radius: 10px; */
   margin: 0px auto;
   letter-spacing: var(--letterSpacing);
-  padding: 0.375rem 0.75rem;
+  padding: 0.275rem 0.65rem;
   box-shadow: var(--shadow-1);
   transition: var(--transtion);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .top-information {
@@ -1103,11 +1115,11 @@ h5.title {
 .top {
   background: var(--primary-800);
   margin: 0px auto -16px auto;
-  font-size: 12px;
+  font-size: 14px;
 }
 .answers {
   cursor: pointer;
-  color: var(--primary-600);
+  color: var(--primary-700);
   background: white;
   opacity: 0.9;
   border: transparent;
@@ -1120,6 +1132,8 @@ h5.title {
   justify-content: center;
   width: 100%;
   margin: 10px auto;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .answers-right {
@@ -1140,6 +1154,8 @@ h5.title {
   margin: 10px auto;
   -webkit-animation: jello-vertical 0.9s both;
   animation: jello-vertical 0.9s both;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 @-webkit-keyframes jello-vertical {
@@ -1207,6 +1223,7 @@ h5.title {
 .container-right {
   position: relative;
   width: 90vw;
+  min-height: 74vh;
   /* height: 85vh; */
   max-width: var(--fixed-width);
   background-image: linear-gradient(to right, #0b8101ba, #14f300ba),
@@ -1214,7 +1231,7 @@ h5.title {
   /* border-radius: 10px; */
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   padding: 0.2rem 1rem 0.5rem 1rem;
-  margin: 0.5rem auto;
+  margin: 0px auto;
   transition: all 1s;
 }
 
@@ -1236,11 +1253,14 @@ h5.title {
   margin: 10px auto;
   -webkit-animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .container-wrong {
   position: relative;
   width: 90vw;
+  min-height: 74vh;
   /* height: 85vh; */
   max-width: var(--fixed-width);
   background-image: linear-gradient(to right, #910013ba, #fa0707cc),
@@ -1248,7 +1268,7 @@ h5.title {
   /* border-radius: 10px; */
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
   padding: 0.2rem 1rem 0.5rem 1rem;
-  margin: 0.5rem auto;
+  margin: 0px auto;
   transition: all 1s;
 }
 

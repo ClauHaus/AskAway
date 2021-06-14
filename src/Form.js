@@ -35,7 +35,9 @@ export const Form = () => {
   return (
     <section className="container-back">
       <article className="form">
-        <h4 className="title">Please provide us some info about yourself:</h4>
+        <h4 className="title" style={{ color: "white" }}>
+          Please provide us some info about yourself:
+        </h4>
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <input

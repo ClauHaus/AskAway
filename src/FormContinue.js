@@ -11,7 +11,7 @@ const FormContinue = () => {
   // console.log(result);
   return (
     <section className="container-back">
-      <div className="container">
+      <div className="container" style={{ minHeight: "70vh" }}>
         <article className="form-text">
           <p className="formContinue-text">
             Welcome <b>{newName} </b>to Ask Away! We will put your {newAge}{" "}

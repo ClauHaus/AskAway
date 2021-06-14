@@ -35,9 +35,7 @@ export const Form = () => {
   return (
     <section className="container-back">
       <article className="form">
-        <h3 className="title">
-          Please provide us some information about yourself:
-        </h3>
+        <h4 className="title">Please provide us some info about yourself:</h4>
         <form onSubmit={handleSubmit}>
           <div className="form-control">
             <input

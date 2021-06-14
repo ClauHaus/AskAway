@@ -599,6 +599,8 @@ ul {
   /* box-shadow: var(--shadow-1); */
   box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
     0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
   transition: var(--transtion);
   text-transform: capitalize;
   display: inline-block;
@@ -617,6 +619,8 @@ ul {
   border: transparent;
   /* border-radius: var(--borderRadius); */
   box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
     0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
   letter-spacing: var(--letterSpacing);
   padding: 0.275rem 0.45rem;
@@ -711,11 +715,12 @@ Modal
   letter-spacing: var(--letterSpacing);
   /* padding: 0.375rem 0.75rem; */
   padding: 0.275rem 0.45rem;
-  box-shadow: var(--shadow-1);
   transition: var(--transtion);
   text-transform: capitalize;
   background: #808080;
   box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
     0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
 }
 

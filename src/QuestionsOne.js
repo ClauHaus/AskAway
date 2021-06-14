@@ -24,16 +24,6 @@ const QuestionsOne = () => {
 
   const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente-UPDATE IMPORTANTE, no es necesario realizar esa modificacion porque con el metodo sort tenemos el mismo resultado
 
-  // const generador = () => {
-  //   const result = data[`${index}`].answers.sort(() => Math.random() - 0.5);
-  //   return result;
-  // };
-
-  // const [respuestas, setRespuestas] = useState(data[`${index}`].answers);
-  // // console.log(respuestas);
-
-  // console.log(data[`${index}`].answers);
-
   const highScore = (points) => {
     if (score >= 1) {
       setScore(points);
@@ -115,9 +105,6 @@ const QuestionsOne = () => {
         {/* Con el metodo de slice lo que hacemos es darle un punto de partida al array "0" y le indicamos que llegue hasta el elemento "10" (en este caso es el 9 IMPORTANTE es 0-index) y es a ese resultado que se mapea // tambien se puede armar como una const por fuera */}
         {data.slice(0, 10).map((item, questionIndex) => {
           const { id, question, answers } = item;
-          // console.log(answers[0][0]); //answer
-          // console.log(answers[0][1]); //true/false
-          // dataOne.sort(() => Math.random() - 0.5);
 
           // Es importante que al "abrir" el array a cada elemento ademas le demos una "posicion", en este caso "questionIndex"
 
@@ -145,6 +132,7 @@ const QuestionsOne = () => {
                           highScore(score + 5),
                           setContainer("container-right"),
                           changeTimeout(),
+                          // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
                           index < 9
                             ? data[`${index + 1}`].answers.sort(
                                 () => Math.random() - 1

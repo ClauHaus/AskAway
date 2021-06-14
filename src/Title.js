@@ -13,10 +13,10 @@ const Title = () => {
     <>
       <section className="container-back">
         <div className="container">
-          <button className="btn btn-change " onClick={openOptions}>
+          <button className="btn-change " onClick={openOptions}>
             <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
           </button>
-          <h1 className="title title-back">ask away</h1>
+          <h3 className="title title-back">ask away</h3>
           {/* <div className="title-underline"></div> */}
           <h5 className="title">How much do you know about stuff?</h5>
           <div className="title-image-container">
@@ -28,12 +28,12 @@ const Title = () => {
           </div>
           <div className="btn-container">
             <button
-              className="btn btn-title"
+              className="btn-title"
               onClick={() => nextPageTest(title, form)}
             >
               Start game
             </button>
-            <button className="btn btn-title" onClick={openModal}>
+            <button className="btn-title" onClick={openModal}>
               How to play
             </button>
           </div>

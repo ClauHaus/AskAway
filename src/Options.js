@@ -9,7 +9,7 @@ const Options = () => {
     <div className="modal-container">
       <div className="modal-overlay show-modal">
         <section className="options">
-          <button className="btn close-modal-btn" onClick={closeOptions}>
+          <button className="close-modal-btn" onClick={closeOptions}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
           <h3 className="title-options title-options-back">Settings</h3>

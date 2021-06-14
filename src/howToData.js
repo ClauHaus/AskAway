@@ -43,13 +43,13 @@ const howToData = [
   },
   {
     id: 5,
-    title: "Correct/Incorrect",
+    title: "Correct?",
     text: "For each correct answer you will get 5 more points, but if you choose an incorrect answer you get 2 points discounted from your total. If you reach 0 points you will get a `Game Over` and the chance to replay the level or start from the beginning.",
     icon: <FontAwesomeIcon icon={faCheckSquare} />,
   },
   {
     id: 6,
-    title: "Go and play!",
+    title: "Play!",
     text: "You will not move on into the next question until you get the correct one. Hope everything is clear and i think that the best way to learn how to play the game is actually trying, so why you just don't give it a try and don't forget to have fun.",
     icon: <FontAwesomeIcon icon={faFistRaised} />,
   },

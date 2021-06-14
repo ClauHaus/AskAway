@@ -40,7 +40,7 @@ const Title = () => {
           <p className="title">
             Coded by{" "}
             <a href="https://bit.ly/383XPVf">
-              <b>' ClauHaus '</b>
+              <b style={{ color: "var(--primary-100" }}>' ClauHaus '</b>
             </a>
           </p>
 

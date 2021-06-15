@@ -423,7 +423,8 @@ html {
 
 body {
   background: var(--backgroundColor);
-  background: lightskyblue;
+  background: #009faa;
+  /* background: url("https://i.pinimg.com/originals/8c/28/5a/8c285aa25129d494f3559e18435c5f88.jpg"); */
   font-family: var(--bodyRetro);
   font-weight: 400;
   line-height: 1.75;
@@ -500,7 +501,7 @@ ul {
 .container-back {
   /* position: fixed; */
   position: absolute;
-  /* top: 1%; */
+  top: 2px;
   left: 5%;
   width: 90%;
   min-height: 77%;
@@ -508,7 +509,11 @@ ul {
   /* border-radius: 20px; */
   /* padding: 10px; */
   box-sizing: border-box;
-  background: #ecf0f3;
+  background: #a0a0a4;
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
   /* box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
 }
 
@@ -518,6 +523,8 @@ ul {
   /* justify-content: space-between; */
   background: linear-gradient(90deg, #2a00ff 0%, #5c74ff 80%);
   padding: 0px 2px 25px 2px;
+  margin-top: 1px;
+  margin-left: 1.91px;
   height: 3vh;
   color: white;
 }
@@ -529,14 +536,40 @@ ul {
   color: white;
 }
 
+.window-image {
+  width: 15px;
+  height: 15px;
+  margin: 5px 5px 0px 3px;
+}
+
 .upper-icons {
   display: flex;
+}
+
+.upper-left {
+  display: flex;
+}
+
+.icons-data {
+  display: flex;
+  color: black;
+  background: #808080;
+  border: transparent;
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  padding: 0.3rem 0.45rem;
+  font-size: 0.5rem;
+  height: 2.5vh;
+  width: 5vw;
+  margin: 2px 3.5px 0px auto;
 }
 
 .container {
   position: relative;
   /* display: none; */
-  width: 80vw;
+  width: 85vw;
   min-height: 71vh;
   /* height: 85vh; */
   max-width: var(--fixed-width);
@@ -544,7 +577,12 @@ ul {
   background-image: linear-gradient(to right, #3204fdba, #9907facc),
     url("https://media.tenor.com/images/4461271a1424a7fa2110431965c41ff1/tenor.gif ");
   /* border-radius: 10px; */
-  /* box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
+    -1px -1px 3px 0px #fffbf0 inset;
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
+    -1px -1px 3px 0px #fffbf0 inset;
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
+    -1px -1px 3px 0px #fffbf0 inset;
   padding: 0.2rem 0.2rem 0.5rem 0.2rem;
   margin: 0.5rem auto;
 }
@@ -655,7 +693,7 @@ ul {
   text-transform: capitalize;
   /* display: inline-block; */
   font-size: 1.5rem;
-  margin: 10px auto 0px 0px;
+  margin: 10px auto 0px 25px;
 }
 
 .btn-next,

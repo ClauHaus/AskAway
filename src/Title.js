@@ -12,6 +12,16 @@ const Title = () => {
   return (
     <>
       <section className="container-back">
+        <header className="window-info">
+          <section className="window-upper">
+            <div>Askaway.exe</div>
+            <section className="upper-icons">
+              <div>X</div>
+              <div>C</div>
+              <div>-</div>
+            </section>
+          </section>
+        </header>
         <div className="container">
           <button className="btn-change " onClick={openOptions}>
             <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>

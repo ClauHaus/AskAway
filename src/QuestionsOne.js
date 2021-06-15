@@ -118,7 +118,7 @@ const QuestionsOne = () => {
             <article key={id} className={position}>
               <div className="title title-back question">{question}</div>
               <div className="container-timer">
-                <div className="score">Score: {score}/25</div>
+                <div className="score">Score: {score}/30</div>
                 <div className="timer">{count ? timer : "Ready?"}</div>
               </div>
               <ul>

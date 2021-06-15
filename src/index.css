@@ -423,6 +423,7 @@ html {
 
 body {
   background: var(--backgroundColor);
+  background: lightskyblue;
   font-family: var(--bodyRetro);
   font-weight: 400;
   line-height: 1.75;
@@ -499,20 +500,42 @@ ul {
 .container-back {
   /* position: fixed; */
   position: absolute;
-  top: 1%;
+  /* top: 1%; */
   left: 5%;
   width: 90%;
   min-height: 77%;
   /* height: 92%; */
   /* border-radius: 20px; */
-  padding: 10px;
+  /* padding: 10px; */
   box-sizing: border-box;
   background: #ecf0f3;
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  /* box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
+}
+
+.window-info {
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: space-between; */
+  background: linear-gradient(90deg, #2a00ff 0%, #5c74ff 80%);
+  padding: 0px 2px 25px 2px;
+  height: 3vh;
+  color: white;
+}
+
+.window-upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+
+.upper-icons {
+  display: flex;
 }
 
 .container {
   position: relative;
+  /* display: none; */
   width: 80vw;
   min-height: 71vh;
   /* height: 85vh; */
@@ -521,7 +544,7 @@ ul {
   background-image: linear-gradient(to right, #3204fdba, #9907facc),
     url("https://media.tenor.com/images/4461271a1424a7fa2110431965c41ff1/tenor.gif ");
   /* border-radius: 10px; */
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  /* box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
   padding: 0.2rem 0.2rem 0.5rem 0.2rem;
   margin: 0.5rem auto;
 }
@@ -673,7 +696,7 @@ Modal
 .modal-overlay {
   position: relative;
   width: 90vw;
-  min-height: 75vh;
+  min-height: 90vh;
   padding: 1rem 1rem;
   margin: auto;
   background: rgba(0, 0, 0, 0.92);

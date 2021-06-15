@@ -5,8 +5,16 @@ import {
   faCog,
   faTimes,
   faWindowMinimize,
+  faMailBulk,
+  faGripLinesVertical,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
+import {
+  faWindows,
+  faGithub,
+  faTwitter,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import HowTo from "./HowTo";
 import Options from "./Options";
 import { useGlobalContext } from "./context";
@@ -14,6 +22,30 @@ import { useGlobalContext } from "./context";
 const Title = () => {
   const { options, modal, nextPageTest, title, form, openModal, openOptions } =
     useGlobalContext();
+
+  // const hour = new Date().getHours();
+  // const minutes = new Date().getMinutes();
+  // const actualTime = `${hour}:${minutes}`;
+
+  //REVISAR!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // function startTime() {
+  //   var today = new Date();
+  //   var h = today.getHours();
+  //   var m = today.getMinutes();
+  //   var s = today.getSeconds();
+  //   m = checkTime(m);
+  //   s = checkTime(s);
+  //   document.getElementsByClassName("container-bottom-icons").innerHTML =
+  //     h + ":" + m + ":" + s;
+  //   var t = setTimeout(startTime, 1000);
+  // }
+  // function checkTime(i) {
+  //   if (i < 10) {
+  //     i = "0" + i;
+  //   } // add zero in front of numbers < 10
+  //   return i;
+  // }
+
   return (
     <>
       <section className="container-back">
@@ -75,6 +107,67 @@ const Title = () => {
           {options && <Options />}
           {modal && <HowTo />}
         </div>
+      </section>
+      <section>
+        <footer className="container-bottom">
+          <div>
+            <button className="btn-restart">
+              <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
+              ReStart
+            </button>
+          </div>
+          <FontAwesomeIcon
+            icon={faGripLinesVertical}
+            className="container-bottom-icons-span"
+          ></FontAwesomeIcon>
+          <a
+            href="https://github.com/ClauHaus/AskAway"
+            target="_blank"
+            style={{ color: "black" }}
+          >
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="container-bottom-icons"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
+            target="_blank"
+            style={{ color: "black" }}
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="container-bottom-icons"
+            />
+          </a>
+          <a href="https://twitter.com/ClauHaus_" target="_blank">
+            <FontAwesomeIcon
+              icon={faTwitter}
+              className="container-bottom-icons"
+              style={{ color: "black" }}
+            />
+          </a>
+          <a
+            href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
+            target="_blank"
+            style={{ color: "black" }}
+          >
+            <FontAwesomeIcon
+              icon={faMailBulk}
+              className="container-bottom-icons"
+            />
+          </a>
+          <FontAwesomeIcon
+            icon={faGripLinesVertical}
+            className="container-bottom-icons-span"
+          ></FontAwesomeIcon>
+          <img
+            className="container-bottom-icons-image"
+            src={titleImg}
+            alt="logo of Ask Away"
+          />
+          {/* <div className="container-bottom-icons" onLoad={startTime}></div> */}
+        </footer>
       </section>
     </>
   );

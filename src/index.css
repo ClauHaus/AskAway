@@ -587,6 +587,57 @@ ul {
   margin: 0.5rem auto;
 }
 
+.container-bottom {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  bottom: 13%;
+  background: #808080;
+  width: 100%;
+  box-shadow: -2px -2px 0px 0px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: -2px -2px 0px 0px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: -2px -2px 0px 0px rgba(255, 255, 255, 0.75);
+}
+
+.container-bottom-icons {
+  font-size: 1.5rem;
+  margin: 11px 4px 8px 4px;
+}
+
+.container-bottom-icons-image {
+  width: 32px;
+  height: 32px;
+  margin: 6px 4px 6px 4px;
+  box-shadow: 5px 5px 0px 10px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 5px 5px 0px 10px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 5px 5px 0px 10px rgba(0, 0, 0, 0.75) inset;
+}
+
+.container-bottom-icons-span {
+  font-size: 1.5rem;
+  margin: 11px 5px 8px 5px;
+  color: #a0a0a4;
+}
+.btn-restart {
+  display: flex;
+  cursor: pointer;
+  color: black;
+  background: #808080;
+  border: transparent;
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  letter-spacing: var(--letterSpacing);
+  padding: 0.275rem 0.45rem;
+  transition: var(--transtion);
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 10px 10px 7px 4px;
+}
+
 .container-back-loading {
   min-height: 77%;
   position: absolute;

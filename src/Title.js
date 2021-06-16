@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,28 +23,28 @@ const Title = () => {
   const { options, modal, nextPageTest, title, form, openModal, openOptions } =
     useGlobalContext();
 
-  // const hour = new Date().getHours();
-  // const minutes = new Date().getMinutes();
-  // const actualTime = `${hour}:${minutes}`;
+  const clock = () => {
+    const today = new Date();
+    let hour = today.getHours();
+    let minutes = today.getMinutes();
+    minutes = checkTime(minutes);
+    const actualTime = `${hour} : ${minutes}`;
+    return actualTime;
+  };
+  const checkTime = (i) => {
+    if (i < 10) {
+      i = "0" + i;
+    } // add zero in front of numbers < 10
+    return i;
+  };
 
-  //REVISAR!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // function startTime() {
-  //   var today = new Date();
-  //   var h = today.getHours();
-  //   var m = today.getMinutes();
-  //   var s = today.getSeconds();
-  //   m = checkTime(m);
-  //   s = checkTime(s);
-  //   document.getElementsByClassName("container-bottom-icons").innerHTML =
-  //     h + ":" + m + ":" + s;
-  //   var t = setTimeout(startTime, 1000);
-  // }
-  // function checkTime(i) {
-  //   if (i < 10) {
-  //     i = "0" + i;
-  //   } // add zero in front of numbers < 10
-  //   return i;
-  // }
+  const [time, setActualTime] = useState(clock);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setActualTime(clock);
+    }, 60000);
+  }, [time]);
 
   return (
     <>
@@ -173,7 +173,7 @@ const Title = () => {
             src={titleImg}
             alt="logo of Ask Away"
           />
-          {/* <div className="container-bottom-icons" onLoad={startTime}></div> */}
+          <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>
     </>

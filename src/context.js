@@ -26,6 +26,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "NEXT_PAGE_INTRO", payload: { erase, add } });
   };
 
+  const nextPageForm = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_FORM", payload: { erase, add } });
+  };
+
   const nextPageOne = (erase, add) => {
     dispatch({ type: "NEXT_PAGE_ONE", payload: { erase, add } });
   };
@@ -88,6 +92,7 @@ const AppProvider = ({ children }) => {
         openModal,
         closeModal,
         nextPageIntro,
+        nextPageForm,
         nextPageOne,
         nextPageTwo,
         nextPageThree,

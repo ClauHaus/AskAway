@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
   faChevronRight,
   faChevronLeft,
+  faWindowMinimize,
 } from "@fortawesome/free-solid-svg-icons";
+import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import howToData from "./howToData";
 import { useGlobalContext } from "./context";
 
@@ -13,32 +16,50 @@ const HowTo = () => {
   const data = howToData;
   const [index, setIndex] = useState(0);
   return (
-    <div className="modal-container">
-      <div className="modal-overlay show-modal">
-        {data.map((item, itemIndex) => {
-          const { text, title, icon } = item;
-          let position = "nextSlide";
-          if (itemIndex === index) {
-            position = "activeSlide";
-          }
-          if (index >= data.length) {
-            setIndex(0);
-          }
-          if (index < 0) {
-            setIndex(data.length - 1);
-          }
-          // if (
-          //   itemIndex === index - 1 ||
-          //   (index === 0 && itemIndex === data.length - 1)
-          // ) {
-          //   position = "lastSlide";
-          // }
-          return (
-            <article key={itemIndex} className={position}>
+    <section className="container-back-howTo">
+      <header className="window-info">
+        <div className="window-upper">
+          <section className="upper-left">
+            <img
+              className="window-image"
+              src={titleImg}
+              alt="logo of Ask Away"
+            />
+            <div>C:\Desktop\Askaway\Howto</div>
+          </section>
+          <section className="upper-icons">
+            <div className="icons-data">
+              <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
+            </div>
+            <div className="icons-data">
+              <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
+            </div>
+            <div className="icons-data">
+              <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      {data.map((item, itemIndex) => {
+        const { text, title, icon } = item;
+        let position = "nextSlide";
+        if (itemIndex === index) {
+          position = "activeSlide";
+        }
+        if (index >= data.length) {
+          setIndex(0);
+        }
+        if (index < 0) {
+          setIndex(data.length - 1);
+        }
+        return (
+          <article key={itemIndex} className={position}>
+            <section className="howto">
               <button className="btn close-modal-btn" onClick={closeModal}>
                 <FontAwesomeIcon icon={faTimes} />
               </button>
-              <h4 className="title-howto title-options-back">{title}</h4>
+              <h5 className="title-howto title-howto-back">{title}</h5>
               <div className="icon-howto">{icon}</div>
               <p className="modal-text">{text}</p>
               <div className="btn-container-howto">
@@ -55,11 +76,11 @@ const HowTo = () => {
                   <FontAwesomeIcon icon={faChevronRight} />
                 </button>
               </div>
-            </article>
-          );
-        })}
-      </div>
-    </div>
+            </section>
+          </article>
+        );
+      })}
+    </section>
   );
 };
 

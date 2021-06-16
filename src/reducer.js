@@ -11,7 +11,7 @@ const reducer = (state, action) => {
   if (action.type === "CLOSE_MODAL") {
     return { ...state, modal: false };
   }
-  if (action.type === "NEXT_PAGE") {
+  if (action.type === "NEXT_PAGE_FORM") {
     //ASI FUNCIONA, el objetivo es automatizar el paso de datos para solo utilizar una funcion
     // const { erase, add } = action.payload;
 

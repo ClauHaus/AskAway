@@ -24,7 +24,7 @@ const Title = () => {
     time,
     options,
     modal,
-    nextPageTest,
+    nextPageForm,
     title,
     form,
     openModal,
@@ -74,7 +74,7 @@ const Title = () => {
           <div className="btn-container">
             <button
               className="btn-title"
-              onClick={() => nextPageTest(title, form)}
+              onClick={() => nextPageForm(title, form)}
             >
               Start game
             </button>

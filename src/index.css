@@ -592,7 +592,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: left;
-  bottom: 13%;
+  bottom: 0%;
   background: #808080;
   width: 100%;
   box-shadow: -2px -2px 0px 0px rgba(255, 255, 255, 0.75);

@@ -123,6 +123,7 @@ const Title = () => {
           <a
             href="https://github.com/ClauHaus/AskAway"
             target="_blank"
+            rel="noreferrer"
             style={{ color: "black" }}
           >
             <FontAwesomeIcon
@@ -133,6 +134,7 @@ const Title = () => {
           <a
             href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
             target="_blank"
+            rel="noreferrer"
             style={{ color: "black" }}
           >
             <FontAwesomeIcon
@@ -140,7 +142,11 @@ const Title = () => {
               className="container-bottom-icons"
             />
           </a>
-          <a href="https://twitter.com/ClauHaus_" target="_blank">
+          <a
+            href="https://twitter.com/ClauHaus_"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FontAwesomeIcon
               icon={faTwitter}
               className="container-bottom-icons"
@@ -150,6 +156,7 @@ const Title = () => {
           <a
             href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
             target="_blank"
+            rel="noreferrer"
             style={{ color: "black" }}
           >
             <FontAwesomeIcon

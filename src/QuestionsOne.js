@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCog,
   faTimes,
   faWindowMinimize,
   faMailBulk,
@@ -19,7 +18,7 @@ import { useGlobalContext } from "./context";
 import dataOne from "./questions";
 
 const QuestionsOne = () => {
-  const [timer, setTimer] = useState(1000); //60
+  const [timer, setTimer] = useState(60); //60
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(10);
   const [changeA, setChangeA] = useState("answers");
@@ -53,6 +52,7 @@ const QuestionsOne = () => {
       setCursor("not-allowed");
       setEvents("none");
     }
+    localStorage.setItem("newScore", JSON.stringify(score));
   }, [score]);
 
   // Aparecen en diferentes tiempos el reloj y el resto de los elementos
@@ -74,6 +74,9 @@ const QuestionsOne = () => {
         setCursor("not-allowed");
         setEvents("none");
         // openModal(); //revisar y armar una funcion
+      }
+      if (index >= 10) {
+        setTimer(timer);
       }
       // ingresar ifs y mas funcionalidad aca
     }, 1000);
@@ -132,7 +135,79 @@ const QuestionsOne = () => {
           </ul>
           {/* //ARMAR ACA EL MODAL QUE LEVANTE LOS PUNTOS QUE SE HICIERON HASTA EL MOMENTO + MAS EL BOTON QUE NOS PERMITA CONTINUAR y etc, hay que diseñar todo esto , lo podemos hacer como un component diferente o directamente armarlos debajo de este ternary operator*/}
           {index >= 10 ? (
-            <h1 className="title title-back question">You did it!</h1>
+            <>
+              {localStorage.setItem("newTimer", JSON.stringify(timer))}
+              <h1 className="title title-back question">
+                {newName}, you are great!
+              </h1>
+              <section
+                className="container-back"
+                style={{
+                  width: "95%",
+                  left: "2%",
+                  top: "15%",
+                }}
+              >
+                <header className="window-info">
+                  <div className="window-upper">
+                    <section className="upper-left">
+                      <img
+                        className="window-image"
+                        src={titleImg}
+                        alt="logo of Ask Away"
+                      />
+                      <div>C:\Desktop\Askaway\{newName}\Results</div>
+                    </section>
+                    <section className="upper-icons">
+                      <div className="icons-data">
+                        <FontAwesomeIcon
+                          icon={faWindowMinimize}
+                        ></FontAwesomeIcon>
+                      </div>
+                      <div className="icons-data">
+                        <FontAwesomeIcon
+                          icon={faWindowMaximize}
+                        ></FontAwesomeIcon>
+                      </div>
+                      <div className="icons-data">
+                        <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+                      </div>
+                    </section>
+                  </div>
+                </header>
+                <div className="container-results">
+                  <p>Awesome job! You cleared the first out of five levels.</p>
+                  <p>Let's see some stats before moving on, shall we?</p>
+                  <ul>
+                    <li>
+                      You scored {score} points{" "}
+                      {score < 35 &&
+                        "Wow you barely made it, let's improve ourselves in the next level!"}
+                      {score >= 40 &&
+                        score < 50 &&
+                        "Great, let's continue with this performance."}
+                      {score >= 50 &&
+                        score < 60 &&
+                        "Hey! You are actually good at this, congratz!"}
+                      {score >= 60 &&
+                        score < 70 &&
+                        "Outstanding score, you know a looot about stuff!"}
+                    </li>
+                    <li>
+                      You cleared this level in{" "}
+                      {60 - JSON.parse(localStorage.getItem("newTimer"))}{" "}
+                      seconds,{" "}
+                      {JSON.parse(localStorage.getItem("newTimer")) > 50
+                        ? "that was close, you need to move those fingers as fast as your mind."
+                        : "you are a fast thinker or a pretty good guesser, let's find out in the next level."}
+                    </li>
+                  </ul>
+                  <button className="btn btn-title center-item">
+                    Continue
+                  </button>
+                </div>
+              </section>
+            </>
           ) : (
             ""
           )}

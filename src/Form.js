@@ -75,7 +75,7 @@ export const Form = () => {
             </section>
           </div>
         </header>
-        <article className="form">
+        <article className="container">
           <h4 className="title title-back">
             Please provide us some info about yourself
           </h4>

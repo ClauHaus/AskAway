@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCog,
   faTimes,
   faWindowMinimize,
   faMailBulk,
@@ -18,12 +17,12 @@ import {
 import { useGlobalContext } from "./context";
 
 const Intro = () => {
-  const { time, intro, title, nextPageIntro } = useGlobalContext();
+  const { time, restartGame, intro, title, nextPageIntro } = useGlobalContext();
 
   useEffect(() => {
     let timeOut = setTimeout(() => {
       nextPageIntro(intro, title);
-    }, 1000); //PASARLO A 5000!
+    }, 6000); //PASARLO A 6000!
     return () => clearTimeout(timeOut);
   });
 
@@ -76,7 +75,7 @@ const Intro = () => {
       <section>
         <footer className="container-bottom">
           <div>
-            <button className="btn-restart">
+            <button className="btn-restart" onClick={restartGame}>
               <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
               ReStart
             </button>

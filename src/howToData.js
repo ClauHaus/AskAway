@@ -32,7 +32,7 @@ const howToData = [
   {
     id: 3,
     title: "Timer",
-    text: "The `Timer` will be set by default in 60 seconds, and that's going to be the amount of time to answer 10 questions in order to advance to the next level. In case the time runs out you will get a `Time Out` and the chance to replay the level or start from the beginning",
+    text: "The `Timer` will be set by default in 60 seconds, and that's going to be the amount of time to answer 10 questions in order to advance to the next level. In case the time runs out you will get a `Time Out` and the chance to replay the level or start from the beginning.",
     icon: <FontAwesomeIcon icon={faClock} />,
   },
   {

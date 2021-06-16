@@ -81,11 +81,15 @@ const AppProvider = ({ children }) => {
     }, 60000);
   }, [time]);
 
+  const restartGame = () => {
+    window.location.reload();
+  };
   return (
     <AppContext.Provider
       value={{
         time,
         ...state,
+        restartGame,
         nextPage,
         openOptions,
         closeOptions,

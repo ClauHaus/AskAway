@@ -22,6 +22,7 @@ import { useGlobalContext } from "./context";
 const Title = () => {
   const {
     time,
+    restartGame,
     options,
     modal,
     nextPageForm,
@@ -96,7 +97,7 @@ const Title = () => {
       <section>
         <footer className="container-bottom">
           <div>
-            <button className="btn-restart">
+            <button className="btn-restart" onClick={restartGame}>
               <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
               ReStart
             </button>

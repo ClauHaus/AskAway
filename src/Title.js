@@ -20,31 +20,16 @@ import Options from "./Options";
 import { useGlobalContext } from "./context";
 
 const Title = () => {
-  const { options, modal, nextPageTest, title, form, openModal, openOptions } =
-    useGlobalContext();
-
-  const clock = () => {
-    const today = new Date();
-    let hour = today.getHours();
-    let minutes = today.getMinutes();
-    minutes = checkTime(minutes);
-    const actualTime = `${hour} : ${minutes}`;
-    return actualTime;
-  };
-  const checkTime = (i) => {
-    if (i < 10) {
-      i = "0" + i;
-    } // add zero in front of numbers < 10
-    return i;
-  };
-
-  const [time, setActualTime] = useState(clock);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setActualTime(clock);
-    }, 60000);
-  }, [time]);
+  const {
+    time,
+    options,
+    modal,
+    nextPageTest,
+    title,
+    form,
+    openModal,
+    openOptions,
+  } = useGlobalContext();
 
   return (
     <>
@@ -168,11 +153,13 @@ const Title = () => {
             icon={faGripLinesVertical}
             className="container-bottom-icons-span"
           ></FontAwesomeIcon>
-          <img
-            className="container-bottom-icons-image"
-            src={titleImg}
-            alt="logo of Ask Away"
-          />
+          <div className="container-bottom-image">
+            <img
+              className="container-bottom-icons-image"
+              src={titleImg}
+              alt="logo of Ask Away"
+            />
+          </div>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

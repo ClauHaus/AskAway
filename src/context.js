@@ -1,10 +1,11 @@
-import React, { useContext, useReducer } from "react";
+import React, { useState, useEffect, useContext, useReducer } from "react";
 import reducer from "./reducer";
 
 const AppContext = React.createContext();
 
 const initialState = {
-  title: true,
+  intro: true,
+  title: false,
   modal: false,
   options: false,
   form: false,
@@ -21,8 +22,8 @@ const AppProvider = ({ children }) => {
     add(true);
   };
 
-  const nextPageTest = (erase, add) => {
-    dispatch({ type: "NEXT_PAGE", payload: { erase, add } });
+  const nextPageIntro = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_INTRO", payload: { erase, add } });
   };
 
   const nextPageOne = (erase, add) => {
@@ -53,16 +54,40 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "CLOSE_MODAL" });
   };
 
+  const clock = () => {
+    const today = new Date();
+    let hour = today.getHours();
+    let minutes = today.getMinutes();
+    minutes = checkTime(minutes);
+    const actualTime = `${hour} : ${minutes}`;
+    return actualTime;
+  };
+  const checkTime = (i) => {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  };
+
+  const [time, setActualTime] = useState(clock);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setActualTime(clock);
+    }, 60000);
+  }, [time]);
+
   return (
     <AppContext.Provider
       value={{
+        time,
         ...state,
         nextPage,
         openOptions,
         closeOptions,
         openModal,
         closeModal,
-        nextPageTest,
+        nextPageIntro,
         nextPageOne,
         nextPageTwo,
         nextPageThree,

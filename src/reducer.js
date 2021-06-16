@@ -20,6 +20,9 @@ const reducer = (state, action) => {
     // console.log(action.payload);
     return { ...state, title: false, form: true };
   }
+  if (action.type === "NEXT_PAGE_INTRO") {
+    return { ...state, intro: false, title: true };
+  }
   if (action.type === "NEXT_PAGE_ONE") {
     return { ...state, form: false, formContinue: true };
   }

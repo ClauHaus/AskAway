@@ -27,16 +27,18 @@ const QuestionsOne = () => {
   const [changeC, setChangeC] = useState("answers");
   const [changeD, setChangeD] = useState("answers");
   const [container, setContainer] = useState("container-question");
-  const { openModal, time, restartGame } = useGlobalContext();
+  const { time, restartGame, questionsOne, knowOne, nextPageFour } =
+    useGlobalContext();
   const [cursor, setCursor] = useState("pointer");
   const [events, setEvents] = useState("auto");
   const newName = JSON.parse(localStorage.getItem("newName"));
+
   // Esta funcion es para que haga un sort de los elementos del array
   const shuffle = () => {
-    const result = dataOne.sort(() => Math.random() - 0.5);
+    const result = dataOne.sort(() => Math.random() - 0.5); //ACA PONES LOS DISTINTOS ARRAY!
     return result;
   };
-  const [data, setData] = useState(shuffle);
+  const [data, setData] = useState([]);
 
   const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente-UPDATE IMPORTANTE, no es necesario realizar esa modificacion porque con el metodo sort tenemos el mismo resultado
 
@@ -46,7 +48,6 @@ const QuestionsOne = () => {
     }
   };
 
-  // GAME OVER!!!
   useEffect(() => {
     if (score < 1) {
       setTimer("TIME OUT");
@@ -58,6 +59,7 @@ const QuestionsOne = () => {
 
   // Aparecen en diferentes tiempos el reloj y el resto de los elementos
   useEffect(() => {
+    setData(shuffle);
     setTimeout(() => {
       setCount(true);
     }, 2000);
@@ -200,7 +202,10 @@ const QuestionsOne = () => {
                         : "you are a fast thinker or a pretty good guesser, let's find out in the next level."}
                     </li>
                   </ul>
-                  <button className="btn btn-title center-item">
+                  <button
+                    className="btn btn-title center-item"
+                    onClick={() => nextPageFour(questionsOne, knowOne)}
+                  >
                     Continue
                   </button>
                 </div>

@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useContext, useReducer } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  useReducer,
+  useCallback,
+} from "react";
 import reducer from "./reducer";
 
 const AppContext = React.createContext();
@@ -12,6 +18,7 @@ const initialState = {
   formContinue: false,
   loadingPage: false,
   questionsOne: false,
+  knowOne: false,
 };
 
 const AppProvider = ({ children }) => {
@@ -42,6 +49,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "NEXT_PAGE_THREE", payload: { erase, add } });
   };
 
+  const nextPageFour = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_FOUR", payload: { erase, add } });
+  };
+
   const openOptions = () => {
     dispatch({ type: "OPEN_OPTIONS" });
   };
@@ -58,14 +69,14 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "CLOSE_MODAL" });
   };
 
-  const clock = () => {
+  const clock = useCallback(() => {
     const today = new Date();
     let hour = today.getHours();
     let minutes = today.getMinutes();
     minutes = checkTime(minutes);
     const actualTime = `${hour} : ${minutes}`;
     return actualTime;
-  };
+  }, []);
   const checkTime = (i) => {
     if (i < 10) {
       i = "0" + i;
@@ -79,7 +90,7 @@ const AppProvider = ({ children }) => {
     setTimeout(() => {
       setActualTime(clock);
     }, 60000);
-  }, [time]);
+  }, [time, clock]);
 
   const restartGame = () => {
     window.location.reload();
@@ -100,6 +111,7 @@ const AppProvider = ({ children }) => {
         nextPageOne,
         nextPageTwo,
         nextPageThree,
+        nextPageFour,
       }}
     >
       {children}

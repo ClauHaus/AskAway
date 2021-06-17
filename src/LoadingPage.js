@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCog,
   faTimes,
   faWindowMinimize,
   faMailBulk,
@@ -23,7 +22,7 @@ const LoadingPage = () => {
   const newName = JSON.parse(localStorage.getItem("newName"));
   useEffect(() => {
     let timeOut = setTimeout(() => {
-      nextPageThree(loadingPage, questionsOne);
+      nextPageThree(loadingPage, questionsOne); //AGREGAR ACA EL setLevel de 0 a 1
     }, 6000); //PASARLO A 5000!
     return () => clearTimeout(timeOut);
     // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut

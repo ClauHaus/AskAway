@@ -2,7 +2,6 @@ import React from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCog,
   faTimes,
   faWindowMinimize,
   faMailBulk,

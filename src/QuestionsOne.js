@@ -214,7 +214,6 @@ const QuestionsOne = () => {
           )}
           {index >= 10 && score < 30 ? (
             <>
-              {localStorage.setItem("newTimer", JSON.stringify(timer))}
               <h1 className="title title-back question">Game Over.</h1>
               <section
                 className="container-back"
@@ -266,8 +265,8 @@ const QuestionsOne = () => {
                     style={{
                       width: "95%",
                       left: "7%",
-                      top: "35%",
-                      minHeight: "50%",
+                      top: "40%",
+                      minHeight: "45%",
                     }}
                   >
                     <header className="window-info">
@@ -303,7 +302,7 @@ const QuestionsOne = () => {
                         ></FontAwesomeIcon>
                         C:\Desktop\Askaway...
                       </div>
-                      <div className="btn-container">
+                      <div className="btn-container" style={{ margin: "10px" }}>
                         <button className="btn-gameOver" onClick={restartGame}>
                           Restart Askaway
                         </button>
@@ -317,7 +316,64 @@ const QuestionsOne = () => {
           ) : (
             ""
           )}
-
+          {score < 1 ? (
+            <>
+              <h1 className="title title-back question">Game Over.</h1>
+              <section
+                className="container-back"
+                style={{
+                  width: "95%",
+                  left: "0%",
+                  top: "30%",
+                  minHeight: "25%",
+                }}
+              >
+                <header className="window-info">
+                  <div className="window-upper">
+                    <section className="upper-left">
+                      <img
+                        className="window-image"
+                        src={titleImg}
+                        alt="logo of Ask Away"
+                      />
+                      <div>Game Over</div>
+                    </section>
+                    <section className="upper-icons">
+                      <div className="icons-data">
+                        <FontAwesomeIcon
+                          icon={faWindowMinimize}
+                        ></FontAwesomeIcon>
+                      </div>
+                      <div className="icons-data">
+                        <FontAwesomeIcon
+                          icon={faWindowMaximize}
+                        ></FontAwesomeIcon>
+                      </div>
+                      <div className="icons-data">
+                        <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+                      </div>
+                    </section>
+                  </div>
+                  <div className="gameOver">
+                    <FontAwesomeIcon
+                      style={{ fontSize: "2.5rem" }}
+                      icon={faExclamationTriangle}
+                    ></FontAwesomeIcon>
+                    C:\Desktop\Askaway...
+                  </div>
+                  <div className="btn-container" style={{ margin: "10px" }}>
+                    <button className="btn-gameOver" onClick={restartGame}>
+                      Restart Askaway
+                    </button>
+                    <button className="btn-gameOver">Restart level</button>
+                  </div>
+                </header>
+              </section>
+            </>
+          ) : (
+            ""
+          )}
+          {/* {INSERTAR MODAL DE TIMEOUT} */}
           {/* Con el metodo de slice lo que hacemos es darle un punto de partida al array "0" y le indicamos que llegue hasta el elemento "10" (en este caso es el 9 IMPORTANTE es 0-index) y es a ese resultado que se mapea // tambien se puede armar como una const por fuera */}
           {data.slice(0, 10).map((item, questionIndex) => {
             const { id, question, answers } = item;

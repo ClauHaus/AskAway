@@ -1660,6 +1660,23 @@ article.nextSlide {
   margin: 0.5rem auto;
 }
 
+.gameOver {
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+  margin: 10px;
+}
+
+.btn-gameOver {
+  width: 40%;
+  cursor: pointer;
+  background: #a0a0a4;
+  border: solid 0.5px black;
+  box-shadow: 3px 3px 3px 0px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(255, 255, 255, 0.75) inset;
+  -moz-box-shadow: 3px 3px 3px 0px rgba(255, 255, 255, 0.75) inset;
+}
+
 /*
 =============== 
 Navbar

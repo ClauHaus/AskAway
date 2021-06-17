@@ -40,7 +40,7 @@ const LoadingPage = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\Form</div>
+              <div>C:\Desktop\Askaway\{newName}</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">

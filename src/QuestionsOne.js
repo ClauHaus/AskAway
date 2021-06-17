@@ -70,12 +70,6 @@ const QuestionsOne = () => {
       if (timer > 0) {
         setTimer(timer - 1);
       }
-      if (timer === 0) {
-        setTimer("TIME OUT");
-        setCursor("not-allowed");
-        setEvents("none");
-        // openModal(); //revisar y armar una funcion
-      }
       if (index >= 10) {
         setTimer(timer);
       }
@@ -134,7 +128,10 @@ const QuestionsOne = () => {
             <li>Question: {index < 10 ? index + 1 : index}/10</li>
             <li>HiScore: {score}</li>
           </ul>
-          {/* //ARMAR ACA EL MODAL QUE LEVANTE LOS PUNTOS QUE SE HICIERON HASTA EL MOMENTO + MAS EL BOTON QUE NOS PERMITA CONTINUAR y etc, hay que diseñar todo esto , lo podemos hacer como un component diferente o directamente armarlos debajo de este ternary operator*/}
+
+          {/* COMIENZO DE LOS POSIBLES RESULTADOS*/}
+
+          {/* 1er escenario - exitoso*/}
           {index >= 10 && score >= 30 ? (
             <>
               {localStorage.setItem("newTimer", JSON.stringify(timer))}
@@ -212,6 +209,7 @@ const QuestionsOne = () => {
           ) : (
             ""
           )}
+          {/* 2do escenario - no exitoso*/}
           {index >= 10 && score < 30 ? (
             <>
               <h1 className="title title-back question">Game Over.</h1>
@@ -316,15 +314,15 @@ const QuestionsOne = () => {
           ) : (
             ""
           )}
+          {/* 3er escenario - no exitoso - Game Over*/}
           {score < 1 ? (
             <>
-              <h1 className="title title-back question">Game Over.</h1>
               <section
                 className="container-back"
                 style={{
                   width: "95%",
                   left: "0%",
-                  top: "30%",
+                  top: "20%",
                   minHeight: "25%",
                 }}
               >
@@ -359,7 +357,7 @@ const QuestionsOne = () => {
                       style={{ fontSize: "2.5rem" }}
                       icon={faExclamationTriangle}
                     ></FontAwesomeIcon>
-                    C:\Desktop\Askaway...
+                    C:\Desktop\Askaway\Game Over
                   </div>
                   <div className="btn-container" style={{ margin: "10px" }}>
                     <button className="btn-gameOver" onClick={restartGame}>
@@ -373,7 +371,66 @@ const QuestionsOne = () => {
           ) : (
             ""
           )}
-          {/* {INSERTAR MODAL DE TIMEOUT} */}
+          {/* 4to escenario - no exitoso - Time Over*/}
+          {timer < 1 ? (
+            <>
+              <section
+                className="container-back"
+                style={{
+                  width: "95%",
+                  left: "0%",
+                  top: "20%",
+                  minHeight: "25%",
+                }}
+              >
+                <header className="window-info">
+                  <div className="window-upper">
+                    <section className="upper-left">
+                      <img
+                        className="window-image"
+                        src={titleImg}
+                        alt="logo of Ask Away"
+                      />
+                      <div>Time Over</div>
+                    </section>
+                    <section className="upper-icons">
+                      <div className="icons-data">
+                        <FontAwesomeIcon
+                          icon={faWindowMinimize}
+                        ></FontAwesomeIcon>
+                      </div>
+                      <div className="icons-data">
+                        <FontAwesomeIcon
+                          icon={faWindowMaximize}
+                        ></FontAwesomeIcon>
+                      </div>
+                      <div className="icons-data">
+                        <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+                      </div>
+                    </section>
+                  </div>
+                  <div className="gameOver">
+                    <FontAwesomeIcon
+                      style={{ fontSize: "2.5rem" }}
+                      icon={faExclamationTriangle}
+                    ></FontAwesomeIcon>
+                    C:\Desktop\Askaway\Time Over
+                  </div>
+                  <div className="btn-container" style={{ margin: "10px" }}>
+                    <button className="btn-gameOver" onClick={restartGame}>
+                      Restart Askaway
+                    </button>
+                    <button className="btn-gameOver">Restart level</button>
+                  </div>
+                </header>
+              </section>
+            </>
+          ) : (
+            ""
+          )}
+
+          {/* FIN DE LOS POSIBLES RESULTADOS*/}
+
           {/* Con el metodo de slice lo que hacemos es darle un punto de partida al array "0" y le indicamos que llegue hasta el elemento "10" (en este caso es el 9 IMPORTANTE es 0-index) y es a ese resultado que se mapea // tambien se puede armar como una const por fuera */}
           {data.slice(0, 10).map((item, questionIndex) => {
             const { id, question, answers } = item;

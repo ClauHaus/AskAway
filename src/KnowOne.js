@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,9 +17,21 @@ import {
 import { useGlobalContext } from "./context";
 
 const KnowOne = () => {
-  const { time, restartGame, nextPageFive, loadingPage, knowOne } =
-    useGlobalContext();
+  const {
+    time,
+    restartGame,
+    nextPageFive,
+    loadingPage,
+    knowOne,
+    level,
+    setLevel,
+  } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
+
+  const continueGame = () => {
+    nextPageFive(knowOne, loadingPage);
+    setLevel(level + 1);
+  };
   return (
     <>
       <section className="container-back">
@@ -56,7 +68,7 @@ const KnowOne = () => {
               left: "30%",
               width: "40%",
             }}
-            onClick={() => nextPageFive(knowOne, loadingPage)}
+            onClick={() => continueGame()}
           >
             Continue to Level 2
           </button>

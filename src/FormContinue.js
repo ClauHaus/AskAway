@@ -26,12 +26,20 @@ const FormContinue = () => {
     nextPageTwo,
     formContinue,
     loadingPage,
+    level,
+    setLevel,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newAge = JSON.parse(localStorage.getItem("newAge"));
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));
   // const result = JSON.parse(localStorage.getItem("newTest"));
   // console.log(result);
+
+  const startGame = () => {
+    nextPageTwo(formContinue, loadingPage);
+    setLevel(level + 1);
+  };
+
   return (
     <>
       <section className="container-back">
@@ -82,7 +90,7 @@ const FormContinue = () => {
           <button
             className="btn btn-title center-item"
             style={{ marginTop: "30px" }}
-            onClick={() => nextPageTwo(formContinue, loadingPage)}
+            onClick={() => startGame()}
           >
             Continue
           </button>

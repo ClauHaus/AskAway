@@ -99,11 +99,16 @@ const AppProvider = ({ children }) => {
   const restartGame = () => {
     window.location.reload();
   };
+
+  const [level, setLevel] = useState(0);
+
   return (
     <AppContext.Provider
       value={{
         time,
         ...state,
+        level,
+        setLevel,
         restartGame,
         nextPage,
         openOptions,

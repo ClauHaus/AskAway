@@ -16,7 +16,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./context";
-import dataOne from "./questions";
+import bigData from "./questions";
 
 const QuestionsOne = () => {
   const [timer, setTimer] = useState(60); //60
@@ -27,17 +27,20 @@ const QuestionsOne = () => {
   const [changeC, setChangeC] = useState("answers");
   const [changeD, setChangeD] = useState("answers");
   const [container, setContainer] = useState("container-question");
-  const { time, restartGame, questionsOne, knowOne, nextPageFour } =
+  const { time, restartGame, questionsOne, knowOne, nextPageFour, level } =
     useGlobalContext();
   const [cursor, setCursor] = useState("pointer");
   const [events, setEvents] = useState("auto");
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   // Esta funcion es para que haga un sort de los elementos del array
+
   const shuffle = () => {
-    const result = dataOne.sort(() => Math.random() - 0.5); //ACA PONES LOS DISTINTOS ARRAY!
+    // en el caso de ser necesario, convertir a async
+    const result = bigData[level].sort(() => Math.random() - 0.5); //ACA PONES LOS DISTINTOS ARRAY!
     return result;
   };
+
   const [data, setData] = useState([]);
 
   const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente-UPDATE IMPORTANTE, no es necesario realizar esa modificacion porque con el metodo sort tenemos el mismo resultado
@@ -60,6 +63,13 @@ const QuestionsOne = () => {
   // Aparecen en diferentes tiempos el reloj y el resto de los elementos
   useEffect(() => {
     setData(shuffle);
+    // if (index >= 1) {
+    //   setData(shuffle);
+    // }
+    // setTimeout(() => {
+    //   setData(shuffle);
+    // }, 100);
+    //ACA HAY que REVISAR------------------------------------------------------------------
     setTimeout(() => {
       setCount(true);
     }, 2000);
@@ -110,7 +120,9 @@ const QuestionsOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}\Level1</div>
+              <div>
+                C:\Desktop\Askaway\{newName}\Level {level}
+              </div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -384,8 +396,9 @@ const QuestionsOne = () => {
                 style={{
                   width: "95%",
                   left: "0%",
-                  top: "20%",
+                  top: "35%",
                   minHeight: "25%",
+                  zIndex: "1",
                 }}
               >
                 <header className="window-info">

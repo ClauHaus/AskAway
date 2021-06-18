@@ -35,6 +35,9 @@ const reducer = (state, action) => {
   if (action.type === "NEXT_PAGE_FOUR") {
     return { ...state, questionsOne: false, knowOne: true };
   }
+  if (action.type === "NEXT_PAGE_FIVE") {
+    return { ...state, knowOne: false, loadingPage: true };
+  }
 
   throw new Error("There is no matching action type");
 };

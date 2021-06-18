@@ -53,6 +53,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "NEXT_PAGE_FOUR", payload: { erase, add } });
   };
 
+  const nextPageFive = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_FIVE", payload: { erase, add } });
+  };
+
   const openOptions = () => {
     dispatch({ type: "OPEN_OPTIONS" });
   };
@@ -112,6 +116,7 @@ const AppProvider = ({ children }) => {
         nextPageTwo,
         nextPageThree,
         nextPageFour,
+        nextPageFive,
       }}
     >
       {children}

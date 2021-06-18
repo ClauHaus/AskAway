@@ -1375,7 +1375,7 @@ h5.title {
   padding: 1rem 0.75rem;
   box-shadow: var(--shadow-1);
   transition: var(--transtion);
-  /* transition: all 1s; */
+  transition: all 1s;
   display: flex;
   justify-content: center;
   width: 90%;
@@ -1482,7 +1482,7 @@ h5.title {
   letter-spacing: var(--letterSpacing);
   padding: 1rem 0.75rem;
   box-shadow: var(--shadow-1);
-  /* transition: var(--transtion); */
+  transition: var(--transtion);
   transition: all 1s;
   display: flex;
   justify-content: center;

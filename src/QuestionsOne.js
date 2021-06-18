@@ -98,6 +98,8 @@ const QuestionsOne = () => {
       setChangeB("answers");
       setChangeC("answers");
       setChangeD("answers");
+      setCursor("pointer");
+      setEvents("auto");
       setContainer("container-question");
     }, 1500);
     return () => clearTimeout(timeout);
@@ -338,9 +340,10 @@ const QuestionsOne = () => {
                 className="container-back"
                 style={{
                   width: "95%",
-                  left: "0%",
-                  top: "20%",
+                  left: "2%",
+                  top: "35%",
                   minHeight: "25%",
+                  zIndex: "1",
                 }}
               >
                 <header className="window-info">
@@ -395,10 +398,7 @@ const QuestionsOne = () => {
                 className="container-back"
                 style={{
                   width: "95%",
-                  left: "0%",
-                  top: "35%",
-                  minHeight: "25%",
-                  zIndex: "1",
+                  left: "2%",
                 }}
               >
                 <header className="window-info">
@@ -478,6 +478,8 @@ const QuestionsOne = () => {
                           ? (setChangeA("answers-right"),
                             highScore(score + 5),
                             setContainer("container-right"),
+                            setCursor("not-allowed"),
+                            setEvents("none"),
                             changeTimeout(),
                             // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
                             index < 9
@@ -502,6 +504,8 @@ const QuestionsOne = () => {
                           ? (setChangeB("answers-right"),
                             highScore(score + 5),
                             setContainer("container-right"),
+                            setCursor("not-allowed"),
+                            setEvents("none"),
                             changeTimeout(),
                             index < 9
                               ? data[`${index + 1}`].answers.sort(
@@ -525,6 +529,8 @@ const QuestionsOne = () => {
                           ? (setChangeC("answers-right"),
                             highScore(score + 5),
                             setContainer("container-right"),
+                            setCursor("not-allowed"),
+                            setEvents("none"),
                             changeTimeout(),
                             index < 9
                               ? data[`${index + 1}`].answers.sort(
@@ -548,6 +554,8 @@ const QuestionsOne = () => {
                           ? (setChangeD("answers-right"),
                             highScore(score + 5),
                             setContainer("container-right"),
+                            setCursor("not-allowed"),
+                            setEvents("none"),
                             changeTimeout(),
                             index < 9
                               ? data[`${index + 1}`].answers.sort(

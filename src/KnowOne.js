@@ -67,7 +67,7 @@ const KnowOne = () => {
         style={{
           width: "95%",
           left: "2%",
-          top: "22%",
+          top: "25%",
           minHeight: "30%",
         }}
       >
@@ -96,7 +96,7 @@ const KnowOne = () => {
         </header>
         <div
           className="container-results"
-          style={{ minHeight: "30%", textAlign: "center" }}
+          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
         >
           <p style={{ fontSize: "1.5rem" }}>
             Spaghetto, confetto, and graffito are the singular forms of

@@ -1,4 +1,5 @@
 const bigData = [
+  //ARRAY 0--------------------------------------
   [
     {
       id: 0,
@@ -11,6 +12,7 @@ const bigData = [
       ],
     },
   ],
+  //ARRAY 1--------------------------------------
   [
     {
       id: 0,
@@ -506,12 +508,135 @@ const bigData = [
     },
     {
       id: 49,
-      question: `What is the alter-ego of the DC comics character "Superman"`,
+      question: `What is the alter-ego of the DC comics character "Superman"?`,
       answers: [
         ["John Jones", false],
         ["Bruce Wayne", false],
         ["Arthur Curry", false],
         ["Clark Kent", true],
+      ],
+    },
+  ],
+  //ARRAY 2--------------------------------------
+  [
+    {
+      id: 0,
+      question: `What country is the second largest in the world by area?`,
+      answers: [
+        ["Canada", true],
+        ["Russia", false],
+        ["China", false],
+        ["United States of America", false],
+      ],
+    },
+    {
+      id: 1,
+      question: `The 2016 Disney animated film "Moana" is based on which culture?`,
+      answers: [
+        ["Nordic", false],
+        ["Polynesian", true],
+        ["Native American", false],
+        ["Japanese", false],
+      ],
+    },
+    {
+      id: 2,
+      question: `What is the unit of electrical capacitance?`,
+      answers: [
+        ["Gauss", false],
+        ["Watt", false],
+        ["Farad", true],
+        ["Henry", false],
+      ],
+    },
+    {
+      id: 3,
+      question: `In South Park, what is Stan's surname?`,
+      answers: [
+        ["Broflovski", false],
+        ["Tweak", false],
+        ["Cartman", false],
+        ["Marsh", true],
+      ],
+    },
+    {
+      id: 4,
+      question: `Which of these bones is hardest to break?`,
+      answers: [
+        ["Femur", true],
+        ["Cranium", false],
+        ["Humerus", false],
+        ["Tibia", false],
+      ],
+    },
+    {
+      id: 5,
+      question: `Hippocampus is the Latin name for which marine creature?`,
+      answers: [
+        ["Dolphin", false],
+        ["Seahorse", true],
+        ["Whale", false],
+        ["Octopus", false],
+      ],
+    },
+    {
+      id: 6,
+      question: `How many planets make up our Solar System?`,
+      answers: [
+        ["7", false],
+        ["6", false],
+        ["8", true],
+        ["9", false],
+      ],
+    },
+    {
+      id: 7,
+      question: `What do you call a baby bat?`,
+      answers: [
+        ["Cub", false],
+        ["Chick", false],
+        ["Kid", false],
+        ["Pup", true],
+      ],
+    },
+    {
+      id: 8,
+      question: `Which of these colours is NOT featured in the logo for Google?`,
+      answers: [
+        ["Pink", true],
+        ["Blue", false],
+        ["Yellow", false],
+        ["Green", false],
+      ],
+    },
+    {
+      id: 9,
+      question: `Which of these characters is the mascot of the video game company SEGA?`,
+      answers: [
+        ["Mario Bros", false],
+        ["Sonic the Hedgehog", true],
+        ["Alex Kidd", false],
+        ["Dinamite Headdy", false],
+      ],
+    },
+    {
+      id: 10,
+      question: `Who was the author of the 1951 novel, "The Catcher in the Rye?`,
+      answers: [
+        ["Hunter Fox", false],
+        ["F. Scott Fitzgerald", false],
+        ["J. D. Salinger", true],
+        ["William Golding", false],
+      ],
+    },
+    {
+      id: 11,
+      question: `The greek god Hades was the god of what?`,
+      answers: [
+        ["War", false],
+        ["Love", false],
+        ["Fire", false],
+        ["The Underworld", true],
       ],
     },
   ],

@@ -57,8 +57,12 @@ const QuestionsOne = () => {
       setCursor("not-allowed");
       setEvents("none");
     }
+    if (timer === 0) {
+      setCursor("not-allowed");
+      setEvents("none");
+    }
     localStorage.setItem("newScore", JSON.stringify(score));
-  }, [score]);
+  }, [score, timer]);
 
   // Aparecen en diferentes tiempos el reloj y el resto de los elementos
   useEffect(() => {
@@ -399,6 +403,9 @@ const QuestionsOne = () => {
                 style={{
                   width: "95%",
                   left: "2%",
+                  top: "35%",
+                  minHeight: "25%",
+                  zIndex: "1",
                 }}
               >
                 <header className="window-info">

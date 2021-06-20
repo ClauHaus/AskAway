@@ -418,7 +418,7 @@ const bigData = [
     },
     {
       id: 40,
-      question: `Which is the fastest land's animal in the world`,
+      question: `Which is the fastest land's animal in the world?`,
       answers: [
         ["Pronghorn Antelope", false],
         ["Thomson's Gazelle", false],

@@ -1027,6 +1027,7 @@ p.modal-text {
   flex-direction: row;
   justify-content: space-around;
   color: white;
+  margin-bottom: -25px;
 }
 
 .alert {

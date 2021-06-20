@@ -31,6 +31,8 @@ const QuestionsOne = () => {
     useGlobalContext();
   const [cursor, setCursor] = useState("pointer");
   const [events, setEvents] = useState("auto");
+  const [alertWrong, setAlertWrong] = useState("");
+  const [alertRight, setAlertRight] = useState("");
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   // Esta funcion es para que haga un sort de los elementos del array
@@ -50,6 +52,18 @@ const QuestionsOne = () => {
       setScore(points);
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAlertWrong("");
+    }, 750);
+  }, [alertWrong]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAlertRight("");
+    }, 750);
+  }, [alertRight]);
 
   useEffect(() => {
     if (score < 1) {
@@ -475,6 +489,11 @@ const QuestionsOne = () => {
                   <div className="score">Score: {score}/30</div>
                   <div className="timer">{count ? timer : "Ready?"}</div>
                 </div>
+                <section className="alerts">
+                  <div className={`alert ${alertWrong}`}>-2</div>
+                  <div className={`alert ${alertRight}`}>+5</div>
+                </section>
+
                 <ul>
                   <li>
                     <button
@@ -487,6 +506,7 @@ const QuestionsOne = () => {
                             setContainer("container-right"),
                             setCursor("not-allowed"),
                             setEvents("none"),
+                            setAlertRight("alert-success"),
                             changeTimeout(),
                             // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
                             index < 9
@@ -496,6 +516,7 @@ const QuestionsOne = () => {
                               : null)
                           : (setChangeA("answers-wrong"),
                             highScore(score - 2),
+                            setAlertWrong("alert-danger"),
                             setContainer("container-wrong"))
                       }
                     >
@@ -513,6 +534,7 @@ const QuestionsOne = () => {
                             setContainer("container-right"),
                             setCursor("not-allowed"),
                             setEvents("none"),
+                            setAlertRight("alert-success"),
                             changeTimeout(),
                             index < 9
                               ? data[`${index + 1}`].answers.sort(
@@ -521,6 +543,7 @@ const QuestionsOne = () => {
                               : null)
                           : (setChangeB("answers-wrong"),
                             highScore(score - 2),
+                            setAlertWrong("alert-danger"),
                             setContainer("container-wrong"))
                       }
                     >
@@ -538,6 +561,7 @@ const QuestionsOne = () => {
                             setContainer("container-right"),
                             setCursor("not-allowed"),
                             setEvents("none"),
+                            setAlertRight("alert-success"),
                             changeTimeout(),
                             index < 9
                               ? data[`${index + 1}`].answers.sort(
@@ -546,6 +570,7 @@ const QuestionsOne = () => {
                               : null)
                           : (setChangeC("answers-wrong"),
                             highScore(score - 2),
+                            setAlertWrong("alert-danger"),
                             setContainer("container-wrong"))
                       }
                     >
@@ -563,6 +588,7 @@ const QuestionsOne = () => {
                             setContainer("container-right"),
                             setCursor("not-allowed"),
                             setEvents("none"),
+                            setAlertRight("alert-success"),
                             changeTimeout(),
                             index < 9
                               ? data[`${index + 1}`].answers.sort(
@@ -571,6 +597,7 @@ const QuestionsOne = () => {
                               : null)
                           : (setChangeD("answers-wrong"),
                             highScore(score - 2),
+                            setAlertWrong("alert-danger"),
                             setContainer("container-wrong"))
                       }
                     >

@@ -19,7 +19,7 @@ import { useGlobalContext } from "./context";
 import bigData from "./questions";
 
 const QuestionsOne = () => {
-  const [timer, setTimer] = useState(60); //60
+  const [timer, setTimer] = useState(6000); //60
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(10);
   const [changeA, setChangeA] = useState("answers");

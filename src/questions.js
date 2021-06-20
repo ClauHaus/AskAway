@@ -639,6 +639,386 @@ const bigData = [
         ["The Underworld", true],
       ],
     },
+    {
+      id: 12,
+      question: `Which of the following sports is not part of the triathlon?`,
+      answers: [
+        ["Horse-riding", true],
+        ["Cycling", false],
+        ["Swimming", false],
+        ["Running", false],
+      ],
+    },
+    {
+      id: 13,
+      question: `The ancient Roman god of war was commonly known as which of the following?`,
+      answers: [
+        ["Jupiter", false],
+        ["Mars", true],
+        ["Ares", false],
+        ["Juno", false],
+      ],
+    },
+    {
+      id: 14,
+      question: `The body of the Egyptian Sphinx was based on which animal?`,
+      answers: [
+        ["Bull", false],
+        ["Horse", false],
+        ["Lion", true],
+        ["Dog", false],
+      ],
+    },
+    {
+      id: 15,
+      question: `Which is the longest bone in the human body?`,
+      answers: [
+        ["Fibula", false],
+        ["Scapula", false],
+        ["Ulna", false],
+        ["Femur", true],
+      ],
+    },
+    {
+      id: 16,
+      question: `This element, when overcome with extreme heat and pressure, creates diamonds.`,
+      answers: [
+        ["Carbon", true],
+        ["Oxygen", false],
+        ["Nitrogen", false],
+        ["Hydrogen", false],
+      ],
+    },
+    {
+      id: 17,
+      question: `What is the capital of Indonesia?`,
+      answers: [
+        ["Bandung", false],
+        ["Jakarta", true],
+        ["Medan", false],
+        ["Palembang", false],
+      ],
+    },
+    {
+      id: 18,
+      question: `How many dots are on a single die?`,
+      answers: [
+        ["24", false],
+        ["15", false],
+        ["21", true],
+        ["18", false],
+      ],
+    },
+    {
+      id: 19,
+      question: `If you were to code software in this language you'd only be able to type "0" and "1".`,
+      answers: [
+        ["C++", false],
+        ["JavaScript", false],
+        ["Python", false],
+        ["Binary", true],
+      ],
+    },
+    {
+      id: 20,
+      question: `What country has a horizontal bicolor red and white flag?`,
+      answers: [
+        ["Monaco", true],
+        ["Bahrain", false],
+        ["Malta", false],
+        ["Liechenstein", false],
+      ],
+    },
+    {
+      id: 21,
+      question: `What is the collective noun for a group of crows?`,
+      answers: [
+        ["Pack", false],
+        ["Murder", true],
+        ["Gaggle", false],
+        ["Herd", false],
+      ],
+    },
+    {
+      id: 22,
+      question: `Which of these films is NOT set in Los Angeles?`,
+      answers: [
+        ["Blade Runner", false],
+        ["The Terminator", false],
+        ["RoboCop", true],
+        ["Predator 2", false],
+      ],
+    },
+    {
+      id: 23,
+      question: `Rhinoplasty is a surgical procedure on what part of the human body?`,
+      answers: [
+        ["Ears", false],
+        ["Chin", false],
+        ["Neck", false],
+        ["Nose", true],
+      ],
+    },
+    {
+      id: 24,
+      question: `What does a funambulist walk on?`,
+      answers: [
+        ["A Tight Rope", true],
+        ["Broken Glass", false],
+        ["Balls", false],
+        ["The Moon", false],
+      ],
+    },
+    {
+      id: 25,
+      question: `What is the capital of Denmark?`,
+      answers: [
+        ["Oslo", false],
+        ["Copenhagen", true],
+        ["Stockholm", false],
+        ["Aalborg", false],
+      ],
+    },
+    {
+      id: 26,
+      question: `What is the name of New Zealand's indigenous people?`,
+      answers: [
+        ["Samoans", false],
+        ["Polynesians", false],
+        ["Maori", true],
+        ["Vikings", false],
+      ],
+    },
+    {
+      id: 27,
+      question: `What mythology did the god "Apollo" come from?`,
+      answers: [
+        ["Greek, Roman and Norse", false],
+        ["Roman and Spanish", false],
+        ["Greek and Chinese", false],
+        ["Greek and Roman", true],
+      ],
+    },
+    {
+      id: 28,
+      question: `In 1453, which important city fell?`,
+      answers: [
+        ["Constantinople", true],
+        ["Rome", false],
+        ["Athens", false],
+        ["Hamburg", false],
+      ],
+    },
+    {
+      id: 29,
+      question: `What mytological creatures have women's faces and vultures bodies?`,
+      answers: [
+        ["Mermaids", false],
+        ["Harpies", true],
+        ["Nymph", false],
+        ["Lilith", false],
+      ],
+    },
+    {
+      id: 30,
+      question: `What is the name of Manchester United's home stadium?`,
+      answers: [
+        ["Anfield", false],
+        ["City of Manchester Stadium", false],
+        ["Old Trafford", true],
+        ["St James Park", false],
+      ],
+    },
+    {
+      id: 31,
+      question: `What is the largest animal currently on Earth?`,
+      answers: [
+        ["Orca", false],
+        ["Colossal Squid", false],
+        ["Giraffe", false],
+        ["Blue Whale", true],
+      ],
+    },
+    {
+      id: 32,
+      question: `What is the first book of the Old Testament?`,
+      answers: [
+        ["Genesis", true],
+        ["Exodus", false],
+        ["Leviticus", false],
+        ["Deuteronomy", false],
+      ],
+    },
+    {
+      id: 33,
+      question: `Which of the following Pacific Islander countries is ruled by a constitutional monarchy?`,
+      answers: [
+        ["Palau", false],
+        ["Tonga", true],
+        ["Fiji", false],
+        ["Kiribati", false],
+      ],
+    },
+    {
+      id: 34,
+      question: `The Space Needle is located in which city?`,
+      answers: [
+        ["Toronto", false],
+        ["Vancouver", false],
+        ["Seattle", true],
+        ["St Louis", false],
+      ],
+    },
+    {
+      id: 35,
+      question: `Aubrey Graham is better known as`,
+      answers: [
+        ["Lil Wayne", false],
+        ["Travis Scott", false],
+        ["2 Chainz", false],
+        ["Drake", true],
+      ],
+    },
+    {
+      id: 36,
+      question: `How many sides does a heptagon have?`,
+      answers: [
+        ["7", true],
+        ["8", false],
+        ["5", false],
+        ["6", false],
+      ],
+    },
+    {
+      id: 37,
+      question: `What zodiac sign is represented by a pair of scales?`,
+      answers: [
+        ["Aries", false],
+        ["Libra", true],
+        ["Capricorn", false],
+        ["Sagittarius", false],
+      ],
+    },
+    {
+      id: 38,
+      question: `Who is often called "the Maestro" in the men's tennis circuit?`,
+      answers: [
+        ["Rafael Nadal", false],
+        ["Novak Djokovic", false],
+        ["Roger Federer", true],
+        ["Pete Sampras", false],
+      ],
+    },
+    {
+      id: 39,
+      question: `Greenland is a part of which kingdom?`,
+      answers: [
+        ["Norway", false],
+        ["Sweden", false],
+        ["United Kingdom", false],
+        ["Denmark", true],
+      ],
+    },
+    {
+      id: 40,
+      question: `Who played Agent Fox Mulder in the TV sci-fi drama "The X-Files"?`,
+      answers: [
+        ["David Duchovny", true],
+        ["Mitch Pileggi", false],
+        ["Robert Patrick", false],
+        ["Luke Perry", false],
+      ],
+    },
+    {
+      id: 41,
+      question: `Who discovered Penicillin?`,
+      answers: [
+        ["Marie Curie", false],
+        ["Alexander Flemming", true],
+        ["Alfred Nobel", false],
+        ["Louis Pasteur", false],
+      ],
+    },
+    {
+      id: 42,
+      question: `What is the scientific name for modern day humans?`,
+      answers: [
+        ["Homo Neanderthalensis", false],
+        ["Homo Erectus", false],
+        ["Homo Sapiens", true],
+        ["Homo Ergaster", false],
+      ],
+    },
+    {
+      id: 43,
+      question: `Which country does Austria not border?`,
+      answers: [
+        ["Slovenia", false],
+        ["Switzerland", false],
+        ["Slovakia", false],
+        ["France", true],
+      ],
+    },
+    {
+      id: 44,
+      question: ``,
+      answers: [
+        ["206", true],
+        ["209", false],
+        ["203", false],
+        ["201", false],
+      ],
+    },
+    {
+      id: 45,
+      question: `How many Harry Potter books are there?`,
+      answers: [
+        ["8", false],
+        ["7", true],
+        ["6", false],
+        ["9", false],
+      ],
+    },
+    {
+      id: 46,
+      question: `What do the letters in the GMT time zone stand for?`,
+      answers: [
+        ["General Median Time", false],
+        ["Global Meridian Time", false],
+        ["Greenwich Mean Time", true],
+        ["Glasgow Man Time", false],
+      ],
+    },
+    {
+      id: 47,
+      question: `Which actor plays Obi-Wan Kenobi in Star Wars Episodes I-III?`,
+      answers: [
+        ["Mark Hamill", false],
+        ["Hayden Christensen", false],
+        ["Liam Neeson", false],
+        ["Ewan McGregor", true],
+      ],
+    },
+    {
+      id: 48,
+      question: `Which of these African countries list "Spanish" as an official language?`,
+      answers: [
+        ["Equatorial Guinea", true],
+        ["Cameroon", false],
+        ["Guinea", false],
+        ["Angola", false],
+      ],
+    },
+    {
+      id: 49,
+      question: `Which Apollo mission was the first one to land on the Moon?`,
+      answers: [
+        ["Apolo 13", false],
+        ["Apolo 11", true],
+        ["Apolo 9", false],
+        ["Apolo 10", false],
+      ],
+    },
   ],
 ];
 

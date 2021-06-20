@@ -16,12 +16,14 @@ const bigData = [
   [
     {
       id: 0,
-      question: "In which continent is located Saint Lucia?",
+      question: "Who is this man?",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/1200px-Albert_Einstein_Head.jpg",
       answers: [
-        ["America", true],
-        ["Asia", false],
-        ["Africa", false],
-        ["Europe", false],
+        ["Albert Einstein", true],
+        ["Charles Darwin", false],
+        ["Stephen Hawking", false],
+        ["Isaac Newton", false],
       ],
     },
 

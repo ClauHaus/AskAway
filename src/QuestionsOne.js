@@ -6,7 +6,6 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
-  faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -17,9 +16,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./context";
 import bigData from "./questions";
+import GameOver from "./GameOver";
+import ZeroPoints from "./ZeroPoints";
+import TimeOver from "./TimeOver";
 
 const QuestionsOne = () => {
-  const [timer, setTimer] = useState(6000); //60
+  const [timer, setTimer] = useState(60); //60
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(10);
   const [changeA, setChangeA] = useState("answers");
@@ -36,7 +38,6 @@ const QuestionsOne = () => {
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   // Esta funcion es para que haga un sort de los elementos del array
-
   const shuffle = () => {
     // en el caso de ser necesario, convertir a async
     const result = bigData[level].sort(() => Math.random() - 0.5); //ACA PONES LOS DISTINTOS ARRAY!
@@ -81,13 +82,6 @@ const QuestionsOne = () => {
   // Aparecen en diferentes tiempos el reloj y el resto de los elementos
   useEffect(() => {
     setData(shuffle);
-    // if (index >= 1) {
-    //   setData(shuffle);
-    // }
-    // setTimeout(() => {
-    //   setData(shuffle);
-    // }, 100);
-    //ACA HAY que REVISAR------------------------------------------------------------------
     setTimeout(() => {
       setCount(true);
     }, 2000);
@@ -96,14 +90,12 @@ const QuestionsOne = () => {
   // Es el trigger del contador y ademas el que muestra el modal en caso de TimeOut
   useEffect(() => {
     let interval = setInterval(() => {
-      // ingresar ifs y mas funcionalidad aca
       if (timer > 0) {
         setTimer(timer - 1);
       }
       if (index >= 10) {
         setTimer(timer);
       }
-      // ingresar ifs y mas funcionalidad aca
     }, 1000);
     return () => clearInterval(interval);
   });
@@ -163,8 +155,6 @@ const QuestionsOne = () => {
             <li>HiScore: {score}</li>
           </ul>
 
-          {/* COMIENZO DE LOS POSIBLES RESULTADOS*/}
-
           {/* 1er escenario - exitoso*/}
           {index >= 10 && score >= 30 ? (
             <>
@@ -208,7 +198,7 @@ const QuestionsOne = () => {
                   </div>
                 </header>
                 <div className="container-results">
-                  <p>Awesome job! You cleared the first out of five levels.</p>
+                  <p>Awesome job! You cleared level {level} out of five.</p>
                   <p>Let's see some stats before moving on, shall we?</p>
                   <ul>
                     <li>
@@ -246,233 +236,21 @@ const QuestionsOne = () => {
           ) : (
             ""
           )}
-          {/* 2do escenario - no exitoso*/}
           {index >= 10 && score < 30 ? (
-            <>
-              <h1 className="title title-back question">Game Over.</h1>
-              <section
-                className="container-back"
-                style={{
-                  width: "95%",
-                  left: "0%",
-                  top: "15%",
-                }}
-              >
-                <header className="window-info">
-                  <div className="window-upper">
-                    <section className="upper-left">
-                      <img
-                        className="window-image"
-                        src={titleImg}
-                        alt="logo of Ask Away"
-                      />
-                      <div>C:\Desktop\Askaway\{newName}\Results</div>
-                    </section>
-                    <section className="upper-icons">
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMinimize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMaximize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-                      </div>
-                    </section>
-                  </div>
-                </header>
-                <div className="container-results">
-                  <p>You only scored {score} points...</p>
-                  <p>
-                    Oh no {newName}, you got the 10 correct answers but not
-                    enough points to move on.
-                  </p>
-                  <section></section>
-                  <button className="btn btn-title center-item">
-                    Continue
-                  </button>
-                  <section
-                    className="container-back"
-                    style={{
-                      width: "95%",
-                      left: "7%",
-                      top: "40%",
-                      minHeight: "45%",
-                    }}
-                  >
-                    <header className="window-info">
-                      <div className="window-upper">
-                        <section className="upper-left">
-                          <img
-                            className="window-image"
-                            src={titleImg}
-                            alt="logo of Ask Away"
-                          />
-                          <div>Game Over</div>
-                        </section>
-                        <section className="upper-icons">
-                          <div className="icons-data">
-                            <FontAwesomeIcon
-                              icon={faWindowMinimize}
-                            ></FontAwesomeIcon>
-                          </div>
-                          <div className="icons-data">
-                            <FontAwesomeIcon
-                              icon={faWindowMaximize}
-                            ></FontAwesomeIcon>
-                          </div>
-                          <div className="icons-data">
-                            <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-                          </div>
-                        </section>
-                      </div>
-                      <div className="gameOver">
-                        <FontAwesomeIcon
-                          style={{ fontSize: "2.5rem" }}
-                          icon={faExclamationTriangle}
-                        ></FontAwesomeIcon>
-                        C:\Desktop\Askaway...
-                      </div>
-                      <div className="btn-container" style={{ margin: "10px" }}>
-                        <button className="btn-gameOver" onClick={restartGame}>
-                          Restart Askaway
-                        </button>
-                        <button className="btn-gameOver">Restart level</button>
-                      </div>
-                    </header>
-                  </section>
-                </div>
-              </section>
-            </>
+            <GameOver
+              newName={newName}
+              score={score}
+              restartGame={restartGame}
+            />
           ) : (
             ""
           )}
-          {/* 3er escenario - no exitoso - Game Over*/}
-          {score < 1 ? (
-            <>
-              <section
-                className="container-back"
-                style={{
-                  width: "95%",
-                  left: "2%",
-                  top: "35%",
-                  minHeight: "25%",
-                  zIndex: "1",
-                }}
-              >
-                <header className="window-info">
-                  <div className="window-upper">
-                    <section className="upper-left">
-                      <img
-                        className="window-image"
-                        src={titleImg}
-                        alt="logo of Ask Away"
-                      />
-                      <div>Game Over</div>
-                    </section>
-                    <section className="upper-icons">
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMinimize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMaximize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-                      </div>
-                    </section>
-                  </div>
-                  <div className="gameOver">
-                    <FontAwesomeIcon
-                      style={{ fontSize: "2.5rem" }}
-                      icon={faExclamationTriangle}
-                    ></FontAwesomeIcon>
-                    C:\Desktop\Askaway\Game Over
-                  </div>
-                  <div className="btn-container" style={{ margin: "10px" }}>
-                    <button className="btn-gameOver" onClick={restartGame}>
-                      Restart Askaway
-                    </button>
-                    <button className="btn-gameOver">Restart level</button>
-                  </div>
-                </header>
-              </section>
-            </>
-          ) : (
-            ""
-          )}
-          {/* 4to escenario - no exitoso - Time Over*/}
-          {timer < 1 ? (
-            <>
-              <section
-                className="container-back"
-                style={{
-                  width: "95%",
-                  left: "2%",
-                  top: "35%",
-                  minHeight: "25%",
-                  zIndex: "1",
-                }}
-              >
-                <header className="window-info">
-                  <div className="window-upper">
-                    <section className="upper-left">
-                      <img
-                        className="window-image"
-                        src={titleImg}
-                        alt="logo of Ask Away"
-                      />
-                      <div>Time Over</div>
-                    </section>
-                    <section className="upper-icons">
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMinimize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMaximize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-                      </div>
-                    </section>
-                  </div>
-                  <div className="gameOver">
-                    <FontAwesomeIcon
-                      style={{ fontSize: "2.5rem" }}
-                      icon={faExclamationTriangle}
-                    ></FontAwesomeIcon>
-                    C:\Desktop\Askaway\Time Over
-                  </div>
-                  <div className="btn-container" style={{ margin: "10px" }}>
-                    <button className="btn-gameOver" onClick={restartGame}>
-                      Restart Askaway
-                    </button>
-                    <button className="btn-gameOver">Restart level</button>
-                  </div>
-                </header>
-              </section>
-            </>
-          ) : (
-            ""
-          )}
-
-          {/* FIN DE LOS POSIBLES RESULTADOS*/}
+          {score < 1 ? <ZeroPoints restartGame={restartGame} /> : ""}
+          {timer < 1 ? <TimeOver restartGame={restartGame} /> : ""}
 
           {/* Con el metodo de slice lo que hacemos es darle un punto de partida al array "0" y le indicamos que llegue hasta el elemento "10" (en este caso es el 9 IMPORTANTE es 0-index) y es a ese resultado que se mapea // tambien se puede armar como una const por fuera */}
           {data.slice(0, 10).map((item, questionIndex) => {
-            const { id, question, answers } = item;
+            const { id, question, image, answers } = item;
 
             // Es importante que al "abrir" el array a cada elemento ademas le demos una "posicion", en este caso "questionIndex"
 
@@ -484,7 +262,20 @@ const QuestionsOne = () => {
 
             return (
               <article key={id} className={position}>
-                <div className="title title-back question">{question}</div>
+                <div className="title title-back question">
+                  {question}
+                  {image ? (
+                    <img
+                      src={image}
+                      alt=""
+                      style={{
+                        width: "80px",
+                        height: "80px",
+                        margin: "0px auto 5px auto",
+                      }}
+                    />
+                  ) : null}
+                </div>
                 <div className="container-timer">
                   <div className="score">Score: {score}/30</div>
                   <div className="timer">{count ? timer : "Ready?"}</div>
@@ -493,7 +284,6 @@ const QuestionsOne = () => {
                   <div className={`alert ${alertWrong}`}>-2</div>
                   <div className={`alert ${alertRight}`}>+5</div>
                 </section>
-
                 <ul>
                   <li>
                     <button

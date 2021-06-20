@@ -1027,7 +1027,7 @@ p.modal-text {
   flex-direction: row;
   justify-content: space-around;
   color: white;
-  margin-bottom: -25px;
+  margin-bottom: -35px;
 }
 
 .alert {
@@ -1306,7 +1306,9 @@ h5.title {
 }
 
 .question {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: var(--bodyRetro);
   font-size: 22px;
   margin-top: -16px;

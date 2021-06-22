@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";

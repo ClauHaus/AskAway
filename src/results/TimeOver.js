@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -6,9 +6,12 @@ import {
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
-import titleImg from "./images/title.png";
+import { useGlobalContext } from "./../context";
+import titleImg from "./../images/title.png";
 
 const TimeOver = ({ restartGame }) => {
+  const { question, loadingRestart, nextPageRestart } = useGlobalContext();
+
   return (
     <>
       <section
@@ -54,7 +57,12 @@ const TimeOver = ({ restartGame }) => {
             <button className="btn-gameOver" onClick={restartGame}>
               Restart Askaway
             </button>
-            <button className="btn-gameOver">Restart level</button>
+            <button
+              className="btn-gameOver"
+              onClick={() => nextPageRestart(question, loadingRestart)}
+            >
+              Restart level
+            </button>
           </div>
         </header>
       </section>

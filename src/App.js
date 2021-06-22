@@ -4,7 +4,8 @@ import Title from "./Title";
 import { Form } from "./Form";
 import FormContinue from "./FormContinue";
 import LoadingPage from "./LoadingPage";
-import QuestionsOne from "./QuestionsOne";
+import LoadingRestart from "./LoadingRestart";
+import Question from "./Question";
 import KnowOne from "./KnowOne";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 import { useGlobalContext } from "./context";
@@ -16,7 +17,8 @@ function App() {
     form,
     formContinue,
     loadingPage,
-    questionsOne,
+    loadingRestart,
+    question,
     knowOne,
   } = useGlobalContext();
   return (
@@ -26,7 +28,8 @@ function App() {
       {form && <Form />}
       {formContinue && <FormContinue />}
       {loadingPage && <LoadingPage />}
-      {questionsOne && <QuestionsOne />}
+      {loadingRestart && <LoadingRestart />}
+      {question && <Question />}
       {knowOne && <KnowOne />}
     </>
   );

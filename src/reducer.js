@@ -29,14 +29,20 @@ const reducer = (state, action) => {
   if (action.type === "NEXT_PAGE_TWO") {
     return { ...state, formContinue: false, loadingPage: true };
   }
+  if (action.type === "NEXT_PAGE_RESTART") {
+    return { ...state, question: false, loadingRestart: true };
+  }
   if (action.type === "NEXT_PAGE_THREE") {
-    return { ...state, loadingPage: false, questionsOne: true };
+    return { ...state, loadingPage: false, question: true };
   }
   if (action.type === "NEXT_PAGE_FOUR") {
-    return { ...state, questionsOne: false, knowOne: true };
+    return { ...state, question: false, knowOne: true };
   }
   if (action.type === "NEXT_PAGE_FIVE") {
     return { ...state, knowOne: false, loadingPage: true };
+  }
+  if (action.type === "NEXT_PAGE_BACK") {
+    return { ...state, loadingRestart: false, question: true };
   }
 
   throw new Error("There is no matching action type");

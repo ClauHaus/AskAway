@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,17 +16,22 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./context";
 
-const LoadingPage = () => {
-  const { time, restartGame, nextPageThree, loadingPage, question, level } =
-    useGlobalContext();
+const LoadingRestart = () => {
+  const {
+    time,
+    restartGame,
+    nextPageBack,
+    loadingRestart,
+    question,
+    level,
+    setLevel,
+  } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
-  useEffect(() => {
-    let timeOut = setTimeout(() => {
-      nextPageThree(loadingPage, question); //AGREGAR ACA EL setLevel de 0 a 1
-    }, 6000); //PASARLO A 5000!
-    return () => clearTimeout(timeOut);
-    // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut
-  }, [nextPageThree, loadingPage, question, level]); //Revisar estas dependencies, en caso de error quitarlas y solo queda un warning
+
+  const continueGame = () => {
+    nextPageBack(loadingRestart, question);
+    setLevel(level);
+  };
 
   return (
     <>
@@ -55,14 +60,60 @@ const LoadingPage = () => {
           </div>
         </header>
         <div className="container">
-          <h3 className="title title-back">Level {level}</h3>
-          <div className="loading"></div>
-          <section className="loading-items">
-            <p>&gt; Get at least 30 points</p>
-            <p>&gt; Obtain 10 correct answers</p>
-            <p>&gt; Achieve it under 60 seconds</p>
-          </section>
-          {/* <h4 className="title title-back">Loading...</h4> */}
+          <h4 className="title title-back">Try one more time</h4>
+          <button
+            className="btn btn-title center-item"
+            style={{
+              position: "absolute",
+              top: "85%",
+              left: "30%",
+              width: "40%",
+            }}
+            onClick={() => continueGame()}
+          >
+            Back to level {level}
+          </button>
+        </div>
+      </section>
+      <section
+        className="container-back"
+        style={{
+          width: "95%",
+          left: "2%",
+          top: "25%",
+          minHeight: "30%",
+        }}
+      >
+        <header className="window-info">
+          <div className="window-upper">
+            <section className="upper-left">
+              <img
+                className="window-image"
+                src={titleImg}
+                alt="logo of Ask Away"
+              />
+              <div>C:\Desktop\Askaway\{newName}\Facts</div>
+            </section>
+            <section className="upper-icons">
+              <div className="icons-data">
+                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
+              </div>
+              <div className="icons-data">
+                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
+              </div>
+              <div className="icons-data">
+                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
+              </div>
+            </section>
+          </div>
+        </header>
+        <div
+          className="container-results"
+          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
+        >
+          <p style={{ fontSize: "1.5rem" }}>
+            Tip: Try to read first the question and go with your first hunch.
+          </p>
         </div>
       </section>
       <section>
@@ -139,4 +190,4 @@ const LoadingPage = () => {
   );
 };
 
-export default LoadingPage;
+export default LoadingRestart;

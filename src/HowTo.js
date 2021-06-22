@@ -60,7 +60,7 @@ const HowTo = () => {
                 <FontAwesomeIcon icon={faTimes} />
               </button>
               <h5 className="title-howto title-howto-back">{title}</h5>
-              <div className="icon-howto">{icon}</div>
+              {/* <div className="icon-howto">{icon}</div> */}
               <p className="modal-text">{text}</p>
               <div className="btn-container-howto">
                 <button

@@ -923,12 +923,14 @@ const bigData = [
     },
     {
       id: 40,
-      question: `Who played Agent Fox Mulder in the TV sci-fi drama "The X-Files"?`,
+      question: `Which Country's flag is this?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Estonia.svg/2560px-Flag_of_Estonia.svg.png",
       answers: [
-        ["David Duchovny", true],
-        ["Mitch Pileggi", false],
-        ["Robert Patrick", false],
-        ["Luke Perry", false],
+        ["Estonia", true],
+        ["Latvia", false],
+        ["Lithuania", false],
+        ["Belarus", false],
       ],
     },
     {
@@ -1019,6 +1021,41 @@ const bigData = [
         ["Apolo 11", true],
         ["Apolo 9", false],
         ["Apolo 10", false],
+      ],
+    },
+  ],
+  //ARRAY 3--------------------------------------
+  [
+    {
+      id: 0,
+      question: `Who played Agent Fox Mulder in the TV sci-fi drama "The X-Files"?`,
+      answers: [
+        ["David Duchovny", true],
+        ["Mitch Pileggi", false],
+        ["Robert Patrick", false],
+        ["Luke Perry", false],
+      ],
+    },
+    {
+      id: 1,
+      question: `In golf, what name is given to a hole score of two under par?`,
+      answers: [
+        ["Albatross", false],
+        ["Eagle", true],
+        ["Birdie", false],
+        ["Bogey", false],
+      ],
+    },
+    {
+      id: 5,
+      question: `Who is this actress?`,
+      image:
+        " https://es.web.img3.acsta.net/pictures/17/01/10/13/53/476324.jpg",
+      answers: [
+        ["Meryl Streep", true],
+        ["Susan Sarandon", false],
+        ["Diane Keaton", false],
+        ["Emma Thompson", false],
       ],
     },
   ],

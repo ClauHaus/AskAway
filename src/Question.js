@@ -16,25 +16,18 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./context";
 import bigData from "./questions";
-import GameOver from "./GameOver";
-import ZeroPoints from "./ZeroPoints";
-import TimeOver from "./TimeOver";
+import Answers from "./Answers";
+import GameOver from "./results/GameOver";
+import ZeroPoints from "./results/ZeroPoints";
+import TimeOver from "./results/TimeOver";
 
-const QuestionsOne = () => {
+const Question = () => {
   const [timer, setTimer] = useState(60); //60
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(10);
-  const [changeA, setChangeA] = useState("answers");
-  const [changeB, setChangeB] = useState("answers");
-  const [changeC, setChangeC] = useState("answers");
-  const [changeD, setChangeD] = useState("answers");
   const [container, setContainer] = useState("container-question");
   const { time, restartGame, questionsOne, knowOne, nextPageFour, level } =
     useGlobalContext();
-  const [cursor, setCursor] = useState("pointer");
-  const [events, setEvents] = useState("auto");
-  const [alertWrong, setAlertWrong] = useState("");
-  const [alertRight, setAlertRight] = useState("");
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   // Esta funcion es para que haga un sort de los elementos del array
@@ -45,7 +38,6 @@ const QuestionsOne = () => {
   };
 
   const [data, setData] = useState([]);
-
   const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente-UPDATE IMPORTANTE, no es necesario realizar esa modificacion porque con el metodo sort tenemos el mismo resultado
 
   const highScore = (points) => {
@@ -55,36 +47,11 @@ const QuestionsOne = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setAlertWrong("");
-    }, 750);
-  }, [alertWrong]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setAlertRight("");
-    }, 750);
-  }, [alertRight]);
-
-  useEffect(() => {
-    if (score < 1) {
-      setTimer("TIME OUT");
-      setCursor("not-allowed");
-      setEvents("none");
-    }
-    if (timer === 0) {
-      setCursor("not-allowed");
-      setEvents("none");
-    }
-    localStorage.setItem("newScore", JSON.stringify(score));
-  }, [score, timer]);
-
-  // Aparecen en diferentes tiempos el reloj y el resto de los elementos
-  useEffect(() => {
     setData(shuffle);
     setTimeout(() => {
       setCount(true);
     }, 2000);
+    // eslint-disable-next-line
   }, []);
 
   // Es el trigger del contador y ademas el que muestra el modal en caso de TimeOut
@@ -99,21 +66,6 @@ const QuestionsOne = () => {
     }, 1000);
     return () => clearInterval(interval);
   });
-
-  //Se hacen los cambios de color en botones y fondo con un delay para pasar a la siguiente pregunta
-  const changeTimeout = () => {
-    let timeout = setTimeout(() => {
-      setIndex(index + 1);
-      setChangeA("answers");
-      setChangeB("answers");
-      setChangeC("answers");
-      setChangeD("answers");
-      setCursor("pointer");
-      setEvents("auto");
-      setContainer("container-question");
-    }, 1500);
-    return () => clearTimeout(timeout);
-  };
 
   return (
     <>
@@ -166,8 +118,8 @@ const QuestionsOne = () => {
                 className="container-back"
                 style={{
                   width: "95%",
-                  left: "2%",
-                  top: "15%",
+                  left: "2.5%",
+                  top: "20%",
                 }}
               >
                 <header className="window-info">
@@ -246,12 +198,19 @@ const QuestionsOne = () => {
             ""
           )}
           {score < 1 ? <ZeroPoints restartGame={restartGame} /> : ""}
-          {timer < 1 ? <TimeOver restartGame={restartGame} /> : ""}
+          {timer < 1 ? (
+            <TimeOver
+              restartGame={restartGame}
+              shuffle={shuffle}
+              setData={setData}
+              setCount={setCount}
+            />
+          ) : (
+            ""
+          )}
 
           {/* Con el metodo de slice lo que hacemos es darle un punto de partida al array "0" y le indicamos que llegue hasta el elemento "10" (en este caso es el 9 IMPORTANTE es 0-index) y es a ese resultado que se mapea // tambien se puede armar como una const por fuera */}
           {data.slice(0, 10).map((item, questionIndex) => {
-            const { id, question, image, answers } = item;
-
             // Es importante que al "abrir" el array a cada elemento ademas le demos una "posicion", en este caso "questionIndex"
 
             // Aca le vamos a dar dependiendo de dicha posicion a cada elemento una clase, dependiendo si esta activo o no, en el caso de que el questionIndex sea el mismo que el index ( que esta declarado con un state-value arriba), ese se va a "ver" y el resto quedara invisible hasta que se cambie el index.
@@ -261,141 +220,22 @@ const QuestionsOne = () => {
             }
 
             return (
-              <article key={id} className={position}>
-                <div className="title title-back question">
-                  {question}
-                  {image ? (
-                    <img
-                      src={image}
-                      alt=""
-                      style={{
-                        width: "80px",
-                        height: "80px",
-                        margin: "0px auto 5px auto",
-                      }}
-                    />
-                  ) : null}
-                </div>
-                <div className="container-timer">
-                  <div className="score">Score: {score}/30</div>
-                  <div className="timer">{count ? timer : "Ready?"}</div>
-                </div>
-                <section className="alerts">
-                  <div className={`alert ${alertWrong}`}>-2</div>
-                  <div className={`alert ${alertRight}`}>+5</div>
-                </section>
-                <ul>
-                  <li>
-                    <button
-                      className={changeA}
-                      style={{ cursor: cursor, pointerEvents: events }}
-                      onClick={() =>
-                        answers[0][1]
-                          ? (setChangeA("answers-right"),
-                            highScore(score + 5),
-                            setContainer("container-right"),
-                            setCursor("not-allowed"),
-                            setEvents("none"),
-                            setAlertRight("alert-success"),
-                            changeTimeout(),
-                            // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
-                            index < 9
-                              ? data[`${index + 1}`].answers.sort(
-                                  () => Math.random() - 1
-                                )
-                              : null)
-                          : (setChangeA("answers-wrong"),
-                            highScore(score - 2),
-                            setAlertWrong("alert-danger"),
-                            setContainer("container-wrong"))
-                      }
-                    >
-                      {answers[0][0]}
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={changeB}
-                      style={{ cursor: cursor, pointerEvents: events }}
-                      onClick={() =>
-                        answers[1][1]
-                          ? (setChangeB("answers-right"),
-                            highScore(score + 5),
-                            setContainer("container-right"),
-                            setCursor("not-allowed"),
-                            setEvents("none"),
-                            setAlertRight("alert-success"),
-                            changeTimeout(),
-                            index < 9
-                              ? data[`${index + 1}`].answers.sort(
-                                  () => Math.random() - 1
-                                )
-                              : null)
-                          : (setChangeB("answers-wrong"),
-                            highScore(score - 2),
-                            setAlertWrong("alert-danger"),
-                            setContainer("container-wrong"))
-                      }
-                    >
-                      {answers[1][0]}
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={changeC}
-                      style={{ cursor: cursor, pointerEvents: events }}
-                      onClick={() =>
-                        answers[2][1]
-                          ? (setChangeC("answers-right"),
-                            highScore(score + 5),
-                            setContainer("container-right"),
-                            setCursor("not-allowed"),
-                            setEvents("none"),
-                            setAlertRight("alert-success"),
-                            changeTimeout(),
-                            index < 9
-                              ? data[`${index + 1}`].answers.sort(
-                                  () => Math.random() - 1
-                                )
-                              : null)
-                          : (setChangeC("answers-wrong"),
-                            highScore(score - 2),
-                            setAlertWrong("alert-danger"),
-                            setContainer("container-wrong"))
-                      }
-                    >
-                      {answers[2][0]}
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={changeD}
-                      style={{ cursor: cursor, pointerEvents: events }}
-                      onClick={() =>
-                        answers[3][1]
-                          ? (setChangeD("answers-right"),
-                            highScore(score + 5),
-                            setContainer("container-right"),
-                            setCursor("not-allowed"),
-                            setEvents("none"),
-                            setAlertRight("alert-success"),
-                            changeTimeout(),
-                            index < 9
-                              ? data[`${index + 1}`].answers.sort(
-                                  () => Math.random() - 1
-                                )
-                              : null)
-                          : (setChangeD("answers-wrong"),
-                            highScore(score - 2),
-                            setAlertWrong("alert-danger"),
-                            setContainer("container-wrong"))
-                      }
-                    >
-                      {answers[3][0]}
-                    </button>
-                  </li>
-                </ul>
-              </article>
+              <Answers
+                key={item.id}
+                {...item}
+                position={position}
+                data={data}
+                score={score}
+                highScore={highScore}
+                count={count}
+                timer={timer}
+                index={index}
+                container={container}
+                setIndex={setIndex}
+                setScore={setScore}
+                setContainer={setContainer}
+                setTimer={setTimer}
+              />
             );
           })}
         </div>
@@ -474,4 +314,4 @@ const QuestionsOne = () => {
   );
 };
 
-export default QuestionsOne;
+export default Question;

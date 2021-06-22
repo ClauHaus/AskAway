@@ -6,6 +6,7 @@ import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import { useGlobalContext } from "./context";
 
 const Options = () => {
+  const [difficulty, setDifficulty] = useState("normal"); // pasar al context
   const { closeOptions } = useGlobalContext();
   return (
     <section className="container-back-options">
@@ -37,14 +38,26 @@ const Options = () => {
           <FontAwesomeIcon icon={faTimes} />
         </button>
         <h4 className="title-options title-options-back">Settings</h4>
-        <h4 className="title-options-sub">Languages</h4>
-        <ul className="options-items">
-          <input type="checkbox" defaultChecked />
-          <li className="options-settings">English</li>
-          <input type="checkbox" />
-          <li className="options-settings">Spanish</li>
-        </ul>
-        <h4 className="title-options-sub">Themes</h4>
+        <h5 className="title-options-sub">Languages</h5>
+        <select id="language" name="language">
+          <option value="english">English</option>
+          <option value="spanish">Spanish</option>
+          <option value="german">German</option>
+        </select>
+        <h5 className="title-options-sub">Difficulty</h5>
+        <div>
+          <input type="range" list="tickmarks" />
+          <datalist id="tickmarks">
+            <option value="0" label="0%" style={{ color: "white" }} />
+            <option value="50" label="50%" />
+            <option value="60" />
+            <option value="70" />
+            <option value="80" />
+            <option value="90" />
+            <option value="100" label="100%" />
+          </datalist>
+        </div>
+        <h5 className="title-options-sub">Themes</h5>
         <ul className="options-items">
           <input type="checkbox" defaultChecked />
           <li className="options-settings">Light</li>

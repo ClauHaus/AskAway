@@ -17,7 +17,8 @@ const initialState = {
   form: false,
   formContinue: false,
   loadingPage: false,
-  questionsOne: false,
+  loadingRestart: false,
+  question: false,
   knowOne: false,
 };
 
@@ -45,6 +46,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "NEXT_PAGE_TWO", payload: { erase, add } });
   };
 
+  const nextPageRestart = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_RESTART", payload: { erase, add } });
+  };
+
   const nextPageThree = (erase, add) => {
     dispatch({ type: "NEXT_PAGE_THREE", payload: { erase, add } });
   };
@@ -55,6 +60,10 @@ const AppProvider = ({ children }) => {
 
   const nextPageFive = (erase, add) => {
     dispatch({ type: "NEXT_PAGE_FIVE", payload: { erase, add } });
+  };
+
+  const nextPageBack = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_BACK", payload: { erase, add } });
   };
 
   const openOptions = () => {
@@ -119,9 +128,11 @@ const AppProvider = ({ children }) => {
         nextPageForm,
         nextPageOne,
         nextPageTwo,
+        nextPageRestart,
         nextPageThree,
         nextPageFour,
         nextPageFive,
+        nextPageBack,
       }}
     >
       {children}

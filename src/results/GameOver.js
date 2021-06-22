@@ -6,9 +6,11 @@ import {
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
-import titleImg from "./images/title.png";
+import { useGlobalContext } from "./../context";
+import titleImg from "./../images/title.png";
 
 const GameOver = ({ newName, score, restartGame }) => {
+  const { question, loadingRestart, nextPageRestart } = useGlobalContext();
   return (
     <>
       <h1 className="title title-back question">Game Over.</h1>
@@ -46,8 +48,8 @@ const GameOver = ({ newName, score, restartGame }) => {
         <div className="container-results">
           <p>You only scored {score} points...</p>
           <p>
-            Oh no {newName}, you got the 10 correct answers but not enough
-            points to move on.
+            Oh no {newName}, you got 10 correct answers but not enough points to
+            move on.
           </p>
           <section
             className="container-back"
@@ -91,7 +93,12 @@ const GameOver = ({ newName, score, restartGame }) => {
                 <button className="btn-gameOver" onClick={restartGame}>
                   Restart Askaway
                 </button>
-                <button className="btn-gameOver">Restart level</button>
+                <button
+                  className="btn-gameOver"
+                  onClick={() => nextPageRestart(question, loadingRestart)}
+                >
+                  Restart level
+                </button>
               </div>
             </header>
           </section>

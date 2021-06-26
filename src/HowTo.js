@@ -42,7 +42,7 @@ const HowTo = () => {
       </header>
 
       {data.map((item, itemIndex) => {
-        const { text, title, icon } = item;
+        const { text, title } = item;
         let position = "nextSlide";
         if (itemIndex === index) {
           position = "activeSlide";

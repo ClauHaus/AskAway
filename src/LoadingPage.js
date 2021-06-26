@@ -17,13 +17,20 @@ import {
 import { useGlobalContext } from "./context";
 
 const LoadingPage = () => {
-  const { time, restartGame, nextPageThree, loadingPage, question, level } =
-    useGlobalContext();
+  const {
+    time,
+    restartGame,
+    nextPageThree,
+    loadingPage,
+    question,
+    level,
+    timerDifficulty,
+  } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   useEffect(() => {
     let timeOut = setTimeout(() => {
       nextPageThree(loadingPage, question); //AGREGAR ACA EL setLevel de 0 a 1
-    }, 6000); //PASARLO A 5000!
+    }, 1000); //PASARLO A 6000!
     return () => clearTimeout(timeOut);
     // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut
   }, [nextPageThree, loadingPage, question, level]); //Revisar estas dependencies, en caso de error quitarlas y solo queda un warning
@@ -60,7 +67,7 @@ const LoadingPage = () => {
           <section className="loading-items">
             <p>&gt; Get at least 30 points</p>
             <p>&gt; Obtain 10 correct answers</p>
-            <p>&gt; Achieve it under 60 seconds</p>
+            <p>&gt; Achieve it under {timerDifficulty()} seconds</p>
           </section>
           {/* <h4 className="title title-back">Loading...</h4> */}
         </div>

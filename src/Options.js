@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
@@ -6,8 +6,29 @@ import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import { useGlobalContext } from "./context";
 
 const Options = () => {
-  const [difficulty, setDifficulty] = useState("normal"); // pasar al context
-  const { closeOptions } = useGlobalContext();
+  const { difficulty, setDifficulty, closeOptions } = useGlobalContext();
+  const [pressNormal, setPressNormal] = useState("");
+  const [pressHard, setPressHard] = useState("");
+  const [pressHell, setPressHell] = useState("");
+
+  useEffect(() => {
+    if (difficulty === "normal") {
+      setPressNormal("btn-options-selected");
+      setPressHard("");
+      setPressHell("");
+    }
+    if (difficulty === "hard") {
+      setPressNormal("");
+      setPressHard("btn-options-selected");
+      setPressHell("");
+    }
+    if (difficulty === "hell") {
+      setPressNormal("");
+      setPressHard("");
+      setPressHell("btn-options-selected");
+    }
+  }, [difficulty]);
+
   return (
     <section className="container-back-options">
       <header className="window-info">
@@ -45,17 +66,28 @@ const Options = () => {
           <option value="german">German</option>
         </select>
         <h5 className="title-options-sub">Difficulty</h5>
-        <div>
-          <input type="range" list="tickmarks" />
-          <datalist id="tickmarks">
-            <option value="0" label="0%" style={{ color: "white" }} />
-            <option value="50" label="50%" />
-            <option value="60" />
-            <option value="70" />
-            <option value="80" />
-            <option value="90" />
-            <option value="100" label="100%" />
-          </datalist>
+        <div className="btn-container-options">
+          <button
+            className={`"btn-options" ${pressNormal}`}
+            value="normal"
+            onClick={(e) => setDifficulty(e.target.value)}
+          >
+            Normal Mode
+          </button>
+          <button
+            className={`"btn-options" ${pressHard}`}
+            value="hard"
+            onClick={(e) => setDifficulty(e.target.value)}
+          >
+            Hard Mode
+          </button>
+          <button
+            className={`"btn-options" ${pressHell}`}
+            value="hell"
+            onClick={(e) => setDifficulty(e.target.value)}
+          >
+            Hell Mode
+          </button>
         </div>
         <h5 className="title-options-sub">Themes</h5>
         <ul className="options-items">

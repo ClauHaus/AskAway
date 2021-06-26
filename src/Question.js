@@ -22,13 +22,30 @@ import ZeroPoints from "./results/ZeroPoints";
 import TimeOver from "./results/TimeOver";
 
 const Question = () => {
-  const [timer, setTimer] = useState(60); //60
-  const [count, setCount] = useState(false);
-  const [score, setScore] = useState(10);
-  const [container, setContainer] = useState("container-question");
-  const { time, restartGame, questionsOne, knowOne, nextPageFour, level } =
-    useGlobalContext();
+  const {
+    time,
+    restartGame,
+    questionsOne,
+    knowOne,
+    nextPageFour,
+    level,
+    timerDifficulty,
+    scoreDifficulty,
+    difficulty,
+  } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
+  const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
+  const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
+  const [count, setCount] = useState(false);
+  const [score, setScore] = useState(scoreDifficulty);
+  const [timer, setTimer] = useState(timerDifficulty);
+  const [topScore, setTopScore] = useState(
+    newTopScore ? newTopScore : scoreDifficulty
+  );
+  const [actualScore, setActualScore] = useState(
+    level >= 2 ? newActualScore : scoreDifficulty
+  );
+  const [container, setContainer] = useState("container-question");
 
   // Esta funcion es para que haga un sort de los elementos del array
   const shuffle = () => {
@@ -41,10 +58,32 @@ const Question = () => {
   const [index, setIndex] = useState(0); // posibilidad para cambiar este 0 por un numero random y que de esa manera nos de un valor diferente-UPDATE IMPORTANTE, no es necesario realizar esa modificacion porque con el metodo sort tenemos el mismo resultado
 
   const highScore = (points) => {
-    if (score >= 1) {
+    if (score >= 1 && score <= actualScore) {
       setScore(points);
+      setActualScore(points);
+    }
+
+    if (score >= 1 && score >= actualScore && score >= topScore) {
+      setScore(points);
+      setActualScore(points);
+      setTopScore(points);
+    }
+    if (score >= 1 && score <= actualScore && level >= 2) {
+      setActualScore(actualScore - score + points);
+    }
+    if (actualScore >= topScore) {
+      //El problema era que aca estaba como actualScore >= topScore, ese = modificaba el setTopScore, cuando solo debe cambiar si el actualScore es mayor. La idea es que cuando se llega a un topscore solo se modifique hacia arriba,nunca hacia abajo
+      setTopScore(actualScore - score + points);
+    }
+    if (actualScore <= topScore) {
+      setTopScore(newTopScore);
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("newTopScore", JSON.stringify(topScore));
+    localStorage.setItem("newActualScore", JSON.stringify(actualScore));
+  }, [topScore, actualScore]);
 
   useEffect(() => {
     setData(shuffle);
@@ -103,8 +142,9 @@ const Question = () => {
         </header>
         <div className={container}>
           <ul className="top-information bottom">
-            <li>Question: {index < 10 ? index + 1 : index}/10</li>
-            <li>HiScore: {score}</li>
+            <li>Question:{index < 10 ? index + 1 : index}/10</li>
+            <li>HiScore:{topScore}</li>
+            <li>Score:{actualScore}</li>
           </ul>
 
           {/* 1er escenario - exitoso*/}
@@ -154,7 +194,8 @@ const Question = () => {
                   <p>Let's see some stats before moving on, shall we?</p>
                   <ul>
                     <li>
-                      You scored {score} points.{" "}
+                      Your actual score is {actualScore} points. And you made{" "}
+                      {score} points in level {level}.{" "}
                       {score < 35 &&
                         "Wow you barely made it, let's improve ourselves in the next level!"}
                       {score >= 40 &&
@@ -171,7 +212,7 @@ const Question = () => {
                       You cleared this level in{" "}
                       {60 - JSON.parse(localStorage.getItem("newTimer"))}{" "}
                       seconds,{" "}
-                      {JSON.parse(localStorage.getItem("newTimer")) > 50
+                      {JSON.parse(localStorage.getItem("newTimer")) < 50
                         ? "that was close, you need to move those fingers as fast as your mind."
                         : "you are a fast thinker or a pretty good guesser, let's find out in the next level."}
                     </li>
@@ -226,11 +267,13 @@ const Question = () => {
                 position={position}
                 data={data}
                 score={score}
+                actualScore={actualScore}
                 highScore={highScore}
                 count={count}
                 timer={timer}
                 index={index}
                 container={container}
+                difficulty={difficulty}
                 setIndex={setIndex}
                 setScore={setScore}
                 setContainer={setContainer}

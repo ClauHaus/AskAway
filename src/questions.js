@@ -16,7 +16,7 @@ const bigData = [
   [
     {
       id: 0,
-      question: "Who is this man?",
+      question: "Who was this man?",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/1200px-Albert_Einstein_Head.jpg",
       answers: [
@@ -120,12 +120,14 @@ const bigData = [
     },
     {
       id: 10,
-      question: `What is the real name of "Bono", singer of u2?`,
+      question: `For which national football team does he plays?`,
+      image:
+        "https://depor.com/resizer/BkGrpcbBXQm_iQu5NH2kdoMi7r8=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/NLTY3MJGEBBRBA63URZZFPRKOI.jpg",
       answers: [
-        ["Mark Ronson", false],
-        ["Paul David Hewson", true],
-        ["Lonnie Donegan", false],
-        ["Calum Scott", false],
+        ["Spain", false],
+        ["Argentina", true],
+        ["Chile", false],
+        ["Uruguay", false],
       ],
     },
     {
@@ -200,12 +202,14 @@ const bigData = [
     },
     {
       id: 18,
-      question: `What is the smallest country in the world?`,
+      question: `What is the name of this actor?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/1200px-Brad_Pitt_2019_by_Glenn_Francis.jpg",
       answers: [
-        ["Monaco", false],
-        ["Malta", false],
-        ["Maldives", false],
-        ["Vatican City", true],
+        ["Johnny Depp", false],
+        ["Jonah Hill", false],
+        ["Leonardo Di Caprio", false],
+        ["Brad Pitt", true],
       ],
     },
     {
@@ -300,12 +304,14 @@ const bigData = [
     },
     {
       id: 28,
-      question: `What is the shape of the toy invented by Hungarian professor Ernő Rubik?`,
+      question: `In which American city is located this famous landmark?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/a/a1/Statue_of_Liberty_7.jpg",
       answers: [
-        ["Sphere", false],
-        ["Cube", true],
-        ["Cylinder", false],
-        ["Pyramid", false],
+        ["Los Angeles", false],
+        ["New York", true],
+        ["Washington D.C.", false],
+        ["Chicago", false],
       ],
     },
     {
@@ -390,12 +396,14 @@ const bigData = [
     },
     {
       id: 37,
-      question: `What does CPU stand for?`,
+      question: `What is the name of this british band?`,
+      image:
+        "https://www.mondosonoro.com/wp-content/uploads/2020/10/RollingStonesWEB.jpg",
       answers: [
-        ["Central Process Unit", false],
-        ["Computer Personal Unit", false],
-        ["Central Processing Unit", true],
-        ["Central Processor Unit", false],
+        ["The Beatles", false],
+        ["Arctic Monkeys", false],
+        ["The Rolling Stones", true],
+        ["Coldplay", false],
       ],
     },
     {
@@ -416,106 +424,6 @@ const bigData = [
         ["Local Area Network", true],
         ["Light Access Node", false],
         ["Land Address Navigation", false],
-      ],
-    },
-    {
-      id: 40,
-      question: `Which is the fastest land's animal in the world?`,
-      answers: [
-        ["Pronghorn Antelope", false],
-        ["Thomson's Gazelle", false],
-        ["Cheetah", true],
-        ["Lion", false],
-      ],
-    },
-    {
-      id: 41,
-      question: `How many legs do butterflies have?`,
-      answers: [
-        ["0", false],
-        ["2", false],
-        ["4", false],
-        ["6", true],
-      ],
-    },
-    {
-      id: 42,
-      question: `Who painted the Sistine Chapel`,
-      answers: [
-        ["Michelangelo", true],
-        ["Leonardo da Vinci", false],
-        ["Raphael", false],
-        ["Pablo Picasso", false],
-      ],
-    },
-    {
-      id: 43,
-      question: `Who designed the Chupa Chups logo?`,
-      answers: [
-        ["Andy Warhol", false],
-        ["Salvador Dali", true],
-        ["Pablo Picasso", false],
-        ["Jean-Michel Basquiat", false],
-      ],
-    },
-    {
-      id: 44,
-      question: `What is not a wind instrument?`,
-      answers: [
-        ["Oboe", false],
-        ["Didgeridoo ", false],
-        ["Viola", true],
-        ["Trombone", false],
-      ],
-    },
-    {
-      id: 45,
-      question: `What is the primary addictive substance found in tobacco?`,
-      answers: [
-        ["Ephedrine", false],
-        ["Cathinone", false],
-        ["Glaucine", false],
-        ["Nicotine", true],
-      ],
-    },
-    {
-      id: 46,
-      question: `Which driver has been the Formula 1 world champion for a record 7 times as Michael Schumacher?`,
-      answers: [
-        ["Lewis Hamilton", true],
-        ["Ayrton Senna", false],
-        ["Juan Manuel Fangio", false],
-        ["Fernando Alonso", false],
-      ],
-    },
-    {
-      id: 47,
-      question: `How many differently shaped Tetris pieces are there?`,
-      answers: [
-        ["5", false],
-        ["7", true],
-        ["6", false],
-        ["9", false],
-      ],
-    },
-    {
-      id: 48,
-      question: `How many stars are featured on New Zealand's flag?`,
-      answers: [
-        ["5", false],
-        ["0", false],
-        ["4", true],
-        ["3", false],
-      ],
-    },
-    {
-      id: 49,
-      question: `What is the alter-ego of the DC comics character "Superman"?`,
-      answers: [
-        ["John Jones", false],
-        ["Bruce Wayne", false],
-        ["Arthur Curry", false],
-        ["Clark Kent", true],
       ],
     },
   ],
@@ -593,12 +501,14 @@ const bigData = [
     },
     {
       id: 7,
-      question: `What do you call a baby bat?`,
+      question: `What is the name of this famous american singer?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/5/5e/Britney_Spears%2C_Roundhouse%2C_London_%28Apple_Music_Festival_2016%29_%2830072929931%29_%28cropped%29.jpg",
       answers: [
-        ["Cub", false],
-        ["Chick", false],
-        ["Kid", false],
-        ["Pup", true],
+        ["Christina Aguilera", false],
+        ["Billie Eilish", false],
+        ["Dua Lipa", false],
+        ["Britney Spears", true],
       ],
     },
     {
@@ -693,12 +603,14 @@ const bigData = [
     },
     {
       id: 17,
-      question: `What is the capital of Indonesia?`,
+      question: `Where is located the "Big Buddha"?`,
+      image:
+        "https://lh3.googleusercontent.com/proxy/uBHG1Lma2D7Jui6xFRaGuR3HIa0Xi4Kx5hqgUJce0LOFvE2BTzoYUrZ2oJim9pR9XX-Gev7TP3NKiPKwBVQqYxuuja8jLkB3KD6540cmzdS25PBknExa6fYhAw5v",
       answers: [
-        ["Bandung", false],
-        ["Jakarta", true],
-        ["Medan", false],
-        ["Palembang", false],
+        ["Cambodia", false],
+        ["Thailand", true],
+        ["Indonesia", false],
+        ["Vietnam", false],
       ],
     },
     {
@@ -763,12 +675,14 @@ const bigData = [
     },
     {
       id: 24,
-      question: `What does a funambulist walk on?`,
+      question: `What animal is in this picture?`,
+      image:
+        "https://i.natgeofe.com/n/89b24060-bbf6-4f8f-b74a-4757dbdfae5c/01-platypus-decline-20180430_3dg1547_16x9.jpg?w=1200",
       answers: [
-        ["A Tight Rope", true],
-        ["Broken Glass", false],
-        ["Balls", false],
-        ["The Moon", false],
+        ["Platypus", true],
+        ["Armadillo", false],
+        ["Okapi", false],
+        ["Tapir", false],
       ],
     },
     {
@@ -883,12 +797,14 @@ const bigData = [
     },
     {
       id: 36,
-      question: `How many sides does a heptagon have?`,
+      question: `What is the common name of this flowers?`,
+      image:
+        "https://bluestoneperennials.global.ssl.fastly.net/img/BTURE/650/BTURE-0-Tulip-Red-Revival27087-vb.1585760406.jpg",
       answers: [
-        ["7", true],
-        ["8", false],
-        ["5", false],
-        ["6", false],
+        ["Tulips", true],
+        ["Roses", false],
+        ["Orchids", false],
+        ["Daisies", false],
       ],
     },
     {
@@ -921,108 +837,6 @@ const bigData = [
         ["Denmark", true],
       ],
     },
-    {
-      id: 40,
-      question: `Which Country's flag is this?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Estonia.svg/2560px-Flag_of_Estonia.svg.png",
-      answers: [
-        ["Estonia", true],
-        ["Latvia", false],
-        ["Lithuania", false],
-        ["Belarus", false],
-      ],
-    },
-    {
-      id: 41,
-      question: `Who discovered Penicillin?`,
-      answers: [
-        ["Marie Curie", false],
-        ["Alexander Flemming", true],
-        ["Alfred Nobel", false],
-        ["Louis Pasteur", false],
-      ],
-    },
-    {
-      id: 42,
-      question: `What is the scientific name for modern day humans?`,
-      answers: [
-        ["Homo Neanderthalensis", false],
-        ["Homo Erectus", false],
-        ["Homo Sapiens", true],
-        ["Homo Ergaster", false],
-      ],
-    },
-    {
-      id: 43,
-      question: `Which country does Austria not border?`,
-      answers: [
-        ["Slovenia", false],
-        ["Switzerland", false],
-        ["Slovakia", false],
-        ["France", true],
-      ],
-    },
-    {
-      id: 44,
-      question: ``,
-      answers: [
-        ["206", true],
-        ["209", false],
-        ["203", false],
-        ["201", false],
-      ],
-    },
-    {
-      id: 45,
-      question: `How many Harry Potter books are there?`,
-      answers: [
-        ["8", false],
-        ["7", true],
-        ["6", false],
-        ["9", false],
-      ],
-    },
-    {
-      id: 46,
-      question: `What do the letters in the GMT time zone stand for?`,
-      answers: [
-        ["General Median Time", false],
-        ["Global Meridian Time", false],
-        ["Greenwich Mean Time", true],
-        ["Glasgow Man Time", false],
-      ],
-    },
-    {
-      id: 47,
-      question: `Which actor plays Obi-Wan Kenobi in Star Wars Episodes I-III?`,
-      answers: [
-        ["Mark Hamill", false],
-        ["Hayden Christensen", false],
-        ["Liam Neeson", false],
-        ["Ewan McGregor", true],
-      ],
-    },
-    {
-      id: 48,
-      question: `Which of these African countries list "Spanish" as an official language?`,
-      answers: [
-        ["Equatorial Guinea", true],
-        ["Cameroon", false],
-        ["Guinea", false],
-        ["Angola", false],
-      ],
-    },
-    {
-      id: 49,
-      question: `Which Apollo mission was the first one to land on the Moon?`,
-      answers: [
-        ["Apolo 13", false],
-        ["Apolo 11", true],
-        ["Apolo 9", false],
-        ["Apolo 10", false],
-      ],
-    },
   ],
   //ARRAY 3--------------------------------------
   [
@@ -1038,6 +852,252 @@ const bigData = [
     },
     {
       id: 1,
+      question: `Which Country's flag is this?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg",
+      answers: [
+        ["Turkmenistan", false],
+        ["Kazakhstan", true],
+        ["Kyrgyzstan", false],
+        ["Uzbekistan", false],
+      ],
+    },
+    {
+      id: 2,
+      question: `Who painted the Mona Lisa?`,
+      answers: [
+        ["Vincent Van Gogh", false],
+        ["Pablo Picasso", false],
+        ["Leonardo da Vinci", true],
+        ["Claude Monet", false],
+      ],
+    },
+    {
+      id: 3,
+      question: `The idea of Socialism was articulated and advanced by whom?`,
+      answers: [
+        ["Vladimir Lenin", false],
+        ["Joseph Stalin", false],
+        ["Vladimir Putin", false],
+        ["Karl Marx", true],
+      ],
+    },
+    {
+      id: 4,
+      question: `What does GHz stand for?`,
+      answers: [
+        ["Gigahertz", true],
+        ["Gigahotz", false],
+        ["Gigahetz", false],
+        ["Gigahatz", false],
+      ],
+    },
+    {
+      id: 5,
+      question: `Who is this actress?`,
+      image:
+        " https://es.web.img3.acsta.net/pictures/17/01/10/13/53/476324.jpg",
+      answers: [
+        ["Meryl Streep", false],
+        ["Susan Sarandon", true],
+        ["Diane Keaton", false],
+        ["Emma Thompson", false],
+      ],
+    },
+    {
+      id: 6,
+      question: `What is the capital of Jamaica?`,
+      answers: [
+        ["San Juan", false],
+        ["Port-au-Prince", false],
+        ["Kingston", true],
+        ["Bridgetown", false],
+      ],
+    },
+    {
+      id: 7,
+      question: `Which modern day country is the region that was known as Phrygia in ancient times?`,
+      answers: [
+        ["Syria", false],
+        ["Greece", false],
+        ["Egypt", false],
+        ["Turkey", true],
+      ],
+    },
+    {
+      id: 8,
+      question: `What is the oldest Disney film?`,
+      answers: [
+        ["Snow White and the Seven Dwarfs", true],
+        ["Pinocchio", false],
+        ["Fantasia", false],
+        ["Dumbo", false],
+      ],
+    },
+    {
+      id: 9,
+      question: `The numbering system with a radix of 16 is more commonly referred to as `,
+      answers: [
+        ["Duodecimal", false],
+        ["Hexidecimal", true],
+        ["Octal", false],
+        ["Binary", false],
+      ],
+    },
+    {
+      id: 10,
+      question: `Where would you find the "Spanish Steps"?`,
+      answers: [
+        ["Barcelona, Spain", false],
+        ["London, England", false],
+        ["Rome, Italy", true],
+        ["Berlin, Germany", false],
+      ],
+    },
+    {
+      id: 11,
+      question: `Who directed &quot;E.T. the Extra-Terrestrial&quot; (1982)?`,
+      answers: [
+        ["Stanley Kubrick", false],
+        ["Tim Burton", false],
+        ["James Cameron", false],
+        ["Steven Spielberg", true],
+      ],
+    },
+    {
+      id: 12,
+      question: `The Italian automaker Lamborghini uses what animal as its logo?`,
+      answers: [
+        ["Bull", true],
+        ["Tiger", false],
+        ["Horse", false],
+        ["Snake", false],
+      ],
+    },
+    {
+      id: 13,
+      question: `The term "battery" to describe an electrical storage device was coined by?`,
+      answers: [
+        ["Nikola Tesla", false],
+        ["Benjamin Franklin", true],
+        ["Luigi Galvani", false],
+        ["Alessandro Volta", false],
+      ],
+    },
+    {
+      id: 14,
+      question: `What is the capital of Switzerland?`,
+      answers: [
+        ["Zürich", false],
+        ["Basel", false],
+        ["Bern", true],
+        ["Geneva", false],
+      ],
+    },
+    {
+      id: 15,
+      question: `Who are this iconic spanish couple?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d9/Don_Quixote_and_Sancho_Panza_by_Jules_David.png",
+      answers: [
+        ["Gerard piqué and Carles Puyol ", false],
+        ["El Cid Campeador and Diego Laínez", false],
+        ["Santiago Segura and Javier Cámara", false],
+        ["Don Quixote and Sancho Panza", true],
+      ],
+    },
+    {
+      id: 16,
+      question: `What is the real name of "Bono", singer of u2?`,
+      answers: [
+        ["Mark Ronson", false],
+        ["Paul David Hewson", true],
+        ["Lonnie Donegan", false],
+        ["Calum Scott", false],
+      ],
+    },
+    {
+      id: 17,
+      question: `What is the smallest country in the world?`,
+      answers: [
+        ["Monaco", false],
+        ["Malta", false],
+        ["Maldives", false],
+        ["Vatican City", true],
+      ],
+    },
+    {
+      id: 18,
+      question: `What is the shape of the toy invented by Hungarian professor Ernő Rubik?`,
+      answers: [
+        ["Sphere", false],
+        ["Cube", true],
+        ["Cylinder", false],
+        ["Pyramid", false],
+      ],
+    },
+    {
+      id: 19,
+      question: `What does CPU stand for?`,
+      answers: [
+        ["Central Process Unit", false],
+        ["Computer Personal Unit", false],
+        ["Central Processing Unit", true],
+        ["Central Processor Unit", false],
+      ],
+    },
+    {
+      id: 20,
+      question: `How many stars are featured on New Zealand's flag?`,
+      answers: [
+        ["5", false],
+        ["0", false],
+        ["4", true],
+        ["3", false],
+      ],
+    },
+    {
+      id: 21,
+      question: `What do you call a baby bat?`,
+      answers: [
+        ["Cub", false],
+        ["Chick", false],
+        ["Kid", false],
+        ["Pup", true],
+      ],
+    },
+    {
+      id: 22,
+      question: `What is the capital of Indonesia?`,
+      answers: [
+        ["Bandung", false],
+        ["Jakarta", true],
+        ["Medan", false],
+        ["Palembang", false],
+      ],
+    },
+    {
+      id: 23,
+      question: `What does a funambulist walk on?`,
+      answers: [
+        ["A Tight Rope", true],
+        ["Broken Glass", false],
+        ["Balls", false],
+        ["The Moon", false],
+      ],
+    },
+    {
+      id: 24,
+      question: `How many sides does a heptagon have?`,
+      answers: [
+        ["7", true],
+        ["8", false],
+        ["5", false],
+        ["6", false],
+      ],
+    },
+    {
+      id: 25,
       question: `In golf, what name is given to a hole score of two under par?`,
       answers: [
         ["Albatross", false],
@@ -1047,15 +1107,767 @@ const bigData = [
       ],
     },
     {
-      id: 5,
-      question: `Who is this actress?`,
-      image:
-        " https://es.web.img3.acsta.net/pictures/17/01/10/13/53/476324.jpg",
+      id: 26,
+      question: `Earth is located in which galaxy?`,
       answers: [
-        ["Meryl Streep", true],
-        ["Susan Sarandon", false],
-        ["Diane Keaton", false],
-        ["Emma Thompson", false],
+        ["The Black Hole", false],
+        ["The Galaxy Note", false],
+        ["The Mars Galaxy", false],
+        ["The Milky Way Galaxy", true],
+      ],
+    },
+    {
+      id: 27,
+      question: `For which national football team does he plays?`,
+      image:
+        "https://depor.com/resizer/Be4hwNj6ccK5tKtg-isUy1rdPcs=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B7WOGTSQRZAWXFP4KN7PBOIWTM.jpg",
+      answers: [
+        ["Portugal", true],
+        ["Spain", false],
+        ["Italy", false],
+        ["France", false],
+      ],
+    },
+    {
+      id: 28,
+      question: `In what year did Neil Armstrong and Buzz Aldrin land on the moon?`,
+      answers: [
+        ["1967", false],
+        ["1969", true],
+        ["1973", false],
+        ["1965", false],
+      ],
+    },
+    {
+      id: 29,
+      question: `Who was the Roman god of fire?`,
+      answers: [
+        ["Apollo", false],
+        ["Mercury", false],
+        ["Vulcan", true],
+        ["Jupiter", false],
+      ],
+    },
+    {
+      id: 30,
+      question: `When was Joan of Arc killed?`,
+      answers: [
+        ["April 29, 1432", false],
+        ["December 25, 1429", false],
+        ["June 13, 1435", false],
+        ["May 30, 1431", true],
+      ],
+    },
+    {
+      id: 31,
+      question: `Which country has three capital cities?`,
+      answers: [
+        ["South Africa", true],
+        ["China", false],
+        ["Somalia", false],
+        ["United Kingdom", false],
+      ],
+    },
+    {
+      id: 32,
+      question: `From which Disney movie is this character from?`,
+      image:
+        "https://static.wikia.nocookie.net/disney/images/7/7a/Profile_-_Philoctetes.jpeg/revision/latest?cb=20190312044519",
+      answers: [
+        ["Aladdin", false],
+        ["Hercules", true],
+        ["Robin Hood", false],
+        ["Mulan", false],
+      ],
+    },
+    {
+      id: 33,
+      question: `How many rivers are in Saudi Arabia?`,
+      answers: [
+        ["1", false],
+        ["3", false],
+        ["0", true],
+        ["2", false],
+      ],
+    },
+    {
+      id: 34,
+      question: `What mountain range lines the border between Spain and France?`,
+      answers: [
+        ["Carpathians", false],
+        ["Urals", false],
+        ["Alps", false],
+        ["Pyrenees", true],
+      ],
+    },
+    {
+      id: 35,
+      question: `Which Russian author wrote the epic novel War and Peace?`,
+      answers: [
+        ["Leo Tolstoy", true],
+        ["Alexander Pushkin", false],
+        ["Vladimir Nabokov", false],
+        ["Fyodor Dostoyevsky", false],
+      ],
+    },
+    {
+      id: 36,
+      question: `What was the African nation of Zimbabwe formerly known as?`,
+      answers: [
+        ["Mozambique", false],
+        ["Rhodesia", true],
+        ["Zambia", false],
+        ["Bulawayo", false],
+      ],
+    },
+    {
+      id: 37,
+      question: `What event marked the start of World War II?`,
+      answers: [
+        ["Invasion of Russia (1942)", false],
+        ["Invasion of Normandy (1944)", false],
+        ["Invasion of Poland (1939)", true],
+        ["Battle of Britain (1940)", false],
+      ],
+    },
+    {
+      id: 38,
+      question: `What is the colour of unoxidized blood?`,
+      answers: [
+        ["Purple", false],
+        ["Blue", false],
+        ["Green", false],
+        ["Red", true],
+      ],
+    },
+    {
+      id: 39,
+      question: `What was the first living creature in space?`,
+      answers: [
+        ["Fruit flies", true],
+        ["Dog", false],
+        ["Monkey", false],
+        ["Mouse", false],
+      ],
+    },
+  ],
+  //ARRAY 4--------------------------------------
+  [
+    {
+      id: 0,
+      question: `What's the name of Batman's parents?`,
+      answers: [
+        ["Todd & Mira", false],
+        ["Jason & Sarah", false],
+        ["Thomas & Martha", true],
+        ["Joey & Jackie", false],
+      ],
+    },
+    {
+      id: 1,
+      question: `In the 1984 movie "The Terminator", what model number is the Terminator portrayed by Arnold Schwarzenegger?`,
+      answers: [
+        ["T-800", true],
+        ["I-950", false],
+        ["T-888", false],
+        ["T-1000", false],
+      ],
+    },
+    {
+      id: 2,
+      question: `Neptune's greek name was...`,
+      answers: [
+        ["Ares", false],
+        ["Poseidon", true],
+        ["Apollo", false],
+        ["Zeus", false],
+      ],
+    },
+    {
+      id: 3,
+      question: `The book "The Little Prince" was written by...`,
+      answers: [
+        ["Miguel de Cervantes Saavedra", false],
+        ["Jane Austen", false],
+        ["Antoine de Saint-Exupéry", true],
+        ["F. Scott Fitzgerald", false],
+      ],
+    },
+    {
+      id: 4,
+      question: `In what year was McDonald's founded?`,
+      answers: [
+        ["1923", false],
+        ["1932", false],
+        ["1967", false],
+        ["1955", true],
+      ],
+    },
+    {
+      id: 5,
+      question: `What is the name of this videogame's character?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/2/21/Link_of_the_Wild.png",
+      answers: [
+        ["Link", true],
+        ["Zelda", false],
+        ["Rito", false],
+        ["Ganon", false],
+      ],
+    },
+    {
+      id: 6,
+      question: `What is the highest mountain in the world?`,
+      answers: [
+        ["Kangchenjunga", false],
+        ["Mt. Everest", true],
+        ["Kilimanjaro", false],
+        ["Aconcagua", false],
+      ],
+    },
+    {
+      id: 7,
+      question: `What is the capital city of New Zealand?`,
+      answers: [
+        ["Auckland", false],
+        ["Melbourne", false],
+        ["Wellington", true],
+        ["Christchurch", false],
+      ],
+    },
+    {
+      id: 8,
+      question: `Who plays "Bruce Wayne" in the 2008 movie "The Dark Knight"`,
+      answers: [
+        ["Michael Keaton", false],
+        ["Michael Caine", false],
+        ["Ben Affleck", false],
+        ["Christian Bale", true],
+      ],
+    },
+    {
+      id: 9,
+      question: `What is the scientific term for "taste"?`,
+      answers: [
+        ["Gustatory Perception", true],
+        ["Olfaction", false],
+        ["Auditory Perception", false],
+        ["Somatosensation", false],
+      ],
+    },
+    {
+      id: 10,
+      question: `What was Britney Spears' debut single?`,
+      answers: [
+        ["Oops!... I Did It Again", false],
+        ["...Baby One More Time", true],
+        ["Toxic", false],
+        ["(You Drive Me) Crazy", false],
+      ],
+    },
+    {
+      id: 11,
+      question: `What is the capital of Peru?`,
+      answers: [
+        ["Santiago", false],
+        ["Montevideo", false],
+        ["Lima", true],
+        ["Medellín", false],
+      ],
+    },
+    {
+      id: 12,
+      question: `The towns of Brugelette, Arlon and Ath are located in which country?`,
+      answers: [
+        ["Luxembourg", false],
+        ["Andorra", false],
+        ["France", false],
+        ["Belgium", true],
+      ],
+    },
+    {
+      id: 13,
+      question: `What continent is the country Lesotho in?`,
+      answers: [
+        ["Africa", true],
+        ["Asia", false],
+        ["South America", false],
+        ["Europe", false],
+      ],
+    },
+    {
+      id: 14,
+      question: `What is the name of this streamer?`,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZNNQfGBm5O9L5vzLlwMBcR5mWjLpcwiNDUlLnvVUpIKjewbZ0Tj2HDqg4HgZBMmQ4DM&usqp=CAU",
+      answers: [
+        ["Rubius", false],
+        ["Ibai Llanos", true],
+        ["Germán Garmendia", false],
+        ["PewDiePie", false],
+      ],
+    },
+    {
+      id: 15,
+      question: `Which of these is not an album released by The Beatles?`,
+      answers: [
+        ["Abbey Road", false],
+        ["Magical Mystery Tour", false],
+        ["The Wall", true],
+        ["Revolver", false],
+      ],
+    },
+    {
+      id: 16,
+      question: `What is the capital of Senegal?`,
+      answers: [
+        ["Nouakchott", false],
+        ["Conakry", false],
+        ["Monrovia", false],
+        ["Dakar", true],
+      ],
+    },
+    {
+      id: 17,
+      question: `where were the 2016 olympic games held?`,
+      answers: [
+        ["Río de Janeiro", true],
+        ["Athens", false],
+        ["London", false],
+        ["Pekin", false],
+      ],
+    },
+    {
+      id: 18,
+      question: `Which puzzle game was designed by a Russian programmer, featuring Russian buildings and music?`,
+      answers: [
+        ["Puzzled", false],
+        ["Tetris", true],
+        ["Jenga", false],
+        ["Boulder Dash", false],
+      ],
+    },
+    {
+      id: 19,
+      question: `What alcoholic drink is mainly made from juniper berries?`,
+      answers: [
+        ["Rum", false],
+        ["Vodka", false],
+        ["Gin", true],
+        ["Tequila", false],
+      ],
+    },
+    {
+      id: 20,
+      question: `What number does the Roman numeral "D" stand for?`,
+      answers: [
+        ["1000", false],
+        ["100", false],
+        ["50", false],
+        ["500", true],
+      ],
+    },
+    {
+      id: 21,
+      question: `What is the name of this animated character?`,
+      image:
+        "https://static.wikia.nocookie.net/doblaje/images/8/8a/Johnny_Bravo_Full_Color_-full.jpg/revision/latest/scale-to-width-down/733?cb=20091223223249&path-prefix=es",
+      answers: [
+        ["Johnny Bravo", true],
+        ["Dexter", false],
+        ["Gumball Watterson", false],
+        ["Carlos Brutowski", false],
+      ],
+    },
+    {
+      id: 22,
+      question: `In which city is located this landmark?`,
+      image:
+        "https://www.etbtoursegypt.com/Wiki/wp-content/uploads/2020/10/Great-Sphinx-of-Giza.jpg",
+      answers: [
+        ["Cairo", false],
+        ["Giza city", true],
+        ["Tanta", false],
+        ["El Obour city", false],
+      ],
+    },
+    {
+      id: 23,
+      question: `A carnivorous animal eats flesh, what does a nucivorous animal eat?`,
+      answers: [
+        ["Nothing", false],
+        ["Fruit", false],
+        ["Nuts", true],
+        ["Seaweed", false],
+      ],
+    },
+    {
+      id: 24,
+      question: `Joseph Smith was the founder of what religion?`,
+      answers: [
+        ["Buddhism", false],
+        ["Christianity", false],
+        ["Hinduism", false],
+        ["Mormonism", true],
+      ],
+    },
+    {
+      id: 25,
+      question: `Paul McCartney has always used his middle name. What is his real first name?`,
+      answers: [
+        ["James", true],
+        ["John", false],
+        ["Jack", false],
+        ["Phil", false],
+      ],
+    },
+    {
+      id: 26,
+      question: `Which of these artists do not originate from France?`,
+      answers: [
+        ["Daft Punk", false],
+        ["The Chemical Brothers", true],
+        ["Zaz", false],
+        ["Justice", false],
+      ],
+    },
+    {
+      id: 27,
+      question: `The dish Fugu, is made from what family of fish?`,
+      answers: [
+        ["Bass", false],
+        ["Salmon", false],
+        ["Pufferfish", true],
+        ["Mackerel", false],
+      ],
+    },
+    {
+      id: 28,
+      question: `What is the name of the first "Star Wars" film by release order?`,
+      answers: [
+        ["The Phantom Menace", false],
+        ["The Force Awakes", false],
+        ["Revenge of the Sith", false],
+        ["A New Hope", true],
+      ],
+    },
+    {
+      id: 29,
+      question: `A minotaur is half human half what?`,
+      answers: [
+        ["Bull", true],
+        ["Cow", false],
+        ["Horse", false],
+        ["Eagle", false],
+      ],
+    },
+  ],
+  //ARRAY 5--------------------------------------
+  [
+    {
+      id: 0,
+      question: `What is the German word for "spoon"?`,
+      answers: [
+        ["Gabel", false],
+        ["Löffel", true],
+        ["Brötchen", false],
+        ["Messer", false],
+      ],
+    },
+    {
+      id: 1,
+      question: `This kind of writing matches this language...`,
+      image:
+        "https://www.meridianlinguistics.com/wp-content/uploads/2018/02/hangeul-chart.jpeg",
+      answers: [
+        ["Chinese", false],
+        ["Japanese", false],
+        ["Korean", true],
+        ["Thai", false],
+      ],
+    },
+    {
+      id: 2,
+      question: `Who tutored Alexander the Great?`,
+      answers: [
+        ["King Philip", false],
+        ["Socrates", false],
+        ["Plato", false],
+        ["Aristotle", true],
+      ],
+    },
+    {
+      id: 3,
+      question: `Who is the villain in the film "Nightmare on Elm Street"?`,
+      answers: [
+        ["Freddy Krueger", true],
+        ["Jason", false],
+        ["Michael Myers", false],
+        ["Chucky", false],
+      ],
+    },
+    {
+      id: 4,
+      question: `What is the full title of the Prime Minister of the UK?`,
+      answers: [
+        ["Duke of Cambridge", false],
+        ["First Lord of the Treasury", true],
+        ["Her Majesty's Loyal Opposition", false],
+        ["Manager of the Crown Estate", false],
+      ],
+    },
+    {
+      id: 5,
+      question: `Which of these companies does not manufacture automobiles?`,
+      answers: [
+        ["Nissan", false],
+        ["GMC", false],
+        ["Ducati", true],
+        ["Fiat", false],
+      ],
+    },
+    {
+      id: 6,
+      question: `Who composed the music for the Swan Lake Ballet?`,
+      answers: [
+        ["Mikhail Azanchevsky", false],
+        ["Nikolai Artsybushev ", false],
+        ["Vyacheslav Artyomov ", false],
+        ["Pyotr Ilyich Tchaikovsky", true],
+      ],
+    },
+    {
+      id: 7,
+      question: `What is the star sign of someone born on Valentines day?`,
+      answers: [
+        ["Aquarius", true],
+        ["Capricorn", false],
+        ["Pisces", false],
+        ["Scorpio", false],
+      ],
+    },
+    {
+      id: 8,
+      question: `What is the collective noun for rats?`,
+      answers: [
+        ["Race", false],
+        ["Mischief", true],
+        ["Pack", false],
+        ["Drift", false],
+      ],
+    },
+    {
+      id: 9,
+      question: `Lake Titicaca is located between which two nations?`,
+      answers: [
+        ["Kenya and Uganda", false],
+        ["Mexico and the United States", false],
+        ["Peru and Bolivia", true],
+        ["India and Bangladesh", false],
+      ],
+    },
+    {
+      id: 10,
+      question: `Which Country's flag is this?`,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Estonia.svg/2560px-Flag_of_Estonia.svg.png",
+      answers: [
+        ["Estonia", true],
+        ["Latvia", false],
+        ["Lithuania", false],
+        ["Belarus", false],
+      ],
+    },
+    {
+      id: 11,
+      question: `Who discovered Penicillin?`,
+      answers: [
+        ["Marie Curie", false],
+        ["Alexander Flemming", true],
+        ["Alfred Nobel", false],
+        ["Louis Pasteur", false],
+      ],
+    },
+    {
+      id: 12,
+      question: `What is the scientific name for modern day humans?`,
+      answers: [
+        ["Homo Neanderthalensis", false],
+        ["Homo Erectus", false],
+        ["Homo Sapiens", true],
+        ["Homo Ergaster", false],
+      ],
+    },
+    {
+      id: 13,
+      question: `Which country does Austria not border?`,
+      answers: [
+        ["Slovenia", false],
+        ["Switzerland", false],
+        ["Slovakia", false],
+        ["France", true],
+      ],
+    },
+    {
+      id: 14,
+      question: `How many bones are in the human body?`,
+      answers: [
+        ["206", true],
+        ["209", false],
+        ["203", false],
+        ["201", false],
+      ],
+    },
+    {
+      id: 15,
+      question: `How many Harry Potter books are there?`,
+      answers: [
+        ["8", false],
+        ["7", true],
+        ["6", false],
+        ["9", false],
+      ],
+    },
+    {
+      id: 16,
+      question: `What do the letters in the GMT time zone stand for?`,
+      answers: [
+        ["General Median Time", false],
+        ["Global Meridian Time", false],
+        ["Greenwich Mean Time", true],
+        ["Glasgow Man Time", false],
+      ],
+    },
+    {
+      id: 17,
+      question: `Which actor plays Obi-Wan Kenobi in Star Wars Episodes I-III?`,
+      answers: [
+        ["Mark Hamill", false],
+        ["Hayden Christensen", false],
+        ["Liam Neeson", false],
+        ["Ewan McGregor", true],
+      ],
+    },
+    {
+      id: 18,
+      question: `Which of these African countries list "Spanish" as an official language?`,
+      answers: [
+        ["Equatorial Guinea", true],
+        ["Cameroon", false],
+        ["Guinea", false],
+        ["Angola", false],
+      ],
+    },
+    {
+      id: 19,
+      question: `Which Apollo mission was the first one to land on the Moon?`,
+      answers: [
+        ["Apolo 13", false],
+        ["Apolo 11", true],
+        ["Apolo 9", false],
+        ["Apolo 10", false],
+      ],
+    },
+    {
+      id: 20,
+      question: `Which is the fastest land's animal in the world?`,
+      answers: [
+        ["Pronghorn Antelope", false],
+        ["Thomson's Gazelle", false],
+        ["Cheetah", true],
+        ["Lion", false],
+      ],
+    },
+    {
+      id: 21,
+      question: `How many legs do butterflies have?`,
+      answers: [
+        ["0", false],
+        ["2", false],
+        ["4", false],
+        ["6", true],
+      ],
+    },
+    {
+      id: 22,
+      question: `Who painted the Sistine Chapel`,
+      answers: [
+        ["Michelangelo", true],
+        ["Leonardo da Vinci", false],
+        ["Raphael", false],
+        ["Pablo Picasso", false],
+      ],
+    },
+    {
+      id: 23,
+      question: `Who designed the Chupa Chups logo?`,
+      answers: [
+        ["Andy Warhol", false],
+        ["Salvador Dali", true],
+        ["Pablo Picasso", false],
+        ["Jean-Michel Basquiat", false],
+      ],
+    },
+    {
+      id: 24,
+      question: `What is not a wind instrument?`,
+      answers: [
+        ["Oboe", false],
+        ["Didgeridoo ", false],
+        ["Viola", true],
+        ["Trombone", false],
+      ],
+    },
+    {
+      id: 25,
+      question: `What is the primary addictive substance found in tobacco?`,
+      answers: [
+        ["Ephedrine", false],
+        ["Cathinone", false],
+        ["Glaucine", false],
+        ["Nicotine", true],
+      ],
+    },
+    {
+      id: 26,
+      question: `Which driver has been the Formula 1 world champion for a record 7 times as Michael Schumacher?`,
+      answers: [
+        ["Lewis Hamilton", true],
+        ["Ayrton Senna", false],
+        ["Juan Manuel Fangio", false],
+        ["Fernando Alonso", false],
+      ],
+    },
+    {
+      id: 27,
+      question: `How many differently shaped Tetris pieces are there?`,
+      answers: [
+        ["5", false],
+        ["7", true],
+        ["6", false],
+        ["9", false],
+      ],
+    },
+    {
+      id: 28,
+      question: `What is the name of this painting?`,
+      image:
+        "http://lh3.googleusercontent.com/J0sw0IiqP2F4gavYnI-vUa5IBgHiHy42lohgm-qq1vuygUX0HQgylVSV1ZdDTV5XIg=w255-h300-n-l64",
+      answers: [
+        ["The Birth of Venus", false],
+        ["The Kiss", false],
+        ["Girl with a Pearl Earring", true],
+        ["Las Meninas", false],
+      ],
+    },
+    {
+      id: 29,
+      question: `What is the alter-ego of the DC comics character "Superman"?`,
+      answers: [
+        ["John Jones", false],
+        ["Bruce Wayne", false],
+        ["Arthur Curry", false],
+        ["Clark Kent", true],
       ],
     },
   ],

@@ -110,14 +110,47 @@ const AppProvider = ({ children }) => {
   };
 
   const [level, setLevel] = useState(0);
+  const [difficulty, setDifficulty] = useState("normal");
+
+  const timerDifficulty = () => {
+    let result = 60;
+    if (difficulty === "normal") {
+      result = 60; //60
+    }
+    if (difficulty === "hard") {
+      result = 55;
+    }
+    if (difficulty === "hell") {
+      result = 45;
+    }
+    return result;
+  };
+
+  const scoreDifficulty = () => {
+    let result = 10;
+    if (difficulty === "normal") {
+      result = 10;
+    }
+    if (difficulty === "hard") {
+      result = 8;
+    }
+    if (difficulty === "hell") {
+      result = 5;
+    }
+    return result;
+  };
 
   return (
     <AppContext.Provider
       value={{
         time,
         ...state,
+        difficulty,
         level,
         setLevel,
+        setDifficulty,
+        timerDifficulty,
+        scoreDifficulty,
         restartGame,
         nextPage,
         openOptions,

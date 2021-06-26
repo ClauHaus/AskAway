@@ -990,30 +990,11 @@ p.modal-text {
   margin: 10px;
   padding: 10px;
   color: white;
-  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
-    -1px -1px 3px 0px #fffbf0 inset;
-  -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
-    -1px -1px 3px 0px #fffbf0 inset;
-  -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
-    -1px -1px 3px 0px #fffbf0 inset;
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
 }
-
-/* .container-results {
-  position: relative;
-  width: 85vw;
-  min-height: 50vh;
-  max-width: var(--fixed-width);
-  background: rgb(15, 15, 15);
-  color: white;
-  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
-    -1px -1px 3px 0px #fffbf0 inset;
-  -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
-    -1px -1px 3px 0px #fffbf0 inset;
-  -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
-    -1px -1px 3px 0px #fffbf0 inset;
-  padding: 0.2rem 0.2rem 0.5rem 0.2rem;
-  margin: 0.5rem auto;
-} */
 
 .title-options {
   color: var(--black);
@@ -1036,6 +1017,40 @@ p.modal-text {
   color: #ecf0f3;
   grid-template-columns: 1fr 2fr;
   row-gap: 0.25rem;
+}
+
+.btn-container-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 10px 1px 10px 1px;
+}
+
+.btn-options {
+  cursor: pointer;
+  color: black;
+  border: transparent;
+  letter-spacing: var(--letterSpacing);
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  width: 30%;
+  justify-content: center;
+}
+
+.btn-options-selected {
+  cursor: pointer;
+  background: var(--primary-500);
+  color: white;
+  border: transparent;
+  letter-spacing: var(--letterSpacing);
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+    0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  width: 30%;
+  justify-content: center;
 }
 
 /* alerts */
@@ -1420,7 +1435,8 @@ h5.title {
 }
 
 .answers-right {
-  cursor: pointer;
+  cursor: not-allowed;
+  pointer-events: none;
   color: white;
   opacity: 0.9;
   background: #155724;
@@ -1529,6 +1545,7 @@ h5.title {
 
 .answers-wrong {
   cursor: not-allowed;
+  pointer-events: none;
   color: white;
   background: #842029;
   opacity: 0.9;

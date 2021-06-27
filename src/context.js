@@ -109,8 +109,16 @@ const AppProvider = ({ children }) => {
     window.location.reload();
   };
 
+  const newLanguage = JSON.parse(localStorage.getItem("newLanguage"));
+  const newDifficulty = JSON.parse(localStorage.getItem("newDifficulty"));
+
   const [level, setLevel] = useState(0);
-  const [difficulty, setDifficulty] = useState("normal");
+  const [difficulty, setDifficulty] = useState(
+    newDifficulty ? newDifficulty : "normal"
+  );
+  const [language, setLanguage] = useState(
+    newLanguage ? newLanguage : "english"
+  );
 
   const timerDifficulty = () => {
     let result = 60;
@@ -146,9 +154,11 @@ const AppProvider = ({ children }) => {
         time,
         ...state,
         difficulty,
+        language,
         level,
         setLevel,
         setDifficulty,
+        setLanguage,
         timerDifficulty,
         scoreDifficulty,
         restartGame,

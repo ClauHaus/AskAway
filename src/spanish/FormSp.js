@@ -1,5 +1,5 @@
-import React from "react";
-import titleImg from "./images/title.png";
+import React, { useState, useEffect } from "react";
+import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -14,24 +14,40 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./../context";
 
-const KnowOne = () => {
-  const {
-    time,
-    restartGame,
-    nextPageFive,
-    loadingPage,
-    knowOne,
-    level,
-    setLevel,
-  } = useGlobalContext();
-  const newName = JSON.parse(localStorage.getItem("newName"));
+export const FormSp = () => {
+  const { nextPageOne, form, formContinue, time, restartGame } =
+    useGlobalContext();
+  const [person, setPerson] = useState({ firstName: "", age: "", country: "" });
+  const [people, setPeople] = useState([]);
 
-  const continueGame = () => {
-    nextPageFive(knowOne, loadingPage);
-    setLevel(level + 1);
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setPerson({ ...person, [name]: value });
+    // if (person.firstName && person.age && person.country) {
+    //   const newPerson = { ...person, id: new Date().getTime().toString() }; //Revisar estas dos donde van?
+    //   setPeople([...people, newPerson]); //
+    // }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (person.firstName && person.age && person.country) {
+      const newPerson = { ...person, id: new Date().getTime().toString() };
+      setPeople([...people, newPerson]);
+      setPerson({ firstName: "", age: "", country: "" });
+      nextPageOne(form, formContinue);
+    }
+  };
+  useEffect(() => {
+    localStorage.setItem("newName", JSON.stringify(person.firstName));
+    localStorage.setItem("newAge", JSON.stringify(person.age));
+    localStorage.setItem("newCountry", JSON.stringify(person.country));
+    // localStorage.setItem("newTest", JSON.stringify(people));
+    // Idealmente seria pasar los tres elementos al Array que ya esta creado y retirar la informacion direcamtente del LOCALHOST --> INVESTIGAR!
+  }, [person]);
   return (
     <>
       <section className="container-back">
@@ -43,7 +59,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}</div>
+              <div>C:\Escritorio\Askaway\Formulario</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -58,63 +74,53 @@ const KnowOne = () => {
             </section>
           </div>
         </header>
-        <div className="container">
-          <h4 className="title title-back">Did you Know?</h4>
-          <button
-            className="btn btn-title center-item"
-            style={{
-              position: "absolute",
-              top: "85%",
-              left: "30%",
-              width: "40%",
-            }}
-            onClick={() => continueGame()}
-          >
-            Continue to level {level + 1}
-          </button>
-        </div>
-      </section>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "25%",
-          minHeight: "30%",
-        }}
-      >
-        <header className="window-info">
-          <div className="window-upper">
-            <section className="upper-left">
-              <img
-                className="window-image"
-                src={titleImg}
-                alt="logo of Ask Away"
+        <article className="container">
+          <h4 className="title title-back">Cuéntanos un poco sobre ti</h4>
+          <form onSubmit={handleSubmit}>
+            <div className="form-control">
+              <input
+                className="form-input"
+                required
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Ingresá tu nombre"
+                value={person.firstName}
+                onChange={handleChange}
               />
-              <div>C:\Desktop\Askaway\{newName}\Facts</div>
-            </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
-          </div>
-        </header>
-        <div
-          className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
-        >
-          <p style={{ fontSize: "1.5rem" }}>
-            Spaghetto, confetto, and graffito are the singular forms of
-            spaghetti, confetti, and graffiti.
-          </p>
-        </div>
+            </div>
+            <div className="form-control">
+              <input
+                className="form-input"
+                required
+                type="number"
+                id="age"
+                name="age"
+                max="99"
+                placeholder="Ingresá tu edad"
+                value={person.age}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-control">
+              <input
+                className="form-input"
+                required
+                type="text"
+                id="country"
+                name="country"
+                placeholder="De donde eres?"
+                value={person.country}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="btn-container">
+              <button type="submit" className="form-btn" onClick={handleSubmit}>
+                Enviar
+              </button>
+            </div>
+          </form>
+        </article>
       </section>
       <section>
         <footer className="container-bottom">
@@ -189,5 +195,3 @@ const KnowOne = () => {
     </>
   );
 };
-
-export default KnowOne;

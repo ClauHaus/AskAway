@@ -1,7 +1,8 @@
 import React from "react";
-import titleImg from "./images/title.png";
+import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCog,
   faTimes,
   faWindowMinimize,
   faMailBulk,
@@ -14,24 +15,23 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./context";
+import HowToSp from "./HowToSp";
+import OptionsSp from "./OptionsSp";
+import { useGlobalContext } from "./../context";
 
-const KnowOne = () => {
+const TitleSp = () => {
   const {
     time,
     restartGame,
-    nextPageFive,
-    loadingPage,
-    knowOne,
-    level,
-    setLevel,
+    options,
+    modal,
+    nextPageForm,
+    title,
+    form,
+    openModal,
+    openOptions,
   } = useGlobalContext();
-  const newName = JSON.parse(localStorage.getItem("newName"));
 
-  const continueGame = () => {
-    nextPageFive(knowOne, loadingPage);
-    setLevel(level + 1);
-  };
   return (
     <>
       <section className="container-back">
@@ -43,7 +43,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}</div>
+              <div>C:\Escritorio\Askaway</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -59,61 +59,38 @@ const KnowOne = () => {
           </div>
         </header>
         <div className="container">
-          <h4 className="title title-back">Did you Know?</h4>
-          <button
-            className="btn btn-title center-item"
-            style={{
-              position: "absolute",
-              top: "85%",
-              left: "30%",
-              width: "40%",
-            }}
-            onClick={() => continueGame()}
-          >
-            Continue to level {level + 1}
+          <button className="btn-change " onClick={openOptions}>
+            <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
           </button>
-        </div>
-      </section>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "25%",
-          minHeight: "30%",
-        }}
-      >
-        <header className="window-info">
-          <div className="window-upper">
-            <section className="upper-left">
-              <img
-                className="window-image"
-                src={titleImg}
-                alt="logo of Ask Away"
-              />
-              <div>C:\Desktop\Askaway\{newName}\Facts</div>
-            </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
+          <h3 className="title title-back">ask away</h3>
+          {/* <div className="title-underline"></div> */}
+          <h5 className="title">Cuánto sabes de cosas?</h5>
+          <div className="title-image-container">
+            <img
+              className="title-image"
+              src={titleImg}
+              alt="logo of Ask Away"
+            />
           </div>
-        </header>
-        <div
-          className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
-        >
-          <p style={{ fontSize: "1.5rem" }}>
-            Spaghetto, confetto, and graffito are the singular forms of
-            spaghetti, confetti, and graffiti.
+          <div className="btn-container">
+            <button
+              className="btn-title"
+              onClick={() => nextPageForm(title, form)}
+            >
+              Comenzar juego
+            </button>
+            <button className="btn-title" onClick={openModal}>
+              Como jugar
+            </button>
+          </div>
+          <p className="title">
+            Desarrollado por{" "}
+            <a href="https://bit.ly/383XPVf">
+              <b style={{ color: "var(--primary-100" }}>' ClauHaus '</b>
+            </a>
           </p>
+          {options && <OptionsSp />}
+          {modal && <HowToSp />}
         </div>
       </section>
       <section>
@@ -190,4 +167,4 @@ const KnowOne = () => {
   );
 };
 
-export default KnowOne;
+export default TitleSp;

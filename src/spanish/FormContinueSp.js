@@ -1,5 +1,5 @@
 import React from "react";
-import titleImg from "./images/title.png";
+import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -14,24 +14,32 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./context";
+import HowToSp from "./HowToSp";
+import { useGlobalContext } from "../context";
 
-const KnowOne = () => {
+const FormContinueSp = () => {
   const {
     time,
     restartGame,
-    nextPageFive,
+    modal,
+    openModal,
+    nextPageTwo,
+    formContinue,
     loadingPage,
-    knowOne,
     level,
     setLevel,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
+  const newAge = JSON.parse(localStorage.getItem("newAge"));
+  const newCountry = JSON.parse(localStorage.getItem("newCountry"));
+  // const result = JSON.parse(localStorage.getItem("newTest"));
+  // console.log(result);
 
-  const continueGame = () => {
-    nextPageFive(knowOne, loadingPage);
+  const startGame = () => {
+    nextPageTwo(formContinue, loadingPage);
     setLevel(level + 1);
   };
+
   return (
     <>
       <section className="container-back">
@@ -43,7 +51,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}</div>
+              <div>C:\Escritorio\Askaway\{newName}</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -59,61 +67,33 @@ const KnowOne = () => {
           </div>
         </header>
         <div className="container">
-          <h4 className="title title-back">Did you Know?</h4>
+          <article className="form-text">
+            <p className="formContinue-text">
+              Bienvenido <b>{newName} </b>a Ask Away! Vamos a poner tus {newAge}{" "}
+              años de conocimiento a prueba contra múltiples desafíos.
+            </p>
+            <p className="formContinue-text">
+              Sí tienes dudas con respecto al juego te recomendamos veas nuestra
+              sección de "como jugar".
+            </p>
+            <button className="btn btn-title center-item" onClick={openModal}>
+              Como jugar
+            </button>
+            <p className="formContinue-text">
+              Todo esta preprarado para que nos maravilles con tu velocidad
+              mental y conocimientos, veamos que tan bien representas{" "}
+              {newCountry}. Comenccemos!
+            </p>
+          </article>
+
           <button
             className="btn btn-title center-item"
-            style={{
-              position: "absolute",
-              top: "85%",
-              left: "30%",
-              width: "40%",
-            }}
-            onClick={() => continueGame()}
+            style={{ marginTop: "30px" }}
+            onClick={() => startGame()}
           >
-            Continue to level {level + 1}
+            Continuar
           </button>
-        </div>
-      </section>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "25%",
-          minHeight: "30%",
-        }}
-      >
-        <header className="window-info">
-          <div className="window-upper">
-            <section className="upper-left">
-              <img
-                className="window-image"
-                src={titleImg}
-                alt="logo of Ask Away"
-              />
-              <div>C:\Desktop\Askaway\{newName}\Facts</div>
-            </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
-          </div>
-        </header>
-        <div
-          className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
-        >
-          <p style={{ fontSize: "1.5rem" }}>
-            Spaghetto, confetto, and graffito are the singular forms of
-            spaghetti, confetti, and graffiti.
-          </p>
+          {modal && <HowToSp />}
         </div>
       </section>
       <section>
@@ -190,4 +170,4 @@ const KnowOne = () => {
   );
 };
 
-export default KnowOne;
+export default FormContinueSp;

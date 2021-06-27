@@ -1,5 +1,5 @@
 import React from "react";
-import titleImg from "./images/title.png";
+import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -14,24 +14,25 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./../context";
 
-const KnowOne = () => {
+const LoadingRestartSp = () => {
   const {
     time,
     restartGame,
-    nextPageFive,
-    loadingPage,
-    knowOne,
+    nextPageBack,
+    loadingRestart,
+    question,
     level,
     setLevel,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   const continueGame = () => {
-    nextPageFive(knowOne, loadingPage);
-    setLevel(level + 1);
+    nextPageBack(loadingRestart, question);
+    setLevel(level);
   };
+
   return (
     <>
       <section className="container-back">
@@ -43,7 +44,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}</div>
+              <div>C:\Escritorio\Askaway\{newName}</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -59,7 +60,7 @@ const KnowOne = () => {
           </div>
         </header>
         <div className="container">
-          <h4 className="title title-back">Did you Know?</h4>
+          <h4 className="title title-back">Inténtalo una vez más</h4>
           <button
             className="btn btn-title center-item"
             style={{
@@ -70,7 +71,7 @@ const KnowOne = () => {
             }}
             onClick={() => continueGame()}
           >
-            Continue to level {level + 1}
+            Regresa al nivel {level}
           </button>
         </div>
       </section>
@@ -91,7 +92,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}\Facts</div>
+              <div>C:\Escritorio\Askaway\{newName}\Hechos</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -111,8 +112,7 @@ const KnowOne = () => {
           style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
         >
           <p style={{ fontSize: "1.5rem" }}>
-            Spaghetto, confetto, and graffito are the singular forms of
-            spaghetti, confetti, and graffiti.
+            Consejo: Lee rápido la pregunta y sigue tu primera corazonada.
           </p>
         </div>
       </section>
@@ -190,4 +190,4 @@ const KnowOne = () => {
   );
 };
 
-export default KnowOne;
+export default LoadingRestartSp;

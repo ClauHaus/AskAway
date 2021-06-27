@@ -7,7 +7,7 @@ const howToData = [
   {
     id: 1,
     title: "Difficulty",
-    text: "You have the chance to change how hard the game is going to be.`Normal`, `Hard` and `Hell mode` , this last one is only for seasoned players. Depending on this setting you will have less points, time and the penalties for wrong answers are going to be higher.",
+    text: "You have the chance to change how hard the game is going to be `Normal`, `Hard` and `Hell mode` , this last one is only for seasoned players. Depending on this setting you will have less points, time and the penalties for wrong answers are going to be higher.",
   },
   {
     id: 2,

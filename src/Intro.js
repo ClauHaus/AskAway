@@ -22,7 +22,7 @@ const Intro = () => {
   useEffect(() => {
     let timeOut = setTimeout(() => {
       nextPageIntro(intro, title);
-    }, 1000); //PASARLO A 5000!
+    }, 5000); //PASARLO A 5000!
     return () => clearTimeout(timeOut);
   });
 

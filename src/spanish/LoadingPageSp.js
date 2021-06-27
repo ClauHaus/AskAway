@@ -1,5 +1,5 @@
-import React from "react";
-import titleImg from "./images/title.png";
+import React, { useEffect } from "react";
+import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -14,24 +14,27 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "./../context";
 
-const KnowOne = () => {
+const LoadingPage = () => {
   const {
     time,
     restartGame,
-    nextPageFive,
+    nextPageThree,
     loadingPage,
-    knowOne,
+    question,
     level,
-    setLevel,
+    timerDifficulty,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
+  useEffect(() => {
+    let timeOut = setTimeout(() => {
+      nextPageThree(loadingPage, question); //AGREGAR ACA EL setLevel de 0 a 1
+    }, 1000); //PASARLO A 6000!
+    return () => clearTimeout(timeOut);
+    // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut
+  }, [nextPageThree, loadingPage, question, level]); //Revisar estas dependencies, en caso de error quitarlas y solo queda un warning
 
-  const continueGame = () => {
-    nextPageFive(knowOne, loadingPage);
-    setLevel(level + 1);
-  };
   return (
     <>
       <section className="container-back">
@@ -59,61 +62,14 @@ const KnowOne = () => {
           </div>
         </header>
         <div className="container">
-          <h4 className="title title-back">Did you Know?</h4>
-          <button
-            className="btn btn-title center-item"
-            style={{
-              position: "absolute",
-              top: "85%",
-              left: "30%",
-              width: "40%",
-            }}
-            onClick={() => continueGame()}
-          >
-            Continue to level {level + 1}
-          </button>
-        </div>
-      </section>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "25%",
-          minHeight: "30%",
-        }}
-      >
-        <header className="window-info">
-          <div className="window-upper">
-            <section className="upper-left">
-              <img
-                className="window-image"
-                src={titleImg}
-                alt="logo of Ask Away"
-              />
-              <div>C:\Desktop\Askaway\{newName}\Facts</div>
-            </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
-          </div>
-        </header>
-        <div
-          className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
-        >
-          <p style={{ fontSize: "1.5rem" }}>
-            Spaghetto, confetto, and graffito are the singular forms of
-            spaghetti, confetti, and graffiti.
-          </p>
+          <h3 className="title title-back">Level {level}</h3>
+          <div className="loading"></div>
+          <section className="loading-items">
+            <p>&gt; Get at least 30 points</p>
+            <p>&gt; Obtain 10 correct answers</p>
+            <p>&gt; Achieve it under {timerDifficulty()} seconds</p>
+          </section>
+          {/* <h4 className="title title-back">Loading...</h4> */}
         </div>
       </section>
       <section>
@@ -190,4 +146,4 @@ const KnowOne = () => {
   );
 };
 
-export default KnowOne;
+export default LoadingPage;

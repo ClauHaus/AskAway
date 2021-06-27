@@ -1,5 +1,5 @@
-import React from "react";
-import titleImg from "./images/title.png";
+import React, { useEffect } from "react";
+import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -14,24 +14,18 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./context";
+import { useGlobalContext } from "../context";
 
-const KnowOne = () => {
-  const {
-    time,
-    restartGame,
-    nextPageFive,
-    loadingPage,
-    knowOne,
-    level,
-    setLevel,
-  } = useGlobalContext();
-  const newName = JSON.parse(localStorage.getItem("newName"));
+const IntroSp = () => {
+  const { time, restartGame, intro, title, nextPageIntro } = useGlobalContext();
 
-  const continueGame = () => {
-    nextPageFive(knowOne, loadingPage);
-    setLevel(level + 1);
-  };
+  useEffect(() => {
+    let timeOut = setTimeout(() => {
+      nextPageIntro(intro, title);
+    }, 5000); //PASARLO A 5000!
+    return () => clearTimeout(timeOut);
+  });
+
   return (
     <>
       <section className="container-back">
@@ -43,7 +37,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}</div>
+              <div>C:\Escritorio</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -58,62 +52,24 @@ const KnowOne = () => {
             </section>
           </div>
         </header>
-        <div className="container">
-          <h4 className="title title-back">Did you Know?</h4>
-          <button
-            className="btn btn-title center-item"
-            style={{
-              position: "absolute",
-              top: "85%",
-              left: "30%",
-              width: "40%",
-            }}
-            onClick={() => continueGame()}
-          >
-            Continue to level {level + 1}
-          </button>
-        </div>
-      </section>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "25%",
-          minHeight: "30%",
-        }}
-      >
-        <header className="window-info">
-          <div className="window-upper">
-            <section className="upper-left">
-              <img
-                className="window-image"
-                src={titleImg}
-                alt="logo of Ask Away"
-              />
-              <div>C:\Desktop\Askaway\{newName}\Facts</div>
-            </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
-          </div>
-        </header>
-        <div
-          className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
-        >
-          <p style={{ fontSize: "1.5rem" }}>
-            Spaghetto, confetto, and graffito are the singular forms of
-            spaghetti, confetti, and graffiti.
-          </p>
+        <div className="container-intro">
+          <ul>
+            <li className="noShow">
+              ClauHaus App [Version 12.0.18032.1144] (c) ClauHaus Corporation.
+              All rights reserved.
+            </li>
+            <li className="noShow1">C:\Escritorio\Verificando...</li>
+            <li className="noShow1">C:\Escritorio\Abriendo\Askaway</li>
+            <li className="noShow2">Generando preguntas</li>
+            <li className="noShow2">Randomizando respuestas</li>
+            <li className="noShow3">Instalando variables de dificultad</li>
+            <li className="noShow3">Desarrollando Modo Infi%1Psfö7$*luI</li>
+            <li className="noShow4">.</li>
+            <li className="noShow4">..</li>
+            <li className="noShow4">...</li>
+            <li className="noShow5">C:\Escritorio\Askaway\Ejecutar</li>
+            <li className="noShow5">Ejecutar</li>
+          </ul>
         </div>
       </section>
       <section>
@@ -176,7 +132,7 @@ const KnowOne = () => {
             icon={faGripLinesVertical}
             className="container-bottom-icons-span"
           ></FontAwesomeIcon>
-          <div className="container-bottom-image">
+          <div className="container-bottom-image" style={{ opacity: "0" }}>
             <img
               className="container-bottom-icons-image"
               src={titleImg}
@@ -190,4 +146,4 @@ const KnowOne = () => {
   );
 };
 
-export default KnowOne;
+export default IntroSp;

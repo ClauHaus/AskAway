@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const Answers = ({
+//Achicar el espacio del score (cambiar como aparece score tambien), achicar el espacio del tiempo, agrandar el espacio de la pregunta para que entre mejor la imagen, ver el tema del tiempo en el que aparece el +5  y -2 |Bradd Pitt ok Messi no, revisar ahi
+
+const AnswersSp = ({
   data,
   id,
   question,
@@ -128,8 +130,8 @@ const Answers = ({
         ) : null}
       </div>
       <div className="container-timer">
-        <div className="score">Points needed: {score}/30</div>
-        <div className="timer">{count ? timer : "Ready?"}</div>
+        <div className="score">Puntos: {score}/30</div>
+        <div className="timer">{count ? timer : "Liste?"}</div>
       </div>
       <section className="alerts">
         <div className={`alert ${alertWrong}`}>-{points}</div>
@@ -246,4 +248,4 @@ const Answers = ({
   );
 };
 
-export default Answers;
+export default AnswersSp;

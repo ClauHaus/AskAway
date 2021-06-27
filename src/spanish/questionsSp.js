@@ -1,4 +1,4 @@
-const bigData = [
+const bigDataSp = [
   //ARRAY 0--------------------------------------
   [
     {
@@ -956,7 +956,7 @@ const bigData = [
     },
     {
       id: 11,
-      question: `Who directed "E.T. the Extra-Terrestrial" (1982)?`,
+      question: `Who directed "&quot;"E.T. the Extra-Terrestrial" (1982)?`,
       answers: [
         ["Stanley Kubrick", false],
         ["Tim Burton", false],
@@ -1873,4 +1873,4 @@ const bigData = [
   ],
 ];
 
-export default bigData;
+export default bigDataSp;

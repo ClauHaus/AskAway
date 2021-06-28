@@ -118,15 +118,9 @@ const AnswersSp = ({
       <div className="title title-back question">
         {question}
         {image ? (
-          <img
-            src={image}
-            alt=""
-            style={{
-              width: "80px",
-              height: "80px",
-              margin: "0px auto 5px auto",
-            }}
-          />
+          <div className="question-image-container">
+            <img src={image} alt="Not found" className="question-image" />
+          </div>
         ) : null}
       </div>
       <div className="container-timer">

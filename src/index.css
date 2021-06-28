@@ -1371,6 +1371,20 @@ h5.title {
   padding: 5px;
 }
 
+.question-image-container {
+  display: flex;
+  justify-content: center;
+  background: #ecf0f3;
+  width: 90px;
+  height: 90px;
+  margin: 0px auto;
+}
+
+.question-image {
+  width: 80px;
+  object-fit: cover;
+}
+
 .timer {
   color: var(--white);
   background: var(--primary-800);

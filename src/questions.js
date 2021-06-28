@@ -1,3 +1,27 @@
+import einstein from "./images/einstein.jpg";
+import messi from "./images/messi.jpg";
+import brad from "./images/brad.jpg";
+import liberty from "./images/liberty.jpg";
+import stones from "./images/stones.jpg";
+import spears from "./images/spears.jpg";
+import buddha from "./images/buddha.jpg";
+import platypus from "./images/platypus.jpg";
+import tulips from "./images/tulips.jpg";
+import kazakhstan from "./images/kazakhstan.png";
+import meryl from "./images/meryl.jpg";
+import quixote from "./images/quixote.png";
+import cristiano from "./images/cristiano.jpg";
+import hercules from "./images/hercules.jpg";
+import link from "./images/link.png";
+import ibai from "./images/ibai.jpg";
+import johnny from "./images/johnny.jpg";
+import giza from "./images/giza.jpg";
+import korean from "./images/korean.jpeg";
+import estonia from "./images/estonia.png";
+import girl from "./images/girl.jpg";
+import vegeta from "./images/vegeta.jpg";
+import sailor from "./images/sailor.jpg";
+
 const bigData = [
   //ARRAY 0--------------------------------------
   [
@@ -17,8 +41,7 @@ const bigData = [
     {
       id: 0,
       question: "Who was this man?",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/1200px-Albert_Einstein_Head.jpg",
+      image: einstein,
       answers: [
         ["Albert Einstein", true],
         ["Charles Darwin", false],
@@ -121,8 +144,7 @@ const bigData = [
     {
       id: 10,
       question: `For which national football team does he plays?`,
-      image:
-        "https://depor.com/resizer/BkGrpcbBXQm_iQu5NH2kdoMi7r8=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/NLTY3MJGEBBRBA63URZZFPRKOI.jpg",
+      image: messi,
       answers: [
         ["Spain", false],
         ["Argentina", true],
@@ -203,8 +225,7 @@ const bigData = [
     {
       id: 18,
       question: `What is the name of this actor?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/1200px-Brad_Pitt_2019_by_Glenn_Francis.jpg",
+      image: brad,
       answers: [
         ["Johnny Depp", false],
         ["Jonah Hill", false],
@@ -229,7 +250,7 @@ const bigData = [
         ["Japan", false],
         ["Qatar", true],
         ["Russia", false],
-        ["Sout Africa", false],
+        ["South Africa", false],
       ],
     },
     {
@@ -305,8 +326,7 @@ const bigData = [
     {
       id: 28,
       question: `In which American city is located this famous landmark?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/a/a1/Statue_of_Liberty_7.jpg",
+      image: liberty,
       answers: [
         ["Los Angeles", false],
         ["New York", true],
@@ -397,8 +417,7 @@ const bigData = [
     {
       id: 37,
       question: `What is the name of this british band?`,
-      image:
-        "https://www.mondosonoro.com/wp-content/uploads/2020/10/RollingStonesWEB.jpg",
+      image: stones,
       answers: [
         ["The Beatles", false],
         ["Arctic Monkeys", false],
@@ -502,8 +521,7 @@ const bigData = [
     {
       id: 7,
       question: `What is the name of this famous american singer?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/5/5e/Britney_Spears%2C_Roundhouse%2C_London_%28Apple_Music_Festival_2016%29_%2830072929931%29_%28cropped%29.jpg",
+      image: spears,
       answers: [
         ["Christina Aguilera", false],
         ["Billie Eilish", false],
@@ -604,8 +622,7 @@ const bigData = [
     {
       id: 17,
       question: `Where is located the "Big Buddha"?`,
-      image:
-        "https://lh3.googleusercontent.com/proxy/uBHG1Lma2D7Jui6xFRaGuR3HIa0Xi4Kx5hqgUJce0LOFvE2BTzoYUrZ2oJim9pR9XX-Gev7TP3NKiPKwBVQqYxuuja8jLkB3KD6540cmzdS25PBknExa6fYhAw5v",
+      image: buddha,
       answers: [
         ["Cambodia", false],
         ["Thailand", true],
@@ -676,8 +693,7 @@ const bigData = [
     {
       id: 24,
       question: `What animal is in this picture?`,
-      image:
-        "https://i.natgeofe.com/n/89b24060-bbf6-4f8f-b74a-4757dbdfae5c/01-platypus-decline-20180430_3dg1547_16x9.jpg?w=1200",
+      image: platypus,
       answers: [
         ["Platypus", true],
         ["Armadillo", false],
@@ -798,8 +814,7 @@ const bigData = [
     {
       id: 36,
       question: `What is the common name of this flowers?`,
-      image:
-        "https://bluestoneperennials.global.ssl.fastly.net/img/BTURE/650/BTURE-0-Tulip-Red-Revival27087-vb.1585760406.jpg",
+      image: tulips,
       answers: [
         ["Tulips", true],
         ["Roses", false],
@@ -853,8 +868,7 @@ const bigData = [
     {
       id: 1,
       question: `Which Country's flag is this?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg",
+      image: kazakhstan,
       answers: [
         ["Turkmenistan", false],
         ["Kazakhstan", true],
@@ -895,8 +909,7 @@ const bigData = [
     {
       id: 5,
       question: `Who is this actress?`,
-      image:
-        " https://es.web.img3.acsta.net/pictures/17/01/10/13/53/476324.jpg",
+      image: meryl,
       answers: [
         ["Meryl Streep", false],
         ["Susan Sarandon", true],
@@ -997,8 +1010,7 @@ const bigData = [
     {
       id: 15,
       question: `Who are this iconic spanish couple?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d9/Don_Quixote_and_Sancho_Panza_by_Jules_David.png",
+      image: quixote,
       answers: [
         ["Gerard piqué and Carles Puyol ", false],
         ["El Cid Campeador and Diego Laínez", false],
@@ -1098,12 +1110,12 @@ const bigData = [
     },
     {
       id: 25,
-      question: `In golf, what name is given to a hole score of two under par?`,
+      question: `What does "hippopotamus" mean and in what langauge?`,
       answers: [
-        ["Albatross", false],
-        ["Eagle", true],
-        ["Birdie", false],
-        ["Bogey", false],
+        ["Fat Pig (Greek)", false],
+        ["River Horse (Greek)", true],
+        ["Fat Pig (Latin)", false],
+        ["River Horse (Latin)", false],
       ],
     },
     {
@@ -1119,8 +1131,7 @@ const bigData = [
     {
       id: 27,
       question: `For which national football team does he plays?`,
-      image:
-        "https://depor.com/resizer/Be4hwNj6ccK5tKtg-isUy1rdPcs=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B7WOGTSQRZAWXFP4KN7PBOIWTM.jpg",
+      image: cristiano,
       answers: [
         ["Portugal", true],
         ["Spain", false],
@@ -1171,8 +1182,7 @@ const bigData = [
     {
       id: 32,
       question: `From which Disney movie are these characters from?`,
-      image:
-        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hercules-disney-fotogramas-1613034035.jpg",
+      image: hercules,
       answers: [
         ["Aladdin", false],
         ["Hercules", true],
@@ -1306,8 +1316,7 @@ const bigData = [
     {
       id: 5,
       question: `What is the name of this videogame's character?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/en/2/21/Link_of_the_Wild.png",
+      image: link,
       answers: [
         ["Link", true],
         ["Zelda", false],
@@ -1398,8 +1407,7 @@ const bigData = [
     {
       id: 14,
       question: `What is the name of this streamer?`,
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZNNQfGBm5O9L5vzLlwMBcR5mWjLpcwiNDUlLnvVUpIKjewbZ0Tj2HDqg4HgZBMmQ4DM&usqp=CAU",
+      image: ibai,
       answers: [
         ["Rubius", false],
         ["Ibai Llanos", true],
@@ -1470,8 +1478,7 @@ const bigData = [
     {
       id: 21,
       question: `What is the name of this animated character?`,
-      image:
-        "https://static.wikia.nocookie.net/doblaje/images/8/8a/Johnny_Bravo_Full_Color_-full.jpg/revision/latest/scale-to-width-down/733?cb=20091223223249&path-prefix=es",
+      image: johnny,
       answers: [
         ["Johnny Bravo", true],
         ["Dexter", false],
@@ -1482,8 +1489,7 @@ const bigData = [
     {
       id: 22,
       question: `In which city is located this landmark?`,
-      image:
-        "https://www.etbtoursegypt.com/Wiki/wp-content/uploads/2020/10/Great-Sphinx-of-Giza.jpg",
+      image: giza,
       answers: [
         ["Cairo", false],
         ["Giza city", true],
@@ -1561,6 +1567,107 @@ const bigData = [
         ["Eagle", false],
       ],
     },
+    {
+      id: 30,
+      question: `Hel was the daughter of which Norse Mythological figure?`,
+      answers: [
+        ["Thor", false],
+        ["Loki", true],
+        ["Balder", false],
+        ["Odin", false],
+      ],
+    },
+    {
+      id: 31,
+      question: `What is the name of the very first video uploaded to YouTube?`,
+      answers: [
+        ["Tribute 2005", false],
+        ["Carrie rides a truck", false],
+        ["Me at the zoo", true],
+        ["Her new puppy from great grandpa vern", false],
+      ],
+    },
+    {
+      id: 32,
+      question: `What are rhino's horn made of`,
+      answers: [
+        ["Bone", false],
+        ["Ivory", false],
+        ["Skin", false],
+        ["Keratin", true],
+      ],
+    },
+    {
+      id: 33,
+      question: `What's this Saiyan name?`,
+      image: vegeta,
+      answers: [
+        ["Vegeta", true],
+        ["Broly", false],
+        ["Goku", false],
+        ["Gohan", false],
+      ],
+    },
+    {
+      id: 34,
+      question: `What was another suggested name for, the 1985 film, Back to the Future?`,
+      answers: [
+        ["Hill Valley Time Travelers", false],
+        ["Spaceman From Pluto", true],
+        ["The Lucky Man", false],
+        ["The Time Travelers", false],
+      ],
+    },
+    {
+      id: 35,
+      question: `What year did the Boxing Day earthquake & tsunami occur in the Indian Ocean?`,
+      answers: [
+        ["2014", false],
+        ["2009", false],
+        ["2004", true],
+        ["1999", false],
+      ],
+    },
+    {
+      id: 36,
+      question: `Which American civilization is the source of the belief that the world would end on December 21st, 2012?`,
+      answers: [
+        ["The Aztecs", false],
+        ["The Incas", false],
+        ["The Navajos", false],
+        ["The Mayans", true],
+      ],
+    },
+    {
+      id: 37,
+      question: `Who patented a steam engine that produced continuous rotary motion?`,
+      answers: [
+        ["James Watt", true],
+        ["Alessandro Volta", false],
+        ["Nikola Tesla", false],
+        ["Albert Einstein", false],
+      ],
+    },
+    {
+      id: 38,
+      question: `Which of the following countries was the first to send an object into space?`,
+      answers: [
+        ["USA", false],
+        ["Germany", true],
+        ["Russia", false],
+        ["China", false],
+      ],
+    },
+    {
+      id: 39,
+      question: `What is the name of the actress who portrayed Rachel Green in the sitcom "Friends"`,
+      answers: [
+        ["Courteney Cox", false],
+        ["Angelina Jolie", false],
+        ["Jeniffer Aniston", true],
+        ["Lisa Kudrow", false],
+      ],
+    },
   ],
   //ARRAY 5--------------------------------------
   [
@@ -1577,8 +1684,7 @@ const bigData = [
     {
       id: 1,
       question: `This kind of writing matches this language...`,
-      image:
-        "https://www.meridianlinguistics.com/wp-content/uploads/2018/02/hangeul-chart.jpeg",
+      image: korean,
       answers: [
         ["Chinese", false],
         ["Japanese", false],
@@ -1669,8 +1775,7 @@ const bigData = [
     {
       id: 10,
       question: `Which Country's flag is this?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Estonia.svg/2560px-Flag_of_Estonia.svg.png",
+      image: estonia,
       answers: [
         ["Estonia", true],
         ["Latvia", false],
@@ -1851,8 +1956,7 @@ const bigData = [
     {
       id: 28,
       question: `What is the name of this painting?`,
-      image:
-        "http://lh3.googleusercontent.com/J0sw0IiqP2F4gavYnI-vUa5IBgHiHy42lohgm-qq1vuygUX0HQgylVSV1ZdDTV5XIg=w255-h300-n-l64",
+      image: girl,
       answers: [
         ["The Birth of Venus", false],
         ["The Kiss", false],
@@ -1868,6 +1972,107 @@ const bigData = [
         ["Bruce Wayne", false],
         ["Arthur Curry", false],
         ["Clark Kent", true],
+      ],
+    },
+    {
+      id: 30,
+      question: `How many years did the Hundred Years's War last?`,
+      answers: [
+        ["116 years", true],
+        ["95 years", false],
+        ["100 years", false],
+        ["101 years", false],
+      ],
+    },
+    {
+      id: 31,
+      question: `The fictional material Kryptonite is which superhero's weakness?`,
+      answers: [
+        ["Batman", false],
+        ["Superman", true],
+        ["Aquaman", false],
+        ["Spiderman", false],
+      ],
+    },
+    {
+      id: 32,
+      question: `Which of the following actors does not play a role in the movie "The Usual Suspects"`,
+      answers: [
+        ["Kevin Spacey", false],
+        ["Benicio Del Toro", false],
+        ["Richard Gere", true],
+        ["Gabriel Byrne", false],
+      ],
+    },
+    {
+      id: 33,
+      question: `What is the name of this popular manga/anime?`,
+      image: sailor,
+      answers: [
+        ["Cardcaptor Sakura", false],
+        ["Ranma 1/2", false],
+        ["Inuyasha", false],
+        ["Sailor Moon", true],
+      ],
+    },
+    {
+      id: 34,
+      question: `What is the capital of Spain?`,
+      answers: [
+        ["Madrid", true],
+        ["A Coruña", false],
+        ["Sevilla", false],
+        ["Barcelona", false],
+      ],
+    },
+    {
+      id: 35,
+      question: `The Hippogriff, is a magical creature with the front half of an eagle, and the back half of what?`,
+      answers: [
+        ["A Dragon", false],
+        ["A Horse", true],
+        ["A Tiger", false],
+        ["A Lion", false],
+      ],
+    },
+    {
+      id: 36,
+      question: `This movie contains the quote, "I love the smell of napalm in the morning"`,
+      answers: [
+        ["Full Metal Jacket", false],
+        ["The Deer Hunter", false],
+        ["Apocalypse Now", true],
+        ["Platoon", false],
+      ],
+    },
+    {
+      id: 37,
+      question: `.at is the top-level domain for what country?`,
+      answers: [
+        ["Argentina", false],
+        ["Angola", false],
+        ["Australia", false],
+        ["Austria", true],
+      ],
+    },
+    {
+      id: 38,
+      question: `What is the highest number of Michelin stars a restaurant can receive?`,
+      answers: [
+        ["Three", true],
+        ["Four", false],
+        ["Five", false],
+        ["Six", false],
+      ],
+    },
+    {
+      id: 39,
+      question: `By definition, where does an abyssopelagic animal live?`,
+      answers: [
+        ["In the desert", false],
+        ["At the bottom of the ocean", true],
+        ["On top of a mountain", false],
+        ["Inside a tree", false],
       ],
     },
   ],

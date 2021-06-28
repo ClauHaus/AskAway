@@ -7,6 +7,7 @@ import LoadingPage from "./LoadingPage";
 import LoadingRestart from "./LoadingRestart";
 import Question from "./Question";
 import KnowOne from "./KnowOne";
+import Ending from "./Ending";
 import IntroSp from "./spanish/IntroSp";
 import TitleSp from "./spanish/TitleSp";
 import { FormSp } from "./spanish/FormSp";
@@ -15,6 +16,7 @@ import LoadingPageSp from "./spanish/LoadingPageSp";
 import LoadingRestartSp from "./spanish/LoadingRestartSp";
 import QuestionSp from "./spanish/QuestionSp";
 import KnowOneSp from "./spanish/KnowOneSp";
+import EndingSp from "./spanish/EndingSp";
 
 // import { library } from "@fortawesome/fontawesome-svg-core";
 import { useGlobalContext } from "./context";
@@ -30,6 +32,7 @@ function App() {
     question,
     knowOne,
     language,
+    ending,
   } = useGlobalContext();
   if (language === "spanish") {
     return (
@@ -42,6 +45,7 @@ function App() {
         {loadingRestart && <LoadingRestartSp />}
         {question && <QuestionSp />}
         {knowOne && <KnowOneSp />}
+        {ending && <EndingSp />}
       </>
     );
   }
@@ -56,6 +60,7 @@ function App() {
       {loadingRestart && <LoadingRestart />}
       {question && <Question />}
       {knowOne && <KnowOne />}
+      {ending && <Ending />}
     </>
   );
 }

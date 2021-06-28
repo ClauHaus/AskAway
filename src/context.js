@@ -20,6 +20,7 @@ const initialState = {
   loadingRestart: false,
   question: false,
   knowOne: false,
+  ending: false,
 };
 
 const AppProvider = ({ children }) => {
@@ -60,6 +61,10 @@ const AppProvider = ({ children }) => {
 
   const nextPageFive = (erase, add) => {
     dispatch({ type: "NEXT_PAGE_FIVE", payload: { erase, add } });
+  };
+
+  const nextPageEnding = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_ENDING", payload: { erase, add } });
   };
 
   const nextPageBack = (erase, add) => {
@@ -123,7 +128,7 @@ const AppProvider = ({ children }) => {
   const timerDifficulty = () => {
     let result = 60;
     if (difficulty === "normal") {
-      result = 60; //60
+      result = 6000; //60
     }
     if (difficulty === "hard") {
       result = 55;
@@ -175,6 +180,7 @@ const AppProvider = ({ children }) => {
         nextPageThree,
         nextPageFour,
         nextPageFive,
+        nextPageEnding,
         nextPageBack,
       }}
     >

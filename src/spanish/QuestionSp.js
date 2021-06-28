@@ -25,9 +25,10 @@ const QuestionSp = () => {
   const {
     time,
     restartGame,
-    questionsOne,
+    question,
     knowOne,
     nextPageFour,
+    nextPageEnding,
     level,
     timerDifficulty,
     scoreDifficulty,
@@ -217,12 +218,27 @@ const QuestionSp = () => {
                         : "eres una persona que piensa muy rápido o que adivina muy bien, lo averiguaremos en el próximo nivel."}
                     </li>
                   </ul>
-                  <button
+                  {level < 5 ? (
+                    <button
+                      className="btn btn-title center-item"
+                      onClick={() => nextPageFour(question, knowOne)}
+                    >
+                      Continuar
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-title center-item"
+                      onClick={() => nextPageEnding(question, knowOne)}
+                    >
+                      Finalizar
+                    </button>
+                  )}
+                  {/* <button
                     className="btn btn-title center-item"
                     onClick={() => nextPageFour(questionsOne, knowOne)}
                   >
                     Continuar
-                  </button>
+                  </button> */}
                 </div>
               </section>
             </>

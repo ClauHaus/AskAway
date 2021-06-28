@@ -1,9 +1,33 @@
+import einstein from "./../images/einstein.jpg";
+import messi from "./../images/messi.jpg";
+import brad from "./../images/brad.jpg";
+import liberty from "./../images/liberty.jpg";
+import stones from "./../images/stones.jpg";
+import spears from "./../images/spears.jpg";
+import buddha from "./../images/buddha.jpg";
+import platypus from "./../images/platypus.jpg";
+import tulips from "./../images/tulips.jpg";
+import kazakhstan from "./../images/kazakhstan.png";
+import meryl from "./../images/meryl.jpg";
+import quixote from "./../images/quixote.png";
+import cristiano from "./../images/cristiano.jpg";
+import hercules from "./../images/hercules.jpg";
+import link from "./../images/link.png";
+import ibai from "./../images/ibai.jpg";
+import johnny from "./../images/johnny.jpg";
+import giza from "./../images/giza.jpg";
+import korean from "./../images/korean.jpeg";
+import estonia from "./../images/estonia.png";
+import girl from "./../images/girl.jpg";
+import vegeta from "./../images/vegeta.jpg";
+import sailor from "./../images/sailor.jpg";
+
 const bigDataSp = [
   //ARRAY 0--------------------------------------
   [
     {
       id: 0,
-      question: "What is π?",
+      question: "Qué es π?",
       answers: [
         ["3.14159", true],
         ["3.14195", false],
@@ -16,9 +40,8 @@ const bigDataSp = [
   [
     {
       id: 0,
-      question: "Who was this man?",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/1200px-Albert_Einstein_Head.jpg",
+      question: "Quién era este hombre?",
+      image: einstein,
       answers: [
         ["Albert Einstein", true],
         ["Charles Darwin", false],
@@ -29,18 +52,18 @@ const bigDataSp = [
 
     {
       id: 1,
-      question: "The first news paper in the world was started by?",
+      question: "El primer periódico fue comenzando por?",
       answers: [
-        ["Japan", false],
+        ["Japón", false],
         ["China", true],
-        ["England", false],
+        ["Inglaterra", false],
         ["India", false],
       ],
     },
 
     {
       id: 2,
-      question: "When did the World War 1 started?",
+      question: "Cuando comenzo la primer guerra mundial?",
       answers: [
         ["27/06/1913", false],
         ["11/11/1915", false],
@@ -50,17 +73,17 @@ const bigDataSp = [
     },
     {
       id: 3,
-      question: "Which is the longest river in Africa?",
+      question: "Cuál es el río mas largo en África?",
       answers: [
-        ["Congo river", false],
-        ["Nile river", true],
-        ["Zambesi river", false],
-        ["Kasai river", false],
+        ["Río Congo ", false],
+        ["Río Nilo ", true],
+        ["Río Zambesi ", false],
+        ["Río Kasai ", false],
       ],
     },
     {
       id: 4,
-      question: `Which movie won "Best Film" in 2018 Oscars?`,
+      question: `Cuál película ganó "Mejor Film" en los Oscars del 2018?`,
       answers: [
         ["The shape of water", true],
         ["Moonlight", false],
@@ -70,7 +93,7 @@ const bigDataSp = [
     },
     {
       id: 5,
-      question: `Who painted "The Starry Night" in 1889?`,
+      question: `Quién pintó "La noche estrellada" en 1889?`,
       answers: [
         ["Piet Mondrian", false],
         ["Willem de Kooning", false],
@@ -80,7 +103,7 @@ const bigDataSp = [
     },
     {
       id: 6,
-      question: `In what year did the Wall Street Crash take place?`,
+      question: `En que año sucedió "la caída de Wall Street"?`,
       answers: [
         ["1925", false],
         ["1929", true],
@@ -90,27 +113,27 @@ const bigDataSp = [
     },
     {
       id: 7,
-      question: `What is the hottest planet in the Solar System?`,
+      question: `Cuál es el planeta con mayor temperatura en el sistema solar?`,
       answers: [
         ["Venus", true],
-        ["Mars", false],
-        ["Jupiter", false],
-        ["Mercury", false],
+        ["Marte", false],
+        ["Júpiter", false],
+        ["Mercurio", false],
       ],
     },
     {
       id: 8,
-      question: `What geometric shape is generally used for stop signs?`,
+      question: `Cuál figura geométrica es utilizada generalmente para señales de "Pare"?`,
       answers: [
-        ["Triangle", false],
-        ["Hexagon", false],
-        ["Circle", false],
-        ["Octagon", true],
+        ["Triángulo", false],
+        ["Hexágono", false],
+        ["Círculo", false],
+        ["Octágono", true],
       ],
     },
     {
       id: 9,
-      question: `Which of these movies did Jeff Bridges not star in?`,
+      question: `Cuál de estas películas no contiene a Jeff Bridges?`,
       answers: [
         ["Iron Man", false],
         ["The Big Lebowsky", false],
@@ -120,11 +143,10 @@ const bigDataSp = [
     },
     {
       id: 10,
-      question: `For which national football team does he plays?`,
-      image:
-        "https://depor.com/resizer/BkGrpcbBXQm_iQu5NH2kdoMi7r8=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/NLTY3MJGEBBRBA63URZZFPRKOI.jpg",
+      question: `Para que selección de fútbol nacional juega éls?`,
+      image: messi,
       answers: [
-        ["Spain", false],
+        ["España", false],
         ["Argentina", true],
         ["Chile", false],
         ["Uruguay", false],
@@ -132,7 +154,7 @@ const bigDataSp = [
     },
     {
       id: 11,
-      question: `What is the name of the famous plumber's brother, star of videogames?`,
+      question: `Cuál es el nombre del hermano del famoso plomero, estrella de los videojuegos?`,
       answers: [
         ["Luigi", true],
         ["Wario", false],
@@ -142,17 +164,17 @@ const bigDataSp = [
     },
     {
       id: 12,
-      question: `The greek god Poseidon was the god of what?`,
+      question: `El dios griego Poseidon era el dios de qué?`,
       answers: [
-        ["Fire", false],
-        ["War", false],
-        ["Sun", false],
-        ["The Sea", true],
+        ["Fuego", false],
+        ["Guerra", false],
+        ["Sol", false],
+        ["Los mares", true],
       ],
     },
     {
       id: 13,
-      question: `Kanye West at 2009 VMA Awards interrupted which celebrity?`,
+      question: `Kanye West en los premios VMA 2009 interrumpió a qué celebridad?`,
       answers: [
         ["Madonna", false],
         ["Beyonce", false],
@@ -162,17 +184,17 @@ const bigDataSp = [
     },
     {
       id: 14,
-      question: `What was the first sport to have been played on the moon?`,
+      question: `Cuál fue el primer deporte en ser jugado en la Luna?`,
       answers: [
-        ["Soccer", false],
+        ["Fútbol", false],
         ["Golf", true],
-        ["Tennis", false],
-        ["Football", false],
+        ["Tenis", false],
+        ["Fútbol Americano", false],
       ],
     },
     {
       id: 15,
-      question: `Which Nirvana album had a naked baby on the cover?`,
+      question: `Cuál albúm de Nirvana tiene a un bebé desnudo en su portada?`,
       answers: [
         ["Nevermind", true],
         ["Bleach", false],
@@ -182,29 +204,28 @@ const bigDataSp = [
     },
     {
       id: 16,
-      question: `In the movie Gremlins, after what time of day should you not feed Mogwai?`,
+      question: `En la película Gremlins, luego de que momento del día no debes alimentar a Mogwai?`,
       answers: [
-        ["Evening", false],
-        ["Midnight", true],
-        ["Afternoon", false],
-        ["Morning", false],
+        ["Noche", false],
+        ["Medianoche", true],
+        ["Tarde", false],
+        ["Mañana", false],
       ],
     },
     {
       id: 17,
-      question: `In 1939, Britain and France declared war on Germany after it invaded which country?`,
+      question: `En 1939, Inglaterra y Francia declaran la guerra a Alemania luego de que este último invadiera a que otro país?`,
       answers: [
         ["Czechoslovakia", false],
         ["Austria", false],
-        ["Poland", true],
-        ["Hungary", false],
+        ["Polonia", true],
+        ["Hungría", false],
       ],
     },
     {
       id: 18,
-      question: `What is the name of this actor?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/1200px-Brad_Pitt_2019_by_Glenn_Francis.jpg",
+      question: `Cuál es el nombre de este actor?`,
+      image: brad,
       answers: [
         ["Johnny Depp", false],
         ["Jonah Hill", false],
@@ -214,7 +235,7 @@ const bigDataSp = [
     },
     {
       id: 19,
-      question: `How many sides does a trapezium have?`,
+      question: `Cuántos lados tiene un trapecio?`,
       answers: [
         ["4", true],
         ["3", false],
@@ -224,19 +245,19 @@ const bigDataSp = [
     },
     {
       id: 20,
-      question: `Which country will host the 2022 FIFA World Cup?`,
+      question: `Qué país será anfitrión de la copa mundial FIFA 2022?`,
       answers: [
-        ["Japan", false],
+        ["Japón", false],
         ["Qatar", true],
-        ["Russia", false],
-        ["Sout Africa", false],
+        ["Rusia", false],
+        ["Sudáfrica", false],
       ],
     },
     {
       id: 21,
-      question: `What breed of dog was Marley in the film "Marley & Me"(2008)?`,
+      question: `Qué raza erá el perro Marley en la película "Marley y yo"(2008)?`,
       answers: [
-        ["Dalmatian", false],
+        ["Dálmata", false],
         ["Golden Retriever", false],
         ["Labrador Retriever", true],
         ["Shiba Inu", false],
@@ -244,7 +265,7 @@ const bigDataSp = [
     },
     {
       id: 22,
-      question: `Who wrote "Harry Potter"?`,
+      question: `Quien escribió "Harry Potter"?`,
       answers: [
         ["J.R.R. Tolkien", false],
         ["Terry Pratchett", false],
@@ -254,7 +275,7 @@ const bigDataSp = [
     },
     {
       id: 23,
-      question: `Who starred as Bruce Wayne/Batman in Tim Burton's 1989 movie "Batman"?`,
+      question: `Quien fue Bruce Wayne/Batman en la película "Batman" de Tim Burton en 1989?`,
       answers: [
         ["Michael Keaton", true],
         ["George Clooney", false],
@@ -264,7 +285,7 @@ const bigDataSp = [
     },
     {
       id: 24,
-      question: `In golf, what name is given to a hole score of two under par?`,
+      question: `En golf cuál es el nombre a un hoyo debajo del par por dos golpes?`,
       answers: [
         ["Albatross", false],
         ["Eagle", true],
@@ -274,7 +295,7 @@ const bigDataSp = [
     },
     {
       id: 25,
-      question: `Who starred in the film 1973 movie "Enter The Dragon"?`,
+      question: `Quien participó en la película 1973 "Enter the Dragon"?`,
       answers: [
         ["Jet Li", false],
         ["Jackie Chan", false],
@@ -284,17 +305,17 @@ const bigDataSp = [
     },
     {
       id: 26,
-      question: `Who in Greek mythology, who led the Argonauts in search of the Golden Fleece?`,
+      question: `Quien en la mitología griega, lidero a los Argonautas en busca del Vellocino de oro?`,
       answers: [
         ["Hercules", false],
-        ["Odysseus", false],
-        ["Daedalus", false],
+        ["Odiseo", false],
+        ["Dédalo", false],
         ["Jason", true],
       ],
     },
     {
       id: 27,
-      question: `Which American president appears on a one dollar bill?`,
+      question: `Qué presidente norteamericano aparece en el billete de un dolár?`,
       answers: [
         ["George Washington", true],
         ["Benjamin Franklin", false],
@@ -304,9 +325,8 @@ const bigDataSp = [
     },
     {
       id: 28,
-      question: `In which American city is located this famous landmark?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/a/a1/Statue_of_Liberty_7.jpg",
+      question: `En qué ciudad norteamericana esta localizada esta atracción turística?`,
+      image: liberty,
       answers: [
         ["Los Angeles", false],
         ["New York", true],
@@ -316,17 +336,17 @@ const bigDataSp = [
     },
     {
       id: 29,
-      question: `Which country has hosted the 2006 FIFA World Cup?`,
+      question: `En qué país se realizo la copa mundial FIFA del 2006?`,
       answers: [
-        ["South Africa", false],
-        ["Italy", false],
-        ["Germany", true],
-        ["Brazil", false],
+        ["Sudáfrica", false],
+        ["Italia", false],
+        ["Alemania", true],
+        ["Brasil", false],
       ],
     },
     {
       id: 30,
-      question: `What is the French word for "hat"?`,
+      question: `Cuál es la palabra francesa para "sombrero"?`,
       answers: [
         ["Casquette", false],
         ["Bonnet", false],
@@ -336,7 +356,7 @@ const bigDataSp = [
     },
     {
       id: 31,
-      question: `The human heart has how many chambers?`,
+      question: `Cuántas cámaras tiene el corazón humano?`,
       answers: [
         ["4", true],
         ["2", false],
@@ -346,7 +366,7 @@ const bigDataSp = [
     },
     {
       id: 32,
-      question: `Who created the "Metal Gear" Series?`,
+      question: `Quien creó la serie "Metal Gear"?`,
       answers: [
         ["Shigeru Miyamoto", false],
         ["Hideo Kojima", true],
@@ -356,37 +376,37 @@ const bigDataSp = [
     },
     {
       id: 33,
-      question: `What is the Zodiac symbol for Gemini?`,
+      question: `Cuál es el símbolo del zodíaco para Géminis?`,
       answers: [
-        ["Fish", false],
-        ["Maiden", false],
-        ["Twins", true],
-        ["Scales", false],
+        ["Pez", false],
+        ["Doncella", false],
+        ["Mellizos", true],
+        ["Escamas", false],
       ],
     },
     {
       id: 34,
-      question: `The Nike apparel and footwear brand takes it's name from the Greek goddess of what?`,
+      question: `La marca de ropa/calzado Nike toma su nombre de que diosa griega?`,
       answers: [
-        ["Strength", false],
-        ["Courage", false],
+        ["Fuerza", false],
+        ["Coraje", false],
         ["Honor", false],
-        ["Victory", true],
+        ["Victoria", true],
       ],
     },
     {
       id: 35,
-      question: `Foie gras is a French delicacy typically made from what part of a duck or goose?`,
+      question: `Foie gras es un delicadeza típicamente realizada de qué parte del pato o ganso?`,
       answers: [
-        ["Liver", true],
-        ["Stomach", false],
-        ["Heart", false],
-        ["Intestines", false],
+        ["Hígado", true],
+        ["Estómago", false],
+        ["Corazón", false],
+        ["Intestinos", false],
       ],
     },
     {
       id: 36,
-      question: `What is the german word for taking pleasure in others pain?`,
+      question: `Cuál es la palabra alemana para "tener placer en el dolor ajeno"?`,
       answers: [
         ["Verkehrsmittel", false],
         ["Schadenfreude", true],
@@ -396,9 +416,8 @@ const bigDataSp = [
     },
     {
       id: 37,
-      question: `What is the name of this british band?`,
-      image:
-        "https://www.mondosonoro.com/wp-content/uploads/2020/10/RollingStonesWEB.jpg",
+      question: `Cuál es el nombre de esta banda británica?`,
+      image: stones,
       answers: [
         ["The Beatles", false],
         ["Arctic Monkeys", false],
@@ -408,7 +427,7 @@ const bigDataSp = [
     },
     {
       id: 38,
-      question: `Which is the mobile OS held the largest market share in 2012?`,
+      question: `Cuál sistema operativo celular tuvo mayor presencia en el mercado en 2012?`,
       answers: [
         ["Symbian", false],
         ["Android", false],
@@ -418,7 +437,7 @@ const bigDataSp = [
     },
     {
       id: 39,
-      question: `In computing, what does LAN stand for?`,
+      question: `En computación, que significa LAN?`,
       answers: [
         ["Long Antenna Node", false],
         ["Local Area Network", true],
@@ -431,27 +450,27 @@ const bigDataSp = [
   [
     {
       id: 0,
-      question: `What country is the second largest in the world by area?`,
+      question: `Cúal es el segundo país más grande del mundo por su área?`,
       answers: [
-        ["Canada", true],
-        ["Russia", false],
+        ["Canadá", true],
+        ["Rusia", false],
         ["China", false],
-        ["United States of America", false],
+        ["Estados unidos de América", false],
       ],
     },
     {
       id: 1,
-      question: `The 2016 Disney animated film "Moana" is based on which culture?`,
+      question: `La película de Disney del 2016 "Moana" esta basado en que cultura?`,
       answers: [
-        ["Nordic", false],
-        ["Polynesian", true],
-        ["Native American", false],
-        ["Japanese", false],
+        ["Nórdica", false],
+        ["Polinesia", true],
+        ["Nativo Americana", false],
+        ["Japonesa", false],
       ],
     },
     {
       id: 2,
-      question: `What is the unit of electrical capacitance?`,
+      question: `Cuál es la unidad de capacitancia eléctrica?`,
       answers: [
         ["Gauss", false],
         ["Watt", false],
@@ -461,7 +480,7 @@ const bigDataSp = [
     },
     {
       id: 3,
-      question: `In South Park, what is Stan's surname?`,
+      question: `En South Park, cuál es el apellido de Stan?`,
       answers: [
         ["Broflovski", false],
         ["Tweak", false],
@@ -471,27 +490,27 @@ const bigDataSp = [
     },
     {
       id: 4,
-      question: `Which of these bones is hardest to break?`,
+      question: `Cuál de estos huesos es mas difícil de romper?`,
       answers: [
-        ["Femur", true],
-        ["Cranium", false],
-        ["Humerus", false],
+        ["Femúr", true],
+        ["Cráneo", false],
+        ["Húmero", false],
         ["Tibia", false],
       ],
     },
     {
       id: 5,
-      question: `Hippocampus is the Latin name for which marine creature?`,
+      question: `Hippocampus es el nombre latín para qué criatura maritíma?`,
       answers: [
-        ["Dolphin", false],
-        ["Seahorse", true],
-        ["Whale", false],
-        ["Octopus", false],
+        ["Delfín", false],
+        ["Caballito de mar", true],
+        ["Ballena", false],
+        ["Pulpo", false],
       ],
     },
     {
       id: 6,
-      question: `How many planets make up our Solar System?`,
+      question: `Cuantos planetas hay en nuestro sistema solar?`,
       answers: [
         ["7", false],
         ["6", false],
@@ -501,9 +520,8 @@ const bigDataSp = [
     },
     {
       id: 7,
-      question: `What is the name of this famous american singer?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/5/5e/Britney_Spears%2C_Roundhouse%2C_London_%28Apple_Music_Festival_2016%29_%2830072929931%29_%28cropped%29.jpg",
+      question: `Cuál es el nombre de esta famosa cantante?`,
+      image: spears,
       answers: [
         ["Christina Aguilera", false],
         ["Billie Eilish", false],
@@ -513,17 +531,17 @@ const bigDataSp = [
     },
     {
       id: 8,
-      question: `Which of these colours is NOT featured in the logo for Google?`,
+      question: `Cuál de estos colores no esta en el logo de Google?`,
       answers: [
-        ["Pink", true],
-        ["Blue", false],
-        ["Yellow", false],
-        ["Green", false],
+        ["Rosa", true],
+        ["Azul", false],
+        ["Amarillo", false],
+        ["Verde", false],
       ],
     },
     {
       id: 9,
-      question: `Which of these characters is the mascot of the video game company SEGA?`,
+      question: `Cuál de estos personajes es la mascota de la compañia de videojuegos SEGA?`,
       answers: [
         ["Mario Bros", false],
         ["Sonic the Hedgehog", true],
@@ -533,7 +551,7 @@ const bigDataSp = [
     },
     {
       id: 10,
-      question: `Who was the author of the 1951 novel, "The Catcher in the Rye?`,
+      question: `Quién fue el autor de la novela del 1951, "El Guardián entre el centeno"?`,
       answers: [
         ["Hunter Fox", false],
         ["F. Scott Fitzgerald", false],
@@ -543,79 +561,78 @@ const bigDataSp = [
     },
     {
       id: 11,
-      question: `The greek god Hades was the god of what?`,
+      question: `El dios griego Hades era el dios de qué?`,
       answers: [
-        ["War", false],
-        ["Love", false],
-        ["Fire", false],
-        ["The Underworld", true],
+        ["Guerra", false],
+        ["Amor", false],
+        ["Fuego", false],
+        ["El Inframundo", true],
       ],
     },
     {
       id: 12,
-      question: `Which of the following sports is not part of the triathlon?`,
+      question: `Cuál de los siguientes deportes no es parte del Triatlón?`,
       answers: [
-        ["Horse-riding", true],
-        ["Cycling", false],
-        ["Swimming", false],
-        ["Running", false],
+        ["Equitación", true],
+        ["Ciclismo", false],
+        ["Natación", false],
+        ["Atletismo", false],
       ],
     },
     {
       id: 13,
-      question: `The ancient Roman god of war was commonly known as which of the following?`,
+      question: `El antiguo diso roman de la guerra era comúnmente conodico como...?`,
       answers: [
-        ["Jupiter", false],
-        ["Mars", true],
+        ["Júpiter", false],
+        ["Marte", true],
         ["Ares", false],
         ["Juno", false],
       ],
     },
     {
       id: 14,
-      question: `The body of the Egyptian Sphinx was based on which animal?`,
+      question: `El cuerpo de la Esfinge egipcia está basado en qué animal?`,
       answers: [
-        ["Bull", false],
-        ["Horse", false],
-        ["Lion", true],
-        ["Dog", false],
+        ["Toro", false],
+        ["Caballo", false],
+        ["León", true],
+        ["Perro", false],
       ],
     },
     {
       id: 15,
-      question: `Which is the longest bone in the human body?`,
+      question: `Cuál es el hueso más largo del cuerpo humano?`,
       answers: [
-        ["Fibula", false],
-        ["Scapula", false],
-        ["Ulna", false],
-        ["Femur", true],
+        ["Peroné", false],
+        ["Omoplato", false],
+        ["Cubito", false],
+        ["Fémur", true],
       ],
     },
     {
       id: 16,
-      question: `This element, when overcome with extreme heat and pressure, creates diamonds.`,
+      question: `Este elemento, cuando se encuentra sometido con extremo calor y presión, crea diamantes.`,
       answers: [
-        ["Carbon", true],
-        ["Oxygen", false],
-        ["Nitrogen", false],
-        ["Hydrogen", false],
+        ["Carbón", true],
+        ["Oxígeno", false],
+        ["Nitrógeno", false],
+        ["Hidrógeno", false],
       ],
     },
     {
       id: 17,
-      question: `Where is located the "Big Buddha"?`,
-      image:
-        "https://lh3.googleusercontent.com/proxy/uBHG1Lma2D7Jui6xFRaGuR3HIa0Xi4Kx5hqgUJce0LOFvE2BTzoYUrZ2oJim9pR9XX-Gev7TP3NKiPKwBVQqYxuuja8jLkB3KD6540cmzdS25PBknExa6fYhAw5v",
+      question: `Donde se encuentra el "Gran Buda"?`,
+      image: buddha,
       answers: [
         ["Cambodia", false],
-        ["Thailand", true],
+        ["Tailandia", true],
         ["Indonesia", false],
         ["Vietnam", false],
       ],
     },
     {
       id: 18,
-      question: `How many dots are on a single die?`,
+      question: `Cuántos puntos hay en un solo dado?`,
       answers: [
         ["24", false],
         ["15", false],
@@ -625,7 +642,7 @@ const bigDataSp = [
     },
     {
       id: 19,
-      question: `If you were to code software in this language you'd only be able to type "0" and "1".`,
+      question: `Sí vas a escribir código en este lenguaje solo podrías tipear "0" y "1".`,
       answers: [
         ["C++", false],
         ["JavaScript", false],
@@ -635,7 +652,7 @@ const bigDataSp = [
     },
     {
       id: 20,
-      question: `What country has a horizontal bicolor red and white flag?`,
+      question: `Que país tiene una bandera bicolor horizontal roja y blanca?`,
       answers: [
         ["Monaco", true],
         ["Bahrain", false],
@@ -645,17 +662,17 @@ const bigDataSp = [
     },
     {
       id: 21,
-      question: `What is the collective noun for a group of crows?`,
+      question: `Cuál es el sustantivo colectivo para un grupo de cuervos?`,
       answers: [
-        ["Pack", false],
-        ["Murder", true],
-        ["Gaggle", false],
-        ["Herd", false],
+        ["Paquete", false],
+        ["Asesinato", true],
+        ["Pandilla", false],
+        ["Jauría", false],
       ],
     },
     {
       id: 22,
-      question: `Which of these films is NOT set in Los Angeles?`,
+      question: `Cuál de estas películas no está ambientada en Los Angeles?`,
       answers: [
         ["Blade Runner", false],
         ["The Terminator", false],
@@ -665,21 +682,20 @@ const bigDataSp = [
     },
     {
       id: 23,
-      question: `Rhinoplasty is a surgical procedure on what part of the human body?`,
+      question: `Rinoplastía es un procedimiento quirúrgico en que parte del cuerpo humano?`,
       answers: [
-        ["Ears", false],
-        ["Chin", false],
-        ["Neck", false],
-        ["Nose", true],
+        ["Orejas", false],
+        ["Mentón", false],
+        ["Cuello", false],
+        ["Nariz", true],
       ],
     },
     {
       id: 24,
-      question: `What animal is in this picture?`,
-      image:
-        "https://i.natgeofe.com/n/89b24060-bbf6-4f8f-b74a-4757dbdfae5c/01-platypus-decline-20180430_3dg1547_16x9.jpg?w=1200",
+      question: `Qué animal se puede ver en esta imagen?`,
+      image: platypus,
       answers: [
-        ["Platypus", true],
+        ["Ornitorrinco", true],
         ["Armadillo", false],
         ["Okapi", false],
         ["Tapir", false],
@@ -687,57 +703,57 @@ const bigDataSp = [
     },
     {
       id: 25,
-      question: `What is the capital of Denmark?`,
+      question: `Cuál es la capital de Dinamarca?`,
       answers: [
         ["Oslo", false],
         ["Copenhagen", true],
-        ["Stockholm", false],
+        ["Estocolmo", false],
         ["Aalborg", false],
       ],
     },
     {
       id: 26,
-      question: `What is the name of New Zealand's indigenous people?`,
+      question: `Cuál es el nombre de la comunidad indígena de Nueva Zelanda?`,
       answers: [
-        ["Samoans", false],
-        ["Polynesians", false],
-        ["Maori", true],
-        ["Vikings", false],
+        ["Samoanos", false],
+        ["Polinesios", false],
+        ["Maoríes", true],
+        ["Vikingos", false],
       ],
     },
     {
       id: 27,
-      question: `What mythology did the god "Apollo" come from?`,
+      question: `De cuál mitología proviene el dios "Apolo"?`,
       answers: [
-        ["Greek, Roman and Norse", false],
-        ["Roman and Spanish", false],
-        ["Greek and Chinese", false],
-        ["Greek and Roman", true],
+        ["Griega, Romana y Nórdica", false],
+        ["Romana and Española", false],
+        ["Griega and China", false],
+        ["Griega and Romana", true],
       ],
     },
     {
       id: 28,
-      question: `In 1453, which important city fell?`,
+      question: `En 1453, cuál importante ciudad "cayó"?`,
       answers: [
-        ["Constantinople", true],
-        ["Rome", false],
-        ["Athens", false],
-        ["Hamburg", false],
+        ["Constantinopla", true],
+        ["Roma", false],
+        ["Atenas", false],
+        ["Hamburgo", false],
       ],
     },
     {
       id: 29,
-      question: `What mytological creatures have women's faces and vultures bodies?`,
+      question: `Que criaturas mitologicas tienen cara de mujeres y cuerpo de buitres?`,
       answers: [
-        ["Mermaids", false],
-        ["Harpies", true],
-        ["Nymph", false],
-        ["Lilith", false],
+        ["Sirenas", false],
+        ["Arpías", true],
+        ["Ninfas", false],
+        ["Súcubos", false],
       ],
     },
     {
       id: 30,
-      question: `What is the name of Manchester United's home stadium?`,
+      question: `Cuál es el nombre del estadio del Manchester United?`,
       answers: [
         ["Anfield", false],
         ["City of Manchester Stadium", false],
@@ -747,27 +763,27 @@ const bigDataSp = [
     },
     {
       id: 31,
-      question: `What is the largest animal currently on Earth?`,
+      question: `Cuál es el animal más grande de la Tierra?`,
       answers: [
         ["Orca", false],
-        ["Colossal Squid", false],
-        ["Giraffe", false],
-        ["Blue Whale", true],
+        ["Calamar Colosal", false],
+        ["Jirafa", false],
+        ["Ballena Azul", true],
       ],
     },
     {
       id: 32,
-      question: `What is the first book of the Old Testament?`,
+      question: `Cuál es el primer libro del viejo testamento?`,
       answers: [
-        ["Genesis", true],
-        ["Exodus", false],
-        ["Leviticus", false],
-        ["Deuteronomy", false],
+        ["Génesis", true],
+        ["Éxodo", false],
+        ["Levítico", false],
+        ["Deuteronomio", false],
       ],
     },
     {
       id: 33,
-      question: `Which of the following Pacific Islander countries is ruled by a constitutional monarchy?`,
+      question: `Cuál de los siguientes países de las islas del Pacífico está gobernado por una monarquía constitucional?`,
       answers: [
         ["Palau", false],
         ["Tonga", true],
@@ -777,7 +793,7 @@ const bigDataSp = [
     },
     {
       id: 34,
-      question: `The Space Needle is located in which city?`,
+      question: `La "Aguja Espacial" esta localizada en que ciudad?`,
       answers: [
         ["Toronto", false],
         ["Vancouver", false],
@@ -787,7 +803,7 @@ const bigDataSp = [
     },
     {
       id: 35,
-      question: `Aubrey Graham is better known as`,
+      question: `Aubrey Graham es mejor conocido como...`,
       answers: [
         ["Lil Wayne", false],
         ["Travis Scott", false],
@@ -797,29 +813,28 @@ const bigDataSp = [
     },
     {
       id: 36,
-      question: `What is the common name of this flowers?`,
-      image:
-        "https://bluestoneperennials.global.ssl.fastly.net/img/BTURE/650/BTURE-0-Tulip-Red-Revival27087-vb.1585760406.jpg",
+      question: `Cuál es el nombre común de estas flores?`,
+      image: tulips,
       answers: [
-        ["Tulips", true],
-        ["Roses", false],
-        ["Orchids", false],
-        ["Daisies", false],
+        ["Tulipanes", true],
+        ["Rosas", false],
+        ["Orquídeas", false],
+        ["Margaritas", false],
       ],
     },
     {
       id: 37,
-      question: `What zodiac sign is represented by a pair of scales?`,
+      question: `Cuál signo del zodíaco esta representado por unas básculas?`,
       answers: [
         ["Aries", false],
         ["Libra", true],
-        ["Capricorn", false],
-        ["Sagittarius", false],
+        ["Capricornio", false],
+        ["Sagitario", false],
       ],
     },
     {
       id: 38,
-      question: `Who is often called "the Maestro" in the men's tennis circuit?`,
+      question: `Quién es llamado "El Maestro" en el circuito masculino de tenis?`,
       answers: [
         ["Rafael Nadal", false],
         ["Novak Djokovic", false],
@@ -829,12 +844,12 @@ const bigDataSp = [
     },
     {
       id: 39,
-      question: `Greenland is a part of which kingdom?`,
+      question: `Groenlandia es parte de que reino?`,
       answers: [
-        ["Norway", false],
-        ["Sweden", false],
-        ["United Kingdom", false],
-        ["Denmark", true],
+        ["Noruega", false],
+        ["Suecia", false],
+        ["Reino Unido", false],
+        ["Dinamarca", true],
       ],
     },
   ],
@@ -842,7 +857,7 @@ const bigDataSp = [
   [
     {
       id: 0,
-      question: `Who played Agent Fox Mulder in the TV sci-fi drama "The X-Files"?`,
+      question: `Quién representaba al agente Fox Mulder en la serie de ciencia ficción "The X-Files"?`,
       answers: [
         ["David Duchovny", true],
         ["Mitch Pileggi", false],
@@ -852,9 +867,8 @@ const bigDataSp = [
     },
     {
       id: 1,
-      question: `Which Country's flag is this?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kazakhstan.svg",
+      question: `La bandera de cual país es esta?`,
+      image: kazakhstan,
       answers: [
         ["Turkmenistan", false],
         ["Kazakhstan", true],
@@ -864,7 +878,7 @@ const bigDataSp = [
     },
     {
       id: 2,
-      question: `Who painted the Mona Lisa?`,
+      question: `Quién pintó la Mona Lisa?`,
       answers: [
         ["Vincent Van Gogh", false],
         ["Pablo Picasso", false],
@@ -874,7 +888,7 @@ const bigDataSp = [
     },
     {
       id: 3,
-      question: `The idea of Socialism was articulated and advanced by whom?`,
+      question: `La idea del socialismo fue articulada y avanzada por quién?`,
       answers: [
         ["Vladimir Lenin", false],
         ["Joseph Stalin", false],
@@ -884,7 +898,7 @@ const bigDataSp = [
     },
     {
       id: 4,
-      question: `What does GHz stand for?`,
+      question: `Que significa GHz?`,
       answers: [
         ["Gigahertz", true],
         ["Gigahotz", false],
@@ -894,9 +908,8 @@ const bigDataSp = [
     },
     {
       id: 5,
-      question: `Who is this actress?`,
-      image:
-        " https://es.web.img3.acsta.net/pictures/17/01/10/13/53/476324.jpg",
+      question: `Quién es esta actriz?`,
+      image: meryl,
       answers: [
         ["Meryl Streep", false],
         ["Susan Sarandon", true],
@@ -906,7 +919,7 @@ const bigDataSp = [
     },
     {
       id: 6,
-      question: `What is the capital of Jamaica?`,
+      question: `Cuál es la capital de Jamaica?`,
       answers: [
         ["San Juan", false],
         ["Port-au-Prince", false],
@@ -916,19 +929,19 @@ const bigDataSp = [
     },
     {
       id: 7,
-      question: `Which modern day country is the region that was known as Phrygia in ancient times?`,
+      question: `Cuál país de la modernidad es la región que se conocia como Frigia en tiempos antiguos?`,
       answers: [
-        ["Syria", false],
-        ["Greece", false],
-        ["Egypt", false],
-        ["Turkey", true],
+        ["Siria", false],
+        ["Grecía", false],
+        ["Egipto", false],
+        ["Turquía", true],
       ],
     },
     {
       id: 8,
-      question: `What is the oldest Disney film?`,
+      question: `Cuál es la película mas antigua de Disney?`,
       answers: [
-        ["Snow White and the Seven Dwarfs", true],
+        ["Blancanieves y los 7 enanitos", true],
         ["Pinocchio", false],
         ["Fantasia", false],
         ["Dumbo", false],
@@ -936,17 +949,17 @@ const bigDataSp = [
     },
     {
       id: 9,
-      question: `The numbering system with a radix of 16 is more commonly referred to as `,
+      question: `El sistema de numeración con una base de 16 se conoce más comúnmente como `,
       answers: [
         ["Duodecimal", false],
-        ["Hexidecimal", true],
+        ["Hexadecimal", true],
         ["Octal", false],
-        ["Binary", false],
+        ["Binario", false],
       ],
     },
     {
       id: 10,
-      question: `Where would you find the "Spanish Steps"?`,
+      question: `Donde encontrarías las "Escaleras Españolas"?`,
       answers: [
         ["Barcelona, Spain", false],
         ["London, England", false],
@@ -956,7 +969,7 @@ const bigDataSp = [
     },
     {
       id: 11,
-      question: `Who directed "&quot;"E.T. the Extra-Terrestrial" (1982)?`,
+      question: `Quién dirigio "E.T. el extraterrestre" (1982)?`,
       answers: [
         ["Stanley Kubrick", false],
         ["Tim Burton", false],
@@ -966,17 +979,17 @@ const bigDataSp = [
     },
     {
       id: 12,
-      question: `The Italian automaker Lamborghini uses what animal as its logo?`,
+      question: `El fabricante de autos italiano Lamborghini utiliza qué animal como su logo?`,
       answers: [
-        ["Bull", true],
-        ["Tiger", false],
-        ["Horse", false],
-        ["Snake", false],
+        ["Toro", true],
+        ["Tigre", false],
+        ["Caballo", false],
+        ["Serpiente", false],
       ],
     },
     {
       id: 13,
-      question: `The term "battery" to describe an electrical storage device was coined by?`,
+      question: `El término "Batería" para describir un dispositivo de almacenamiento eléctrico fue acuñado por?`,
       answers: [
         ["Nikola Tesla", false],
         ["Benjamin Franklin", true],
@@ -986,29 +999,28 @@ const bigDataSp = [
     },
     {
       id: 14,
-      question: `What is the capital of Switzerland?`,
+      question: `Cuál es la capital de Suiza?`,
       answers: [
-        ["Zürich", false],
-        ["Basel", false],
-        ["Bern", true],
-        ["Geneva", false],
+        ["Zúrich", false],
+        ["Basilea", false],
+        ["Berna", true],
+        ["Ginebra", false],
       ],
     },
     {
       id: 15,
-      question: `Who are this iconic spanish couple?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/d/d9/Don_Quixote_and_Sancho_Panza_by_Jules_David.png",
+      question: `Quién es esta iconica pareja española?`,
+      image: quixote,
       answers: [
-        ["Gerard piqué and Carles Puyol ", false],
-        ["El Cid Campeador and Diego Laínez", false],
-        ["Santiago Segura and Javier Cámara", false],
-        ["Don Quixote and Sancho Panza", true],
+        ["Gerard piqué y Carles Puyol ", false],
+        ["El Cid Campeador y Diego Laínez", false],
+        ["Santiago Segura y Javier Cámara", false],
+        ["Don Quixote y Sancho Panza", true],
       ],
     },
     {
       id: 16,
-      question: `What is the real name of "Bono", singer of u2?`,
+      question: `Cuál es el verdadero nombre de "Bono", cantante de U2?`,
       answers: [
         ["Mark Ronson", false],
         ["Paul David Hewson", true],
@@ -1018,27 +1030,27 @@ const bigDataSp = [
     },
     {
       id: 17,
-      question: `What is the smallest country in the world?`,
+      question: `Cuál es el país mas pequeño del mundo?`,
       answers: [
-        ["Monaco", false],
+        ["Mónaco", false],
         ["Malta", false],
-        ["Maldives", false],
-        ["Vatican City", true],
+        ["Maldivas", false],
+        ["El Vaticano", true],
       ],
     },
     {
       id: 18,
-      question: `What is the shape of the toy invented by Hungarian professor Ernő Rubik?`,
+      question: `Cuál es la forma del juguete inventado por el profesor húngaro Ernő Rubik?`,
       answers: [
-        ["Sphere", false],
-        ["Cube", true],
-        ["Cylinder", false],
-        ["Pyramid", false],
+        ["Esfera", false],
+        ["Cubo", true],
+        ["Cilindro", false],
+        ["Pirámide", false],
       ],
     },
     {
       id: 19,
-      question: `What does CPU stand for?`,
+      question: `Que significa CPU?`,
       answers: [
         ["Central Process Unit", false],
         ["Computer Personal Unit", false],
@@ -1048,7 +1060,7 @@ const bigDataSp = [
     },
     {
       id: 20,
-      question: `How many stars are featured on New Zealand's flag?`,
+      question: `Cuantas estrellas hay en la bandera de Nueva Zelanda?`,
       answers: [
         ["5", false],
         ["0", false],
@@ -1058,17 +1070,17 @@ const bigDataSp = [
     },
     {
       id: 21,
-      question: `What do you call a baby bat?`,
+      question: `Como se llama un murciélago bebé?`,
       answers: [
-        ["Cub", false],
-        ["Chick", false],
-        ["Kid", false],
-        ["Pup", true],
+        ["Cría", false],
+        ["Pollito", false],
+        ["Pequeño", false],
+        ["Cachorro", true],
       ],
     },
     {
       id: 22,
-      question: `What is the capital of Indonesia?`,
+      question: `Cuál es la capital de Indonesia?`,
       answers: [
         ["Bandung", false],
         ["Jakarta", true],
@@ -1078,17 +1090,17 @@ const bigDataSp = [
     },
     {
       id: 23,
-      question: `What does a funambulist walk on?`,
+      question: `En qué camina un funambulista?`,
       answers: [
-        ["A Tight Rope", true],
-        ["Broken Glass", false],
-        ["Balls", false],
-        ["The Moon", false],
+        ["Cuerda floja", true],
+        ["Vidrio roto", false],
+        ["Bolas", false],
+        ["La Luna", false],
       ],
     },
     {
       id: 24,
-      question: `How many sides does a heptagon have?`,
+      question: `Cuantos lados tiene un heptágono?`,
       answers: [
         ["7", true],
         ["8", false],
@@ -1098,39 +1110,38 @@ const bigDataSp = [
     },
     {
       id: 25,
-      question: `In golf, what name is given to a hole score of two under par?`,
+      question: `Qué significa "hippopotamus" y en qué idioma?`,
       answers: [
-        ["Albatross", false],
-        ["Eagle", true],
-        ["Birdie", false],
-        ["Bogey", false],
+        ["Cerdo gordo (griego)", false],
+        ["Caballo de río(griego)", true],
+        ["Cerdo gordo(latín)", false],
+        ["Caballo de río(latín)", false],
       ],
     },
     {
       id: 26,
-      question: `Earth is located in which galaxy?`,
+      question: `La Tierra esta ubicada en cuál galaxia?`,
       answers: [
-        ["The Black Hole", false],
-        ["The Galaxy Note", false],
-        ["The Mars Galaxy", false],
-        ["The Milky Way Galaxy", true],
+        ["El Hoyo Negro", false],
+        ["La Galaxy Note", false],
+        ["La Galaxia Marciana", false],
+        ["La Vía Láctea", true],
       ],
     },
     {
       id: 27,
-      question: `For which national football team does he plays?`,
-      image:
-        "https://depor.com/resizer/Be4hwNj6ccK5tKtg-isUy1rdPcs=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/B7WOGTSQRZAWXFP4KN7PBOIWTM.jpg",
+      question: `Para cuál selección nacional de fútbol juega él?`,
+      image: cristiano,
       answers: [
         ["Portugal", true],
-        ["Spain", false],
-        ["Italy", false],
-        ["France", false],
+        ["España", false],
+        ["Italia", false],
+        ["Francia", false],
       ],
     },
     {
       id: 28,
-      question: `In what year did Neil Armstrong and Buzz Aldrin land on the moon?`,
+      question: `En qué año Neil Armstrong y Buzz Aldrin llegaron a la luna?`,
       answers: [
         ["1967", false],
         ["1969", true],
@@ -1140,39 +1151,38 @@ const bigDataSp = [
     },
     {
       id: 29,
-      question: `Who was the Roman god of fire?`,
+      question: `Quién fue el dios romano del fuego?`,
       answers: [
         ["Apollo", false],
-        ["Mercury", false],
-        ["Vulcan", true],
-        ["Jupiter", false],
+        ["Mercurio", false],
+        ["Vulcano", true],
+        ["Júpiter", false],
       ],
     },
     {
       id: 30,
-      question: `When was Joan of Arc killed?`,
+      question: `Cuando fue asesinada Juana de Arco?`,
       answers: [
-        ["April 29, 1432", false],
-        ["December 25, 1429", false],
-        ["June 13, 1435", false],
-        ["May 30, 1431", true],
+        ["29 de Abril de 1432", false],
+        ["25 de Diciembre de 1429", false],
+        ["13 de Junio de 1435", false],
+        ["30 de Mayo de 1431", true],
       ],
     },
     {
       id: 31,
-      question: `Which country has three capital cities?`,
+      question: `Cuál país tiene tres ciudades capitales?`,
       answers: [
-        ["South Africa", true],
+        ["Sudáfrica", true],
         ["China", false],
         ["Somalia", false],
-        ["United Kingdom", false],
+        ["Reino Unido", false],
       ],
     },
     {
       id: 32,
-      question: `From which Disney movie are these characters from?`,
-      image:
-        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hercules-disney-fotogramas-1613034035.jpg",
+      question: `De cuál película de Disney son estos personajes?`,
+      image: hercules,
       answers: [
         ["Aladdin", false],
         ["Hercules", true],
@@ -1182,7 +1192,7 @@ const bigDataSp = [
     },
     {
       id: 33,
-      question: `How many rivers are in Saudi Arabia?`,
+      question: `Cuántos ríos hay en Arabia Saudita?`,
       answers: [
         ["1", false],
         ["3", false],
@@ -1192,17 +1202,17 @@ const bigDataSp = [
     },
     {
       id: 34,
-      question: `What mountain range lines the border between Spain and France?`,
+      question: `Que línea montañosa está en el limíte entre España y Francia?`,
       answers: [
-        ["Carpathians", false],
-        ["Urals", false],
-        ["Alps", false],
-        ["Pyrenees", true],
+        ["Cárpatos", false],
+        ["Urales", false],
+        ["Alpes", false],
+        ["Pirineos", true],
       ],
     },
     {
       id: 35,
-      question: `Which Russian author wrote the epic novel War and Peace?`,
+      question: `Cuál autor ruso escribio la épica novela "Guerra y Paz"?`,
       answers: [
         ["Leo Tolstoy", true],
         ["Alexander Pushkin", false],
@@ -1212,7 +1222,7 @@ const bigDataSp = [
     },
     {
       id: 36,
-      question: `What was the African nation of Zimbabwe formerly known as?`,
+      question: `Como se conocía anteriormente a la nación africana de Zimbabwe?`,
       answers: [
         ["Mozambique", false],
         ["Rhodesia", true],
@@ -1222,32 +1232,32 @@ const bigDataSp = [
     },
     {
       id: 37,
-      question: `What event marked the start of World War II?`,
+      question: `Qué evento desató el comienzo de la segunda guerra mundial?`,
       answers: [
-        ["Invasion of Russia (1942)", false],
-        ["Invasion of Normandy (1944)", false],
-        ["Invasion of Poland (1939)", true],
-        ["Battle of Britain (1940)", false],
+        ["Invasión de Rusia (1942)", false],
+        ["Invasión de Normandía (1944)", false],
+        ["Invasión de Polonia (1939)", true],
+        ["Batalla de Inglaterra (1940)", false],
       ],
     },
     {
       id: 38,
-      question: `What is the colour of unoxidized blood?`,
+      question: `De qué color es la sangre no oxidada?`,
       answers: [
-        ["Purple", false],
-        ["Blue", false],
-        ["Green", false],
-        ["Red", true],
+        ["Púrpura", false],
+        ["Azul", false],
+        ["Verde", false],
+        ["Roja", true],
       ],
     },
     {
       id: 39,
-      question: `What was the first living creature in space?`,
+      question: `Cuál fue la primera criatura viva en el espacio?`,
       answers: [
-        ["Fruit flies", true],
-        ["Dog", false],
-        ["Monkey", false],
-        ["Mouse", false],
+        ["Moscas de la fruta", true],
+        ["Perro", false],
+        ["Mono", false],
+        ["Ratón", false],
       ],
     },
   ],
@@ -1255,17 +1265,17 @@ const bigDataSp = [
   [
     {
       id: 0,
-      question: `What's the name of Batman's parents?`,
+      question: `Cuales eran los nombres de los padres de Batman?`,
       answers: [
-        ["Todd & Mira", false],
-        ["Jason & Sarah", false],
-        ["Thomas & Martha", true],
-        ["Joey & Jackie", false],
+        ["Todd y Mira", false],
+        ["Jason y Sarah", false],
+        ["Thomas y Martha", true],
+        ["Joey y Jackie", false],
       ],
     },
     {
       id: 1,
-      question: `In the 1984 movie "The Terminator", what model number is the Terminator portrayed by Arnold Schwarzenegger?`,
+      question: `En la película Terminator (1984), cuál era el modelo del Terminator interpretado por Arnold Schwarzenegger?`,
       answers: [
         ["T-800", true],
         ["I-950", false],
@@ -1275,7 +1285,7 @@ const bigDataSp = [
     },
     {
       id: 2,
-      question: `Neptune's greek name was...`,
+      question: `El nombre griego de Neptuno era ...`,
       answers: [
         ["Ares", false],
         ["Poseidon", true],
@@ -1285,7 +1295,7 @@ const bigDataSp = [
     },
     {
       id: 3,
-      question: `The book "The Little Prince" was written by...`,
+      question: `El libro "El Principito" fue escrito por...`,
       answers: [
         ["Miguel de Cervantes Saavedra", false],
         ["Jane Austen", false],
@@ -1295,7 +1305,7 @@ const bigDataSp = [
     },
     {
       id: 4,
-      question: `In what year was McDonald's founded?`,
+      question: `En que año fue fundada la empresa McDonald's ?`,
       answers: [
         ["1923", false],
         ["1932", false],
@@ -1305,9 +1315,8 @@ const bigDataSp = [
     },
     {
       id: 5,
-      question: `What is the name of this videogame's character?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/en/2/21/Link_of_the_Wild.png",
+      question: `Cuál es el nombre de este personaje de videojuegos?`,
+      image: link,
       answers: [
         ["Link", true],
         ["Zelda", false],
@@ -1317,7 +1326,7 @@ const bigDataSp = [
     },
     {
       id: 6,
-      question: `What is the highest mountain in the world?`,
+      question: `Cuál es la montaña más alta del mundo?`,
       answers: [
         ["Kangchenjunga", false],
         ["Mt. Everest", true],
@@ -1327,7 +1336,7 @@ const bigDataSp = [
     },
     {
       id: 7,
-      question: `What is the capital city of New Zealand?`,
+      question: `Cuál es la capital de Nueva Zelanda?`,
       answers: [
         ["Auckland", false],
         ["Melbourne", false],
@@ -1337,7 +1346,7 @@ const bigDataSp = [
     },
     {
       id: 8,
-      question: `Who plays "Bruce Wayne" in the 2008 movie "The Dark Knight"`,
+      question: `Quien actua como Bruce Wayne/batman en la película "The Dark Knight" (2008)`,
       answers: [
         ["Michael Keaton", false],
         ["Michael Caine", false],
@@ -1347,17 +1356,17 @@ const bigDataSp = [
     },
     {
       id: 9,
-      question: `What is the scientific term for "taste"?`,
+      question: `Cuál es el término científico para el "gusto"?`,
       answers: [
-        ["Gustatory Perception", true],
-        ["Olfaction", false],
-        ["Auditory Perception", false],
-        ["Somatosensation", false],
+        ["Percepción gustativa", true],
+        ["Olfacción", false],
+        ["Percepción auditiva", false],
+        ["Somatosensacion", false],
       ],
     },
     {
       id: 10,
-      question: `What was Britney Spears' debut single?`,
+      question: `Cual fue el single debut de Britney Spears?`,
       answers: [
         ["Oops!... I Did It Again", false],
         ["...Baby One More Time", true],
@@ -1367,7 +1376,7 @@ const bigDataSp = [
     },
     {
       id: 11,
-      question: `What is the capital of Peru?`,
+      question: `Cuál es la capital de Perú?`,
       answers: [
         ["Santiago", false],
         ["Montevideo", false],
@@ -1377,29 +1386,28 @@ const bigDataSp = [
     },
     {
       id: 12,
-      question: `The towns of Brugelette, Arlon and Ath are located in which country?`,
+      question: `Las ciudades de Brugelette, Arlon y Ath sen encuentran en que país?`,
       answers: [
-        ["Luxembourg", false],
+        ["Luxemburgo", false],
         ["Andorra", false],
-        ["France", false],
-        ["Belgium", true],
+        ["Francia", false],
+        ["Bélgica", true],
       ],
     },
     {
       id: 13,
-      question: `What continent is the country Lesotho in?`,
+      question: `En cuál continente se encuentra el país de Lesoto?`,
       answers: [
         ["Africa", true],
         ["Asia", false],
-        ["South America", false],
-        ["Europe", false],
+        ["Sudámerica", false],
+        ["Europa", false],
       ],
     },
     {
       id: 14,
-      question: `What is the name of this streamer?`,
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZNNQfGBm5O9L5vzLlwMBcR5mWjLpcwiNDUlLnvVUpIKjewbZ0Tj2HDqg4HgZBMmQ4DM&usqp=CAU",
+      question: `Cuál es el nombre de este streamer?`,
+      image: ibai,
       answers: [
         ["Rubius", false],
         ["Ibai Llanos", true],
@@ -1409,7 +1417,7 @@ const bigDataSp = [
     },
     {
       id: 15,
-      question: `Which of these is not an album released by The Beatles?`,
+      question: `Cuál de los siguientes no es un albúm de The Beatles?`,
       answers: [
         ["Abbey Road", false],
         ["Magical Mystery Tour", false],
@@ -1419,7 +1427,7 @@ const bigDataSp = [
     },
     {
       id: 16,
-      question: `What is the capital of Senegal?`,
+      question: `Cuál es la capital de Senegal?`,
       answers: [
         ["Nouakchott", false],
         ["Conakry", false],
@@ -1429,17 +1437,17 @@ const bigDataSp = [
     },
     {
       id: 17,
-      question: `where were the 2016 olympic games held?`,
+      question: `Donde se realizaron los Juegos olímpicos del 2016?`,
       answers: [
         ["Río de Janeiro", true],
-        ["Athens", false],
-        ["London", false],
-        ["Pekin", false],
+        ["Atenas", false],
+        ["Londres", false],
+        ["Beijing", false],
       ],
     },
     {
       id: 18,
-      question: `Which puzzle game was designed by a Russian programmer, featuring Russian buildings and music?`,
+      question: `Cuál juego-rompecabezas fue diseñado por un programador ruso, mostrando edificios y música rusa?`,
       answers: [
         ["Puzzled", false],
         ["Tetris", true],
@@ -1449,9 +1457,9 @@ const bigDataSp = [
     },
     {
       id: 19,
-      question: `What alcoholic drink is mainly made from juniper berries?`,
+      question: `Qué bebida alcohólica se elabora principalmente a partir de bayas de enebro?`,
       answers: [
-        ["Rum", false],
+        ["Ron", false],
         ["Vodka", false],
         ["Gin", true],
         ["Tequila", false],
@@ -1459,7 +1467,7 @@ const bigDataSp = [
     },
     {
       id: 20,
-      question: `What number does the Roman numeral "D" stand for?`,
+      question: `Qué número es el represanto por el númeral romano "D"?`,
       answers: [
         ["1000", false],
         ["100", false],
@@ -1469,9 +1477,8 @@ const bigDataSp = [
     },
     {
       id: 21,
-      question: `What is the name of this animated character?`,
-      image:
-        "https://static.wikia.nocookie.net/doblaje/images/8/8a/Johnny_Bravo_Full_Color_-full.jpg/revision/latest/scale-to-width-down/733?cb=20091223223249&path-prefix=es",
+      question: `Cuál es el nombre de este personaje animado?`,
+      image: johnny,
       answers: [
         ["Johnny Bravo", true],
         ["Dexter", false],
@@ -1481,39 +1488,38 @@ const bigDataSp = [
     },
     {
       id: 22,
-      question: `In which city is located this landmark?`,
-      image:
-        "https://www.etbtoursegypt.com/Wiki/wp-content/uploads/2020/10/Great-Sphinx-of-Giza.jpg",
+      question: `En que ciudad se encuentra esta atracción turística?`,
+      image: giza,
       answers: [
-        ["Cairo", false],
-        ["Giza city", true],
+        ["El Cairo", false],
+        ["Ciudad de Giza", true],
         ["Tanta", false],
-        ["El Obour city", false],
+        ["El Obour", false],
       ],
     },
     {
       id: 23,
-      question: `A carnivorous animal eats flesh, what does a nucivorous animal eat?`,
+      question: `Un animal carnívoro come carne, qué come un animal nucívoro?`,
       answers: [
-        ["Nothing", false],
-        ["Fruit", false],
-        ["Nuts", true],
-        ["Seaweed", false],
+        ["Nada", false],
+        ["Frutas", false],
+        ["Nueces", true],
+        ["Algas marinas", false],
       ],
     },
     {
       id: 24,
-      question: `Joseph Smith was the founder of what religion?`,
+      question: `Joseph Smith fue el fundador de cuál religion?`,
       answers: [
-        ["Buddhism", false],
-        ["Christianity", false],
-        ["Hinduism", false],
-        ["Mormonism", true],
+        ["Budismo", false],
+        ["Cristianismo", false],
+        ["Hinduismo", false],
+        ["Mormonismo", true],
       ],
     },
     {
       id: 25,
-      question: `Paul McCartney has always used his middle name. What is his real first name?`,
+      question: `Paul McCartney siempre ha utilizado su segundo nombre, cuál es su verdadero primer nombre?`,
       answers: [
         ["James", true],
         ["John", false],
@@ -1523,7 +1529,7 @@ const bigDataSp = [
     },
     {
       id: 26,
-      question: `Which of these artists do not originate from France?`,
+      question: `Cuál de los siguientes artistas no es original de Francia?`,
       answers: [
         ["Daft Punk", false],
         ["The Chemical Brothers", true],
@@ -1533,17 +1539,17 @@ const bigDataSp = [
     },
     {
       id: 27,
-      question: `The dish Fugu, is made from what family of fish?`,
+      question: `El platillo Fugu, esta preparado con que familia de peces?`,
       answers: [
-        ["Bass", false],
-        ["Salmon", false],
-        ["Pufferfish", true],
-        ["Mackerel", false],
+        ["Róbalo", false],
+        ["Salmón", false],
+        ["Pez globo", true],
+        ["Caballa", false],
       ],
     },
     {
       id: 28,
-      question: `What is the name of the first "Star Wars" film by release order?`,
+      question: `Cuál es el nombre de la primer película de "Star Wars" por orden de lanzamiento?`,
       answers: [
         ["The Phantom Menace", false],
         ["The Force Awakes", false],
@@ -1553,12 +1559,113 @@ const bigDataSp = [
     },
     {
       id: 29,
-      question: `A minotaur is half human half what?`,
+      question: `Un minotauro es mitad humano y mitad qué?`,
       answers: [
-        ["Bull", true],
-        ["Cow", false],
-        ["Horse", false],
-        ["Eagle", false],
+        ["Toro", true],
+        ["Vaca", false],
+        ["Caballo", false],
+        ["Águila", false],
+      ],
+    },
+    {
+      id: 30,
+      question: `Hel era la hija de que figura nórdica mitológica?`,
+      answers: [
+        ["Thor", false],
+        ["Loki", true],
+        ["Balder", false],
+        ["Odin", false],
+      ],
+    },
+    {
+      id: 31,
+      question: `Cuál es el nombre del primer video subido a  YouTube?`,
+      answers: [
+        ["Tribute 2005", false],
+        ["Carrie rides a truck", false],
+        ["Me at the zoo", true],
+        ["Her new puppy from great grandpa vern", false],
+      ],
+    },
+    {
+      id: 32,
+      question: `De qué esta hecho el cuerno de un rinoceronte?`,
+      answers: [
+        ["Hueso", false],
+        ["Marfil", false],
+        ["Piel", false],
+        ["Queratina", true],
+      ],
+    },
+    {
+      id: 33,
+      question: `Cuál es el nombre de este Saiyajin?`,
+      image: vegeta,
+      answers: [
+        ["Vegeta", true],
+        ["Broly", false],
+        ["Goku", false],
+        ["Gohan", false],
+      ],
+    },
+    {
+      id: 34,
+      question: `Cuál era el otro nombre sugerido para la película de 1985, "Back to the Future"?`,
+      answers: [
+        ["Hill Valley Time Travelers", false],
+        ["Spaceman From Pluto", true],
+        ["The Lucky Man", false],
+        ["The Time Travelers", false],
+      ],
+    },
+    {
+      id: 35,
+      question: `En qué año sucedió el terremoto y tsunami en el océano Índico?`,
+      answers: [
+        ["2014", false],
+        ["2009", false],
+        ["2004", true],
+        ["1999", false],
+      ],
+    },
+    {
+      id: 36,
+      question: `Que civilización americana es el origen de la creencia que el mundo acabaría el 21 de diciembre de 2012?`,
+      answers: [
+        ["Los Aztecas", false],
+        ["Los Incas", false],
+        ["Los Navajos", false],
+        ["Los Mayas", true],
+      ],
+    },
+    {
+      id: 37,
+      question: `Quién patentó una máquina de vapor que producía un movimiento rotatorio continuo?`,
+      answers: [
+        ["James Watt", true],
+        ["Alessandro Volta", false],
+        ["Nikola Tesla", false],
+        ["Albert Einstein", false],
+      ],
+    },
+    {
+      id: 38,
+      question: `Cuál de los siguientes países fue el primero en enviar un objeto al espacio?`,
+      answers: [
+        ["USA", false],
+        ["Alemania", true],
+        ["Rusia", false],
+        ["China", false],
+      ],
+    },
+    {
+      id: 39,
+      question: `Cuál es el nombre de la actriz que interpretaba a Rachel Green en la comedia "Friends"`,
+      answers: [
+        ["Courteney Cox", false],
+        ["Angelina Jolie", false],
+        ["Jeniffer Aniston", true],
+        ["Lisa Kudrow", false],
       ],
     },
   ],
@@ -1566,7 +1673,7 @@ const bigDataSp = [
   [
     {
       id: 0,
-      question: `What is the German word for "spoon"?`,
+      question: `Cuál es la palabra alemana para "cuchara"?`,
       answers: [
         ["Gabel", false],
         ["Löffel", true],
@@ -1576,29 +1683,28 @@ const bigDataSp = [
     },
     {
       id: 1,
-      question: `This kind of writing matches this language...`,
-      image:
-        "https://www.meridianlinguistics.com/wp-content/uploads/2018/02/hangeul-chart.jpeg",
+      question: `Este tipo de escritura pertenece a este lenguaje...`,
+      image: korean,
       answers: [
-        ["Chinese", false],
-        ["Japanese", false],
-        ["Korean", true],
-        ["Thai", false],
+        ["Chino", false],
+        ["Japones", false],
+        ["Koreano", true],
+        ["Tailandés", false],
       ],
     },
     {
       id: 2,
-      question: `Who tutored Alexander the Great?`,
+      question: `Quién enseño a Alejandro Magno?`,
       answers: [
-        ["King Philip", false],
-        ["Socrates", false],
-        ["Plato", false],
-        ["Aristotle", true],
+        ["Rey Philip", false],
+        ["Sócrates", false],
+        ["Platón", false],
+        ["Aristóteles", true],
       ],
     },
     {
       id: 3,
-      question: `Who is the villain in the film "Nightmare on Elm Street"?`,
+      question: `Quién es el villano en la película "Nightmare on Elm Street"?`,
       answers: [
         ["Freddy Krueger", true],
         ["Jason", false],
@@ -1608,17 +1714,17 @@ const bigDataSp = [
     },
     {
       id: 4,
-      question: `What is the full title of the Prime Minister of the UK?`,
+      question: `Cuál es el título completo del Primer Ministro del Reino Unido ?`,
       answers: [
-        ["Duke of Cambridge", false],
-        ["First Lord of the Treasury", true],
-        ["Her Majesty's Loyal Opposition", false],
-        ["Manager of the Crown Estate", false],
+        ["Duque de Cambridge", false],
+        ["Primer Lord del Tesoro", true],
+        ["La Oposición Leal de Su Majestad", false],
+        ["Gerente de la Finca de la Corona", false],
       ],
     },
     {
       id: 5,
-      question: `Which of these companies does not manufacture automobiles?`,
+      question: `Cuál de estas compañias no fabrica automóviles?`,
       answers: [
         ["Nissan", false],
         ["GMC", false],
@@ -1628,7 +1734,7 @@ const bigDataSp = [
     },
     {
       id: 6,
-      question: `Who composed the music for the Swan Lake Ballet?`,
+      question: `Quién compuso la música del ballet "El Lago de los Cisnes"?`,
       answers: [
         ["Mikhail Azanchevsky", false],
         ["Nikolai Artsybushev ", false],
@@ -1638,49 +1744,48 @@ const bigDataSp = [
     },
     {
       id: 7,
-      question: `What is the star sign of someone born on Valentines day?`,
+      question: `Cuál es la estrella signo de una persona nacida el día de San Valentín?`,
       answers: [
-        ["Aquarius", true],
-        ["Capricorn", false],
-        ["Pisces", false],
-        ["Scorpio", false],
+        ["Acuario", true],
+        ["Capricornio", false],
+        ["Piscis", false],
+        ["Escorpio", false],
       ],
     },
     {
       id: 8,
-      question: `What is the collective noun for rats?`,
+      question: `Cuál es el sustantivo colectivo para ratas rats?`,
       answers: [
-        ["Race", false],
-        ["Mischief", true],
-        ["Pack", false],
-        ["Drift", false],
+        ["Paquete", false],
+        ["Travesura", true],
+        ["Pandilla", false],
+        ["Deriva", false],
       ],
     },
     {
       id: 9,
-      question: `Lake Titicaca is located between which two nations?`,
+      question: `El Lago Titicaca está ubicado entre cuales dos países?`,
       answers: [
-        ["Kenya and Uganda", false],
-        ["Mexico and the United States", false],
-        ["Peru and Bolivia", true],
-        ["India and Bangladesh", false],
+        ["Kenya y Uganda", false],
+        ["Mexico y los Estados Unidos", false],
+        ["Perú y Bolivia", true],
+        ["India y Bangladesh", false],
       ],
     },
     {
       id: 10,
-      question: `Which Country's flag is this?`,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flag_of_Estonia.svg/2560px-Flag_of_Estonia.svg.png",
+      question: `Esta bandera pertenece a cuál país?`,
+      image: estonia,
       answers: [
         ["Estonia", true],
-        ["Latvia", false],
-        ["Lithuania", false],
-        ["Belarus", false],
+        ["Letonia", false],
+        ["Lituania", false],
+        ["Bielorrusia", false],
       ],
     },
     {
       id: 11,
-      question: `Who discovered Penicillin?`,
+      question: `Quién descubrió la Penicilina?`,
       answers: [
         ["Marie Curie", false],
         ["Alexander Flemming", true],
@@ -1690,7 +1795,7 @@ const bigDataSp = [
     },
     {
       id: 12,
-      question: `What is the scientific name for modern day humans?`,
+      question: `Cuál es el nombre científico para humanos de la modernidad?`,
       answers: [
         ["Homo Neanderthalensis", false],
         ["Homo Erectus", false],
@@ -1700,17 +1805,17 @@ const bigDataSp = [
     },
     {
       id: 13,
-      question: `Which country does Austria not border?`,
+      question: `Con cuál país Austria no tiene fronteras?`,
       answers: [
-        ["Slovenia", false],
-        ["Switzerland", false],
-        ["Slovakia", false],
-        ["France", true],
+        ["Eslovenia", false],
+        ["Suiza", false],
+        ["Eslovakia", false],
+        ["Francia", true],
       ],
     },
     {
       id: 14,
-      question: `How many bones are in the human body?`,
+      question: `Cuantos huesos tiene el cuerpo humano?`,
       answers: [
         ["206", true],
         ["209", false],
@@ -1720,7 +1825,7 @@ const bigDataSp = [
     },
     {
       id: 15,
-      question: `How many Harry Potter books are there?`,
+      question: `Cuantos libros de Harry Potter hay?`,
       answers: [
         ["8", false],
         ["7", true],
@@ -1730,7 +1835,7 @@ const bigDataSp = [
     },
     {
       id: 16,
-      question: `What do the letters in the GMT time zone stand for?`,
+      question: `Que significa la sigla de zona horaria GMT?`,
       answers: [
         ["General Median Time", false],
         ["Global Meridian Time", false],
@@ -1740,7 +1845,7 @@ const bigDataSp = [
     },
     {
       id: 17,
-      question: `Which actor plays Obi-Wan Kenobi in Star Wars Episodes I-III?`,
+      question: `Qué actor interpretó a Obi-Wan Kenobi en Star Wars Episodios I-III?`,
       answers: [
         ["Mark Hamill", false],
         ["Hayden Christensen", false],
@@ -1750,17 +1855,17 @@ const bigDataSp = [
     },
     {
       id: 18,
-      question: `Which of these African countries list "Spanish" as an official language?`,
+      question: `Cuál de estos países africanos tiene al "español" como idioma oficial?`,
       answers: [
-        ["Equatorial Guinea", true],
-        ["Cameroon", false],
+        ["Guinea Equatorial", true],
+        ["Camerún", false],
         ["Guinea", false],
         ["Angola", false],
       ],
     },
     {
       id: 19,
-      question: `Which Apollo mission was the first one to land on the Moon?`,
+      question: `Que misión Apollo fue la primera en alunizar en la Luna?`,
       answers: [
         ["Apolo 13", false],
         ["Apolo 11", true],
@@ -1770,17 +1875,17 @@ const bigDataSp = [
     },
     {
       id: 20,
-      question: `Which is the fastest land's animal in the world?`,
+      question: `Cuál es el animal terrestre más rapido del mundo?`,
       answers: [
-        ["Pronghorn Antelope", false],
-        ["Thomson's Gazelle", false],
-        ["Cheetah", true],
-        ["Lion", false],
+        ["Antílope Berrendoe", false],
+        ["Gacela de Thomson", false],
+        ["Guepardo", true],
+        ["León", false],
       ],
     },
     {
       id: 21,
-      question: `How many legs do butterflies have?`,
+      question: `Cuantas piernas tienen las mariposas?`,
       answers: [
         ["0", false],
         ["2", false],
@@ -1790,7 +1895,7 @@ const bigDataSp = [
     },
     {
       id: 22,
-      question: `Who painted the Sistine Chapel`,
+      question: `Quién pintó la Capilla Sixtina?`,
       answers: [
         ["Michelangelo", true],
         ["Leonardo da Vinci", false],
@@ -1800,7 +1905,7 @@ const bigDataSp = [
     },
     {
       id: 23,
-      question: `Who designed the Chupa Chups logo?`,
+      question: `Quién diseño el logo de Chupa Chups?`,
       answers: [
         ["Andy Warhol", false],
         ["Salvador Dali", true],
@@ -1810,27 +1915,27 @@ const bigDataSp = [
     },
     {
       id: 24,
-      question: `What is not a wind instrument?`,
+      question: `Cuál no es un instrumento musical de viento?`,
       answers: [
         ["Oboe", false],
         ["Didgeridoo ", false],
         ["Viola", true],
-        ["Trombone", false],
+        ["Trombón", false],
       ],
     },
     {
       id: 25,
-      question: `What is the primary addictive substance found in tobacco?`,
+      question: `Cuál es la sustancia principal adictiva del tabaco?`,
       answers: [
-        ["Ephedrine", false],
-        ["Cathinone", false],
-        ["Glaucine", false],
-        ["Nicotine", true],
+        ["Efedrina", false],
+        ["Catinona", false],
+        ["Glaucina", false],
+        ["Nicotina", true],
       ],
     },
     {
       id: 26,
-      question: `Which driver has been the Formula 1 world champion for a record 7 times as Michael Schumacher?`,
+      question: `Cuál corredor de Formula 1 tiene el mismo record de 7 veces campeón como Michael Schumacher, ?`,
       answers: [
         ["Lewis Hamilton", true],
         ["Ayrton Senna", false],
@@ -1840,7 +1945,7 @@ const bigDataSp = [
     },
     {
       id: 27,
-      question: `How many differently shaped Tetris pieces are there?`,
+      question: `Cuantas piezas de diferentes formas aparecen en el juego Tetris?`,
       answers: [
         ["5", false],
         ["7", true],
@@ -1850,24 +1955,124 @@ const bigDataSp = [
     },
     {
       id: 28,
-      question: `What is the name of this painting?`,
-      image:
-        "http://lh3.googleusercontent.com/J0sw0IiqP2F4gavYnI-vUa5IBgHiHy42lohgm-qq1vuygUX0HQgylVSV1ZdDTV5XIg=w255-h300-n-l64",
+      question: `Cuál es el nombre de esta pintura?`,
+      image: girl,
       answers: [
-        ["The Birth of Venus", false],
-        ["The Kiss", false],
-        ["Girl with a Pearl Earring", true],
+        ["El Nacimiento de Venus", false],
+        ["El Beso", false],
+        ["La Joven de la Perla", true],
         ["Las Meninas", false],
       ],
     },
     {
       id: 29,
-      question: `What is the alter-ego of the DC comics character "Superman"?`,
+      question: `Cuál es el alter-ego del personaje de comics de DC, Superman?`,
       answers: [
         ["John Jones", false],
         ["Bruce Wayne", false],
         ["Arthur Curry", false],
         ["Clark Kent", true],
+      ],
+    },
+    {
+      id: 30,
+      question: `Cuantos años duró realmente la guerra de los 100 años?`,
+      answers: [
+        ["116", true],
+        ["95", false],
+        ["100", false],
+        ["101", false],
+      ],
+    },
+    {
+      id: 31,
+      question: `El material de ficción, Kryptonita, es la debilidad de cuál superhéroe?`,
+      answers: [
+        ["Batman", false],
+        ["Superman", true],
+        ["Aquaman", false],
+        ["Spiderman", false],
+      ],
+    },
+    {
+      id: 32,
+      question: `Cuál de los siguientes actores no trabaja en la película "Los Sospechosos de Siempre"?`,
+      answers: [
+        ["Kevin Spacey", false],
+        ["Benicio Del Toro", false],
+        ["Richard Gere", true],
+        ["Gabriel Byrne", false],
+      ],
+    },
+    {
+      id: 33,
+      question: `Cuál es el nombre de este popular manga/anime?`,
+      image: sailor,
+      answers: [
+        ["Cardcaptor Sakura", false],
+        ["Ranma 1/2", false],
+        ["Inuyasha", false],
+        ["Sailor Moon", true],
+      ],
+    },
+    {
+      id: 34,
+      question: `Cuál es la capital de España?`,
+      answers: [
+        ["Madrid", true],
+        ["A Coruña", false],
+        ["Sevilla", false],
+        ["Barcelona", false],
+      ],
+    },
+    {
+      id: 35,
+      question: `El Hipogrifo, es una criatura magica con la media parte frontal de un águila y la parte dorsal de qué?`,
+      answers: [
+        ["Dragón", false],
+        ["Caballo", true],
+        ["Tigre", false],
+        ["León", false],
+      ],
+    },
+    {
+      id: 36,
+      question: `Esta película contiente la frase, "I love the smell of napalm in the morning"`,
+      answers: [
+        ["Full Metal Jacket", false],
+        ["The Deer Hunter", false],
+        ["Apocalypse Now", true],
+        ["Platoon", false],
+      ],
+    },
+    {
+      id: 37,
+      question: `".at" es el dominio de internet de qué país?`,
+      answers: [
+        ["Argentina", false],
+        ["Angola", false],
+        ["Australia", false],
+        ["Austria", true],
+      ],
+    },
+    {
+      id: 38,
+      question: `Cuál es el número máximo de estrellas Michelin que un restaurante puede recibir?`,
+      answers: [
+        ["Tres", true],
+        ["Cuatro", false],
+        ["Cinco", false],
+        ["Seis", false],
+      ],
+    },
+    {
+      id: 39,
+      question: `Por definición, dónde vive un animal abisopelágico?`,
+      answers: [
+        ["En el desierto", false],
+        ["En el fondo del océano", true],
+        ["En la cima de una montaña", false],
+        ["Dentro de un árbol", false],
       ],
     },
   ],

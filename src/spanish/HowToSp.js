@@ -25,7 +25,7 @@ const HowTo = () => {
               src={titleImg}
               alt="logo of Ask Away"
             />
-            <div>C:\Escritorio\Askaway\ComoJugar</div>
+            <div>C:\Askaway\ComoJugar</div>
           </section>
           <section className="upper-icons">
             <div className="icons-data">

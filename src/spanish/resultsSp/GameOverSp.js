@@ -6,8 +6,8 @@ import {
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
-import { useGlobalContext } from "./../context";
-import titleImg from "./../images/title.png";
+import { useGlobalContext } from "./../../context";
+import titleImg from "./../../images/title.png";
 
 const GameOverSp = ({ newName, score, restartGame }) => {
   const { question, loadingRestart, nextPageRestart } = useGlobalContext();
@@ -30,7 +30,7 @@ const GameOverSp = ({ newName, score, restartGame }) => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Escritorio\Askaway\{newName}\Resultados</div>
+              <div>C:\Askaway\{newName}\Resultados</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -87,7 +87,7 @@ const GameOverSp = ({ newName, score, restartGame }) => {
                   style={{ fontSize: "2.5rem" }}
                   icon={faExclamationTriangle}
                 ></FontAwesomeIcon>
-                C:\Escritorio\Askaway...
+                C:\Askaway...
               </div>
               <div className="btn-container" style={{ margin: "10px" }}>
                 <button className="btn-gameOver" onClick={restartGame}>

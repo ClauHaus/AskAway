@@ -125,7 +125,7 @@ const Question = () => {
                 alt="logo of Ask Away"
               />
               <div>
-                C:\Desktop\Askaway\{newName}\Level {level}
+                C:\Askaway\{newName}\Level {level}
               </div>
             </section>
             <section className="upper-icons">
@@ -160,7 +160,7 @@ const Question = () => {
                 style={{
                   width: "95%",
                   left: "2.5%",
-                  top: "20%",
+                  top: "23%",
                 }}
               >
                 <header className="window-info">
@@ -171,7 +171,7 @@ const Question = () => {
                         src={titleImg}
                         alt="logo of Ask Away"
                       />
-                      <div>C:\Desktop\Askaway\{newName}\Results</div>
+                      <div>C:\Askaway\{newName}\Results</div>
                     </section>
                     <section className="upper-icons">
                       <div className="icons-data">
@@ -191,7 +191,7 @@ const Question = () => {
                   </div>
                 </header>
                 <div className="container-results">
-                  <p>Awesome job! You cleared level {level} out of five.</p>
+                  <p>Awesome job! You cleared level {level} out of 5.</p>
                   <p>Let's see some stats before moving on, shall we?</p>
                   <ul>
                     <li>

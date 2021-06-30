@@ -25,12 +25,13 @@ const LoadingPage = () => {
     question,
     level,
     timerDifficulty,
+    theme,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   useEffect(() => {
     let timeOut = setTimeout(() => {
       nextPageThree(loadingPage, question); //AGREGAR ACA EL setLevel de 0 a 1
-    }, 1000); //PASARLO A 6000!
+    }, 5000); //PASARLO A 6000!
     return () => clearTimeout(timeOut);
     // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut
   }, [nextPageThree, loadingPage, question, level]); //Revisar estas dependencies, en caso de error quitarlas y solo queda un warning
@@ -46,7 +47,7 @@ const LoadingPage = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}</div>
+              <div>C:\Askaway\{newName}</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -63,7 +64,19 @@ const LoadingPage = () => {
         </header>
         <div className="container">
           <h3 className="title title-back">Level {level}</h3>
-          <div className="loading"></div>
+          {theme === "light" ? (
+            <img
+              className="loading"
+              src="https://art.pixilart.com/010daff759faae6.png"
+              alt=""
+            />
+          ) : (
+            <img
+              className="loading"
+              src="https://art.pixilart.com/abe4c798bd975be.png"
+              alt=""
+            />
+          )}
           <section className="loading-items">
             <p>&gt; Get at least 30 points</p>
             <p>&gt; Obtain 10 correct answers</p>

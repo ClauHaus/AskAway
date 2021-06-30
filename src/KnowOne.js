@@ -43,7 +43,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}</div>
+              <div>C:\Askaway\{newName}</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -91,7 +91,7 @@ const KnowOne = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}\Facts</div>
+              <div>C:\Askaway\{newName}\Facts</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">

@@ -17,9 +17,9 @@ import {
 import { useGlobalContext } from "./../context";
 import bigDataSp from "./questionsSp";
 import AnswersSp from "./AnswersSp";
-import GameOverSp from "./GameOverSp";
-import ZeroPointsSp from "./ZeroPointsSp";
-import TimeOverSp from "./TimeOverSp";
+import GameOverSp from "./resultsSp/GameOverSp";
+import ZeroPointsSp from "./resultsSp/ZeroPointsSp";
+import TimeOverSp from "./resultsSp/TimeOverSp";
 
 const QuestionSp = () => {
   const {
@@ -125,7 +125,7 @@ const QuestionSp = () => {
                 alt="logo of Ask Away"
               />
               <div>
-                C:\Escritorio\Askaway\{newName}\Nivel {level}
+                C:\Askaway\{newName}\Nivel {level}
               </div>
             </section>
             <section className="upper-icons">
@@ -160,7 +160,7 @@ const QuestionSp = () => {
                 style={{
                   width: "95%",
                   left: "2.5%",
-                  top: "20%",
+                  top: "23%",
                 }}
               >
                 <header className="window-info">
@@ -171,7 +171,7 @@ const QuestionSp = () => {
                         src={titleImg}
                         alt="logo of Ask Away"
                       />
-                      <div>C:\Escritorio\Askaway\Resultados</div>
+                      <div>C:\Askaway\Resultados</div>
                     </section>
                     <section className="upper-icons">
                       <div className="icons-data">

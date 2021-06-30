@@ -21,6 +21,7 @@ const initialState = {
   question: false,
   knowOne: false,
   ending: false,
+  credits: false,
 };
 
 const AppProvider = ({ children }) => {
@@ -65,6 +66,10 @@ const AppProvider = ({ children }) => {
 
   const nextPageEnding = (erase, add) => {
     dispatch({ type: "NEXT_PAGE_ENDING", payload: { erase, add } });
+  };
+
+  const nextPageCredits = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_CREDITS", payload: { erase, add } });
   };
 
   const nextPageBack = (erase, add) => {
@@ -116,6 +121,7 @@ const AppProvider = ({ children }) => {
 
   const newLanguage = JSON.parse(localStorage.getItem("newLanguage"));
   const newDifficulty = JSON.parse(localStorage.getItem("newDifficulty"));
+  const newTheme = JSON.parse(localStorage.getItem("newTheme"));
 
   const [level, setLevel] = useState(0);
   const [difficulty, setDifficulty] = useState(
@@ -124,6 +130,12 @@ const AppProvider = ({ children }) => {
   const [language, setLanguage] = useState(
     newLanguage ? newLanguage : "english"
   );
+
+  const [theme, setTheme] = useState(newTheme ? newTheme : "dark");
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
 
   const timerDifficulty = () => {
     let result = 60;
@@ -161,9 +173,11 @@ const AppProvider = ({ children }) => {
         difficulty,
         language,
         level,
+        theme,
         setLevel,
         setDifficulty,
         setLanguage,
+        setTheme,
         timerDifficulty,
         scoreDifficulty,
         restartGame,
@@ -181,6 +195,7 @@ const AppProvider = ({ children }) => {
         nextPageFour,
         nextPageFive,
         nextPageEnding,
+        nextPageCredits,
         nextPageBack,
       }}
     >

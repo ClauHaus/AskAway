@@ -51,7 +51,7 @@ const FormContinueSp = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Escritorio\Askaway\{newName}</div>
+              <div>C\Askaway\{newName}</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">

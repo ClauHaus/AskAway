@@ -44,7 +44,7 @@ const LoadingRestartSp = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Escritorio\Askaway\{newName}</div>
+              <div>C:\Askaway\{newName}</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -92,7 +92,7 @@ const LoadingRestartSp = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Escritorio\Askaway\{newName}\Hechos</div>
+              <div>C:\Askaway\{newName}\Hechos</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">

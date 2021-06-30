@@ -1,5 +1,6 @@
 import React from "react";
 import titleImg from "./images/title.png";
+import clauhaus from "./images/clauhaus.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -16,26 +17,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./context";
 
-const LoadingRestart = () => {
-  const {
-    time,
-    restartGame,
-    nextPageBack,
-    loadingRestart,
-    question,
-    level,
-    setLevel,
-  } = useGlobalContext();
-  const newName = JSON.parse(localStorage.getItem("newName"));
-
-  const continueGame = () => {
-    nextPageBack(loadingRestart, question);
-    setLevel(level);
-  };
-
+const Credits = () => {
+  const { restartGame, time } = useGlobalContext();
   return (
     <>
-      <section className="container-back">
+      <section className="container-back-options">
         <header className="window-info">
           <div className="window-upper">
             <section className="upper-left">
@@ -44,7 +30,7 @@ const LoadingRestart = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Askaway\{newName}</div>
+              <div>C:\Askaway\Credits</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -59,62 +45,18 @@ const LoadingRestart = () => {
             </section>
           </div>
         </header>
-        <div className="container">
-          <h4 className="title title-back">Try one more time</h4>
-          <button
-            className="btn btn-title center-item"
-            style={{
-              position: "absolute",
-              top: "85%",
-              left: "30%",
-              width: "40%",
-            }}
-            onClick={() => continueGame()}
-          >
-            Back to level {level}
-          </button>
-        </div>
-      </section>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "25%",
-          minHeight: "30%",
-        }}
-      >
-        <header className="window-info">
-          <div className="window-upper">
-            <section className="upper-left">
-              <img
-                className="window-image"
-                src={titleImg}
-                alt="logo of Ask Away"
-              />
-              <div>C:\Askaway\{newName}\Facts</div>
-            </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
-          </div>
-        </header>
-        <div
-          className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
-        >
-          <p style={{ fontSize: "1.5rem" }}>
-            Tip: Try to read first the question and go with your first hunch.
+        <section className="credits">
+          <p className="credits-text">
+            Director, Producer, Designer, Programmer, Tester, Editor, QA and
+            Heavy Coffee Drinker
           </p>
-        </div>
+          <p className="credits-text">Claudio Aime</p>
+          <div className="credits-container-image">
+            <img src={clauhaus} alt="ClauHaus" className="clauhaus" />
+          </div>
+          <p className="credits-text">Thank you very much for playing!</p>
+          <button onClick={() => restartGame()}>Replay AskAway</button>
+        </section>
       </section>
       <section>
         <footer className="container-bottom">
@@ -190,4 +132,4 @@ const LoadingRestart = () => {
   );
 };
 
-export default LoadingRestart;
+export default Credits;

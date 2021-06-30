@@ -30,7 +30,7 @@ const GameOver = ({ newName, score, restartGame }) => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\{newName}\Results</div>
+              <div>C:\Askaway\{newName}\Results</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -87,7 +87,7 @@ const GameOver = ({ newName, score, restartGame }) => {
                   style={{ fontSize: "2.5rem" }}
                   icon={faExclamationTriangle}
                 ></FontAwesomeIcon>
-                C:\Desktop\Askaway...
+                C:\Askaway...
               </div>
               <div className="btn-container" style={{ margin: "10px" }}>
                 <button className="btn-gameOver" onClick={restartGame}>

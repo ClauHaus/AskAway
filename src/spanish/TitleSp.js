@@ -43,7 +43,7 @@ const TitleSp = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Escritorio\Askaway</div>
+              <div>C:\Askaway</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -58,7 +58,7 @@ const TitleSp = () => {
             </section>
           </div>
         </header>
-        <div className="container">
+        <div className="container-title">
           <button className="btn-change " onClick={openOptions}>
             <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
           </button>

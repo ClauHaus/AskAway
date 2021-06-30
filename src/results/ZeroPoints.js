@@ -50,7 +50,7 @@ const ZeroPoints = ({ restartGame }) => {
               style={{ fontSize: "2.5rem" }}
               icon={faExclamationTriangle}
             ></FontAwesomeIcon>
-            C:\Desktop\Askaway\Game Over
+            C:\Askaway\Game Over
           </div>
           <div className="btn-container" style={{ margin: "10px" }}>
             <button className="btn-gameOver" onClick={restartGame}>

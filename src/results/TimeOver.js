@@ -51,7 +51,7 @@ const TimeOver = ({ restartGame }) => {
               style={{ fontSize: "2.5rem" }}
               icon={faExclamationTriangle}
             ></FontAwesomeIcon>
-            C:\Desktop\Askaway\Time Over
+            C:\Askaway\Time Over
           </div>
           <div className="btn-container" style={{ margin: "10px" }}>
             <button className="btn-gameOver" onClick={restartGame}>

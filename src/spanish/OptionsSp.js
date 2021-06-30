@@ -6,13 +6,23 @@ import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import { useGlobalContext } from "../context";
 
 const OptionsSp = () => {
-  const { difficulty, setDifficulty, language, setLanguage, closeOptions } =
-    useGlobalContext();
+  const {
+    difficulty,
+    setDifficulty,
+    language,
+    setLanguage,
+    theme,
+    setTheme,
+    closeOptions,
+    style,
+  } = useGlobalContext();
   const [pressNormal, setPressNormal] = useState("");
   const [pressHard, setPressHard] = useState("");
   const [pressHell, setPressHell] = useState("");
   const [english, setEnglish] = useState("");
   const [spanish, setSpanish] = useState("");
+  const [dark, setDark] = useState("");
+  const [light, setLight] = useState("");
 
   useEffect(() => {
     if (difficulty === "normal") {
@@ -43,9 +53,20 @@ const OptionsSp = () => {
   }, [language]);
 
   useEffect(() => {
+    if (theme === "dark") {
+      setDark("btn-options-selected");
+      setLight("");
+    } else {
+      setDark("");
+      setLight("btn-options-selected");
+    }
+  }, [theme]);
+
+  useEffect(() => {
     localStorage.setItem("newDifficulty", JSON.stringify(difficulty));
     localStorage.setItem("newLanguage", JSON.stringify(language));
-  }, [difficulty, language]);
+    localStorage.setItem("newTheme", JSON.stringify(theme));
+  }, [difficulty, language, theme]);
 
   return (
     <section className="container-back-options">
@@ -57,7 +78,7 @@ const OptionsSp = () => {
               src={titleImg}
               alt="logo of Ask Away"
             />
-            <div>C:\Escritorio\Askaway\Opciones</div>
+            <div>C:\Askaway\Opciones</div>
           </section>
           <section className="upper-icons">
             <div className="icons-data">
@@ -72,7 +93,7 @@ const OptionsSp = () => {
           </section>
         </div>
       </header>
-      <section className="options">
+      <section className={`options ${style}`}>
         <button className="close-modal-btn" onClick={closeOptions}>
           <FontAwesomeIcon icon={faTimes} />
         </button>
@@ -118,13 +139,23 @@ const OptionsSp = () => {
             Modo Infierno
           </button>
         </div>
-        <h5 className="title-options-sub">Tema</h5>
-        <ul className="options-items">
-          <input type="checkbox" defaultChecked />
-          <li className="options-settings">Claro</li>
-          <input type="checkbox" />
-          <li className="options-settings">Oscuro</li>
-        </ul>
+        <h5 className="title-options-sub">Temas</h5>
+        <div className="btn-container-options">
+          <button
+            className={`btn-options ${dark}`}
+            value="dark"
+            onClick={(e) => setTheme(e.target.value)}
+          >
+            Oscuro
+          </button>
+          <button
+            className={`btn-options ${light}`}
+            value="light"
+            onClick={(e) => setTheme(e.target.value)}
+          >
+            Claro
+          </button>
+        </div>
       </section>
     </section>
   );

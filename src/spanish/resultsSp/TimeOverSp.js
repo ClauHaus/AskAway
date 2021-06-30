@@ -6,8 +6,8 @@ import {
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
-import { useGlobalContext } from "./../context";
-import titleImg from "./../images/title.png";
+import { useGlobalContext } from "./../../context";
+import titleImg from "./../../images/title.png";
 
 const TimeOverSp = ({ restartGame }) => {
   const { question, loadingRestart, nextPageRestart } = useGlobalContext();
@@ -51,7 +51,7 @@ const TimeOverSp = ({ restartGame }) => {
               style={{ fontSize: "2.5rem" }}
               icon={faExclamationTriangle}
             ></FontAwesomeIcon>
-            C:\Escritorio\Askaway\SeAcabóElTiempo
+            C:\Askaway\SeAcabóElTiempo
           </div>
           <div className="btn-container" style={{ margin: "10px" }}>
             <button className="btn-gameOver" onClick={restartGame}>

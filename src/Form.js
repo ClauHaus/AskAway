@@ -59,7 +59,7 @@ export const Form = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Desktop\Askaway\Form</div>
+              <div>C:\Askaway\Form</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -75,7 +75,7 @@ export const Form = () => {
           </div>
         </header>
         <article className="container">
-          <h4 className="title title-back">
+          <h4 className="form-title">
             Please provide us some info about yourself
           </h4>
           <form onSubmit={handleSubmit}>

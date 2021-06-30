@@ -59,7 +59,7 @@ export const FormSp = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Escritorio\Askaway\Formulario</div>
+              <div>C:\Askaway\Formulario</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -75,7 +75,7 @@ export const FormSp = () => {
           </div>
         </header>
         <article className="container">
-          <h4 className="title title-back">Cuéntanos un poco sobre ti</h4>
+          <h4 className="form-title">Cuéntanos un poco sobre ti</h4>
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <input

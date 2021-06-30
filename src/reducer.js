@@ -44,6 +44,9 @@ const reducer = (state, action) => {
   if (action.type === "NEXT_PAGE_ENDING") {
     return { ...state, question: false, ending: true };
   }
+  if (action.type === "NEXT_PAGE_CREDITS") {
+    return { ...state, ending: false, credits: true };
+  }
   if (action.type === "NEXT_PAGE_BACK") {
     return { ...state, loadingRestart: false, question: true };
   }

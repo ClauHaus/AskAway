@@ -10,14 +10,14 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  intro: false,
+  intro: true,
   title: false,
   modal: false,
   options: false,
   form: false,
   formContinue: false,
   loadingPage: false,
-  loadingRestart: true,
+  loadingRestart: false,
   question: false,
   knowOne: false,
   ending: false,

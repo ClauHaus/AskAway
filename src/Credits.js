@@ -54,8 +54,12 @@ const Credits = () => {
           <div className="credits-container-image">
             <img src={clauhaus} alt="ClauHaus" className="clauhaus" />
           </div>
-          <p className="credits-text">Thank you very much for playing!</p>
-          <button onClick={() => restartGame()}>Replay AskAway</button>
+          <p className="credits-text" style={{ marginTop: "-20px" }}>
+            Thank you very much for playing!
+          </p>
+          <button className="btn btn-title" onClick={() => restartGame()}>
+            Replay AskAway
+          </button>
         </section>
       </section>
       <section>

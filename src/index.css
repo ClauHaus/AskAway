@@ -416,9 +416,15 @@ html {
   --back-image: linear-gradient(to right, #02000aba, #0f0316cc),
     url("https://i.redd.it/8i8u75t1cve51.png ");
   --window-color: linear-gradient(90deg, #2a00ff 0%, #5c74ff 80%);
-  --topinfo-background: #009f55;
-  --score-background: #d43f00;
-  --timer-background: #009f55;
+  --topinfo-background: #5147ff;
+  --score-background: #dd69bc;
+  --timer-background: #5147ff;
+  --title-color: #2a00ff;
+  --dark-low: #5533ff;
+  --dark-high: #1b00a3;
+  --left-radius: 0px;
+  --right-radius: 0px;
+  --full-radius: 0px;
 
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -486,6 +492,12 @@ html {
   --topinfo-background: #585191;
   --score-background: #d68589;
   --timer-background: #585191;
+  --title-color: #aa00aa;
+  --dark-low: #ff47ff;
+  --dark-high: #8f008f;
+  --left-radius: 7.5px;
+  --right-radius: 7.5px;
+  --full-radius: 7.5px;
 
   /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -585,6 +597,7 @@ ul {
   left: 5%;
   width: 90%;
   min-height: 77%;
+  border-radius: var(--full-radius);
   /* height: 92%; */
   /* padding: 10px; */
   box-sizing: border-box;
@@ -600,6 +613,8 @@ ul {
   /* display: flex;
   flex-direction: row; */
   /* justify-content: space-between; */
+  border-top-left-radius: var(--left-radius);
+  border-top-right-radius: var(--right-radius);
   background: var(--window-color);
   padding: 0px 2px 25px 2px;
   margin-top: 1px;
@@ -642,7 +657,8 @@ ul {
   font-size: 0.5rem;
   height: 2.5vh;
   width: 5vw;
-  margin: 2px 3.5px 0px auto;
+  margin: 2px 5px 0px auto;
+  /* 3.5 */
 }
 
 .noShow {
@@ -804,7 +820,7 @@ ul {
   transition: var(--transtion);
   text-transform: capitalize;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   margin: 10px 10px 7px 4px;
 }
 
@@ -864,7 +880,7 @@ ul {
   width: 30%;
   justify-content: center;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .btn-change {
@@ -998,6 +1014,7 @@ p.modal-text {
   left: 5.5%;
   width: 100%;
   min-height: 100%;
+  border-radius: var(--full-radius);
   /* height: 92%; */
   /* padding: 10px; */
   box-sizing: border-box;
@@ -1073,6 +1090,7 @@ p.modal-text {
   left: 5%;
   width: 90%;
   min-height: 77%;
+  border-radius: var(--full-radius);
   /* height: 92%; */
   /* padding: 10px; */
   box-sizing: border-box;
@@ -1166,7 +1184,7 @@ p.modal-text {
   width: 30%;
   justify-content: center;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .btn-options-selected {
@@ -1331,7 +1349,7 @@ input {
 }
 
 .form-title {
-  color: var(--white);
+  color: var(--dark-low);
   text-align: center;
   padding: 10px;
   margin-top: 20px;
@@ -1368,7 +1386,7 @@ input {
 .title {
   text-align: center;
   font-family: var(--retro);
-  color: var(--primary-700);
+  color: var(--title-color);
 }
 
 h5.title {
@@ -1568,7 +1586,7 @@ h5.title {
 }
 .answers {
   cursor: pointer;
-  color: var(--primary-700);
+  color: var(--dark-high);
   background: #fff;
   opacity: 0.9;
   border: transparent;
@@ -1607,7 +1625,7 @@ h5.title {
   -webkit-animation: jello-vertical 0.9s both;
   animation: jello-vertical 0.9s both;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
     -1px -1px 3px 0px #fffbf0 inset;
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
@@ -1716,7 +1734,7 @@ h5.title {
   -webkit-animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
     -1px -1px 3px 0px #fffbf0 inset;
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
@@ -1887,11 +1905,22 @@ Ending
   align-items: center;
 }
 
+.final-score {
+  display: flex;
+  align-items: center;
+}
+
+.new-final-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--dark-low);
+}
+
 .credits {
-  background: #000;
+  background: #fff;
   margin: 10px;
   padding: 10px;
-  color: #fff;
   box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75) inset,
     0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75) inset,

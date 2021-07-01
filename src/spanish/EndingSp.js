@@ -18,8 +18,14 @@ import { useGlobalContext } from "../context";
 
 const EndingSp = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
-  const { difficulty, credits, ending, nextPageCredits, restartGame, time } =
-    useGlobalContext();
+  const {
+    difficulty,
+    highScore,
+    ending,
+    nextPageHighScore,
+    restartGame,
+    time,
+  } = useGlobalContext();
   return (
     <>
       <section className="container-back-options">
@@ -128,8 +134,11 @@ const EndingSp = () => {
               </p>
             )}
           </section>
-          <button onClick={() => nextPageCredits(ending, credits)}>
-            Ver créditos
+          <button
+            className="btn btn-title"
+            onClick={() => nextPageHighScore(ending, highScore)}
+          >
+            High Score?
           </button>
         </section>
       </section>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,6 +14,7 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import tips from "./tips";
 import { useGlobalContext } from "./context";
 
 const LoadingRestart = () => {
@@ -27,6 +28,19 @@ const LoadingRestart = () => {
     setLevel,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
+
+  const shuffle = () => {
+    const result = tips.sort(() => Math.random() - 0.5);
+    return result;
+  };
+
+  const [data, setData] = useState([]);
+  const index = 0;
+
+  useEffect(() => {
+    setData(shuffle);
+    // eslint-disable-next-line
+  }, []);
 
   const continueGame = () => {
     nextPageBack(loadingRestart, question);
@@ -81,7 +95,7 @@ const LoadingRestart = () => {
           width: "95%",
           left: "2%",
           top: "25%",
-          minHeight: "30%",
+          minHeight: "0%",
         }}
       >
         <header className="window-info">
@@ -92,7 +106,7 @@ const LoadingRestart = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Askaway\{newName}\Facts</div>
+              <div>C:\Askaway\{newName}\Tips</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -109,11 +123,20 @@ const LoadingRestart = () => {
         </header>
         <div
           className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
+          style={{ top: "20%", minHeight: "0%", textAlign: "center" }}
         >
-          <p style={{ fontSize: "1.5rem" }}>
-            Tip: Try to read first the question and go with your first hunch.
-          </p>
+          {data.map((item, itemIndex) => {
+            const { id, text } = item;
+            let position = "nextSlide";
+            if (itemIndex === index) {
+              position = "activeslide";
+            }
+            return (
+              <article key={id} className={position}>
+                <p>{text}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
       <section>

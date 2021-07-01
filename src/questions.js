@@ -16,7 +16,7 @@ import link from "./images/link.png";
 import ibai from "./images/ibai.jpg";
 import johnny from "./images/johnny.jpg";
 import giza from "./images/giza.jpg";
-import korean from "./images/korean.jpeg";
+import korean from "./images/korean.png";
 import estonia from "./images/estonia.png";
 import girl from "./images/girl.jpg";
 import vegeta from "./images/vegeta.jpg";

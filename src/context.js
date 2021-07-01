@@ -10,17 +10,18 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  intro: true,
+  intro: false,
   title: false,
   modal: false,
   options: false,
   form: false,
   formContinue: false,
   loadingPage: false,
-  loadingRestart: false,
+  loadingRestart: true,
   question: false,
   knowOne: false,
   ending: false,
+  highScore: false,
   credits: false,
 };
 
@@ -66,6 +67,10 @@ const AppProvider = ({ children }) => {
 
   const nextPageEnding = (erase, add) => {
     dispatch({ type: "NEXT_PAGE_ENDING", payload: { erase, add } });
+  };
+
+  const nextPageHighScore = (erase, add) => {
+    dispatch({ type: "NEXT_PAGE_HIGHSCORE", payload: { erase, add } });
   };
 
   const nextPageCredits = (erase, add) => {
@@ -195,6 +200,7 @@ const AppProvider = ({ children }) => {
         nextPageFour,
         nextPageFive,
         nextPageEnding,
+        nextPageHighScore,
         nextPageCredits,
         nextPageBack,
       }}

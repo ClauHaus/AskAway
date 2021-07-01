@@ -8,6 +8,7 @@ import LoadingRestart from "./LoadingRestart";
 import Question from "./Question";
 import KnowOne from "./KnowOne";
 import Ending from "./Ending";
+import HighScore from "./HighScore";
 import Credits from "./Credits";
 //Spanish imports
 import IntroSp from "./spanish/IntroSp";
@@ -19,6 +20,7 @@ import LoadingRestartSp from "./spanish/LoadingRestartSp";
 import QuestionSp from "./spanish/QuestionSp";
 import KnowOneSp from "./spanish/KnowOneSp";
 import EndingSp from "./spanish/EndingSp";
+import HighScoreSp from "./spanish/HighScoreSp";
 import CreditsSp from "./spanish/CreditsSp";
 
 // import { library } from "@fortawesome/fontawesome-svg-core";
@@ -36,6 +38,7 @@ function App() {
     knowOne,
     language,
     ending,
+    highScore,
     credits,
   } = useGlobalContext();
   if (language === "spanish") {
@@ -50,6 +53,7 @@ function App() {
         {question && <QuestionSp />}
         {knowOne && <KnowOneSp />}
         {ending && <EndingSp />}
+        {highScore && <HighScoreSp />}
         {credits && <CreditsSp />}
       </>
     );
@@ -66,6 +70,7 @@ function App() {
       {question && <Question />}
       {knowOne && <KnowOne />}
       {ending && <Ending />}
+      {highScore && <HighScore />}
       {credits && <Credits />}
     </>
   );

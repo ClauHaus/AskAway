@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,6 +14,7 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import facts from "./facts";
 import { useGlobalContext } from "./context";
 
 const KnowOne = () => {
@@ -26,6 +27,20 @@ const KnowOne = () => {
     level,
     setLevel,
   } = useGlobalContext();
+
+  const shuffle = () => {
+    const result = facts.sort(() => Math.random() - 0.5);
+    return result;
+  };
+
+  const [data, setData] = useState([]);
+  const index = 0;
+
+  useEffect(() => {
+    setData(shuffle);
+    // eslint-disable-next-line
+  }, []);
+
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   const continueGame = () => {
@@ -80,7 +95,7 @@ const KnowOne = () => {
           width: "95%",
           left: "2%",
           top: "25%",
-          minHeight: "30%",
+          minHeight: "0%",
         }}
       >
         <header className="window-info">
@@ -108,12 +123,20 @@ const KnowOne = () => {
         </header>
         <div
           className="container-results"
-          style={{ top: "20%", minHeight: "30%", textAlign: "center" }}
+          style={{ top: "20%", minHeight: "0%", textAlign: "center" }}
         >
-          <p style={{ fontSize: "1.5rem" }}>
-            Spaghetto, confetto, and graffito are the singular forms of
-            spaghetti, confetti, and graffiti.
-          </p>
+          {data.map((item, itemIndex) => {
+            const { id, text } = item;
+            let position = "nextSlide";
+            if (itemIndex === index) {
+              position = "activeslide";
+            }
+            return (
+              <article key={id} className={position}>
+                <p>{text}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
       <section>

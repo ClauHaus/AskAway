@@ -1,6 +1,5 @@
 import React from "react";
 import titleImg from "./../images/title.png";
-import clauhaus from "./../images/clauhaus.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -17,8 +16,13 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./../context";
 
-const CreditsSp = () => {
-  const { restartGame, time } = useGlobalContext();
+const HighScoreSp = () => {
+  const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
+  const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
+  const newName = JSON.parse(localStorage.getItem("newName"));
+  const newCountry = JSON.parse(localStorage.getItem("newCountry"));
+  const { credits, highScore, nextPageCredits, restartGame, time } =
+    useGlobalContext();
   return (
     <>
       <section className="container-back-options">
@@ -30,7 +34,7 @@ const CreditsSp = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Askaway\Credits</div>
+              <div>C:\Askaway\FinalResults</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -45,20 +49,28 @@ const CreditsSp = () => {
             </section>
           </div>
         </header>
-        <section className="credits">
-          <p className="credits-text">
-            Director, Productor, Diseñador, Programador, Tester, Editor, QA y
-            Gran bebedor de café
-          </p>
-          <p className="credits-text">Claudio Aime</p>
-          <div className="credits-container-image">
-            <img src={clauhaus} alt="ClauHaus" className="clauhaus" />
-          </div>
-          <p className="credits-text" style={{ marginTop: "-20px" }}>
-            Muchísimas gracias por jugar!
-          </p>
-          <button className="btn btn-title" onClick={() => restartGame()}>
-            Rejugar AskAway
+        <section className="ending" style={{ justifyContent: "center" }}>
+          {newActualScore >= newTopScore ? (
+            <div className="new-final-score">
+              <h4>High Score</h4>
+              <h4>{newTopScore}</h4>
+              <h5>Participante</h5>
+              <h5>{newName}</h5>
+              <h5>de</h5>
+              <h5>{newCountry}</h5>
+            </div>
+          ) : (
+            <div className="new-final-score">
+              <h4>High Score</h4>
+              <h4>{newActualScore}</h4>
+              <h5>La próxima vez será el tuyp!</h5>
+            </div>
+          )}
+          <button
+            className="btn btn-title"
+            onClick={() => nextPageCredits(highScore, credits)}
+          >
+            Ver créditos
           </button>
         </section>
       </section>
@@ -136,4 +148,4 @@ const CreditsSp = () => {
   );
 };
 
-export default CreditsSp;
+export default HighScoreSp;

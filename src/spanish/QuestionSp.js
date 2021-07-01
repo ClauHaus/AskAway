@@ -158,7 +158,7 @@ const QuestionSp = () => {
               <section
                 className="container-back"
                 style={{
-                  width: "95%",
+                  width: "97%",
                   left: "2.5%",
                   top: "23%",
                 }}
@@ -214,8 +214,8 @@ const QuestionSp = () => {
                       {60 - JSON.parse(localStorage.getItem("newTimer"))}{" "}
                       segundos,{" "}
                       {JSON.parse(localStorage.getItem("newTimer")) < 50
-                        ? "eso estuvo cerca, debes mover tus dedos tan rápido como tu mente."
-                        : "eres una persona que piensa muy rápido o que adivina muy bien, lo averiguaremos en el próximo nivel."}
+                        ? "eres una persona que piensa muy rápido o que adivina muy bien, lo averiguaremos en el próximo nivel."
+                        : "eso estuvo cerca, debes mover tus dedos tan rápido como tu mente."}
                     </li>
                   </ul>
                   {level < 5 ? (

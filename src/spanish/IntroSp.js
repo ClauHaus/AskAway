@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import titleImg from "./../images/title.png";
+import useSound from "use-sound";
+import startup from "./../sounds/startup.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
@@ -18,13 +20,19 @@ import { useGlobalContext } from "../context";
 
 const IntroSp = () => {
   const { time, restartGame, intro, title, nextPageIntro } = useGlobalContext();
+  const [start, setStart] = useState(false);
+  const [opacity, setOpacity] = useState(1);
+  const [play] = useSound(startup, { volume: 0.5 });
 
-  useEffect(() => {
+  const startGame = () => {
+    play();
+    setStart(true);
+    setOpacity(0);
     let timeOut = setTimeout(() => {
       nextPageIntro(intro, title);
-    }, 5000); //PASARLO A 5000!
+    }, 5500); //PASARLO A 5000!
     return () => clearTimeout(timeOut);
-  });
+  };
 
   return (
     <>
@@ -53,23 +61,40 @@ const IntroSp = () => {
           </div>
         </header>
         <div className="container-intro">
-          <ul>
-            <li className="noShow">
-              ClauHaus App [Version 12.0.18032.1144] (c) ClauHaus Corporation.
-              All rights reserved.
-            </li>
-            <li className="noShow1">C:\Escritorio\Verificando...</li>
-            <li className="noShow1">C:\Escritorio\Abriendo\Askaway</li>
-            <li className="noShow2">Generando preguntas</li>
-            <li className="noShow2">Randomizando respuestas</li>
-            <li className="noShow3">Instalando variables de dificultad</li>
-            <li className="noShow3">Desarrollando Modo Infi%1Psfö7$*luI</li>
-            <li className="noShow4">.</li>
-            <li className="noShow4">..</li>
-            <li className="noShow4">...</li>
-            <li className="noShow5">C:\Escritorio\Askaway\Ejecutar</li>
-            <li className="noShow5">Ejecutar</li>
-          </ul>
+          <button
+            onClick={() => startGame()}
+            style={{
+              color: "#fff",
+              background: "#000",
+              marginTop: "5px",
+              opacity: `${opacity}`,
+            }}
+          >
+            &gt;Run
+          </button>
+          {start && (
+            <ul>
+              <li className="noShow">
+                ClauHaus App [Version 12.0.18032.1144] © ClauHaus Corporation.
+                All rights reserved.
+              </li>
+              <li className="noShow1">C:\Escritorio\Verificando...</li>
+              <li className="noShow1">C:\Escritorio\Abriendo\Askaway</li>
+              <li className="noShow2">&gt;Generando preguntas</li>
+              <li className="noShow2">&gt;Randomizando respuestas</li>
+              <li className="noShow3">
+                &gt;Instalando variables de dificultad
+              </li>
+              <li className="noShow3">
+                &gt;Desarrollando Modo Infi%1Psfö7$*luI
+              </li>
+              <li className="noShow4">.</li>
+              <li className="noShow4">..</li>
+              <li className="noShow4">...</li>
+              <li className="noShow5">C:\Escritorio\Askaway\Ejecutar</li>
+              <li className="noShow5">&gt;Ejecutar</li>
+            </ul>
+          )}
         </div>
       </section>
       <section>

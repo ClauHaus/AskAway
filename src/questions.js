@@ -911,8 +911,8 @@ const bigData = [
       question: `Who is this actress?`,
       image: meryl,
       answers: [
-        ["Meryl Streep", false],
-        ["Susan Sarandon", true],
+        ["Meryl Streep", true],
+        ["Susan Sarandon", false],
         ["Diane Keaton", false],
         ["Emma Thompson", false],
       ],

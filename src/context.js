@@ -145,7 +145,7 @@ const AppProvider = ({ children }) => {
   const timerDifficulty = () => {
     let result = 60;
     if (difficulty === "normal") {
-      result = 6000; //60
+      result = 60; //60
     }
     if (difficulty === "hard") {
       result = 55;
@@ -165,7 +165,7 @@ const AppProvider = ({ children }) => {
       result = 8;
     }
     if (difficulty === "hell") {
-      result = 5;
+      result = 6;
     }
     return result;
   };

@@ -31,6 +31,7 @@ const Title = () => {
     openModal,
     openOptions,
   } = useGlobalContext();
+  const year = new Date().getFullYear();
 
   return (
     <>
@@ -83,13 +84,7 @@ const Title = () => {
               How to play
             </button>
           </div>
-          <p className="title">
-            Coded by{" "}
-            <a href="https://bit.ly/383XPVf">
-              <b style={{ color: "var(--primary-100" }}>' ClauHaus '</b>
-            </a>
-          </p>
-
+          <p className="title">Coded by ClauHaus - {year}</p>
           {options && <Options />}
           {modal && <HowTo />}
         </div>

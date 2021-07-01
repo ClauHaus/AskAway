@@ -63,7 +63,7 @@ const LoadingPage = () => {
           </div>
         </header>
         <div className="container">
-          <h3 className="title title-back">Level {level}</h3>
+          <h3 className="title title-back">Nivel {level}</h3>
           {theme === "light" ? (
             <img
               className="loading"

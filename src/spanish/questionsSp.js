@@ -911,8 +911,8 @@ const bigDataSp = [
       question: `Quién es esta actriz?`,
       image: meryl,
       answers: [
-        ["Meryl Streep", false],
-        ["Susan Sarandon", true],
+        ["Meryl Streep", true],
+        ["Susan Sarandon", false],
         ["Diane Keaton", false],
         ["Emma Thompson", false],
       ],
@@ -1754,7 +1754,7 @@ const bigDataSp = [
     },
     {
       id: 8,
-      question: `Cuál es el sustantivo colectivo para ratas rats?`,
+      question: `Cuál es el sustantivo colectivo para ratas?`,
       answers: [
         ["Paquete", false],
         ["Travesura", true],

@@ -31,6 +31,7 @@ const TitleSp = () => {
     openModal,
     openOptions,
   } = useGlobalContext();
+  const year = new Date().getFullYear();
 
   return (
     <>
@@ -83,12 +84,7 @@ const TitleSp = () => {
               Como jugar
             </button>
           </div>
-          <p className="title">
-            Desarrollado por{" "}
-            <a href="https://bit.ly/383XPVf">
-              <b style={{ color: "var(--primary-100" }}>' ClauHaus '</b>
-            </a>
-          </p>
+          <p className="title">Desarrollado por ClauHaus - {year}</p>
           {options && <OptionsSp />}
           {modal && <HowToSp />}
         </div>

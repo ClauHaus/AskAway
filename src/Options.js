@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useSound from "use-sound";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";

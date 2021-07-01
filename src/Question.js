@@ -158,7 +158,7 @@ const Question = () => {
               <section
                 className="container-back"
                 style={{
-                  width: "95%",
+                  width: "97%",
                   left: "2.5%",
                   top: "23%",
                 }}

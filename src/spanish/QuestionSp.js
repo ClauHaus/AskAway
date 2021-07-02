@@ -37,6 +37,7 @@ const QuestionSp = () => {
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
+  const newFullData = JSON.parse(localStorage.getItem("newFullData"));
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(scoreDifficulty);
   const [timer, setTimer] = useState(timerDifficulty);
@@ -47,6 +48,14 @@ const QuestionSp = () => {
     level >= 2 ? newActualScore : scoreDifficulty
   );
   const [container, setContainer] = useState("container-question");
+
+  useEffect(() => {
+    localStorage.setItem(
+      "newFullData",
+      JSON.stringify({ ...newFullData, topHighScore: newActualScore })
+    );
+    // eslint-disable-next-line
+  }, [newActualScore]);
 
   // Esta funcion es para que haga un sort de los elementos del array
   const shuffle = () => {
@@ -233,12 +242,6 @@ const QuestionSp = () => {
                       Finalizar
                     </button>
                   )}
-                  {/* <button
-                    className="btn btn-title center-item"
-                    onClick={() => nextPageFour(questionsOne, knowOne)}
-                  >
-                    Continuar
-                  </button> */}
                 </div>
               </section>
             </>

@@ -1,5 +1,7 @@
 import React from "react";
 import titleImg from "./../images/title.png";
+import useSound from "use-sound";
+import pop from "./../sounds/pop.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCog,
@@ -7,6 +9,8 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -30,8 +34,16 @@ const TitleSp = () => {
     form,
     openModal,
     openOptions,
+    sound,
+    setSound,
   } = useGlobalContext();
   const year = new Date().getFullYear();
+  const [play] = useSound(pop, { volume: 0.5 });
+
+  const makeSound = () => {
+    setSound(!sound);
+    play();
+  };
 
   return (
     <>
@@ -60,9 +72,22 @@ const TitleSp = () => {
           </div>
         </header>
         <div className="container-title">
-          <button className="btn-change " onClick={openOptions}>
-            <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
-          </button>
+          <div className="btn-container" style={{ marginTop: "0px" }}>
+            <button className="btn-change " onClick={openOptions}>
+              <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
+            </button>
+            <button
+              className="btn-change "
+              onClick={() => makeSound()}
+              style={{ margin: "10px 25px 0px auto", fontSize: "1.3rem" }}
+            >
+              {sound ? (
+                <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+              ) : (
+                <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+              )}
+            </button>
+          </div>
           <h3 className="title title-back">ask away</h3>
           {/* <div className="title-underline"></div> */}
           <h5 className="title">Cuánto sabes de cosas?</h5>

@@ -18,6 +18,34 @@ import { useGlobalContext } from "./context";
 
 const Ending = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
+  const newFullData = JSON.parse(localStorage.getItem("newFullData"));
+  const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
+
+  if (newFullData.topHighScore >= newFullScore.topHighScore) {
+    localStorage.setItem(
+      "newFullScore",
+      JSON.stringify({
+        topName: newFullData.topName,
+        topCountry: newFullData.topCountry,
+        topAge: newFullData.topAge,
+        topHighScore: newFullData.topHighScore,
+        topDay: newFullData.topDay,
+      })
+    );
+  }
+  if (newFullData.topHighScore < newFullScore.topHighScore) {
+    localStorage.setItem(
+      "newFullScore",
+      JSON.stringify({
+        topName: newFullScore.topName,
+        topCountry: newFullScore.topCountry,
+        topAge: newFullScore.topAge,
+        topHighScore: newFullScore.topHighScore,
+        topDay: newFullScore.topDay,
+      })
+    );
+  }
+
   const {
     difficulty,
     highScore,

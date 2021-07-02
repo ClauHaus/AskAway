@@ -127,6 +127,10 @@ const AppProvider = ({ children }) => {
   const newLanguage = JSON.parse(localStorage.getItem("newLanguage"));
   const newDifficulty = JSON.parse(localStorage.getItem("newDifficulty"));
   const newTheme = JSON.parse(localStorage.getItem("newTheme"));
+  const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
+  const newSound = JSON.parse(localStorage.getItem("newSound"));
+
+  const [sound, setSound] = useState(newSound ? newSound : false);
 
   const [level, setLevel] = useState(0);
   const [difficulty, setDifficulty] = useState(
@@ -134,6 +138,20 @@ const AppProvider = ({ children }) => {
   );
   const [language, setLanguage] = useState(
     newLanguage ? newLanguage : "english"
+  );
+  const [final, setFinal] = useState(
+    newFullScore
+      ? newFullScore
+      : localStorage.setItem(
+          "newFullScore",
+          JSON.stringify({
+            topName: "",
+            topCountry: "",
+            topAge: "",
+            topHighScore: 0,
+            topDay: "",
+          })
+        )
   );
 
   const [theme, setTheme] = useState(newTheme ? newTheme : "dark");
@@ -179,6 +197,10 @@ const AppProvider = ({ children }) => {
         language,
         level,
         theme,
+        final,
+        sound,
+        setSound,
+        setFinal,
         setLevel,
         setDifficulty,
         setLanguage,

@@ -37,6 +37,7 @@ const Question = () => {
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
+  const newFullData = JSON.parse(localStorage.getItem("newFullData"));
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(scoreDifficulty);
   const [timer, setTimer] = useState(timerDifficulty);
@@ -47,6 +48,14 @@ const Question = () => {
     level >= 2 ? newActualScore : scoreDifficulty
   );
   const [container, setContainer] = useState("container-question");
+
+  useEffect(() => {
+    localStorage.setItem(
+      "newFullData",
+      JSON.stringify({ ...newFullData, topHighScore: newActualScore })
+    );
+    // eslint-disable-next-line
+  }, [newActualScore]);
 
   // Esta funcion es para que haga un sort de los elementos del array
   const shuffle = () => {
@@ -214,8 +223,8 @@ const Question = () => {
                       {60 - JSON.parse(localStorage.getItem("newTimer"))}{" "}
                       seconds,{" "}
                       {JSON.parse(localStorage.getItem("newTimer")) < 50
-                        ? "that was close, you need to move those fingers as fast as your mind."
-                        : "you are a fast thinker or a pretty good guesser, let's find out in the next level."}
+                        ? "you are a fast thinker or a pretty good guesser, let's find out in the next level."
+                        : "that was close, you need to move those fingers as fast as your mind."}
                     </li>
                   </ul>
                   {level < 5 ? (
@@ -233,12 +242,6 @@ const Question = () => {
                       Conclude
                     </button>
                   )}
-                  {/* <button
-                    className="btn btn-title center-item"
-                    onClick={() => nextPageFour(question, knowOne)}
-                  >
-                    Continue
-                  </button> */}
                 </div>
               </section>
             </>

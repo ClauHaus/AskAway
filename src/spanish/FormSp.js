@@ -31,6 +31,12 @@ export const FormSp = () => {
     //   setPeople([...people, newPerson]); //
     // }
   };
+  const hours = new Date().getHours();
+  const minutes = new Date().getMinutes();
+  const days = new Date().getDate();
+  const months = new Date().getMonth();
+  const years = new Date().getFullYear();
+  const fullDate = `a las ${hours}:${minutes} en ${days}/${months}/${years}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,6 +53,17 @@ export const FormSp = () => {
     localStorage.setItem("newCountry", JSON.stringify(person.country));
     // localStorage.setItem("newTest", JSON.stringify(people));
     // Idealmente seria pasar los tres elementos al Array que ya esta creado y retirar la informacion direcamtente del LOCALHOST --> INVESTIGAR!
+    localStorage.setItem(
+      "newFullData",
+      JSON.stringify({
+        topName: person.firstName,
+        topCountry: person.country,
+        topAge: person.age,
+        topDay: fullDate,
+      })
+      //Asi se pasan los 3, no a un array sino a un objeto
+    );
+    // eslint-disable-next-line
   }, [person]);
   return (
     <>

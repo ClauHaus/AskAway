@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import titleImg from "./images/title.png";
 import useSound from "use-sound";
 import startup from "./sounds/startup.mp3";
@@ -30,7 +30,7 @@ const Intro = () => {
     setOpacity(0);
     let timeOut = setTimeout(() => {
       nextPageIntro(intro, title);
-    }, 5500); //PASARLO A 5000!
+    }, 5500); //PASARLO A 5500!
     return () => clearTimeout(timeOut);
   };
 

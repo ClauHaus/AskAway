@@ -18,11 +18,13 @@ import { useGlobalContext } from "./../context";
 
 const HighScoreSp = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
-  const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));
+  const newFullData = JSON.parse(localStorage.getItem("newFullData"));
+  const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
   const { credits, highScore, nextPageCredits, restartGame, time } =
     useGlobalContext();
+  console.log(newFullData[0]);
   return (
     <>
       <section className="container-back-options">
@@ -34,7 +36,7 @@ const HighScoreSp = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\Askaway\FinalResults</div>
+              <div>C:\Askaway\ResultadosFinales</div>
             </section>
             <section className="upper-icons">
               <div className="icons-data">
@@ -50,27 +52,37 @@ const HighScoreSp = () => {
           </div>
         </header>
         <section className="ending" style={{ justifyContent: "center" }}>
-          {newActualScore >= newTopScore ? (
+          {newActualScore >= newFullScore.topHighScore ? (
             <div className="new-final-score">
-              <h4>High Score</h4>
-              <h4>{newTopScore}</h4>
-              <h5>Participante</h5>
+              <h4>Nuevo High Score!</h4>
+              <h4>{newActualScore} puntos</h4>
+              <h5>Logrado {newFullData.topDay}</h5>
               <h5>{newName}</h5>
-              <h5>de</h5>
+              <h5>De</h5>
               <h5>{newCountry}</h5>
             </div>
           ) : (
             <div className="new-final-score">
-              <h4>High Score</h4>
-              <h4>{newActualScore}</h4>
-              <h5>La próxima vez será el tuyp!</h5>
+              <h4>Previo High Score</h4>
+              <h4>
+                {newFullData.topHighScore > newFullScore.topHighScore
+                  ? newFullData.topHighScore
+                  : newFullScore.topHighScore}{" "}
+                puntos
+              </h4>
+              {/* <h5>Player</h5> */}
+              <h5>Logrado {newFullScore.topDay}</h5>
+              <h5>{newFullScore.topName}</h5>
+              <h5>De</h5>
+              <h5>{newFullScore.topCountry}</h5>
+              <h5>La próxima vez será el tuyo!</h5>
             </div>
           )}
           <button
             className="btn btn-title"
             onClick={() => nextPageCredits(highScore, credits)}
           >
-            Ver créditos
+            Roll the Credits
           </button>
         </section>
       </section>

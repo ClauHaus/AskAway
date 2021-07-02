@@ -30,7 +30,7 @@ const IntroSp = () => {
     setOpacity(0);
     let timeOut = setTimeout(() => {
       nextPageIntro(intro, title);
-    }, 5500); //PASARLO A 5000!
+    }, 5500); //PASARLO A 5500!
     return () => clearTimeout(timeOut);
   };
 

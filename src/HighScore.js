@@ -18,9 +18,10 @@ import { useGlobalContext } from "./context";
 
 const HighScore = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
-  const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));
+  const newFullData = JSON.parse(localStorage.getItem("newFullData"));
+  const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
   const { credits, highScore, nextPageCredits, restartGame, time } =
     useGlobalContext();
   return (
@@ -50,19 +51,29 @@ const HighScore = () => {
           </div>
         </header>
         <section className="ending" style={{ justifyContent: "center" }}>
-          {newActualScore >= newTopScore ? (
+          {newActualScore >= newFullScore.topHighScore ? (
             <div className="new-final-score">
-              <h4>High Score</h4>
-              <h4>{newTopScore}</h4>
-              <h5>Player</h5>
+              <h4>New High Score!</h4>
+              <h4>{newActualScore} points</h4>
+              <h5>Scored {newFullData.topDay}</h5>
               <h5>{newName}</h5>
               <h5>From</h5>
               <h5>{newCountry}</h5>
             </div>
           ) : (
             <div className="new-final-score">
-              <h4>High Score</h4>
-              <h4>{newActualScore}</h4>
+              <h4>Previous High Score</h4>
+              <h4>
+                {newFullData.topHighScore > newFullScore.topHighScore
+                  ? newFullData.topHighScore
+                  : newFullScore.topHighScore}{" "}
+                Points
+              </h4>
+              {/* <h5>Player</h5> */}
+              <h5>Scored {newFullScore.topDay}</h5>
+              <h5>{newFullScore.topName}</h5>
+              <h5>From</h5>
+              <h5>{newFullScore.topCountry}</h5>
               <h5>Next time it will be yours!</h5>
             </div>
           )}

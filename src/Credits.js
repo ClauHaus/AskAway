@@ -65,7 +65,7 @@ const Credits = () => {
       <section>
         <footer
           className="container-bottom"
-          style={{ top: "75%", bottom: "auto" }}
+          style={{ top: "95%", bottom: "auto" }}
         >
           <div>
             <button className="btn-restart" onClick={restartGame}>

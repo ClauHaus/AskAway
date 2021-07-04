@@ -174,7 +174,7 @@ const Question = () => {
                 style={{
                   width: "97%",
                   left: "2.5%",
-                  top: "23%",
+                  top: "25%",
                 }}
               >
                 <header className="window-info">

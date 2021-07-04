@@ -756,7 +756,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: left;
-  top: -15%;
+  bottom: -15%;
   background: #808080;
   width: 100%;
   box-shadow: -2px -2px 0px 0px rgba(255, 255, 255, 0.75);

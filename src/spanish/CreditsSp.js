@@ -21,7 +21,7 @@ const CreditsSp = () => {
   const { restartGame, time } = useGlobalContext();
   return (
     <>
-      <section className="container-back-options">
+      <section className="container-back-options" style={{ minHeight: "67%" }}>
         <header className="window-info">
           <div className="window-upper">
             <section className="upper-left">
@@ -45,25 +45,28 @@ const CreditsSp = () => {
             </section>
           </div>
         </header>
-        <section className="credits">
+        <section className="credits" style={{ minHeight: "60vh" }}>
           <p className="credits-text">
             Director, Productor, Diseñador, Programador, Tester, Editor, QA y
-            Gran bebedor de café
+            Gran bebedor de té
           </p>
-          <p className="credits-text">Claudio Aime</p>
+          <p className="credits-text" style={{ marginTop: "-20px" }}>
+            Claudio Aime
+          </p>
           <div className="credits-container-image">
             <img src={clauhaus} alt="ClauHaus" className="clauhaus" />
           </div>
-          <p className="credits-text" style={{ marginTop: "-20px" }}>
-            Muchísimas gracias por jugar!
+          <p className="credits-text" style={{ marginTop: "-35px" }}>
+            Muchísimas gracias por jugar! Para contactarte conmigo podes usar
+            los links debajo, cualquier feedback será muy bienvenido.
           </p>
-          <button className="btn btn-title" onClick={() => restartGame()}>
-            Rejugar AskAway
-          </button>
         </section>
       </section>
       <section>
-        <footer className="container-bottom">
+        <footer
+          className="container-bottom"
+          style={{ top: "75%", bottom: "auto" }}
+        >
           <div>
             <button className="btn-restart" onClick={restartGame}>
               <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>

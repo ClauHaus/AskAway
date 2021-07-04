@@ -2,6 +2,7 @@ import React from "react";
 import titleImg from "./../images/title.png";
 import useSound from "use-sound";
 import pop from "./../sounds/pop.mp3";
+import click1 from "./../sounds/click1.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCog,
@@ -37,12 +38,20 @@ const TitleSp = () => {
     sound,
     setSound,
   } = useGlobalContext();
+
   const year = new Date().getFullYear();
-  const [play] = useSound(pop, { volume: 0.5 });
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const [play1] = useSound(click1, { volume: 0.5 });
 
   const makeSound = () => {
     setSound(!sound);
-    play();
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
+
+  const soundAction = (action) => {
+    play1();
+    action();
   };
 
   return (
@@ -73,7 +82,10 @@ const TitleSp = () => {
         </header>
         <div className="container-title">
           <div className="btn-container" style={{ marginTop: "0px" }}>
-            <button className="btn-change " onClick={openOptions}>
+            <button
+              className="btn-change "
+              onClick={sound ? () => soundAction(openOptions) : openOptions}
+            >
               <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
             </button>
             <button
@@ -103,10 +115,13 @@ const TitleSp = () => {
               className="btn-title"
               onClick={() => nextPageForm(title, form)}
             >
-              Comenzar juego
+              Comenzar!
             </button>
-            <button className="btn-title" onClick={openModal}>
-              Como jugar
+            <button
+              className="btn-title"
+              onClick={sound ? () => soundAction(openModal) : openModal}
+            >
+              Cómo jugar?
             </button>
           </div>
           <p className="title">Desarrollado por ClauHaus - {year}</p>

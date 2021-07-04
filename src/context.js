@@ -163,7 +163,7 @@ const AppProvider = ({ children }) => {
   const timerDifficulty = () => {
     let result = 60;
     if (difficulty === "normal") {
-      result = 60; //60
+      result = 6000; //60
     }
     if (difficulty === "hard") {
       result = 55;

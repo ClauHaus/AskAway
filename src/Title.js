@@ -40,12 +40,12 @@ const Title = () => {
   } = useGlobalContext();
 
   const year = new Date().getFullYear();
-  const [play] = useSound(pop, { volume: 0.5 });
+  const [playPop] = useSound(pop, { volume: 0.5 });
   const [play1] = useSound(click1, { volume: 0.5 });
 
   const makeSound = () => {
     setSound(!sound);
-    play();
+    playPop();
     localStorage.setItem("newSound", JSON.stringify(!sound));
   };
 
@@ -53,6 +53,7 @@ const Title = () => {
     play1();
     action();
   };
+
   return (
     <>
       <section className="container-back">
@@ -99,7 +100,6 @@ const Title = () => {
               )}
             </button>
           </div>
-
           <h3 className="title title-back">ask away</h3>
           <h5 className="title">How much do you know about stuff?</h5>
           <div className="title-image-container">
@@ -114,13 +114,13 @@ const Title = () => {
               className="btn-title"
               onClick={() => nextPageForm(title, form)}
             >
-              Start game
+              Start!
             </button>
             <button
               className="btn-title"
               onClick={sound ? () => soundAction(openModal) : openModal}
             >
-              How to play
+              How to play?
             </button>
           </div>
           <p className="title">Coded by ClauHaus - {year}</p>

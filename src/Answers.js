@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import useSound from "use-sound";
+import errorSound from "./sounds/errorSound.mp3";
+import rightSound from "./sounds/rightSound.mp3";
 
 const Answers = ({
   data,
@@ -47,6 +50,10 @@ const Answers = ({
   };
 
   const points = pointsDifficulty();
+
+  const [playError] = useSound(errorSound, { volume: 0.5 });
+  const [playRight] = useSound(rightSound, { volume: 0.5 });
+  const newSound = JSON.parse(localStorage.getItem("newSound"));
 
   //Se hacen los cambios de color en botones y fondo con un delay para pasar a la siguiente pregunta
 
@@ -142,6 +149,7 @@ const Answers = ({
                   setAlertRight("alert-success"),
                   changeAttributes(),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
@@ -151,7 +159,8 @@ const Answers = ({
                   setCursorA("not-allowed"),
                   setEventsA("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[0][0]}
@@ -169,6 +178,7 @@ const Answers = ({
                   changeAttributes(),
                   setAlertRight("alert-success"),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
                     : null)
@@ -177,7 +187,8 @@ const Answers = ({
                   setCursorB("not-allowed"),
                   setEventsB("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[1][0]}
@@ -195,6 +206,7 @@ const Answers = ({
                   changeAttributes(),
                   setAlertRight("alert-success"),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
                     : null)
@@ -203,7 +215,8 @@ const Answers = ({
                   setCursorC("not-allowed"),
                   setEventsC("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[2][0]}
@@ -221,6 +234,7 @@ const Answers = ({
                   changeAttributes(),
                   setAlertRight("alert-success"),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
                     : null)
@@ -229,7 +243,8 @@ const Answers = ({
                   setCursorD("not-allowed"),
                   setEventsD("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[3][0]}

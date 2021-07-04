@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import useSound from "use-sound";
+import click1 from "./sounds/click1.mp3";
+import clickOptions from "./sounds/clickOptions.mp3";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,9 +15,18 @@ import howToData from "./howToData";
 import { useGlobalContext } from "./context";
 
 const HowTo = () => {
-  const { closeModal } = useGlobalContext();
+  const { closeModal, sound } = useGlobalContext();
   const data = howToData;
   const [index, setIndex] = useState(0);
+
+  const [play] = useSound(click1, { volume: 0.5 });
+  const [play1] = useSound(clickOptions, { volume: 0.5 });
+
+  const soundAction = (action) => {
+    play();
+    action();
+  };
+
   return (
     <section className="container-back-howTo">
       <header className="window-info">
@@ -56,7 +68,10 @@ const HowTo = () => {
         return (
           <article key={itemIndex} className={position}>
             <section className="howto">
-              <button className="btn close-modal-btn" onClick={closeModal}>
+              <button
+                className="btn close-modal-btn"
+                onClick={sound ? () => soundAction(closeModal) : closeModal}
+              >
                 <FontAwesomeIcon icon={faTimes} />
               </button>
               <h5 className="title-howto title-howto-back">{title}</h5>
@@ -65,13 +80,17 @@ const HowTo = () => {
               <div className="btn-container-howto">
                 <button
                   className="btn-prev"
-                  onClick={() => setIndex(index - 1)}
+                  onClick={() =>
+                    sound ? (play1(), setIndex(index - 1)) : setIndex(index - 1)
+                  }
                 >
                   <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <button
                   className="btn-next"
-                  onClick={() => setIndex(index + 1)}
+                  onClick={() =>
+                    sound ? (play1(), setIndex(index + 1)) : setIndex(index + 1)
+                  }
                 >
                   <FontAwesomeIcon icon={faChevronRight} />
                 </button>

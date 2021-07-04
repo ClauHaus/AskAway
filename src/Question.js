@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import useSound from "use-sound";
+import levelClear from "./sounds/levelClear.mp3";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -33,6 +35,7 @@ const Question = () => {
     timerDifficulty,
     scoreDifficulty,
     difficulty,
+    sound,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
@@ -115,6 +118,8 @@ const Question = () => {
     }, 1000);
     return () => clearInterval(interval);
   });
+
+  const [playFanfare] = useSound(levelClear, { volume: 0.5 });
 
   return (
     <>
@@ -230,7 +235,11 @@ const Question = () => {
                   {level < 5 ? (
                     <button
                       className="btn btn-title center-item"
-                      onClick={() => nextPageFour(question, knowOne)}
+                      onClick={() =>
+                        sound
+                          ? (nextPageFour(question, knowOne), playFanfare())
+                          : nextPageFour(question, knowOne)
+                      }
                     >
                       Continue
                     </button>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
+import click1 from "./../sounds/click1.mp3";
+import pop from "./../sounds/pop.mp3";
 import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +17,7 @@ const OptionsSp = () => {
     theme,
     setTheme,
     closeOptions,
-    style,
+    sound,
   } = useGlobalContext();
   const [pressNormal, setPressNormal] = useState("");
   const [pressHard, setPressHard] = useState("");
@@ -69,6 +71,14 @@ const OptionsSp = () => {
     localStorage.setItem("newTheme", JSON.stringify(theme));
   }, [difficulty, language, theme]);
 
+  const [play] = useSound(click1, { volume: 0.5 });
+  const [play1] = useSound(pop, { volume: 0.5 });
+
+  const soundAction = (action) => {
+    play();
+    action();
+  };
+
   return (
     <section className="container-back-options">
       <header className="window-info">
@@ -94,8 +104,11 @@ const OptionsSp = () => {
           </section>
         </div>
       </header>
-      <section className={`options ${style}`}>
-        <button className="close-modal-btn" onClick={closeOptions}>
+      <section className="options">
+        <button
+          className="close-modal-btn"
+          onClick={sound ? () => soundAction(closeOptions) : closeOptions}
+        >
           <FontAwesomeIcon icon={faTimes} />
         </button>
         <h4 className="title-options title-options-back">Opciones</h4>
@@ -104,14 +117,22 @@ const OptionsSp = () => {
           <button
             className={`btn-options ${english}`}
             value="english"
-            onClick={(e) => setLanguage(e.target.value)}
+            onClick={(e) =>
+              sound
+                ? (setLanguage(e.target.value), play1())
+                : setLanguage(e.target.value)
+            }
           >
             Inglés
           </button>
           <button
             className={`btn-options ${spanish}`}
             value="spanish"
-            onClick={(e) => setLanguage(e.target.value)}
+            onClick={(e) =>
+              sound
+                ? (setLanguage(e.target.value), play1())
+                : setLanguage(e.target.value)
+            }
           >
             Español
           </button>
@@ -121,21 +142,33 @@ const OptionsSp = () => {
           <button
             className={`btn-options ${pressNormal}`}
             value="normal"
-            onClick={(e) => setDifficulty(e.target.value)}
+            onClick={(e) =>
+              sound
+                ? (play1(), setDifficulty(e.target.value))
+                : setDifficulty(e.target.value)
+            }
           >
             Modo Normal
           </button>
           <button
             className={`btn-options ${pressHard}`}
             value="hard"
-            onClick={(e) => setDifficulty(e.target.value)}
+            onClick={(e) =>
+              sound
+                ? (play1(), setDifficulty(e.target.value))
+                : setDifficulty(e.target.value)
+            }
           >
             Modo Difícil
           </button>
           <button
             className={`btn-options ${pressHell}`}
             value="hell"
-            onClick={(e) => setDifficulty(e.target.value)}
+            onClick={(e) =>
+              sound
+                ? (play1(), setDifficulty(e.target.value))
+                : setDifficulty(e.target.value)
+            }
           >
             Modo Infierno
           </button>
@@ -145,14 +178,22 @@ const OptionsSp = () => {
           <button
             className={`btn-options ${dark}`}
             value="dark"
-            onClick={(e) => setTheme(e.target.value)}
+            onClick={(e) =>
+              sound
+                ? (play1(), setTheme(e.target.value))
+                : setTheme(e.target.value)
+            }
           >
             Oscuro
           </button>
           <button
             className={`btn-options ${light}`}
             value="light"
-            onClick={(e) => setTheme(e.target.value)}
+            onClick={(e) =>
+              sound
+                ? (play1(), setTheme(e.target.value))
+                : setTheme(e.target.value)
+            }
           >
             Claro
           </button>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
-//Achicar el espacio del score (cambiar como aparece score tambien), achicar el espacio del tiempo, agrandar el espacio de la pregunta para que entre mejor la imagen, ver el tema del tiempo en el que aparece el +5  y -2 |Bradd Pitt ok Messi no, revisar ahi
+import useSound from "use-sound";
+import errorSound from "./../sounds/errorSound.mp3";
+import rightSound from "./../sounds/rightSound.mp3";
 
 const AnswersSp = ({
   data,
@@ -49,6 +50,10 @@ const AnswersSp = ({
   };
 
   const points = pointsDifficulty();
+
+  const [playError] = useSound(errorSound, { volume: 0.5 });
+  const [playRight] = useSound(rightSound, { volume: 0.5 });
+  const newSound = JSON.parse(localStorage.getItem("newSound"));
 
   //Se hacen los cambios de color en botones y fondo con un delay para pasar a la siguiente pregunta
 
@@ -144,6 +149,7 @@ const AnswersSp = ({
                   setAlertRight("alert-success"),
                   changeAttributes(),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
@@ -153,7 +159,8 @@ const AnswersSp = ({
                   setCursorA("not-allowed"),
                   setEventsA("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[0][0]}
@@ -171,6 +178,7 @@ const AnswersSp = ({
                   changeAttributes(),
                   setAlertRight("alert-success"),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
                     : null)
@@ -179,7 +187,8 @@ const AnswersSp = ({
                   setCursorB("not-allowed"),
                   setEventsB("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[1][0]}
@@ -197,6 +206,7 @@ const AnswersSp = ({
                   changeAttributes(),
                   setAlertRight("alert-success"),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
                     : null)
@@ -205,7 +215,8 @@ const AnswersSp = ({
                   setCursorC("not-allowed"),
                   setEventsC("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[2][0]}
@@ -223,6 +234,7 @@ const AnswersSp = ({
                   changeAttributes(),
                   setAlertRight("alert-success"),
                   changeTimeout(),
+                  newSound ? playRight() : null,
                   index < 9
                     ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
                     : null)
@@ -231,7 +243,8 @@ const AnswersSp = ({
                   setCursorD("not-allowed"),
                   setEventsD("none"),
                   setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"))
+                  setContainer("container-wrong"),
+                  newSound ? playError() : null)
             }
           >
             {answers[3][0]}

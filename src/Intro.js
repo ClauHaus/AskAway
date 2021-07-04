@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import titleImg from "./images/title.png";
 import useSound from "use-sound";
 import startup from "./sounds/startup.mp3";

@@ -117,10 +117,10 @@ const Options = () => {
           <button
             className={`btn-options ${english}`}
             value="english"
-            onClick={
+            onClick={(e) =>
               sound
-                ? (() => play1(), (e) => setLanguage(e.target.value))
-                : (e) => setLanguage(e.target.value)
+                ? (setLanguage(e.target.value), play1())
+                : setLanguage(e.target.value)
             }
           >
             English
@@ -128,10 +128,10 @@ const Options = () => {
           <button
             className={`btn-options ${spanish}`}
             value="spanish"
-            onClick={
+            onClick={(e) =>
               sound
-                ? (play1(), (e) => setLanguage(e.target.value))
-                : (e) => setLanguage(e.target.value)
+                ? (setLanguage(e.target.value), play1())
+                : setLanguage(e.target.value)
             }
           >
             Spanish
@@ -142,10 +142,10 @@ const Options = () => {
           <button
             className={`btn-options ${pressNormal}`}
             value="normal"
-            onClick={
+            onClick={(e) =>
               sound
-                ? (() => play1(), (e) => setDifficulty(e.target.value))
-                : (e) => setDifficulty(e.target.value)
+                ? (play1(), setDifficulty(e.target.value))
+                : setDifficulty(e.target.value)
             }
           >
             Normal Mode
@@ -153,10 +153,10 @@ const Options = () => {
           <button
             className={`btn-options ${pressHard}`}
             value="hard"
-            onClick={
+            onClick={(e) =>
               sound
-                ? (() => play1(), (e) => setDifficulty(e.target.value))
-                : (e) => setDifficulty(e.target.value)
+                ? (play1(), setDifficulty(e.target.value))
+                : setDifficulty(e.target.value)
             }
           >
             Hard Mode
@@ -164,10 +164,10 @@ const Options = () => {
           <button
             className={`btn-options ${pressHell}`}
             value="hell"
-            onClick={
+            onClick={(e) =>
               sound
-                ? (() => play1(), (e) => setDifficulty(e.target.value))
-                : (e) => setDifficulty(e.target.value)
+                ? (play1(), setDifficulty(e.target.value))
+                : setDifficulty(e.target.value)
             }
           >
             Hell Mode
@@ -178,10 +178,10 @@ const Options = () => {
           <button
             className={`btn-options ${dark}`}
             value="dark"
-            onClick={
+            onClick={(e) =>
               sound
-                ? (() => play1(), (e) => setTheme(e.target.value))
-                : (e) => setTheme(e.target.value)
+                ? (play1(), setTheme(e.target.value))
+                : setTheme(e.target.value)
             }
           >
             Dark
@@ -189,10 +189,10 @@ const Options = () => {
           <button
             className={`btn-options ${light}`}
             value="light"
-            onClick={
+            onClick={(e) =>
               sound
-                ? (() => play1(), (e) => setTheme(e.target.value))
-                : (e) => setTheme(e.target.value)
+                ? (play1(), setTheme(e.target.value))
+                : setTheme(e.target.value)
             }
           >
             Light

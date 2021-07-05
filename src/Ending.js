@@ -1,4 +1,7 @@
 import React from "react";
+import useSound from "use-sound";
+import pop from "./sounds/pop.mp3";
+import applause from "./sounds/applause.mp3";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,6 +9,8 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -53,7 +58,18 @@ const Ending = () => {
     nextPageHighScore,
     restartGame,
     time,
+    sound,
+    setSound,
   } = useGlobalContext();
+
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const [playApplause] = useSound(applause, { volume: 0.5 });
+  const makeSound = () => {
+    setSound(!sound);
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
+
   return (
     <>
       <section className="container-back-options">
@@ -163,7 +179,11 @@ const Ending = () => {
           </section>
           <button
             className="btn btn-title"
-            onClick={() => nextPageHighScore(ending, highScore)}
+            onClick={() =>
+              sound
+                ? (nextPageHighScore(ending, highScore), playApplause())
+                : nextPageHighScore(ending, highScore)
+            }
           >
             High Score?
           </button>
@@ -236,6 +256,16 @@ const Ending = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

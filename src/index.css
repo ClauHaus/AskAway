@@ -769,11 +769,19 @@ ul {
   margin: 15px 4px 8px 4px;
 }
 
+.container-bottom-sound {
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: 10px;
+  padding: 1px;
+  background: #808080;
+}
+
 .container-bottom-clock {
   font-size: 1rem;
-  margin: 10px 0px 10px 35px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: 10px 1px;
+  padding-left: 10px;
+  padding-right: 10px;
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
     -1px -1px 3px 0px #fffbf0 inset;
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,

@@ -51,7 +51,7 @@ const Answers = ({
 
   const points = pointsDifficulty();
 
-  const [playError] = useSound(errorSound, { volume: 0.5 });
+  const [playError] = useSound(errorSound, { volume: 0.6 });
   const [playRight] = useSound(rightSound, { volume: 0.5 });
   const newSound = JSON.parse(localStorage.getItem("newSound"));
 

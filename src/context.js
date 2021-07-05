@@ -10,7 +10,7 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  intro: false,
+  intro: true,
   title: false,
   modal: false,
   options: false,
@@ -22,7 +22,7 @@ const initialState = {
   knowOne: false,
   ending: false,
   highScore: false,
-  credits: true,
+  credits: false,
 };
 
 const AppProvider = ({ children }) => {

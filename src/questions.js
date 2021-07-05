@@ -1012,10 +1012,10 @@ const bigData = [
       question: `Who are this iconic spanish couple?`,
       image: quixote,
       answers: [
-        ["Gerard piqué and Carles Puyol ", false],
-        ["El Cid Campeador and Diego Laínez", false],
-        ["Santiago Segura and Javier Cámara", false],
-        ["Don Quixote and Sancho Panza", true],
+        ["Gerard piqué & Carles Puyol ", false],
+        ["El Cid & Diego Laínez", false],
+        ["Santiago Segura & Javier Cámara", false],
+        ["Don Quixote & Sancho Panza", true],
       ],
     },
     {

@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import useSound from "use-sound";
+import pop from "./../sounds/pop.mp3";
 import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,6 +8,8 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -26,6 +30,8 @@ const LoadingPage = () => {
     level,
     timerDifficulty,
     theme,
+    sound,
+    setSound,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   useEffect(() => {
@@ -35,6 +41,13 @@ const LoadingPage = () => {
     return () => clearTimeout(timeOut);
     // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut
   }, [nextPageThree, loadingPage, question, level]); //Revisar estas dependencies, en caso de error quitarlas y solo queda un warning
+
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const makeSound = () => {
+    setSound(!sound);
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
 
   return (
     <>
@@ -152,6 +165,16 @@ const LoadingPage = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

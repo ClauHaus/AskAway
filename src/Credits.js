@@ -1,4 +1,6 @@
 import React from "react";
+import useSound from "use-sound";
+import pop from "./sounds/pop.mp3";
 import titleImg from "./images/title.png";
 import clauhaus from "./images/clauhaus.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +9,8 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -18,7 +22,15 @@ import {
 import { useGlobalContext } from "./context";
 
 const Credits = () => {
-  const { restartGame, time } = useGlobalContext();
+  const { restartGame, time, sound, setSound } = useGlobalContext();
+
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const makeSound = () => {
+    setSound(!sound);
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
+
   return (
     <>
       <section className="container-back-options" style={{ minHeight: "67%" }}>
@@ -65,7 +77,7 @@ const Credits = () => {
       <section>
         <footer
           className="container-bottom"
-          style={{ top: "95%", bottom: "auto" }}
+          style={{ top: "90%", bottom: "auto" }}
         >
           <div>
             <button className="btn-restart" onClick={restartGame}>
@@ -132,6 +144,16 @@ const Credits = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

@@ -1,11 +1,16 @@
 import React from "react";
 import titleImg from "./images/title.png";
+import useSound from "use-sound";
+import pop from "./sounds/pop.mp3";
+import click1 from "./sounds/click1.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -28,6 +33,8 @@ const FormContinue = () => {
     loadingPage,
     level,
     setLevel,
+    sound,
+    setSound,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newAge = JSON.parse(localStorage.getItem("newAge"));
@@ -38,6 +45,18 @@ const FormContinue = () => {
   const startGame = () => {
     nextPageTwo(formContinue, loadingPage);
     setLevel(level + 1);
+  };
+
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const [play1] = useSound(click1, { volume: 0.5 });
+  const makeSound = () => {
+    setSound(!sound);
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
+  const soundAction = (action) => {
+    play1();
+    action();
   };
 
   return (
@@ -77,7 +96,10 @@ const FormContinue = () => {
               game, we highly recommend you to check on the "How To play"
               section.
             </p>
-            <button className="btn btn-title center-item" onClick={openModal}>
+            <button
+              className="btn btn-title center-item"
+              onClick={sound ? () => soundAction(openModal) : openModal}
+            >
               How to play
             </button>
             <p className="formContinue-text">
@@ -90,7 +112,7 @@ const FormContinue = () => {
           <button
             className="btn btn-title center-item"
             style={{ marginTop: "30px" }}
-            onClick={() => startGame()}
+            onClick={() => (sound ? (startGame(), play1()) : startGame())}
           >
             Continue
           </button>
@@ -164,6 +186,16 @@ const FormContinue = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

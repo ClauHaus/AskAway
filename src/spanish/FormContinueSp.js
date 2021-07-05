@@ -1,4 +1,7 @@
 import React from "react";
+import useSound from "use-sound";
+import pop from "./../sounds/pop.mp3";
+import click1 from "./../sounds/click1.mp3";
 import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,6 +9,8 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -28,6 +33,8 @@ const FormContinueSp = () => {
     loadingPage,
     level,
     setLevel,
+    sound,
+    setSound,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newAge = JSON.parse(localStorage.getItem("newAge"));
@@ -38,6 +45,18 @@ const FormContinueSp = () => {
   const startGame = () => {
     nextPageTwo(formContinue, loadingPage);
     setLevel(level + 1);
+  };
+
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const [play1] = useSound(click1, { volume: 0.5 });
+  const makeSound = () => {
+    setSound(!sound);
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
+  const soundAction = (action) => {
+    play1();
+    action();
   };
 
   return (
@@ -76,20 +95,23 @@ const FormContinueSp = () => {
               Sí tienes dudas con respecto al juego te recomendamos veas nuestra
               sección de "como jugar".
             </p>
-            <button className="btn btn-title center-item" onClick={openModal}>
+            <button
+              className="btn btn-title center-item"
+              onClick={sound ? () => soundAction(openModal) : openModal}
+            >
               Como jugar
             </button>
             <p className="formContinue-text">
               Todo esta preprarado para que nos maravilles con tu velocidad
               mental y conocimientos, veamos que tan bien representas{" "}
-              {newCountry}. Comenccemos!
+              {newCountry}. Comencemos!
             </p>
           </article>
 
           <button
             className="btn btn-title center-item"
             style={{ marginTop: "30px" }}
-            onClick={() => startGame()}
+            onClick={() => (sound ? (startGame(), play1()) : startGame())}
           >
             Continuar
           </button>
@@ -163,6 +185,16 @@ const FormContinueSp = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

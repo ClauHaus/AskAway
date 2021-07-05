@@ -113,7 +113,11 @@ const TitleSp = () => {
           <div className="btn-container">
             <button
               className="btn-title"
-              onClick={() => nextPageForm(title, form)}
+              onClick={() =>
+                sound
+                  ? (nextPageForm(title, form), play1())
+                  : nextPageForm(title, form)
+              }
             >
               Comenzar!
             </button>
@@ -196,6 +200,16 @@ const TitleSp = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

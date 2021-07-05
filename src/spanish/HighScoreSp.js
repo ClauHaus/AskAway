@@ -1,4 +1,7 @@
 import React from "react";
+import useSound from "use-sound";
+import pop from "./../sounds/pop.mp3";
+import creditsSound from "./../sounds/creditsSound.mp3";
 import titleImg from "./../images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,6 +9,8 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -22,9 +27,24 @@ const HighScoreSp = () => {
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));
   const newFullData = JSON.parse(localStorage.getItem("newFullData"));
   const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
-  const { credits, highScore, nextPageCredits, restartGame, time } =
-    useGlobalContext();
-  console.log(newFullData[0]);
+  const {
+    credits,
+    highScore,
+    nextPageCredits,
+    restartGame,
+    time,
+    sound,
+    setSound,
+  } = useGlobalContext();
+
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const [playCredits] = useSound(creditsSound, { volume: 0.5 });
+  const makeSound = () => {
+    setSound(!sound);
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
+
   return (
     <>
       <section className="container-back-options">
@@ -80,7 +100,11 @@ const HighScoreSp = () => {
           )}
           <button
             className="btn btn-title"
-            onClick={() => nextPageCredits(highScore, credits)}
+            onClick={() =>
+              sound
+                ? (nextPageCredits(highScore, credits), playCredits())
+                : nextPageCredits(highScore, credits)
+            }
           >
             Roll the Credits
           </button>
@@ -153,6 +177,16 @@ const HighScoreSp = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

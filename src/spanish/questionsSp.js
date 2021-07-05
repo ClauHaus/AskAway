@@ -1009,13 +1009,13 @@ const bigDataSp = [
     },
     {
       id: 15,
-      question: `Quién es esta iconica pareja española?`,
+      question: `Quien es esta icónica pareja española?`,
       image: quixote,
       answers: [
-        ["Gerard piqué y Carles Puyol ", false],
-        ["El Cid Campeador y Diego Laínez", false],
-        ["Santiago Segura y Javier Cámara", false],
-        ["Don Quixote y Sancho Panza", true],
+        ["Gerard piqué & Carles Puyol ", false],
+        ["El Cid & Diego Laínez", false],
+        ["Santiago Segura & Javier Cámara", false],
+        ["Don Quixote & Sancho Panza", true],
       ],
     },
     {

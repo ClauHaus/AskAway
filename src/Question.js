@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
 import levelClear from "./sounds/levelClear.mp3";
+import finalLevelFanfare from "./sounds/finalLevelFanfare.mp3";
+import pop from "./sounds/pop.mp3";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,6 +10,8 @@ import {
   faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
+  faVolumeUp,
+  faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -36,6 +40,7 @@ const Question = () => {
     scoreDifficulty,
     difficulty,
     sound,
+    setSound,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
@@ -120,6 +125,13 @@ const Question = () => {
   });
 
   const [playFanfare] = useSound(levelClear, { volume: 0.5 });
+  const [playFinalFanfare] = useSound(finalLevelFanfare, { volume: 0.5 });
+  const [playPop] = useSound(pop, { volume: 0.5 });
+  const makeSound = () => {
+    setSound(!sound);
+    playPop();
+    localStorage.setItem("newSound", JSON.stringify(!sound));
+  };
 
   return (
     <>
@@ -246,7 +258,13 @@ const Question = () => {
                   ) : (
                     <button
                       className="btn btn-title center-item"
-                      onClick={() => nextPageEnding(question, knowOne)}
+                      // onClick={() => nextPageEnding(question, knowOne)}
+                      onClick={() =>
+                        sound
+                          ? (nextPageEnding(question, knowOne),
+                            playFinalFanfare())
+                          : nextPageEnding(question, knowOne)
+                      }
                     >
                       Conclude
                     </button>
@@ -378,6 +396,16 @@ const Question = () => {
               alt="logo of Ask Away"
             />
           </div>
+          <button
+            className="container-bottom-sound"
+            onClick={() => makeSound()}
+          >
+            {sound ? (
+              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+            ) : (
+              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+            )}
+          </button>
           <div className="container-bottom-clock">{time}</div>
         </footer>
       </section>

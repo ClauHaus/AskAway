@@ -33,7 +33,8 @@ const IntroSp = () => {
     }, 5500); //PASARLO A 5500!
     return () => clearTimeout(timeOut);
   };
-
+  const info = window.innerWidth;
+  console.log(info);
   return (
     <>
       <section className="container-back">
@@ -164,7 +165,7 @@ const IntroSp = () => {
               alt="logo of Ask Away"
             />
           </div>
-          <div className="container-bottom-clock">{time}</div>
+          <div className="container-bottom-clock-intro">{time}</div>
         </footer>
       </section>
     </>

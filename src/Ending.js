@@ -72,7 +72,7 @@ const Ending = () => {
 
   return (
     <>
-      <section className="container-back-options">
+      <section className="container-back-final">
         <header className="window-info">
           <div className="window-upper">
             <section className="upper-left">

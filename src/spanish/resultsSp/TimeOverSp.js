@@ -14,16 +14,7 @@ const TimeOverSp = ({ restartGame }) => {
 
   return (
     <>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "35%",
-          minHeight: "25%",
-          zIndex: "1",
-        }}
-      >
+      <section className="container-back-time">
         <header className="window-info">
           <div className="window-upper">
             <section className="upper-left">

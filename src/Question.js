@@ -135,13 +135,7 @@ const Question = () => {
 
   return (
     <>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-        }}
-      >
+      <section className="container-back-question">
         <header className="window-info">
           <div className="window-upper">
             <section className="upper-left">
@@ -181,14 +175,7 @@ const Question = () => {
               <h1 className="title title-back question">
                 {newName}, you are great!
               </h1>
-              <section
-                className="container-back"
-                style={{
-                  width: "97%",
-                  left: "2.5%",
-                  top: "25%",
-                }}
-              >
+              <section className="container-back-results">
                 <header className="window-info">
                   <div className="window-upper">
                     <section className="upper-left">

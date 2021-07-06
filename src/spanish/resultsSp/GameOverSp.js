@@ -51,15 +51,7 @@ const GameOverSp = ({ newName, score, restartGame }) => {
             Oh no {newName}, has conseguido las 10 respuestas correctas pero no
             suficientes puntos.
           </p>
-          <section
-            className="container-back"
-            style={{
-              width: "95%",
-              left: "7%",
-              top: "40%",
-              minHeight: "45%",
-            }}
-          >
+          <section className="container-back-over">
             <header className="window-info">
               <div className="window-upper">
                 <section className="upper-left">

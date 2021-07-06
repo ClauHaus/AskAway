@@ -51,15 +51,7 @@ const GameOver = ({ newName, score, restartGame }) => {
             Oh no {newName}, you got 10 correct answers but not enough points to
             move on.
           </p>
-          <section
-            className="container-back"
-            style={{
-              width: "95%",
-              left: "7%",
-              top: "40%",
-              minHeight: "45%",
-            }}
-          >
+          <section className="container-back-over">
             <header className="window-info">
               <div className="window-upper">
                 <section className="upper-left">

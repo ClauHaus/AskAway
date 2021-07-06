@@ -160,7 +160,7 @@ const Intro = () => {
               alt="logo of Ask Away"
             />
           </div>
-          <div className="container-bottom-clock">{time}</div>
+          <div className="container-bottom-clock-intro">{time}</div>
         </footer>
       </section>
     </>

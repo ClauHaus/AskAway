@@ -33,7 +33,7 @@ const Credits = () => {
 
   return (
     <>
-      <section className="container-back-options" style={{ minHeight: "67%" }}>
+      <section className="container-back-final">
         <header className="window-info">
           <div className="window-upper">
             <section className="upper-left">
@@ -58,27 +58,24 @@ const Credits = () => {
           </div>
         </header>
         <section className="credits" style={{ minHeight: "60vh" }}>
-          <p className="credits-text">
-            Director, Producer, Designer, Programmer, Tester, Editor, QA and
-            Heavy tea Drinker
+          <p className="credits-text-up">
+            Director, Producer, Designer, Programmer, Tester, Editor and
+            Developer
           </p>
-          <p className="credits-text" style={{ marginTop: "-20px" }}>
+          <p className="credits-text-up" style={{ marginTop: "-20px" }}>
             Claudio Aime
           </p>
           <div className="credits-container-image">
             <img src={clauhaus} alt="ClauHaus" className="clauhaus" />
           </div>
-          <p className="credits-text" style={{ marginTop: "-35px" }}>
+          <p className="credits-text-up" style={{ marginTop: "-35px" }}>
             Thank you very much for playing! If you want to contact me, you can
             use the links below, any feedback is more than welcome.
           </p>
         </section>
       </section>
       <section>
-        <footer
-          className="container-bottom"
-          style={{ top: "90%", bottom: "auto" }}
-        >
+        <footer className="container-bottom-credits">
           <div>
             <button className="btn-restart" onClick={restartGame}>
               <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>

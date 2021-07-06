@@ -143,7 +143,7 @@ const bigDataSp = [
     },
     {
       id: 10,
-      question: `Para que selección de fútbol nacional juega éls?`,
+      question: `Para que selección de fútbol nacional juega él?`,
       image: messi,
       answers: [
         ["España", false],

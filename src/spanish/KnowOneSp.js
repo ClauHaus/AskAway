@@ -105,15 +105,7 @@ const KnowOneSp = () => {
           </button>
         </div>
       </section>
-      <section
-        className="container-back"
-        style={{
-          width: "95%",
-          left: "2%",
-          top: "25%",
-          minHeight: "0%",
-        }}
-      >
+      <section className="container-back-know">
         <header className="window-info">
           <div className="window-upper">
             <section className="upper-left">

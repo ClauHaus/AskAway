@@ -37,7 +37,7 @@ const LoadingPage = () => {
   useEffect(() => {
     let timeOut = setTimeout(() => {
       nextPageThree(loadingPage, question); //AGREGAR ACA EL setLevel de 0 a 1
-    }, 1000); //PASARLO A 5000!
+    }, 5000); //PASARLO A 5000!
     return () => clearTimeout(timeOut);
     // clearTimeout(timeout); Revisar si puede haber problemas de no sacar el timeOut
   }, [nextPageThree, loadingPage, question, level]); //Revisar estas dependencies, en caso de error quitarlas y solo queda un warning

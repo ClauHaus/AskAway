@@ -117,6 +117,7 @@ const AnswersSp = ({
     }, 1500);
     return () => clearTimeout(timeout);
   };
+  const infoWidth = window.innerWidth;
 
   return (
     <article key={id} className={position}>
@@ -130,127 +131,251 @@ const AnswersSp = ({
       </div>
       <div className="container-timer">
         <div className="score">Puntos: {score}/30</div>
-        <div className="timer">{count ? timer : "Liste?"}</div>
+        <div className="timer">{count ? timer : "Listx?"}</div>
       </div>
       <section className="alerts">
         <div className={`alert ${alertWrong}`}>-{points}</div>
         <div className={`alert ${alertRight}`}>+5</div>
       </section>
-      <ul>
-        <li>
-          <button
-            className={changeA}
-            style={{ cursor: cursorA, pointerEvents: eventsA }}
-            onClick={() =>
-              answers[0][1]
-                ? (setChangeA("answers-right"),
-                  highScore(score + 5),
-                  setContainer("container-right"),
-                  setAlertRight("alert-success"),
-                  changeAttributes(),
-                  changeTimeout(),
-                  newSound ? playRight() : null,
-                  // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
-                  index < 9
-                    ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
-                    : null)
-                : (setChangeA("answers-wrong"),
-                  highScore(score - points),
-                  setCursorA("not-allowed"),
-                  setEventsA("none"),
-                  setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"),
-                  newSound ? playError() : null)
-            }
-          >
-            {answers[0][0]}
-          </button>
-        </li>
-        <li>
-          <button
-            className={changeB}
-            style={{ cursor: cursorB, pointerEvents: eventsB }}
-            onClick={() =>
-              answers[1][1]
-                ? (setChangeB("answers-right"),
-                  highScore(score + 5),
-                  setContainer("container-right"),
-                  changeAttributes(),
-                  setAlertRight("alert-success"),
-                  changeTimeout(),
-                  newSound ? playRight() : null,
-                  index < 9
-                    ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
-                    : null)
-                : (setChangeB("answers-wrong"),
-                  highScore(score - points),
-                  setCursorB("not-allowed"),
-                  setEventsB("none"),
-                  setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"),
-                  newSound ? playError() : null)
-            }
-          >
-            {answers[1][0]}
-          </button>
-        </li>
-        <li>
-          <button
-            className={changeC}
-            style={{ cursor: cursorC, pointerEvents: eventsC }}
-            onClick={() =>
-              answers[2][1]
-                ? (setChangeC("answers-right"),
-                  highScore(score + 5),
-                  setContainer("container-right"),
-                  changeAttributes(),
-                  setAlertRight("alert-success"),
-                  changeTimeout(),
-                  newSound ? playRight() : null,
-                  index < 9
-                    ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
-                    : null)
-                : (setChangeC("answers-wrong"),
-                  highScore(score - points),
-                  setCursorC("not-allowed"),
-                  setEventsC("none"),
-                  setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"),
-                  newSound ? playError() : null)
-            }
-          >
-            {answers[2][0]}
-          </button>
-        </li>
-        <li>
-          <button
-            className={changeD}
-            style={{ cursor: cursorD, pointerEvents: eventsD }}
-            onClick={() =>
-              answers[3][1]
-                ? (setChangeD("answers-right"),
-                  highScore(score + 5),
-                  setContainer("container-right"),
-                  changeAttributes(),
-                  setAlertRight("alert-success"),
-                  changeTimeout(),
-                  newSound ? playRight() : null,
-                  index < 9
-                    ? data[`${index + 1}`].answers.sort(() => Math.random() - 1)
-                    : null)
-                : (setChangeD("answers-wrong"),
-                  highScore(score - points),
-                  setCursorD("not-allowed"),
-                  setEventsD("none"),
-                  setAlertWrong("alert-danger"),
-                  setContainer("container-wrong"),
-                  newSound ? playError() : null)
-            }
-          >
-            {answers[3][0]}
-          </button>
-        </li>
-      </ul>
+      {infoWidth >= 1024 ? (
+        <>
+          <ul style={{ display: "flex" }}>
+            <li style={{ width: "50%" }}>
+              <button
+                className={changeA}
+                style={{ cursor: cursorA, pointerEvents: eventsA }}
+                onClick={() =>
+                  answers[0][1]
+                    ? (setChangeA("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      setAlertRight("alert-success"),
+                      changeAttributes(),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeA("answers-wrong"),
+                      highScore(score - points),
+                      setCursorA("not-allowed"),
+                      setEventsA("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[0][0]}
+              </button>
+            </li>
+            <li style={{ width: "50%" }}>
+              <button
+                className={changeB}
+                style={{ cursor: cursorB, pointerEvents: eventsB }}
+                onClick={() =>
+                  answers[1][1]
+                    ? (setChangeB("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      changeAttributes(),
+                      setAlertRight("alert-success"),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeB("answers-wrong"),
+                      highScore(score - points),
+                      setCursorB("not-allowed"),
+                      setEventsB("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[1][0]}
+              </button>
+            </li>
+          </ul>
+          <ul style={{ display: "flex" }}>
+            <li style={{ width: "50%" }}>
+              <button
+                className={changeC}
+                style={{ cursor: cursorC, pointerEvents: eventsC }}
+                onClick={() =>
+                  answers[2][1]
+                    ? (setChangeC("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      changeAttributes(),
+                      setAlertRight("alert-success"),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeC("answers-wrong"),
+                      highScore(score - points),
+                      setCursorC("not-allowed"),
+                      setEventsC("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[2][0]}
+              </button>
+            </li>
+            <li style={{ width: "50%" }}>
+              <button
+                className={changeD}
+                style={{ cursor: cursorD, pointerEvents: eventsD }}
+                onClick={() =>
+                  answers[3][1]
+                    ? (setChangeD("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      changeAttributes(),
+                      setAlertRight("alert-success"),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeD("answers-wrong"),
+                      highScore(score - points),
+                      setCursorD("not-allowed"),
+                      setEventsD("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[3][0]}
+              </button>
+            </li>
+          </ul>
+        </>
+      ) : (
+        <>
+          <ul>
+            <li>
+              <button
+                className={changeA}
+                style={{ cursor: cursorA, pointerEvents: eventsA }}
+                onClick={() =>
+                  answers[0][1]
+                    ? (setChangeA("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      setAlertRight("alert-success"),
+                      changeAttributes(),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeA("answers-wrong"),
+                      highScore(score - points),
+                      setCursorA("not-allowed"),
+                      setEventsA("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[0][0]}
+              </button>
+            </li>
+            <li>
+              <button
+                className={changeB}
+                style={{ cursor: cursorB, pointerEvents: eventsB }}
+                onClick={() =>
+                  answers[1][1]
+                    ? (setChangeB("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      changeAttributes(),
+                      setAlertRight("alert-success"),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeB("answers-wrong"),
+                      highScore(score - points),
+                      setCursorB("not-allowed"),
+                      setEventsB("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[1][0]}
+              </button>
+            </li>
+            <li>
+              <button
+                className={changeC}
+                style={{ cursor: cursorC, pointerEvents: eventsC }}
+                onClick={() =>
+                  answers[2][1]
+                    ? (setChangeC("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      changeAttributes(),
+                      setAlertRight("alert-success"),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeC("answers-wrong"),
+                      highScore(score - points),
+                      setCursorC("not-allowed"),
+                      setEventsC("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[2][0]}
+              </button>
+            </li>
+            <li>
+              <button
+                className={changeD}
+                style={{ cursor: cursorD, pointerEvents: eventsD }}
+                onClick={() =>
+                  answers[3][1]
+                    ? (setChangeD("answers-right"),
+                      highScore(score + 5),
+                      setContainer("container-right"),
+                      changeAttributes(),
+                      setAlertRight("alert-success"),
+                      changeTimeout(),
+                      newSound ? playRight() : null,
+                      index < 9
+                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        : null)
+                    : (setChangeD("answers-wrong"),
+                      highScore(score - points),
+                      setCursorD("not-allowed"),
+                      setEventsD("none"),
+                      setAlertWrong("alert-danger"),
+                      setContainer("container-wrong"),
+                      newSound ? playError() : null)
+                }
+              >
+                {answers[3][0]}
+              </button>
+            </li>
+          </ul>
+        </>
+      )}
     </article>
   );
 };

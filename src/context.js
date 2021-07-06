@@ -10,8 +10,8 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  intro: true,
-  title: false,
+  intro: false,
+  title: true,
   modal: false,
   options: false,
   form: false,

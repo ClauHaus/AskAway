@@ -8,11 +8,10 @@ import {
   faTimes,
   faChevronRight,
   faChevronLeft,
-  faWindowMinimize,
 } from "@fortawesome/free-solid-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import howToData from "./howToData";
 import { useGlobalContext } from "./context";
+import WindowInfo from "./WindowInfo";
 
 const HowTo = () => {
   const { closeModal, sound } = useGlobalContext();
@@ -39,17 +38,7 @@ const HowTo = () => {
             />
             <div>C:\Askaway\HowToPlay</div>
           </section>
-          <section className="upper-icons">
-            <div className="icons-data">
-              <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-            </div>
-            <div className="icons-data">
-              <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-            </div>
-            <div className="icons-data">
-              <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-            </div>
-          </section>
+          <WindowInfo />
         </div>
       </header>
 

@@ -413,9 +413,16 @@ html {
   --max-width: 1120px;
   --fixed-width: 600px;
   --body-color: #009faa;
+  --desktop-icon: #00858f;
+  /* --back-image: linear-gradient(to right, #02000aba, #0f0316cc),
+    url("https://i.redd.it/8i8u75t1cve51.png "); */
   --back-image: linear-gradient(to right, #02000aba, #0f0316cc),
-    url("https://i.redd.it/8i8u75t1cve51.png ");
+    url("https://art.pixilart.com/3db2c52363683e3.png ");
+  --back-image-right: linear-gradient(to right, #0b8101ba, #14f300ba),
+    url("https://art.pixilart.com/3db2c52363683e3.png");
   --window-color: linear-gradient(90deg, #2a00ff 0%, #5c74ff 80%);
+  --back-image-wrong: linear-gradient(to right, #910013ba, #fa0707cc),
+    url("https://art.pixilart.com/3db2c52363683e3.png ");
   --topinfo-background: #5147ff;
   --score-background: #dd69bc;
   --timer-background: #5147ff;
@@ -486,8 +493,13 @@ html {
   --max-width: 1120px;
   --fixed-width: 600px;
   --body-color: #99ffff;
+  --desktop-icon: #00727a;
   --back-image: linear-gradient(to right, #484357ba, #422b4ecc),
-    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ5H32qL1fPWEvYd3_d6bvyoRFJ2P8AVcSYcf3fJgDGb9Exk5PDEVBru99GYNJKTecVJA&usqp=CAU ");
+    url("https://art.pixilart.com/0c425131e0ed8b4.png");
+  --back-image-right: linear-gradient(to right, #0b8101ba, #14f300ba),
+    url("https://art.pixilart.com/0c425131e0ed8b4.png");
+  --back-image-wrong: linear-gradient(to right, #910013ba, #fa0707cc),
+    url("https://art.pixilart.com/0c425131e0ed8b4.png ");
   --window-color: linear-gradient(90deg, #d400ff 0%, #ff8fff 80%);
   --topinfo-background: #585191;
   --score-background: #d68589;
@@ -767,6 +779,7 @@ ul {
 .container-bottom-icons {
   font-size: 1rem;
   margin: 15px 4px 8px 4px;
+  color: var(--black);
 }
 
 .container-bottom-sound {
@@ -775,6 +788,7 @@ ul {
   margin: 10px;
   padding: 1px;
   background: #808080;
+  color: var(--black);
 }
 
 .container-bottom-clock {
@@ -1458,9 +1472,9 @@ h5.title {
   display: flex;
   justify-content: center;
   background: var(--background-title);
-  width: 150px;
-  height: 150px;
-  padding: 20px 0px 0px 0px;
+  width: 142px;
+  height: 142px;
+  padding: 1.5px;
   margin: 0px auto;
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
     -1px -1px 3px 0px #fffbf0 inset;
@@ -1524,8 +1538,7 @@ h5.title {
   min-height: 74vh;
   /* height: 85vh; */
   max-width: var(--fixed-width);
-  background-image: linear-gradient(to right, #02000aba, #0f0316cc),
-    url("https://i.redd.it/8i8u75t1cve51.png ");
+  background-image: var(--back-image);
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
     -1px -1px 3px 0px #fffbf0 inset;
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
@@ -1683,6 +1696,7 @@ h5.title {
   width: 90%;
   margin: 7.5px auto;
   -webkit-animation: jello-vertical 0.9s both;
+  -moz-animation: jello-vertical 0.9s both;
   animation: jello-vertical 0.9s both;
   font-size: 18px;
   font-weight: 500;
@@ -1762,8 +1776,7 @@ h5.title {
   min-height: 74vh;
   /* height: 85vh; */
   max-width: var(--fixed-width);
-  background-image: linear-gradient(to right, #0b8101ba, #14f300ba),
-    url("https://i.redd.it/8i8u75t1cve51.png ");
+  background-image: var(--back-image-right);
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
     -1px -1px 3px 0px #fffbf0 inset;
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
@@ -1791,6 +1804,7 @@ h5.title {
   justify-content: center;
   width: 90%;
   margin: 7.5px auto;
+  -moz-animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   -webkit-animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   animation: shake-top 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
   font-size: 18px;
@@ -1809,8 +1823,7 @@ h5.title {
   min-height: 74vh;
   /* height: 85vh; */
   max-width: var(--fixed-width);
-  background-image: linear-gradient(to right, #910013ba, #fa0707cc),
-    url("https://i.redd.it/8i8u75t1cve51.png ");
+  background-image: var(--back-image-wrong);
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75) inset,
     -1px -1px 3px 0px #fffbf0 inset;
   -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75) inset,
@@ -2338,6 +2351,9 @@ Ending
   h5 {
     font-size: 1.6rem;
   }
+  p {
+    font-size: 18px;
+  }
   .container-bottom {
     bottom: 0%;
   }
@@ -2396,13 +2412,22 @@ Ending
     width: 42vw;
   }
   .question {
-    font-size: 20px;
-    height: 150px;
+    font-size: 22px;
+    height: 200px;
+  }
+  .question-image-container {
+    width: 130px;
+    height: 130px;
+  }
+
+  .question-image {
+    width: 100px;
+    object-fit: cover;
   }
   .top-information,
   .score,
   .timer {
-    font-size: 16px;
+    font-size: 18px;
   }
   .answers,
   .answers-right,
@@ -2417,7 +2442,6 @@ Ending
     left: 8%;
     width: 45%;
   }
-
   .credits-container-image {
     height: 240px;
     width: 240px;
@@ -2434,5 +2458,25 @@ Ending
   }
   .container-bottom-credits {
     top: 91.2%;
+  }
+  .container-desktop {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 10px;
+    padding: 2px;
+    background: var(--body-color);
+    width: 5%;
+    background-color: var(--desktop-icon);
+    color: var(--black);
+    cursor: pointer;
+  }
+  a:link,
+  a:visited {
+    color: var(--black);
   }
 }

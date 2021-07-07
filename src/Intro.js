@@ -4,12 +4,9 @@ import useSound from "use-sound";
 import startup from "./sounds/startup.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTimes,
-  faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
 } from "@fortawesome/free-solid-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
   faWindows,
   faGithub,
@@ -17,6 +14,8 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./context";
+import WindowInfo from "./WindowInfo";
+import InformationContainerTop from "./InformationContainerTop";
 
 const Intro = () => {
   const { time, restartGame, intro, title, nextPageIntro } = useGlobalContext();
@@ -34,8 +33,11 @@ const Intro = () => {
     return () => clearTimeout(timeOut);
   };
 
+  const infoWidth = window.innerWidth;
+
   return (
     <>
+      {infoWidth >= 1024 && <InformationContainerTop />}
       <section className="container-back">
         <header className="window-info">
           <div className="window-upper">
@@ -47,17 +49,7 @@ const Intro = () => {
               />
               <div>C:\Desktop</div>
             </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
+            <WindowInfo />
           </div>
         </header>
         <div className="container-intro">
@@ -109,7 +101,6 @@ const Intro = () => {
             href="https://github.com/ClauHaus/AskAway"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faGithub}
@@ -120,7 +111,6 @@ const Intro = () => {
             href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -135,14 +125,12 @@ const Intro = () => {
             <FontAwesomeIcon
               icon={faTwitter}
               className="container-bottom-icons"
-              style={{ color: "black" }}
             />
           </a>
           <a
             href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faMailBulk}

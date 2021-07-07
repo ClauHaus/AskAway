@@ -10,8 +10,8 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  intro: false,
-  title: true,
+  intro: true,
+  title: false,
   modal: false,
   options: false,
   form: false,
@@ -163,7 +163,7 @@ const AppProvider = ({ children }) => {
   const timerDifficulty = () => {
     let result = 60;
     if (difficulty === "normal") {
-      result = 6000; //60
+      result = 60; //60
     }
     if (difficulty === "hard") {
       result = 55;

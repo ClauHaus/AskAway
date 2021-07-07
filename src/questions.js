@@ -1437,7 +1437,7 @@ const bigData = [
     },
     {
       id: 17,
-      question: `where were the 2016 olympic games held?`,
+      question: `Where were the 2016 olympic games held?`,
       answers: [
         ["Río de Janeiro", true],
         ["Athens", false],
@@ -1584,7 +1584,7 @@ const bigData = [
         ["Tribute 2005", false],
         ["Carrie rides a truck", false],
         ["Me at the zoo", true],
-        ["Her new puppy from great grandpa vern", false],
+        ["Her new puppy...", false],
       ],
     },
     {

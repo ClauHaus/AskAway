@@ -4,12 +4,9 @@ import useSound from "use-sound";
 import startup from "./../sounds/startup.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTimes,
-  faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
 } from "@fortawesome/free-solid-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
   faWindows,
   faGithub,
@@ -17,6 +14,8 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "../context";
+import WindowInfo from "./../WindowInfo";
+import InformationContainerTop from "./../InformationContainerTop";
 
 const IntroSp = () => {
   const { time, restartGame, intro, title, nextPageIntro } = useGlobalContext();
@@ -33,10 +32,12 @@ const IntroSp = () => {
     }, 5500); //PASARLO A 5500!
     return () => clearTimeout(timeOut);
   };
-  const info = window.innerWidth;
-  console.log(info);
+
+  const infoWidth = window.innerWidth;
+
   return (
     <>
+      {infoWidth >= 1024 && <InformationContainerTop />}
       <section className="container-back">
         <header className="window-info">
           <div className="window-upper">
@@ -48,17 +49,7 @@ const IntroSp = () => {
               />
               <div>C:\Escritorio</div>
             </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
+            <WindowInfo />
           </div>
         </header>
         <div className="container-intro">

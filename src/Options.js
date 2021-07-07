@@ -4,9 +4,9 @@ import click1 from "./sounds/click1.mp3";
 import pop from "./sounds/pop.mp3";
 import titleImg from "./images/title.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faWindowMinimize } from "@fortawesome/free-solid-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useGlobalContext } from "./context";
+import WindowInfo from "./WindowInfo";
 
 const Options = () => {
   const {
@@ -91,17 +91,7 @@ const Options = () => {
             />
             <div>C:\Askaway\Settings</div>
           </section>
-          <section className="upper-icons">
-            <div className="icons-data">
-              <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-            </div>
-            <div className="icons-data">
-              <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-            </div>
-            <div className="icons-data">
-              <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-            </div>
-          </section>
+          <WindowInfo />
         </div>
       </header>
       <section className="options">

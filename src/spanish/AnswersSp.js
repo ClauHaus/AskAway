@@ -155,7 +155,9 @@ const AnswersSp = ({
                       newSound ? playRight() : null,
                       // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeA("answers-wrong"),
                       highScore(score - points),
@@ -183,7 +185,9 @@ const AnswersSp = ({
                       changeTimeout(),
                       newSound ? playRight() : null,
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeB("answers-wrong"),
                       highScore(score - points),
@@ -213,7 +217,9 @@ const AnswersSp = ({
                       changeTimeout(),
                       newSound ? playRight() : null,
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeC("answers-wrong"),
                       highScore(score - points),
@@ -241,7 +247,9 @@ const AnswersSp = ({
                       changeTimeout(),
                       newSound ? playRight() : null,
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeD("answers-wrong"),
                       highScore(score - points),
@@ -275,7 +283,9 @@ const AnswersSp = ({
                       newSound ? playRight() : null,
                       // Si el index aun no llego al limite que se le pone al Array, lo que se hace es modificar el orden de las respuestas del siguiente sub-array , de esta forma solo se activa dicho metodo una vez y solo al clickear la respuesta correcta
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeA("answers-wrong"),
                       highScore(score - points),
@@ -303,7 +313,9 @@ const AnswersSp = ({
                       changeTimeout(),
                       newSound ? playRight() : null,
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeB("answers-wrong"),
                       highScore(score - points),
@@ -331,7 +343,9 @@ const AnswersSp = ({
                       changeTimeout(),
                       newSound ? playRight() : null,
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeC("answers-wrong"),
                       highScore(score - points),
@@ -359,7 +373,9 @@ const AnswersSp = ({
                       changeTimeout(),
                       newSound ? playRight() : null,
                       index < 9
-                        ? data[index + 1].answers.sort(() => Math.random() - 1)
+                        ? data[index + 1].answers.sort(
+                            () => Math.random() - 0.5
+                          )
                         : null)
                     : (setChangeD("answers-wrong"),
                       highScore(score - points),

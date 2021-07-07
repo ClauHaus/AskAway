@@ -1,8 +1,8 @@
 import React from "react";
+import titleImg from "./images/title.png";
 import useSound from "use-sound";
-import pop from "./../sounds/pop.mp3";
-import titleImg from "./../images/title.png";
-import clauhaus from "./../images/clauhaus.gif";
+import pop from "./sounds/pop.mp3";
+import { useGlobalContext } from "./context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMailBulk,
@@ -16,58 +16,21 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./../context";
-import InformationContainerTop from "../InformationContainerTop";
-import WindowInfo from "../WindowInfo";
 
-const CreditsSp = () => {
-  const { restartGame, time, sound, setSound } = useGlobalContext();
+const InformationContainerBottom = () => {
+  const { time, restartGame, sound, setSound } = useGlobalContext();
 
-  const [playPop] = useSound(pop, { volume: 0.5 });
   const makeSound = () => {
     setSound(!sound);
     playPop();
     localStorage.setItem("newSound", JSON.stringify(!sound));
   };
-
-  const infoWidth = window.innerWidth;
+  const [playPop] = useSound(pop, { volume: 0.5 });
 
   return (
     <>
-      {infoWidth >= 1024 && <InformationContainerTop />}
-      <section className="container-back-final">
-        <header className="window-info">
-          <div className="window-upper">
-            <section className="upper-left">
-              <img
-                className="window-image"
-                src={titleImg}
-                alt="logo of Ask Away"
-              />
-              <div>C:\Askaway\Credits</div>
-            </section>
-            <WindowInfo />
-          </div>
-        </header>
-        <section className="credits" style={{ minHeight: "60vh" }}>
-          <p className="credits-text-up">
-            Director, Productor, Diseñador, Programador, Tester, Editor y
-            Desarrollador
-          </p>
-          <p className="credits-text-up" style={{ marginTop: "-20px" }}>
-            Claudio Aime
-          </p>
-          <div className="credits-container-image">
-            <img src={clauhaus} alt="ClauHaus" className="clauhaus" />
-          </div>
-          <p className="credits-text-up" style={{ marginTop: "-35px" }}>
-            Muchísimas gracias por jugar! Para contactarte conmigo podes usar
-            los links debajo, cualquier feedback será muy bienvenido.
-          </p>
-        </section>
-      </section>
       <section>
-        <footer className="container-bottom-credits">
+        <footer className="container-bottom">
           <div>
             <button className="btn-restart" onClick={restartGame}>
               <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
@@ -82,7 +45,6 @@ const CreditsSp = () => {
             href="https://github.com/ClauHaus/AskAway"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faGithub}
@@ -93,7 +55,6 @@ const CreditsSp = () => {
             href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -108,14 +69,12 @@ const CreditsSp = () => {
             <FontAwesomeIcon
               icon={faTwitter}
               className="container-bottom-icons"
-              style={{ color: "black" }}
             />
           </a>
           <a
             href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faMailBulk}
@@ -150,4 +109,4 @@ const CreditsSp = () => {
   );
 };
 
-export default CreditsSp;
+export default InformationContainerBottom;

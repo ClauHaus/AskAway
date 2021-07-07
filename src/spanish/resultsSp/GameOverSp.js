@@ -1,16 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTimes,
-  faWindowMinimize,
-  faExclamationTriangle,
-} from "@fortawesome/free-solid-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import { useGlobalContext } from "./../../context";
 import titleImg from "./../../images/title.png";
+import WindowInfo from "../../WindowInfo";
 
 const GameOverSp = ({ newName, score, restartGame }) => {
   const { question, loadingRestart, nextPageRestart } = useGlobalContext();
+
   return (
     <>
       <h1 className="title title-back question">Has perdido.</h1>
@@ -32,17 +29,7 @@ const GameOverSp = ({ newName, score, restartGame }) => {
               />
               <div>C:\Askaway\{newName}\Resultados</div>
             </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
+            <WindowInfo />
           </div>
         </header>
         <div className="container-results">
@@ -62,17 +49,7 @@ const GameOverSp = ({ newName, score, restartGame }) => {
                   />
                   <div>Has perdido</div>
                 </section>
-                <section className="upper-icons">
-                  <div className="icons-data">
-                    <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-                  </div>
-                  <div className="icons-data">
-                    <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-                  </div>
-                  <div className="icons-data">
-                    <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-                  </div>
-                </section>
+                <WindowInfo />
               </div>
               <div className="gameOver">
                 <FontAwesomeIcon

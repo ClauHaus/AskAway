@@ -455,7 +455,7 @@ const bigDataSp = [
         ["Canadá", true],
         ["Rusia", false],
         ["China", false],
-        ["Estados unidos de América", false],
+        ["Estados Unidos", false],
       ],
     },
     {
@@ -1584,7 +1584,7 @@ const bigDataSp = [
         ["Tribute 2005", false],
         ["Carrie rides a truck", false],
         ["Me at the zoo", true],
-        ["Her new puppy from great grandpa vern", false],
+        ["Her new puppy...", false],
       ],
     },
     {

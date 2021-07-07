@@ -2,34 +2,19 @@ import React, { useState, useEffect } from "react";
 import useSound from "use-sound";
 import levelClear from "./../sounds/levelClear.mp3";
 import finalLevelFanfare from "./../sounds/finalLevelFanfare.mp3";
-import pop from "./../sounds/pop.mp3";
 import titleImg from "./../images/title.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTimes,
-  faWindowMinimize,
-  faMailBulk,
-  faGripLinesVertical,
-  faVolumeUp,
-  faVolumeMute,
-} from "@fortawesome/free-solid-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
-import {
-  faWindows,
-  faGithub,
-  faTwitter,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./../context";
+import InformationContainerTop from "../InformationContainerTop";
 import bigDataSp from "./questionsSp";
 import AnswersSp from "./AnswersSp";
 import GameOverSp from "./resultsSp/GameOverSp";
 import ZeroPointsSp from "./resultsSp/ZeroPointsSp";
 import TimeOverSp from "./resultsSp/TimeOverSp";
+import WindowInfo from "../WindowInfo";
+import InformationContainerBottom from "../InformationContainerBottom";
 
 const QuestionSp = () => {
   const {
-    time,
     restartGame,
     question,
     knowOne,
@@ -40,7 +25,6 @@ const QuestionSp = () => {
     scoreDifficulty,
     difficulty,
     sound,
-    setSound,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
@@ -126,15 +110,12 @@ const QuestionSp = () => {
 
   const [playFanfare] = useSound(levelClear, { volume: 0.5 });
   const [playFinalFanfare] = useSound(finalLevelFanfare, { volume: 0.5 });
-  const [playPop] = useSound(pop, { volume: 0.5 });
-  const makeSound = () => {
-    setSound(!sound);
-    playPop();
-    localStorage.setItem("newSound", JSON.stringify(!sound));
-  };
+
+  const infoWidth = window.innerWidth;
 
   return (
     <>
+      {infoWidth >= 1024 && <InformationContainerTop />}
       <section className="container-back-question">
         <header className="window-info">
           <div className="window-upper">
@@ -148,17 +129,7 @@ const QuestionSp = () => {
                 C:\Askaway\{newName}\Nivel {level}
               </div>
             </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
+            <WindowInfo />
           </div>
         </header>
         <div className={container}>
@@ -186,21 +157,7 @@ const QuestionSp = () => {
                       />
                       <div>C:\Askaway\Resultados</div>
                     </section>
-                    <section className="upper-icons">
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMinimize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon
-                          icon={faWindowMaximize}
-                        ></FontAwesomeIcon>
-                      </div>
-                      <div className="icons-data">
-                        <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-                      </div>
-                    </section>
+                    <WindowInfo />
                   </div>
                 </header>
                 <div className="container-results">
@@ -316,86 +273,7 @@ const QuestionSp = () => {
           })}
         </div>
       </section>
-      <section>
-        <footer className="container-bottom">
-          <div>
-            <button className="btn-restart" onClick={restartGame}>
-              <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
-              ReStart
-            </button>
-          </div>
-          <FontAwesomeIcon
-            icon={faGripLinesVertical}
-            className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
-          <a
-            href="https://github.com/ClauHaus/AskAway"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon
-              icon={faGithub}
-              className="container-bottom-icons"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="container-bottom-icons"
-            />
-          </a>
-          <a
-            href="https://twitter.com/ClauHaus_"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="container-bottom-icons"
-              style={{ color: "black" }}
-            />
-          </a>
-          <a
-            href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon
-              icon={faMailBulk}
-              className="container-bottom-icons"
-            />
-          </a>
-          <FontAwesomeIcon
-            icon={faGripLinesVertical}
-            className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
-          <div className="container-bottom-image">
-            <img
-              className="container-bottom-icons-image"
-              src={titleImg}
-              alt="logo of Ask Away"
-            />
-          </div>
-          <button
-            className="container-bottom-sound"
-            onClick={() => makeSound()}
-          >
-            {sound ? (
-              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
-            )}
-          </button>
-          <div className="container-bottom-clock">{time}</div>
-        </footer>
-      </section>
+      <InformationContainerBottom />
     </>
   );
 };

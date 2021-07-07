@@ -5,14 +5,11 @@ import titleImg from "./images/title.png";
 import clauhaus from "./images/clauhaus.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTimes,
-  faWindowMinimize,
   faMailBulk,
   faGripLinesVertical,
   faVolumeUp,
   faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
-import { faWindowMaximize } from "@fortawesome/free-regular-svg-icons";
 import {
   faWindows,
   faGithub,
@@ -20,6 +17,8 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./context";
+import InformationContainerTop from "./InformationContainerTop";
+import WindowInfo from "./WindowInfo";
 
 const Credits = () => {
   const { restartGame, time, sound, setSound } = useGlobalContext();
@@ -31,8 +30,11 @@ const Credits = () => {
     localStorage.setItem("newSound", JSON.stringify(!sound));
   };
 
+  const infoWidth = window.innerWidth;
+
   return (
     <>
+      {infoWidth >= 1024 && <InformationContainerTop />}
       <section className="container-back-final">
         <header className="window-info">
           <div className="window-upper">
@@ -44,17 +46,7 @@ const Credits = () => {
               />
               <div>C:\Askaway\Credits</div>
             </section>
-            <section className="upper-icons">
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMinimize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faWindowMaximize}></FontAwesomeIcon>
-              </div>
-              <div className="icons-data">
-                <FontAwesomeIcon icon={faTimes}></FontAwesomeIcon>
-              </div>
-            </section>
+            <WindowInfo />
           </div>
         </header>
         <section className="credits" style={{ minHeight: "60vh" }}>

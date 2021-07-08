@@ -18,10 +18,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useGlobalContext } from "./../context";
 import InformationContainerTop from "../InformationContainerTop";
+import InformationContainerBottom from "../InformationContainerBottom";
 import WindowInfo from "../WindowInfo";
+import About from "../About";
 
 const CreditsSp = () => {
-  const { restartGame, time, sound, setSound } = useGlobalContext();
+  const { restartGame, time, sound, setSound, about } = useGlobalContext();
 
   const [playPop] = useSound(pop, { volume: 0.5 });
   const makeSound = () => {
@@ -65,87 +67,90 @@ const CreditsSp = () => {
             los links debajo, cualquier feedback será muy bienvenido.
           </p>
         </section>
+        {infoWidth >= 1024 && about && <About />}
       </section>
-      <section>
-        <footer className="container-bottom-credits">
-          <div>
-            <button className="btn-restart" onClick={restartGame}>
-              <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
-              ReStart
-            </button>
-          </div>
-          <FontAwesomeIcon
-            icon={faGripLinesVertical}
-            className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
-          <a
-            href="https://github.com/ClauHaus/AskAway"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon
-              icon={faGithub}
-              className="container-bottom-icons"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="container-bottom-icons"
-            />
-          </a>
-          <a
-            href="https://twitter.com/ClauHaus_"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="container-bottom-icons"
-              style={{ color: "black" }}
-            />
-          </a>
-          <a
-            href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: "black" }}
-          >
-            <FontAwesomeIcon
-              icon={faMailBulk}
-              className="container-bottom-icons"
-            />
-          </a>
-          <FontAwesomeIcon
-            icon={faGripLinesVertical}
-            className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
-          <div className="container-bottom-image">
-            <img
-              className="container-bottom-icons-image"
-              src={titleImg}
-              alt="logo of Ask Away"
-            />
-          </div>
-          <button
-            className="container-bottom-sound"
-            onClick={() => makeSound()}
-          >
-            {sound ? (
-              <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
-            ) : (
-              <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
-            )}
-          </button>
-          <div className="container-bottom-clock">{time}</div>
-        </footer>
-      </section>
+      {infoWidth >= 1024 ? (
+        <InformationContainerBottom />
+      ) : (
+        <>
+          <section>
+            <footer className="container-bottom-credits">
+              <div>
+                <button className="btn-restart" onClick={restartGame}>
+                  <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
+                  ReStart
+                </button>
+              </div>
+              <FontAwesomeIcon
+                icon={faGripLinesVertical}
+                className="container-bottom-icons-span"
+              ></FontAwesomeIcon>
+              <a
+                href="https://github.com/ClauHaus/AskAway"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="container-bottom-icons"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="container-bottom-icons"
+                />
+              </a>
+              <a
+                href="https://twitter.com/ClauHaus_"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  className="container-bottom-icons"
+                />
+              </a>
+              <a
+                href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faMailBulk}
+                  className="container-bottom-icons"
+                />
+              </a>
+              <FontAwesomeIcon
+                icon={faGripLinesVertical}
+                className="container-bottom-icons-span"
+              ></FontAwesomeIcon>
+              <div className="container-bottom-image">
+                <img
+                  className="container-bottom-icons-image"
+                  src={titleImg}
+                  alt="logo of Ask Away"
+                />
+              </div>
+              <button
+                className="container-bottom-sound"
+                onClick={() => makeSound()}
+              >
+                {sound ? (
+                  <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                ) : (
+                  <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                )}
+              </button>
+              <div className="container-bottom-clock">{time}</div>
+            </footer>
+          </section>
+        </>
+      )}
     </>
   );
 };

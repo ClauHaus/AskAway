@@ -6,6 +6,7 @@ import { useGlobalContext } from "../context";
 import InformationContainerTop from "../InformationContainerTop";
 import WindowInfo from "../WindowInfo";
 import InformationContainerBottom from "../InformationContainerBottom";
+import About from "../About";
 
 const EndingSp = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
@@ -37,7 +38,7 @@ const EndingSp = () => {
     );
   }
 
-  const { difficulty, highScore, ending, nextPageHighScore, sound } =
+  const { difficulty, highScore, ending, nextPageHighScore, sound, about } =
     useGlobalContext();
 
   const [playApplause] = useSound(applause, { volume: 0.5 });
@@ -154,6 +155,7 @@ const EndingSp = () => {
             High Score?
           </button>
         </section>
+        {infoWidth >= 1024 && about && <About />}
       </section>
       <InformationContainerBottom />
     </>

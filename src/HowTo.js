@@ -1,17 +1,24 @@
 import React, { useState } from "react";
-import useSound from "use-sound";
-import click1 from "./sounds/click1.mp3";
-import clickOptions from "./sounds/clickOptions.mp3";
-import titleImg from "./images/title.png";
+import { useGlobalContext } from "./context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTimes,
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import howToData from "./howToData";
-import { useGlobalContext } from "./context";
-import WindowInfo from "./WindowInfo";
+
+import {
+  //HOOKS
+  useSound,
+  //DATA ARRAYS
+  howToData,
+  //FILES
+  titleImg,
+  clickOptions,
+  click1,
+  //COMPONENTS
+  WindowInfo,
+} from "./index";
 
 const HowTo = () => {
   const { closeModal, sound } = useGlobalContext();

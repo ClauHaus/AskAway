@@ -1,9 +1,14 @@
 import React, { useEffect } from "react";
-import titleImg from "./../images/title.png";
 import { useGlobalContext } from "./../context";
-import InformationContainerTop from "./../InformationContainerTop";
-import WindowInfo from "../WindowInfo";
-import InformationContainerBottom from "../InformationContainerBottom";
+import {
+  //FILES
+  titleImg,
+  //COMPONENTS
+  About,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./../index";
 
 const LoadingPage = () => {
   const {
@@ -13,6 +18,7 @@ const LoadingPage = () => {
     level,
     timerDifficulty,
     theme,
+    about,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   useEffect(() => {
@@ -62,6 +68,7 @@ const LoadingPage = () => {
             <p>&gt; Consigue 10 respuestas correctas</p>
             <p>&gt; Obtenlo en menos de {timerDifficulty()} segundos</p>
           </section>
+          {infoWidth >= 1024 && about && <About />}
         </div>
       </section>
       <InformationContainerBottom />

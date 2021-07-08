@@ -2361,11 +2361,25 @@ Ending
     margin: 10px 0px 10px 800px;
   }
   .container-bottom-clock {
-    margin: 10px 0px 10px 750px;
+    margin: 10px 0px 10px 10px;
+  }
+  .language-icon {
+    color: var(--black);
+    font-size: 1.75rem;
+    margin: 0px 5px 0px 10px;
+    background: #808080;
   }
   .container-bottom-sound {
     width: 2rem;
     height: 2rem;
+    margin: 10px 0px 10px 650px;
+  }
+  .container-bottom-theme {
+    background: #808080;
+    color: var(--black);
+    width: 2rem;
+    height: 2rem;
+    margin: 10px 0px 10px 10px;
   }
   .container-bottom-image {
     margin: 0.65rem 0.25rem 0.313rem 0.25rem;
@@ -2478,5 +2492,63 @@ Ending
   a:link,
   a:visited {
     color: var(--black);
+  }
+  .claudio {
+    display: flex;
+    margin: 5px 30px 5px 5px;
+    width: 100px;
+  }
+  .container-back-about {
+    position: absolute;
+    top: 2px;
+    left: -22%;
+    width: 90%;
+    min-height: 77%;
+    border-radius: var(--full-radius);
+    box-sizing: border-box;
+    background: #a0a0a4;
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+      0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+    -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+      0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  }
+  .container-about {
+    display: flex;
+  }
+  .container-back-game-folder {
+    position: absolute;
+    top: -25px;
+    left: 72%;
+    width: 70%;
+    min-height: 57%;
+    border-radius: var(--full-radius);
+    box-sizing: border-box;
+    background: #a0a0a4;
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+      0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+    -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+      0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+  }
+  .container-back-game {
+    display: flex;
+    justify-content: center;
+  }
+  .container-back-data {
+    position: absolute;
+    top: -35px;
+    left: 12%;
+    width: 100%;
+    min-height: 77%;
+    border-radius: var(--full-radius);
+    box-sizing: border-box;
+    background: #a0a0a4;
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+      0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+    -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
+      0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+    z-index: 1;
+  }
+  .links-data {
+    color: var(--dark-high);
   }
 }

@@ -1,20 +1,29 @@
 import React from "react";
-import titleImg from "./images/title.png";
-import useSound from "use-sound";
-import pop from "./sounds/pop.mp3";
-import click1 from "./sounds/click1.mp3";
+import { useGlobalContext } from "./context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCog,
   faVolumeUp,
   faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
-import HowTo from "./HowTo";
-import Options from "./Options";
-import { useGlobalContext } from "./context";
-import InformationContainerTop from "./InformationContainerTop";
-import InformationContainerBottom from "./InformationContainerBottom";
-import WindowInfo from "./WindowInfo";
+
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  pop,
+  click1,
+  //COMPONENTS
+  About,
+  DataFolder,
+  GameFolder,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+  HowTo,
+  Options,
+} from "./index";
 
 const Title = () => {
   const {
@@ -27,6 +36,9 @@ const Title = () => {
     openOptions,
     sound,
     setSound,
+    about,
+    gameFolder,
+    dataFolder,
   } = useGlobalContext();
 
   const year = new Date().getFullYear();
@@ -45,7 +57,6 @@ const Title = () => {
   };
 
   const infoWidth = window.innerWidth;
-
   return (
     <>
       {infoWidth >= 1024 && <InformationContainerTop />}
@@ -113,6 +124,9 @@ const Title = () => {
           <p className="title">Coded by ClauHaus - {year}</p>
           {options && <Options />}
           {modal && <HowTo />}
+          {infoWidth >= 1024 && about && <About />}
+          {infoWidth >= 1024 && gameFolder && <GameFolder />}
+          {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
       <InformationContainerBottom />

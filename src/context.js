@@ -14,6 +14,9 @@ const initialState = {
   title: false,
   modal: false,
   options: false,
+  about: false,
+  gameFolder: false,
+  dataFolder: false,
   form: false,
   formContinue: false,
   loadingPage: false,
@@ -95,6 +98,30 @@ const AppProvider = ({ children }) => {
 
   const closeModal = () => {
     dispatch({ type: "CLOSE_MODAL" });
+  };
+
+  const openAbout = () => {
+    dispatch({ type: "OPEN_ABOUT" });
+  };
+
+  const closeAbout = () => {
+    dispatch({ type: "CLOSE_ABOUT" });
+  };
+
+  const openGameFolder = () => {
+    dispatch({ type: "OPEN_GAME_FOLDER" });
+  };
+
+  const closeGameFolder = () => {
+    dispatch({ type: "CLOSE_GAME_FOLDER" });
+  };
+
+  const openDataFolder = () => {
+    dispatch({ type: "OPEN_DATA_FOLDER" });
+  };
+
+  const closeDataFolder = () => {
+    dispatch({ type: "CLOSE_DATA_FOLDER" });
   };
 
   const clock = useCallback(() => {
@@ -213,6 +240,12 @@ const AppProvider = ({ children }) => {
         closeOptions,
         openModal,
         closeModal,
+        openAbout,
+        closeAbout,
+        openGameFolder,
+        closeGameFolder,
+        openDataFolder,
+        closeDataFolder,
         nextPageIntro,
         nextPageForm,
         nextPageOne,

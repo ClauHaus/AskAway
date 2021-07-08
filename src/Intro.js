@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import titleImg from "./images/title.png";
-import useSound from "use-sound";
-import startup from "./sounds/startup.mp3";
+import { useGlobalContext } from "./context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMailBulk,
@@ -13,12 +11,31 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./context";
-import WindowInfo from "./WindowInfo";
-import InformationContainerTop from "./InformationContainerTop";
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  startup,
+  //COMPONENTS
+  About,
+  DataFolder,
+  GameFolder,
+  InformationContainerTop,
+  WindowInfo,
+} from "./index";
 
 const Intro = () => {
-  const { time, restartGame, intro, title, nextPageIntro } = useGlobalContext();
+  const {
+    time,
+    restartGame,
+    intro,
+    title,
+    nextPageIntro,
+    about,
+    gameFolder,
+    dataFolder,
+  } = useGlobalContext();
   const [start, setStart] = useState(false);
   const [opacity, setOpacity] = useState(1);
   const [play] = useSound(startup, { volume: 0.5 });
@@ -83,6 +100,9 @@ const Intro = () => {
               <li className="noShow5">&gt;Execute</li>
             </ul>
           )}
+          {infoWidth >= 1024 && about && <About />}
+          {infoWidth >= 1024 && gameFolder && <GameFolder />}
+          {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
       <section>

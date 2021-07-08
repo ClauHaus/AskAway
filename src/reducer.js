@@ -11,6 +11,24 @@ const reducer = (state, action) => {
   if (action.type === "CLOSE_MODAL") {
     return { ...state, modal: false };
   }
+  if (action.type === "OPEN_ABOUT") {
+    return { ...state, about: true };
+  }
+  if (action.type === "CLOSE_ABOUT") {
+    return { ...state, about: false };
+  }
+  if (action.type === "OPEN_GAME_FOLDER") {
+    return { ...state, gameFolder: true };
+  }
+  if (action.type === "CLOSE_GAME_FOLDER") {
+    return { ...state, gameFolder: false };
+  }
+  if (action.type === "OPEN_DATA_FOLDER") {
+    return { ...state, dataFolder: true };
+  }
+  if (action.type === "CLOSE_DATA_FOLDER") {
+    return { ...state, dataFolder: false };
+  }
   if (action.type === "NEXT_PAGE_FORM") {
     //ASI FUNCIONA, el objetivo es automatizar el paso de datos para solo utilizar una funcion
     // const { erase, add } = action.payload;

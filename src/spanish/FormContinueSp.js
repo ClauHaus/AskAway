@@ -1,12 +1,19 @@
 import React from "react";
-import useSound from "use-sound";
-import click1 from "./../sounds/click1.mp3";
-import titleImg from "./../images/title.png";
-import HowToSp from "./HowToSp";
 import { useGlobalContext } from "../context";
-import InformationContainerTop from "./../InformationContainerTop";
-import WindowInfo from "../WindowInfo";
-import InformationContainerBottom from "../InformationContainerBottom";
+
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  click1,
+  //COMPONENTS
+  HowToSp,
+  About,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./../index";
 
 const FormContinueSp = () => {
   const {
@@ -18,6 +25,7 @@ const FormContinueSp = () => {
     level,
     setLevel,
     sound,
+    about,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newAge = JSON.parse(localStorage.getItem("newAge"));
@@ -84,6 +92,7 @@ const FormContinueSp = () => {
             Continuar
           </button>
           {modal && <HowToSp />}
+          {infoWidth >= 1024 && about && <About />}
         </div>
       </section>
       <InformationContainerBottom />

@@ -6,6 +6,7 @@ import { useGlobalContext } from "./../context";
 import InformationContainerTop from "../InformationContainerTop";
 import WindowInfo from "../WindowInfo";
 import InformationContainerBottom from "../InformationContainerBottom";
+import About from "../About";
 
 const HighScoreSp = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
@@ -13,7 +14,8 @@ const HighScoreSp = () => {
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));
   const newFullData = JSON.parse(localStorage.getItem("newFullData"));
   const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
-  const { credits, highScore, nextPageCredits, sound } = useGlobalContext();
+  const { credits, highScore, nextPageCredits, sound, about } =
+    useGlobalContext();
 
   const [playCredits] = useSound(creditsSound, { volume: 0.5 });
 
@@ -73,6 +75,7 @@ const HighScoreSp = () => {
             Roll the Credits
           </button>
         </section>
+        {infoWidth >= 1024 && about && <About />}
       </section>
       <InformationContainerBottom />
     </>

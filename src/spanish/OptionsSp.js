@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
-import useSound from "use-sound";
-import click1 from "./../sounds/click1.mp3";
-import pop from "./../sounds/pop.mp3";
-import titleImg from "./../images/title.png";
+import { useGlobalContext } from "../context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { useGlobalContext } from "../context";
-import WindowInfo from "../WindowInfo";
+
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  pop,
+  click1,
+  //COMPONENTS
+  WindowInfo,
+} from "./../index";
 
 const OptionsSp = () => {
   const {

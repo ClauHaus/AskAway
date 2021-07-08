@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import titleImg from "./../images/title.png";
-import useSound from "use-sound";
-import startup from "./../sounds/startup.mp3";
+import { useGlobalContext } from "../context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMailBulk,
@@ -13,12 +11,31 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "../context";
-import WindowInfo from "./../WindowInfo";
-import InformationContainerTop from "./../InformationContainerTop";
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  startup,
+  //COMPONENTS
+  About,
+  DataFolder,
+  GameFolder,
+  InformationContainerTop,
+  WindowInfo,
+} from "./../index";
 
 const IntroSp = () => {
-  const { time, restartGame, intro, title, nextPageIntro } = useGlobalContext();
+  const {
+    time,
+    restartGame,
+    intro,
+    title,
+    nextPageIntro,
+    about,
+    gameFolder,
+    dataFolder,
+  } = useGlobalContext();
   const [start, setStart] = useState(false);
   const [opacity, setOpacity] = useState(1);
   const [play] = useSound(startup, { volume: 0.5 });
@@ -87,6 +104,9 @@ const IntroSp = () => {
               <li className="noShow5">&gt;Ejecutar</li>
             </ul>
           )}
+          {infoWidth >= 1024 && about && <About />}
+          {infoWidth >= 1024 && gameFolder && <GameFolder />}
+          {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
       <section>
@@ -105,7 +125,6 @@ const IntroSp = () => {
             href="https://github.com/ClauHaus/AskAway"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faGithub}
@@ -116,7 +135,6 @@ const IntroSp = () => {
             href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -131,14 +149,12 @@ const IntroSp = () => {
             <FontAwesomeIcon
               icon={faTwitter}
               className="container-bottom-icons"
-              style={{ color: "black" }}
             />
           </a>
           <a
             href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "black" }}
           >
             <FontAwesomeIcon
               icon={faMailBulk}

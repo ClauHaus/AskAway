@@ -7,9 +7,10 @@ import { useGlobalContext } from "./../context";
 import InformationContainerTop from "../InformationContainerTop";
 import WindowInfo from "../WindowInfo";
 import InformationContainerBottom from "../InformationContainerBottom";
+import About from "../About";
 
 const KnowOneSp = () => {
-  const { nextPageFive, loadingPage, knowOne, level, setLevel, sound } =
+  const { nextPageFive, loadingPage, knowOne, level, setLevel, sound, about } =
     useGlobalContext();
 
   const shuffle = () => {
@@ -99,6 +100,7 @@ const KnowOneSp = () => {
               </article>
             );
           })}
+          {infoWidth >= 1024 && about && <About />}
         </div>
       </section>
       <InformationContainerBottom />

@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
-import useSound from "use-sound";
-import click1 from "./sounds/click1.mp3";
-import titleImg from "./images/title.png";
 import { useGlobalContext } from "./context";
-import WindowInfo from "./WindowInfo";
-import InformationContainerTop from "./InformationContainerTop";
-import InformationContainerBottom from "./InformationContainerBottom";
+
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  click1,
+  //COMPONENTS
+  About,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./index";
 
 export const Form = () => {
-  const { nextPageOne, form, formContinue, sound } = useGlobalContext();
+  const { nextPageOne, form, formContinue, sound, about } = useGlobalContext();
   const [person, setPerson] = useState({ firstName: "", age: "", country: "" });
   const [people, setPeople] = useState([]);
 
@@ -131,6 +138,7 @@ export const Form = () => {
             </div>
           </form>
         </article>
+        {infoWidth >= 1024 && about && <About />}
       </section>
       <InformationContainerBottom />
     </>

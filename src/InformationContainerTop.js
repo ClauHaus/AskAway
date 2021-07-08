@@ -1,4 +1,6 @@
 import React from "react";
+import useSound from "use-sound";
+import click1 from "./sounds/click1.mp3";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMailBulk,
@@ -11,32 +13,51 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { useGlobalContext } from "./context";
 
 const InformationContainerTop = () => {
+  const { openAbout, openGameFolder, openDataFolder, sound, language } =
+    useGlobalContext();
+
+  const [play1] = useSound(click1, { volume: 0.5 });
+  const soundAction = (action) => {
+    play1();
+    action();
+  };
+
   return (
     <>
       <section>
         <div className="container-desktop"></div>
-        <button className="container-desktop-icon">
+        <button
+          className="container-desktop-icon"
+          onClick={sound ? () => soundAction(openAbout) : openAbout}
+        >
           <FontAwesomeIcon
             icon={faLaptop}
             style={{ fontSize: "2rem" }}
           ></FontAwesomeIcon>
-          My PC
+          {language === "english" ? "My PC" : "Mi PC"}
         </button>
-        <button className="container-desktop-icon">
+        <button
+          className="container-desktop-icon"
+          onClick={sound ? () => soundAction(openGameFolder) : openGameFolder}
+        >
           <FontAwesomeIcon
             icon={faFolderOpen}
             style={{ fontSize: "2rem" }}
           ></FontAwesomeIcon>
           AskAway
         </button>
-        <button className="container-desktop-icon">
+        <button
+          className="container-desktop-icon"
+          onClick={sound ? () => soundAction(openDataFolder) : openDataFolder}
+        >
           <FontAwesomeIcon
             icon={faFileCode}
             style={{ fontSize: "2rem" }}
           ></FontAwesomeIcon>
-          External
+          Data
         </button>
         <button className="container-desktop-icon">
           <a

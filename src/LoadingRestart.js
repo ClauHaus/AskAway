@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
-import titleImg from "./images/title.png";
-import tips from "./tips";
 import { useGlobalContext } from "./context";
-import InformationContainerTop from "./InformationContainerTop";
-import WindowInfo from "./WindowInfo";
-import InformationContainerBottom from "./InformationContainerBottom";
+import {
+  //DATA ARRAYS
+  tips,
+  //FILES
+  titleImg,
+  //COMPONENTS
+  About,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./index";
 
 const LoadingRestart = () => {
-  const { nextPageBack, loadingRestart, question, level, setLevel } =
+  const { nextPageBack, loadingRestart, question, level, setLevel, about } =
     useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
 
@@ -94,6 +100,7 @@ const LoadingRestart = () => {
               </article>
             );
           })}
+          {infoWidth >= 1024 && about && <About />}
         </div>
       </section>
       <InformationContainerBottom />

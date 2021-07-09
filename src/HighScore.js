@@ -1,12 +1,19 @@
 import React from "react";
-import useSound from "use-sound";
-import creditsSound from "./sounds/creditsSound.mp3";
-import titleImg from "./images/title.png";
 import { useGlobalContext } from "./context";
-import InformationContainerTop from "./InformationContainerTop";
-import WindowInfo from "./WindowInfo";
-import InformationContainerBottom from "./InformationContainerBottom";
-import About from "./About";
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  creditsSound,
+  //COMPONENTS
+  About,
+  GameFolder,
+  DataFolder,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./index";
 
 const HighScore = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
@@ -14,8 +21,15 @@ const HighScore = () => {
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));
   const newFullData = JSON.parse(localStorage.getItem("newFullData"));
   const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
-  const { credits, highScore, nextPageCredits, sound, about } =
-    useGlobalContext();
+  const {
+    credits,
+    highScore,
+    nextPageCredits,
+    sound,
+    about,
+    gameFolder,
+    dataFolder,
+  } = useGlobalContext();
 
   const [playCredits] = useSound(creditsSound, { volume: 0.5 });
 
@@ -76,6 +90,8 @@ const HighScore = () => {
           </button>
         </section>
         {infoWidth >= 1024 && about && <About />}
+        {infoWidth >= 1024 && gameFolder && <GameFolder />}
+        {infoWidth >= 1024 && dataFolder && <DataFolder />}
       </section>
       <InformationContainerBottom />
     </>

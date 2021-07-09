@@ -1,9 +1,13 @@
 import React from "react";
+import { useGlobalContext } from "./../context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
-import { useGlobalContext } from "./../context";
-import titleImg from "./../images/title.png";
-import WindowInfo from "../WindowInfo";
+import {
+  //FILES
+  titleImg,
+  //COMPONENTS
+  WindowInfo,
+} from "./../index";
 
 const GameOver = ({ newName, score, restartGame }) => {
   const { question, loadingRestart, nextPageRestart } = useGlobalContext();

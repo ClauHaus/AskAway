@@ -1,12 +1,17 @@
 import React from "react";
-import useSound from "use-sound";
-import click1 from "./sounds/click1.mp3";
-import titleImg from "./images/title.png";
-import claudio from "./images/claudio.JPG";
+import { useGlobalContext } from "./context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import WindowInfo from "./WindowInfo";
-import { useGlobalContext } from "./context";
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  click1,
+  claudio,
+  //COMPONENTS
+  WindowInfo,
+} from "./index";
 
 const About = () => {
   const { closeAbout, sound, language } = useGlobalContext();

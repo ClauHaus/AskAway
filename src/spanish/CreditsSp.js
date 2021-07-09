@@ -1,8 +1,5 @@
 import React from "react";
-import useSound from "use-sound";
-import pop from "./../sounds/pop.mp3";
-import titleImg from "./../images/title.png";
-import clauhaus from "./../images/clauhaus.gif";
+import { useGlobalContext } from "./../context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMailBulk,
@@ -16,14 +13,25 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { useGlobalContext } from "./../context";
-import InformationContainerTop from "../InformationContainerTop";
-import InformationContainerBottom from "../InformationContainerBottom";
-import WindowInfo from "../WindowInfo";
-import About from "../About";
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  pop,
+  clauhaus,
+  //COMPONENTS
+  About,
+  GameFolder,
+  DataFolder,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./../index";
 
 const CreditsSp = () => {
-  const { restartGame, time, sound, setSound, about } = useGlobalContext();
+  const { restartGame, time, sound, setSound, about, gameFolder, dataFolder } =
+    useGlobalContext();
 
   const [playPop] = useSound(pop, { volume: 0.5 });
   const makeSound = () => {
@@ -68,6 +76,8 @@ const CreditsSp = () => {
           </p>
         </section>
         {infoWidth >= 1024 && about && <About />}
+        {infoWidth >= 1024 && gameFolder && <GameFolder />}
+        {infoWidth >= 1024 && dataFolder && <DataFolder />}
       </section>
       {infoWidth >= 1024 ? (
         <InformationContainerBottom />

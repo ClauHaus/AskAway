@@ -1,12 +1,19 @@
 import React from "react";
-import useSound from "use-sound";
-import applause from "./sounds/applause.mp3";
-import titleImg from "./images/title.png";
 import { useGlobalContext } from "./context";
-import InformationContainerTop from "./InformationContainerTop";
-import WindowInfo from "./WindowInfo";
-import InformationContainerBottom from "./InformationContainerBottom";
-import About from "./About";
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  applause,
+  //COMPONENTS
+  About,
+  GameFolder,
+  DataFolder,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./index";
 
 const Ending = () => {
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
@@ -38,8 +45,16 @@ const Ending = () => {
     );
   }
 
-  const { difficulty, highScore, ending, nextPageHighScore, sound, about } =
-    useGlobalContext();
+  const {
+    difficulty,
+    highScore,
+    ending,
+    nextPageHighScore,
+    sound,
+    about,
+    gameFolder,
+    dataFolder,
+  } = useGlobalContext();
 
   const [playApplause] = useSound(applause, { volume: 0.5 });
 
@@ -155,6 +170,8 @@ const Ending = () => {
           </button>
         </section>
         {infoWidth >= 1024 && about && <About />}
+        {infoWidth >= 1024 && gameFolder && <GameFolder />}
+        {infoWidth >= 1024 && dataFolder && <DataFolder />}
       </section>
       <InformationContainerBottom />
     </>

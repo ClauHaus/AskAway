@@ -1,17 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useSound from "use-sound";
-import pop from "./sounds/pop.mp3";
-import levelClear from "./sounds/levelClear.mp3";
-import finalLevelFanfare from "./sounds/finalLevelFanfare.mp3";
-import titleImg from "./images/title.png";
 import { useGlobalContext } from "./context";
-import InformationContainerTop from "./InformationContainerTop";
-import bigData from "./questions";
-import Answers from "./Answers";
-import GameOver from "./results/GameOver";
-import ZeroPoints from "./results/ZeroPoints";
-import TimeOver from "./results/TimeOver";
-import WindowInfo from "./WindowInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMailBulk,
@@ -28,7 +16,25 @@ import {
   faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import About from "./About";
+import {
+  //HOOKS
+  useSound,
+  //DATA ARRAYS
+  bigData,
+  //FILES
+  titleImg,
+  pop,
+  levelClear,
+  finalLevelFanfare,
+  //COMPONENTS
+  About,
+  Answers,
+  InformationContainerTop,
+  WindowInfo,
+  GameOver,
+  ZeroPoints,
+  TimeOver,
+} from "./index";
 
 const Question = () => {
   const {

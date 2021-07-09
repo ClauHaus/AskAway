@@ -1,6 +1,5 @@
 import React from "react";
 import { useGlobalContext } from "./context";
-
 import {
   //HOOKS
   useSound,
@@ -10,6 +9,8 @@ import {
   //COMPONENTS
   HowTo,
   About,
+  GameFolder,
+  DataFolder,
   InformationContainerTop,
   InformationContainerBottom,
   WindowInfo,
@@ -26,6 +27,8 @@ const FormContinue = () => {
     setLevel,
     sound,
     about,
+    gameFolder,
+    dataFolder,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newAge = JSON.parse(localStorage.getItem("newAge"));
@@ -94,6 +97,8 @@ const FormContinue = () => {
           </button>
           {modal && <HowTo />}
           {infoWidth >= 1024 && about && <About />}
+          {infoWidth >= 1024 && gameFolder && <GameFolder />}
+          {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
       <InformationContainerBottom />

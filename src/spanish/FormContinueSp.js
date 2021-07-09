@@ -10,6 +10,8 @@ import {
   //COMPONENTS
   HowToSp,
   About,
+  GameFolder,
+  DataFolder,
   InformationContainerTop,
   InformationContainerBottom,
   WindowInfo,
@@ -26,6 +28,8 @@ const FormContinueSp = () => {
     setLevel,
     sound,
     about,
+    gameFolder,
+    dataFolder,
   } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newAge = JSON.parse(localStorage.getItem("newAge"));
@@ -93,6 +97,8 @@ const FormContinueSp = () => {
           </button>
           {modal && <HowToSp />}
           {infoWidth >= 1024 && about && <About />}
+          {infoWidth >= 1024 && gameFolder && <GameFolder />}
+          {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
       <InformationContainerBottom />

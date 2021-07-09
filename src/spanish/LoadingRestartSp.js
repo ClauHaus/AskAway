@@ -7,14 +7,24 @@ import {
   titleImg,
   //COMPONENTS
   About,
+  GameFolder,
+  DataFolder,
   InformationContainerTop,
   InformationContainerBottom,
   WindowInfo,
 } from "./../index";
 
 const LoadingRestartSp = () => {
-  const { nextPageBack, loadingRestart, question, level, setLevel, about } =
-    useGlobalContext();
+  const {
+    nextPageBack,
+    loadingRestart,
+    question,
+    level,
+    setLevel,
+    about,
+    gameFolder,
+    dataFolder,
+  } = useGlobalContext();
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   const shuffle = () => {
@@ -101,6 +111,8 @@ const LoadingRestartSp = () => {
             );
           })}
           {infoWidth >= 1024 && about && <About />}
+          {infoWidth >= 1024 && gameFolder && <GameFolder />}
+          {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
       <InformationContainerBottom />

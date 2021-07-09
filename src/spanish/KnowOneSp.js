@@ -1,17 +1,34 @@
 import React, { useState, useEffect } from "react";
-import useSound from "use-sound";
-import click1 from "./../sounds/click1.mp3";
-import titleImg from "./../images/title.png";
-import factsSp from "./factsSp";
 import { useGlobalContext } from "./../context";
-import InformationContainerTop from "../InformationContainerTop";
-import WindowInfo from "../WindowInfo";
-import InformationContainerBottom from "../InformationContainerBottom";
-import About from "../About";
+import {
+  //HOOKS
+  useSound,
+  //DATA ARRAY
+  factsSp,
+  //FILES
+  titleImg,
+  click1,
+  //COMPONENTS
+  About,
+  GameFolder,
+  DataFolder,
+  InformationContainerTop,
+  InformationContainerBottom,
+  WindowInfo,
+} from "./../index";
 
 const KnowOneSp = () => {
-  const { nextPageFive, loadingPage, knowOne, level, setLevel, sound, about } =
-    useGlobalContext();
+  const {
+    nextPageFive,
+    loadingPage,
+    knowOne,
+    level,
+    setLevel,
+    sound,
+    about,
+    gameFolder,
+    dataFolder,
+  } = useGlobalContext();
 
   const shuffle = () => {
     const result = factsSp.sort(() => Math.random() - 0.5);
@@ -101,6 +118,8 @@ const KnowOneSp = () => {
             );
           })}
           {infoWidth >= 1024 && about && <About />}
+          {infoWidth >= 1024 && gameFolder && <GameFolder />}
+          {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
       <InformationContainerBottom />

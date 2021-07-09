@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import useSound from "use-sound";
-import errorSound from "./sounds/errorSound.mp3";
-import rightSound from "./sounds/rightSound.mp3";
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  errorSound,
+  rightSound,
+} from "./index";
 
 const Answers = ({
   data,

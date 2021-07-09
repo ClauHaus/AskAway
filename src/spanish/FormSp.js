@@ -9,13 +9,23 @@ import {
   click1,
   //COMPONENTS
   About,
+  GameFolder,
+  DataFolder,
   InformationContainerTop,
   InformationContainerBottom,
   WindowInfo,
 } from "./../index";
 
 export const FormSp = () => {
-  const { nextPageOne, form, formContinue, sound, about } = useGlobalContext();
+  const {
+    nextPageOne,
+    form,
+    formContinue,
+    sound,
+    about,
+    gameFolder,
+    dataFolder,
+  } = useGlobalContext();
   const [person, setPerson] = useState({ firstName: "", age: "", country: "" });
   const [people, setPeople] = useState([]);
 
@@ -136,6 +146,8 @@ export const FormSp = () => {
           </form>
         </article>
         {infoWidth >= 1024 && about && <About />}
+        {infoWidth >= 1024 && gameFolder && <GameFolder />}
+        {infoWidth >= 1024 && dataFolder && <DataFolder />}
       </section>
       <InformationContainerBottom />
     </>

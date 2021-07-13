@@ -30,7 +30,7 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
       fetchInfo(API_ENDPOINT_SP);
     }
     // eslint-disable-next-line
-  }, [language]);
+  }, [, language]);
 
   const [index, setIndex] = useState(0);
   const [isClosed, setIsClosed] = useState("");

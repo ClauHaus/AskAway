@@ -11,6 +11,7 @@ import {
 
 const ZeroPointsSp = ({ restartGame }) => {
   const { question, loadingRestart, nextPageRestart } = useGlobalContext();
+
   return (
     <>
       <section className="container-back-time">
@@ -30,7 +31,7 @@ const ZeroPointsSp = ({ restartGame }) => {
             <FontAwesomeIcon
               style={{ fontSize: "2.5rem" }}
               icon={faExclamationTriangle}
-            ></FontAwesomeIcon>
+            />
             C:\Askaway\HasPerdido
           </div>
           <div className="btn-container" style={{ margin: "10px" }}>

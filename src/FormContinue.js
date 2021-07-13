@@ -30,6 +30,7 @@ const FormContinue = () => {
     gameFolder,
     dataFolder,
   } = useGlobalContext();
+
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newAge = JSON.parse(localStorage.getItem("newAge"));
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));

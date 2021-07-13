@@ -24,7 +24,9 @@ const LoadingPage = () => {
     gameFolder,
     dataFolder,
   } = useGlobalContext();
+
   const newName = JSON.parse(localStorage.getItem("newName"));
+
   useEffect(() => {
     let timeOut = setTimeout(() => {
       nextPageThree(loadingPage, question); //AGREGAR ACA EL setLevel de 0 a 1

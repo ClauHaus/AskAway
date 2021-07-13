@@ -26,6 +26,7 @@ export const Form = () => {
     gameFolder,
     dataFolder,
   } = useGlobalContext();
+
   const [person, setPerson] = useState({ firstName: "", age: "", country: "" });
   const [people, setPeople] = useState([]);
 
@@ -33,16 +34,22 @@ export const Form = () => {
     const name = e.target.name;
     const value = e.target.value;
     setPerson({ ...person, [name]: value });
-    // if (person.firstName && person.age && person.country) {
-    //   const newPerson = { ...person, id: new Date().getTime().toString() }; //Revisar estas dos donde van?
-    //   setPeople([...people, newPerson]); //
-    // }
   };
-  const hours = new Date().getHours();
+
+  let hours = new Date().getHours();
   const minutes = new Date().getMinutes();
-  const days = new Date().getDate();
-  const months = new Date().getMonth();
+  let days = new Date().getDate();
+  let months = new Date().getMonth() + 1;
   const years = new Date().getFullYear();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (days < 10) {
+    days = `0${days}`;
+  }
+  if (months < 10) {
+    months = `0${months}`;
+  }
   const fullDate = `at ${hours}:${minutes} on ${days}/${months}/${years}`;
 
   const handleSubmit = (e) => {
@@ -58,7 +65,6 @@ export const Form = () => {
     localStorage.setItem("newName", JSON.stringify(person.firstName));
     localStorage.setItem("newAge", JSON.stringify(person.age));
     localStorage.setItem("newCountry", JSON.stringify(person.country));
-    // localStorage.setItem("newTest", JSON.stringify(people));
     // Idealmente seria pasar los tres elementos al Array que ya esta creado y retirar la informacion direcamtente del LOCALHOST --> INVESTIGAR!
     localStorage.setItem(
       "newFullData",
@@ -140,7 +146,6 @@ export const Form = () => {
               <button
                 type="submit"
                 className="form-btn"
-                // onClick={handleSubmit}
                 onClick={() => (sound ? (handleSubmit, play1()) : handleSubmit)}
               >
                 Submit

@@ -61,6 +61,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3xrWMtJ"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       useSound (React Hook) --- {""}
@@ -68,6 +69,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/2UA37Vc"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Josh W Comeau.
@@ -77,6 +79,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3dXUCdC"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       coolors.co --- {""}
@@ -84,6 +87,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3AHbVJJ"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Fabrizio Bianchi.
@@ -93,9 +97,18 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3AHPOTf"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
-                      Free Copyright Sounds.
+                      Free Copyright Sounds, {""}
+                    </a>
+                    <a
+                      href="https://bit.ly/3i7VnSD"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ color: "var(--dark-low)" }}
+                    >
+                      News API.
                     </a>
                   </li>
                 </ul>
@@ -103,6 +116,7 @@ const DataFolder = () => {
                 <a
                   href="https://mzl.la/3AJS5NJ"
                   target="_blank"
+                  rel="noreferrer"
                   style={{ color: "var(--dark-low)" }}
                 >
                   {" "}
@@ -112,6 +126,7 @@ const DataFolder = () => {
                 <a
                   href="https://bit.ly/3hT6tKW"
                   target="_blank"
+                  rel="noreferrer"
                   style={{ color: "var(--dark-low)" }}
                 >
                   W3schools
@@ -124,6 +139,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/2SXlSS9"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Introduction to JavaScript Programming --- {""}
@@ -131,6 +147,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/36piGSA"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Javier Usobiaga Ferrer.
@@ -140,6 +157,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3r0XKur"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       JavaScript Tutorial for Beginners --- {""}
@@ -147,6 +165,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3xy33Ec"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       John Smilga.
@@ -156,6 +175,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3dXUCdC"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       React Tutorial and Projects Course --- {""}
@@ -163,6 +183,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3xy33Ec"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       John Smilga.
@@ -184,6 +205,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3xrWMtJ"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       useSound (React Hook) --- {""}
@@ -191,6 +213,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/2UA37Vc"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Josh W Comeau.
@@ -200,6 +223,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3dXUCdC"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       coolors.co --- {""}
@@ -207,6 +231,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3AHbVJJ"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Fabrizio Bianchi.
@@ -216,9 +241,18 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3AHPOTf"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
-                      Sonidos Free Copyright.
+                      Free Copyright Sounds, {""}
+                    </a>
+                    <a
+                      href="https://bit.ly/3i7VnSD"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ color: "var(--dark-low)" }}
+                    >
+                      News API.
                     </a>
                   </li>
                 </ul>
@@ -226,6 +260,7 @@ const DataFolder = () => {
                 <a
                   href="https://mzl.la/3AJS5NJ"
                   target="_blank"
+                  rel="noreferrer"
                   style={{ color: "var(--dark-low)" }}
                 >
                   {" "}
@@ -235,6 +270,7 @@ const DataFolder = () => {
                 <a
                   href="https://bit.ly/3hT6tKW"
                   target="_blank"
+                  rel="noreferrer"
                   style={{ color: "var(--dark-low)" }}
                 >
                   W3schools
@@ -247,6 +283,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/2SXlSS9"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Introduction to JavaScript Programming --- {""}
@@ -254,6 +291,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/36piGSA"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       Javier Usobiaga Ferrer.
@@ -263,6 +301,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3r0XKur"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       JavaScript Tutorial for Beginners --- {""}
@@ -270,6 +309,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3xy33Ec"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       John Smilga.
@@ -279,6 +319,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3dXUCdC"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       React Tutorial and Projects Course --- {""}
@@ -286,6 +327,7 @@ const DataFolder = () => {
                     <a
                       href="https://bit.ly/3xy33Ec"
                       target="_blank"
+                      rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
                       John Smilga.

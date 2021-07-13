@@ -59,7 +59,7 @@ const GameOverSp = ({ newName, score, restartGame }) => {
                 <FontAwesomeIcon
                   style={{ fontSize: "2.5rem" }}
                   icon={faExclamationTriangle}
-                ></FontAwesomeIcon>
+                />
                 C:\Askaway...
               </div>
               <div className="btn-container" style={{ margin: "10px" }}>

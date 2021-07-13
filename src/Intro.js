@@ -1,16 +1,5 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "./context";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMailBulk,
-  faGripLinesVertical,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faWindows,
-  faGithub,
-  faTwitter,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 import {
   //HOOKS
   useSound,
@@ -22,20 +11,13 @@ import {
   DataFolder,
   GameFolder,
   InformationContainerTop,
+  InformationContainerBottom,
   WindowInfo,
 } from "./index";
 
 const Intro = () => {
-  const {
-    time,
-    restartGame,
-    intro,
-    title,
-    nextPageIntro,
-    about,
-    gameFolder,
-    dataFolder,
-  } = useGlobalContext();
+  const { intro, title, nextPageIntro, about, gameFolder, dataFolder } =
+    useGlobalContext();
   const [start, setStart] = useState(false);
   const [opacity, setOpacity] = useState(1);
   const [play] = useSound(startup, { volume: 0.5 });
@@ -105,72 +87,7 @@ const Intro = () => {
           {infoWidth >= 1024 && dataFolder && <DataFolder />}
         </div>
       </section>
-      <section>
-        <footer className="container-bottom">
-          <div>
-            <button className="btn-restart" onClick={restartGame}>
-              <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
-              ReStart
-            </button>
-          </div>
-          <FontAwesomeIcon
-            icon={faGripLinesVertical}
-            className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
-          <a
-            href="https://github.com/ClauHaus/AskAway"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faGithub}
-              className="container-bottom-icons"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/claudio-aime-2a91a034/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              className="container-bottom-icons"
-            />
-          </a>
-          <a
-            href="https://twitter.com/ClauHaus_"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className="container-bottom-icons"
-            />
-          </a>
-          <a
-            href="mailto:claudio.aime32@gmail.com?subject=Regarding%20Askaway"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon
-              icon={faMailBulk}
-              className="container-bottom-icons"
-            />
-          </a>
-          <FontAwesomeIcon
-            icon={faGripLinesVertical}
-            className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
-          <div className="container-bottom-image" style={{ opacity: "0" }}>
-            <img
-              className="container-bottom-icons-image"
-              src={titleImg}
-              alt="logo of Ask Away"
-            />
-          </div>
-          <div className="container-bottom-clock-intro">{time}</div>
-        </footer>
-      </section>
+      <InformationContainerBottom />
     </>
   );
 };

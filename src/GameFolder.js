@@ -11,6 +11,7 @@ import {
   //COMPONENTS
   WindowInfo,
 } from "./index";
+
 const GameFolder = () => {
   const { closeGameFolder, sound, language } = useGlobalContext();
 
@@ -47,14 +48,14 @@ const GameFolder = () => {
           </button>
           {language === "english" ? (
             <>
-              <h4 className="title-options title-options-back">AskAway</h4>
+              <h4 className="title-options title-options-back">Ask Away</h4>
               <div className="container-back-game">
                 <p>The game is already open and running...</p>
               </div>
             </>
           ) : (
             <>
-              <h4 className="title-options title-options-back">AskAway</h4>
+              <h4 className="title-options title-options-back">Ask Away</h4>
               <div className="container-back-game">
                 <p>El juego ya esta abierto y funcionando...</p>
               </div>

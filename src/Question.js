@@ -55,10 +55,12 @@ const Question = () => {
     language,
     time,
   } = useGlobalContext();
+
   const newName = JSON.parse(localStorage.getItem("newName"));
   const newTopScore = JSON.parse(localStorage.getItem("newTopScore"));
   const newActualScore = JSON.parse(localStorage.getItem("newActualScore"));
   const newFullData = JSON.parse(localStorage.getItem("newFullData"));
+
   const [count, setCount] = useState(false);
   const [score, setScore] = useState(scoreDifficulty);
   const [timer, setTimer] = useState(timerDifficulty);
@@ -237,7 +239,6 @@ const Question = () => {
                   ) : (
                     <button
                       className="btn btn-title center-item"
-                      // onClick={() => nextPageEnding(question, knowOne)}
                       onClick={() =>
                         sound
                           ? (nextPageEnding(question, knowOne),
@@ -313,14 +314,14 @@ const Question = () => {
         <footer className="container-bottom">
           <div>
             <button className="btn-restart" onClick={restartGame}>
-              <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faWindows} />
               ReStart
             </button>
           </div>
           <FontAwesomeIcon
             icon={faGripLinesVertical}
             className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
+          />
           <a
             href="https://github.com/ClauHaus/AskAway"
             target="_blank"
@@ -364,7 +365,7 @@ const Question = () => {
           <FontAwesomeIcon
             icon={faGripLinesVertical}
             className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
+          />
           <div className="container-bottom-image">
             <img
               className="container-bottom-icons-image"
@@ -378,9 +379,9 @@ const Question = () => {
               onClick={() => makeSound()}
             >
               {sound ? (
-                <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeUp} />
               ) : (
-                <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeMute} />
               )}
             </button>
           ) : (
@@ -389,9 +390,9 @@ const Question = () => {
               onClick={() => makeSound()}
             >
               {sound ? (
-                <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeUp} />
               ) : (
-                <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeMute} />
               )}
             </button>
           )}
@@ -401,7 +402,7 @@ const Question = () => {
               onClick={() => setTheme("light")}
               className="container-bottom-theme"
             >
-              <FontAwesomeIcon icon={faMoon}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faMoon} />
             </button>
           )}
           {infoWidth >= 1024 && theme === "light" && (
@@ -409,18 +410,18 @@ const Question = () => {
               onClick={() => setTheme("dark")}
               className="container-bottom-theme"
             >
-              <FontAwesomeIcon icon={faSun}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faSun} />
             </button>
           )}
 
           {infoWidth >= 1024 && language === "spanish" && (
             <button className="container-bottom-theme">
-              <FontAwesomeIcon icon={faLanguage}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faLanguage} />
             </button>
           )}
           {infoWidth >= 1024 && language === "english" && (
             <button className="container-bottom-theme">
-              <FontAwesomeIcon icon={faLanguage}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faLanguage} />
             </button>
           )}
 

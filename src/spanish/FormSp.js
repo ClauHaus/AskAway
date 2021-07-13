@@ -38,12 +38,21 @@ export const FormSp = () => {
     //   setPeople([...people, newPerson]); //
     // }
   };
-  const hours = new Date().getHours();
+  let hours = new Date().getHours();
   const minutes = new Date().getMinutes();
-  const days = new Date().getDate();
-  const months = new Date().getMonth();
+  let days = new Date().getDate();
+  let months = new Date().getMonth() + 1;
   const years = new Date().getFullYear();
-  const fullDate = `a las ${hours}:${minutes} en ${days}/${months}/${years}`;
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (days < 10) {
+    days = `0${days}`;
+  }
+  if (months < 10) {
+    months = `0${months}`;
+  }
+  const fullDate = `at ${hours}:${minutes} on ${days}/${months}/${years}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();

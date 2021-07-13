@@ -41,6 +41,7 @@ function App() {
     highScore,
     credits,
   } = useGlobalContext();
+
   if (language === "spanish") {
     return (
       <>

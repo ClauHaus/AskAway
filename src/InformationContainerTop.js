@@ -33,30 +33,21 @@ const InformationContainerTop = () => {
           className="container-desktop-icon"
           onClick={sound ? () => soundAction(openAbout) : openAbout}
         >
-          <FontAwesomeIcon
-            icon={faLaptop}
-            style={{ fontSize: "2rem" }}
-          ></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faLaptop} style={{ fontSize: "2rem" }} />
           {language === "english" ? "My PC" : "Mi PC"}
         </button>
         <button
           className="container-desktop-icon"
           onClick={sound ? () => soundAction(openGameFolder) : openGameFolder}
         >
-          <FontAwesomeIcon
-            icon={faFolderOpen}
-            style={{ fontSize: "2rem" }}
-          ></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faFolderOpen} style={{ fontSize: "2rem" }} />
           AskAway
         </button>
         <button
           className="container-desktop-icon"
           onClick={sound ? () => soundAction(openDataFolder) : openDataFolder}
         >
-          <FontAwesomeIcon
-            icon={faFileCode}
-            style={{ fontSize: "2rem" }}
-          ></FontAwesomeIcon>
+          <FontAwesomeIcon icon={faFileCode} style={{ fontSize: "2rem" }} />
           Data
         </button>
         <button className="container-desktop-icon">
@@ -65,10 +56,7 @@ const InformationContainerTop = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon
-              icon={faGithub}
-              style={{ fontSize: "2rem" }}
-            ></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faGithub} style={{ fontSize: "2rem" }} />
             Github
           </a>
         </button>
@@ -79,10 +67,7 @@ const InformationContainerTop = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              style={{ fontSize: "2rem" }}
-            ></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: "2rem" }} />
             LinkedIn
           </a>
         </button>
@@ -93,10 +78,7 @@ const InformationContainerTop = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              style={{ fontSize: "2rem" }}
-            ></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faTwitter} style={{ fontSize: "2rem" }} />
             Twitter
           </a>
         </button>
@@ -106,10 +88,7 @@ const InformationContainerTop = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FontAwesomeIcon
-              icon={faMailBulk}
-              style={{ fontSize: "2rem" }}
-            ></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faMailBulk} style={{ fontSize: "2rem" }} />
             Mail
           </a>
         </button>

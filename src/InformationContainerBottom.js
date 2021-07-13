@@ -1,7 +1,4 @@
-import React from "react";
-import titleImg from "./images/title.png";
-import useSound from "use-sound";
-import pop from "./sounds/pop.mp3";
+import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,11 +11,21 @@ import {
   faLanguage,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faWindows,
   faGithub,
   faTwitter,
   faLinkedin,
+  faMicrosoft,
 } from "@fortawesome/free-brands-svg-icons";
+
+import {
+  //HOOKS
+  useSound,
+  //FILES
+  titleImg,
+  pop,
+} from "./index";
+import NotificationCenter from "./NotificationCenter";
+import { faNewspaper } from "@fortawesome/free-regular-svg-icons";
 
 const InformationContainerBottom = () => {
   const {
@@ -31,6 +38,8 @@ const InformationContainerBottom = () => {
     setTheme,
     setLanguage,
   } = useGlobalContext();
+
+  const [notificationCenter, setNotificationCenter] = useState(false);
 
   const makeSound = () => {
     setSound(!sound);
@@ -58,22 +67,43 @@ const InformationContainerBottom = () => {
     localStorage.setItem("newLanguage", JSON.stringify(item));
   };
 
+  const openNews = () => {
+    playPop();
+    setNotificationCenter(true);
+  };
+
+  let days = new Date().getDate();
+  let months = new Date().getMonth() + 1;
+  const years = new Date().getFullYear();
+  if (days < 10) {
+    days = `0${days}`;
+  }
+  if (months < 10) {
+    months = `0${months}`;
+  }
+  const fullDate = `${days}/${months}/${years}`;
   const infoWidth = window.innerWidth;
 
   return (
     <>
       <section>
+        {
+          <NotificationCenter
+            notificationCenter={notificationCenter}
+            setNotificationCenter={setNotificationCenter}
+          />
+        }
         <footer className="container-bottom">
           <div>
             <button className="btn-restart" onClick={restartGame}>
-              <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faMicrosoft} />
               ReStart
             </button>
           </div>
           <FontAwesomeIcon
             icon={faGripLinesVertical}
             className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
+          />
           <a
             href="https://github.com/ClauHaus/AskAway"
             target="_blank"
@@ -117,7 +147,7 @@ const InformationContainerBottom = () => {
           <FontAwesomeIcon
             icon={faGripLinesVertical}
             className="container-bottom-icons-span"
-          ></FontAwesomeIcon>
+          />
           <div className="container-bottom-image">
             <img
               className="container-bottom-icons-image"
@@ -131,9 +161,9 @@ const InformationContainerBottom = () => {
               onClick={() => makeSound()}
             >
               {sound ? (
-                <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeUp} />
               ) : (
-                <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeMute} />
               )}
             </button>
           ) : (
@@ -142,9 +172,9 @@ const InformationContainerBottom = () => {
               onClick={() => makeSound()}
             >
               {sound ? (
-                <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeUp} />
               ) : (
-                <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeMute} />
               )}
             </button>
           )}
@@ -156,7 +186,7 @@ const InformationContainerBottom = () => {
               }
               className="container-bottom-theme"
             >
-              <FontAwesomeIcon icon={faMoon}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faMoon} />
             </button>
           )}
           {infoWidth >= 1024 && theme === "light" && (
@@ -164,7 +194,7 @@ const InformationContainerBottom = () => {
               onClick={() => (sound ? setGameTheme("dark") : gameTheme("dark"))}
               className="container-bottom-theme"
             >
-              <FontAwesomeIcon icon={faSun}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faSun} />
             </button>
           )}
 
@@ -175,7 +205,7 @@ const InformationContainerBottom = () => {
               }
               className="container-bottom-theme"
             >
-              <FontAwesomeIcon icon={faLanguage}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faLanguage} />
             </button>
           )}
           {infoWidth >= 1024 && language === "english" && (
@@ -185,7 +215,7 @@ const InformationContainerBottom = () => {
               }
               className="container-bottom-theme"
             >
-              <FontAwesomeIcon icon={faLanguage}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faLanguage} />
             </button>
           )}
 
@@ -194,7 +224,28 @@ const InformationContainerBottom = () => {
               {language === "english" ? "ENG" : "ESP"}
             </div>
           )}
-          <div className="container-bottom-clock">{time}</div>
+          {infoWidth >= 1024 ? (
+            <>
+              <div className="container-bottom-clock">
+                <div>{time}</div>
+                <div>{fullDate}</div>
+              </div>
+            </>
+          ) : (
+            <div className="container-bottom-clock">{time}</div>
+          )}
+          {infoWidth >= 1024 && (
+            <>
+              <button
+                className="container-bottom-theme"
+                onClick={
+                  sound ? () => openNews() : () => setNotificationCenter(true)
+                }
+              >
+                <FontAwesomeIcon icon={faNewspaper} />
+              </button>
+            </>
+          )}
         </footer>
       </section>
     </>

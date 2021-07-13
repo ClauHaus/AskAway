@@ -25,6 +25,7 @@ const OptionsSp = () => {
     closeOptions,
     sound,
   } = useGlobalContext();
+
   const [pressNormal, setPressNormal] = useState("");
   const [pressHard, setPressHard] = useState("");
   const [pressHell, setPressHell] = useState("");

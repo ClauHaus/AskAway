@@ -8,10 +8,10 @@ import {
   faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faWindows,
   faGithub,
   faTwitter,
   faLinkedin,
+  faMicrosoft,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   //HOOKS
@@ -87,14 +87,14 @@ const CreditsSp = () => {
             <footer className="container-bottom-credits">
               <div>
                 <button className="btn-restart" onClick={restartGame}>
-                  <FontAwesomeIcon icon={faWindows}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faMicrosoft} />
                   ReStart
                 </button>
               </div>
               <FontAwesomeIcon
                 icon={faGripLinesVertical}
                 className="container-bottom-icons-span"
-              ></FontAwesomeIcon>
+              />
               <a
                 href="https://github.com/ClauHaus/AskAway"
                 target="_blank"
@@ -138,7 +138,7 @@ const CreditsSp = () => {
               <FontAwesomeIcon
                 icon={faGripLinesVertical}
                 className="container-bottom-icons-span"
-              ></FontAwesomeIcon>
+              />
               <div className="container-bottom-image">
                 <img
                   className="container-bottom-icons-image"
@@ -151,9 +151,9 @@ const CreditsSp = () => {
                 onClick={() => makeSound()}
               >
                 {sound ? (
-                  <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faVolumeUp} />
                 ) : (
-                  <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faVolumeMute} />
                 )}
               </button>
               <div className="container-bottom-clock">{time}</div>

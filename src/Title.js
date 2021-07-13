@@ -79,7 +79,7 @@ const Title = () => {
               className="btn-change "
               onClick={sound ? () => soundAction(openOptions) : openOptions}
             >
-              <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faCog} />
             </button>
             <button
               className="btn-change "
@@ -87,9 +87,9 @@ const Title = () => {
               style={{ margin: "10px 25px 0px auto", fontSize: "1.3rem" }}
             >
               {sound ? (
-                <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeUp} />
               ) : (
-                <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeMute} />
               )}
             </button>
           </div>

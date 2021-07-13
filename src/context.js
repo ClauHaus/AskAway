@@ -10,8 +10,8 @@ import reducer from "./reducer";
 const AppContext = React.createContext();
 
 const initialState = {
-  intro: true,
-  title: false,
+  intro: false,
+  title: true,
   modal: false,
   options: false,
   about: false,
@@ -127,6 +127,9 @@ const AppProvider = ({ children }) => {
   const clock = useCallback(() => {
     const today = new Date();
     let hour = today.getHours();
+    if (hour < 10) {
+      hour = `0${hour}`;
+    }
     let minutes = today.getMinutes();
     minutes = checkTime(minutes);
     const actualTime = `${hour} : ${minutes}`;

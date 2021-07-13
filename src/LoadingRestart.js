@@ -25,6 +25,7 @@ const LoadingRestart = () => {
     gameFolder,
     dataFolder,
   } = useGlobalContext();
+
   const newName = JSON.parse(localStorage.getItem("newName"));
 
   const shuffle = () => {

@@ -81,7 +81,7 @@ const TitleSp = () => {
               className="btn-change "
               onClick={sound ? () => soundAction(openOptions) : openOptions}
             >
-              <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faCog} />
             </button>
             <button
               className="btn-change "
@@ -89,14 +89,13 @@ const TitleSp = () => {
               style={{ margin: "10px 25px 0px auto", fontSize: "1.3rem" }}
             >
               {sound ? (
-                <FontAwesomeIcon icon={faVolumeUp}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeUp} />
               ) : (
-                <FontAwesomeIcon icon={faVolumeMute}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faVolumeMute} />
               )}
             </button>
           </div>
           <h3 className="title title-back">ask away</h3>
-          {/* <div className="title-underline"></div> */}
           <h5 className="title">Cuánto sabes de cosas?</h5>
           <div className="title-image-container">
             <img

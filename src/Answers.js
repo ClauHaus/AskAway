@@ -109,7 +109,6 @@ const Answers = ({
       multipleChanges();
     }
     localStorage.setItem("newScore", JSON.stringify(score));
-
     // eslint-disable-next-line
   }, [score, timer]);
 

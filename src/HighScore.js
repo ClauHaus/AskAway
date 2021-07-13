@@ -21,6 +21,7 @@ const HighScore = () => {
   const newCountry = JSON.parse(localStorage.getItem("newCountry"));
   const newFullData = JSON.parse(localStorage.getItem("newFullData"));
   const newFullScore = JSON.parse(localStorage.getItem("newFullScore"));
+
   const {
     credits,
     highScore,

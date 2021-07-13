@@ -24,13 +24,18 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
   };
 
   useEffect(() => {
+    fetchInfo(API_ENDPOINT_EN);
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
     if (language === "english") {
       fetchInfo(API_ENDPOINT_EN);
     } else {
       fetchInfo(API_ENDPOINT_SP);
     }
     // eslint-disable-next-line
-  }, [, language]);
+  }, [language]);
 
   const [index, setIndex] = useState(0);
   const [isClosed, setIsClosed] = useState("");

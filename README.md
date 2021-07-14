@@ -8,7 +8,17 @@ How much do you know about stuff?
 
 This is my first React project in where i try to apply what i learnt about hooks. Any kind of feedback is welcome, and obviously if you spot any bugs let me know ASAP so i can fix it. I hope you enjoy it!
 
-Claudio
+While programming this web, i used the following external tools:
+
+useSound (React Hook) --- Josh W Comeau.
+coolors.co --- Fabrizio Bianchi.
+Free Copyright Sounds, Hacker News API (Only in English at the moment)
+I also highly recommend to check MDN Web Docs and W3schools for any kind of doubts while coding. Mostly of the resources that I poured into this project I learned them from these courses:
+Introduction to JavaScript Programming --- Javier Usobiaga Ferrer.
+JavaScript Tutorial for Beginners --- John Smilga.
+React Tutorial and Projects Course --- John Smilga.
+
+Greetings Claudio 🤓
 
 ## Available Scripts
 

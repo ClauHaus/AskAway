@@ -24,9 +24,9 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
     setInfo(data.articles);
   };
 
-  useEffect(() => {
-    fetchInfo(API_ENDPOINT_EN);
-  }, []);
+  // useEffect(() => {
+  //   fetchInfo(API_ENDPOINT_EN);
+  // }, []);
 
   useEffect(() => {
     if (language === "english") {
@@ -35,7 +35,7 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
       fetchInfo(API_ENDPOINT_SP);
     }
     // eslint-disable-next-line
-  }, [language]);
+  }, [setNotificationCenter]);
 
   const [index, setIndex] = useState(0);
   const [isClosed, setIsClosed] = useState("");

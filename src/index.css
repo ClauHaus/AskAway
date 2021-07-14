@@ -945,8 +945,8 @@ button.btn-change:hover {
 
 .btn-next-notification {
   position: fixed;
-  top: 520px;
-  right: 200px;
+  top: 480px;
+  right: 140px;
 }
 
 button.btn-next:hover,
@@ -2479,7 +2479,7 @@ Ending
   .claudio {
     display: flex;
     margin: 5px 30px 5px 5px;
-    width: 100px;
+    width: 150px;
   }
   .container-back-about {
     position: absolute;
@@ -2546,7 +2546,7 @@ Ending
     position: fixed;
     top: 0;
     right: 0;
-    width: 40%;
+    width: 30%;
     height: 100%;
     background: #a0a0a4;
     display: grid;
@@ -2561,7 +2561,7 @@ Ending
 
   .container-notification {
     position: relative;
-    width: 39vw;
+    width: 29vw;
     min-height: 90vh;
     max-width: var(--fixed-width);
     background: var(--black);

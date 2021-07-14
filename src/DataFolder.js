@@ -103,12 +103,12 @@ const DataFolder = () => {
                       Free Copyright Sounds, {""}
                     </a>
                     <a
-                      href="https://bit.ly/3i7VnSD"
+                      href="https://bit.ly/3r8yNgT"
                       target="_blank"
                       rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
-                      News API.
+                      Hacker News API (Only in English at the moment)
                     </a>
                   </li>
                 </ul>
@@ -247,12 +247,12 @@ const DataFolder = () => {
                       Free Copyright Sounds, {""}
                     </a>
                     <a
-                      href="https://bit.ly/3i7VnSD"
+                      href="https://bit.ly/3r8yNgT"
                       target="_blank"
                       rel="noreferrer"
                       style={{ color: "var(--dark-low)" }}
                     >
-                      News API.
+                      Hacker News API (Solo en inglés por el momento)
                     </a>
                   </li>
                 </ul>

@@ -7,25 +7,31 @@ import {
   useSound,
   //FILES
   click1,
-  notFound,
 } from "./index";
 
 const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
-  const { sound, language } = useGlobalContext();
+  const { sound, theme } = useGlobalContext();
 
-  const API_ENDPOINT_NEWS =
-    "http://api.mediastack.com/v1/news?access_key=1ce706cf258a138d239bf5e814dc3baf";
+  const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?tags=front_page";
 
   const [info, setInfo] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchInfo = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setInfo(data.data);
+    setIsLoading(true);
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      setInfo(data.hits);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      console.log(error);
+    }
   };
 
   useEffect(() => {
-    fetchInfo(API_ENDPOINT_NEWS);
+    fetchInfo(API_ENDPOINT);
 
     // eslint-disable-next-line
   }, [setNotificationCenter]);
@@ -45,6 +51,43 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
     setNotificationCenter(false);
     setIsClosed("notification-back");
   };
+
+  if (isLoading) {
+    return (
+      <>
+        <section
+          className={`${
+            notificationCenter
+              ? "container-back-notification notification-move"
+              : `container-back-notification ${isClosed}`
+          }`}
+        >
+          <div className="container-notification">
+            <button
+              className="close-modal-btn-notification"
+              onClick={sound ? () => soundAction() : () => notificationClose()}
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+            {theme === "light" ? (
+              <img
+                className="loading"
+                src="https://art.pixilart.com/010daff759faae6.png"
+                alt=""
+              />
+            ) : (
+              <img
+                className="loading"
+                src="https://art.pixilart.com/abe4c798bd975be.png"
+                alt=""
+              />
+            )}
+          </div>
+        </section>
+      </>
+    );
+  }
+
   return (
     <>
       {" "}
@@ -57,7 +100,7 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
       >
         <div className="container-notification">
           {info.map((item, itemIndex) => {
-            const { title, image, url, author, description } = item;
+            const { title, url, points, num_comments, author } = item;
             let position = "nextSlide";
             if (itemIndex === index) {
               position = "activeSlide";
@@ -82,24 +125,23 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
                 >
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
-                <h5 className="news-title">{title}</h5>
+                <h3 className="title title-back">Hacker News</h3>
+                <h4 className="news-title">{title}</h4>
                 <p>By {author} </p>
                 <p>
-                  {description}{" "}
+                  {" "}
                   <a
                     href={url}
                     target="_blank"
                     rel="noreferrer"
                     style={{ color: "var(--dark-high)" }}
                   >
-                    {language === "english" ? "Read more" : "Leer más"}
+                    Read More
                   </a>
                 </p>
-                <img
-                  src={image ? image : notFound}
-                  alt={title}
-                  className="news-image"
-                />
+                <p className="info">
+                  {points} points | {num_comments} comments
+                </p>
               </article>
             );
           })}
@@ -107,7 +149,7 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
             className="btn-next-notification"
             onClick={() => setIndex(index + 1)}
           >
-            {language === "english" ? "Show more news" : "Mostrar más noticias"}
+            Show More News
           </button>
         </div>
       </section>

@@ -7,13 +7,14 @@ import {
   useSound,
   //FILES
   click1,
+  notFound,
 } from "./index";
 
 const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
   const { sound, language } = useGlobalContext();
 
-  const API_ENDPOINT_EN = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
-  const API_ENDPOINT_SP = `https://newsapi.org/v2/top-headlines?country=ar&category=business&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
+  const API_ENDPOINT_EN = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f4634deb7f29438dab5ca9206fca8c24`;
+  const API_ENDPOINT_SP = `https://newsapi.org/v2/top-headlines?country=ar&category=business&apiKey=f4634deb7f29438dab5ca9206fca8c24`;
 
   const [info, setInfo] = useState([]);
 
@@ -22,11 +23,6 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
     const data = await response.json();
     setInfo(data.articles);
   };
-
-  useEffect(() => {
-    fetchInfo(API_ENDPOINT_EN);
-    // eslint-disable-next-line
-  }, []);
 
   useEffect(() => {
     if (language === "english") {
@@ -97,7 +93,11 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
                 <h5 className="news-title">{title}</h5>
-                <img src={urlToImage} alt={title} className="news-image" />
+                <img
+                  src={urlToImage ? urlToImage : notFound}
+                  alt={title}
+                  className="news-image"
+                />
                 <p>
                   {description}{" "}
                   <a

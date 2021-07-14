@@ -18,6 +18,7 @@ import facts from "./facts";
 import titleImg from "./images/title.png";
 import claudio from "./images/claudio.JPG";
 import clauhaus from "./images/clauhaus.gif";
+import notFound from "./images/notFound.jpg";
 import startup from "./sounds/startup.mp3";
 import pop from "./sounds/pop.mp3";
 import click1 from "./sounds/click1.mp3";
@@ -73,6 +74,7 @@ export {
   titleImg,
   claudio,
   clauhaus,
+  notFound,
   startup,
   pop,
   click1,

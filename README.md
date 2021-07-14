@@ -20,7 +20,8 @@ JavaScript Tutorial for Beginners --- John Smilga.
 
 React Tutorial and Projects Course --- John Smilga.
 
-Greetings Claudio 🤓
+Greetings!
+Claudio 🤓
 
 # Getting Started with Create React App
 

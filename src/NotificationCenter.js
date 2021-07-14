@@ -16,12 +16,15 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
   const API_ENDPOINT_EN = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f4634deb7f29438dab5ca9206fca8c24`;
   const API_ENDPOINT_SP = `https://newsapi.org/v2/top-headlines?country=ar&category=business&apiKey=f4634deb7f29438dab5ca9206fca8c24`;
 
+  const API_ENDPOINT =
+    "https://hn.algolia.com/api/v1/search_by_date?tags=story";
+
   const [info, setInfo] = useState([]);
 
   const fetchInfo = async (url) => {
     const response = await fetch(url);
     const data = await response.json();
-    setInfo(data.articles);
+    setInfo(data.hits);
   };
 
   // useEffect(() => {
@@ -29,11 +32,8 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
   // }, []);
 
   useEffect(() => {
-    if (language === "english") {
-      fetchInfo(API_ENDPOINT_EN);
-    } else {
-      fetchInfo(API_ENDPOINT_SP);
-    }
+    fetchInfo(API_ENDPOINT);
+
     // eslint-disable-next-line
   }, [setNotificationCenter]);
 
@@ -64,14 +64,7 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
       >
         <div className="container-notification">
           {info.map((item, itemIndex) => {
-            const {
-              author,
-              title,
-              source: { name },
-              urlToImage,
-              url,
-              description,
-            } = item;
+            const { title, num_comments, url, points, author } = item;
             let position = "nextSlide";
             if (itemIndex === index) {
               position = "activeSlide";
@@ -97,13 +90,13 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
                 <h5 className="news-title">{title}</h5>
-                <img
+                {/* <img
                   src={urlToImage ? urlToImage : notFound}
                   alt={title}
                   className="news-image"
-                />
+                /> */}
                 <p>
-                  {description}{" "}
+                  {author}{" "}
                   <a
                     href={url}
                     target="_blank"
@@ -112,11 +105,6 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
                   >
                     {language === "english" ? "Read more" : "Leer más"}
                   </a>
-                </p>
-                <p>
-                  {language === "english"
-                    ? `By ${author} | Source: ${name}`
-                    : `Por ${author} | Fuente: ${name}`}
                 </p>
               </article>
             );

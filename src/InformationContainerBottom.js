@@ -87,12 +87,12 @@ const InformationContainerBottom = () => {
   return (
     <>
       <section>
-        {
+        {infoWidth >= 1024 && (
           <NotificationCenter
             notificationCenter={notificationCenter}
             setNotificationCenter={setNotificationCenter}
           />
-        }
+        )}
         <footer className="container-bottom">
           <div>
             <button className="btn-restart" onClick={restartGame}>

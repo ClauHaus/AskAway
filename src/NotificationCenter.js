@@ -25,6 +25,10 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
   };
 
   useEffect(() => {
+    fetchInfo(API_ENDPOINT_EN);
+  }, []);
+
+  useEffect(() => {
     if (language === "english") {
       fetchInfo(API_ENDPOINT_EN);
     } else {

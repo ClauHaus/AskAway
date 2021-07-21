@@ -36,6 +36,7 @@ const TitleSp = () => {
     openOptions,
     sound,
     setSound,
+    language,
     about,
     gameFolder,
     dataFolder,
@@ -123,6 +124,17 @@ const TitleSp = () => {
             </button>
           </div>
           <p className="title">Desarrollado por ClauHaus - {year}</p>
+          {infoWidth < 1024 ? (
+            <>
+              {sound ? (
+                <p className="titleHead">
+                  {language === "english"
+                    ? "We reccomend using headphones"
+                    : "Recomendamos usar auriculares"}
+                </p>
+              ) : null}{" "}
+            </>
+          ) : null}
           {options && <OptionsSp />}
           {modal && <HowToSp />}
           {infoWidth >= 1024 && about && <About />}

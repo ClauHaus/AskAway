@@ -63,12 +63,6 @@ const NotificationCenter = ({ notificationCenter, setNotificationCenter }) => {
           }`}
         >
           <div className="container-notification">
-            <button
-              className="close-modal-btn-notification"
-              onClick={sound ? () => soundAction() : () => notificationClose()}
-            >
-              <FontAwesomeIcon icon={faTimes} />
-            </button>
             {theme === "light" ? (
               <img
                 className="loading"

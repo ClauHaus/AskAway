@@ -33,7 +33,7 @@ const About = () => {
                 src={titleImg}
                 alt="logo of Ask Away"
               />
-              <div>C:\MyPC</div>
+              {language === "english" ? <div>C:\MyPC</div> : <div>C:\MiPC</div>}
             </section>
             <WindowInfo />
           </div>

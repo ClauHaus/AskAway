@@ -414,12 +414,12 @@ html {
   --desktop-icon: #00858f;
   --back-desktop: #00abb8;
   --back-image: linear-gradient(to right, #02000aba, #0f0316cc),
-    url("https://art.pixilart.com/3db2c52363683e3.png ");
+    url("https://art.pixilart.com/7addb15d3bca1e8.gif");
   --back-image-right: linear-gradient(to right, #0b8101ba, #14f300ba),
-    url("https://art.pixilart.com/3db2c52363683e3.png");
+    url("https://art.pixilart.com/7addb15d3bca1e8.gif");
   --window-color: linear-gradient(90deg, #2a00ff 0%, #5c74ff 80%);
   --back-image-wrong: linear-gradient(to right, #910013ba, #fa0707cc),
-    url("https://art.pixilart.com/3db2c52363683e3.png ");
+    url("https://art.pixilart.com/7addb15d3bca1e8.gif");
   --topinfo-background: #5147ff;
   --score-background: #dd69bc;
   --timer-background: #5147ff;
@@ -490,11 +490,11 @@ html {
   --desktop-icon: #00becc;
   --back-desktop: #00d1e0;
   --back-image: linear-gradient(to right, #484357ba, #422b4ecc),
-    url("https://art.pixilart.com/0c425131e0ed8b4.png");
+    url("https://art.pixilart.com/b45f6c4989491f9.gif");
   --back-image-right: linear-gradient(to right, #0b8101ba, #14f300ba),
-    url("https://art.pixilart.com/0c425131e0ed8b4.png");
+    url("https://art.pixilart.com/b45f6c4989491f9.gif");
   --back-image-wrong: linear-gradient(to right, #910013ba, #fa0707cc),
-    url("https://art.pixilart.com/0c425131e0ed8b4.png ");
+    url("https://art.pixilart.com/b45f6c4989491f9.gif");
   --window-color: linear-gradient(90deg, #d400ff 0%, #ff8fff 80%);
   --topinfo-background: #585191;
   --score-background: #d68589;
@@ -1424,6 +1424,11 @@ input {
   color: var(--title-color);
 }
 
+.titleHead {
+  text-align: center;
+  color: var(--dark-low);
+}
+
 h5.title {
   color: var(--primary-100);
 }
@@ -2093,7 +2098,7 @@ Ending
   background: #999999;
 }
 
-/*-----------------------------------------------------Media Queries------------ Smartphone L-----------------------------*/
+/*----------------------Media Queries----------------*/
 
 @media screen and (max-width: 360px) {
   h4 {
@@ -2482,10 +2487,10 @@ Ending
     width: 150px;
   }
   .container-back-about {
-    position: absolute;
-    top: 2px;
-    left: -22%;
-    width: 90%;
+    position: fixed;
+    top: 32px;
+    left: 42%;
+    width: 40%;
     min-height: 77%;
     border-radius: var(--full-radius);
     box-sizing: border-box;
@@ -2494,15 +2499,16 @@ Ending
       0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
     -webkit-box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.75),
       0.65px 0.65px 0px 0.65px rgba(255, 255, 255, 0.75) inset;
+    z-index: 2;
   }
   .container-about {
     display: flex;
   }
   .container-back-game-folder {
-    position: absolute;
-    top: -25px;
+    position: fixed;
+    top: 25px;
     left: 72%;
-    width: 70%;
+    width: 25%;
     min-height: 57%;
     border-radius: var(--full-radius);
     box-sizing: border-box;
@@ -2517,10 +2523,11 @@ Ending
     justify-content: center;
   }
   .container-back-data {
-    position: absolute;
-    top: -35px;
-    left: 12%;
-    width: 100%;
+    /* position: absolute; */
+    position: fixed;
+    top: 5px;
+    left: 7%;
+    width: 50%;
     min-height: 77%;
     border-radius: var(--full-radius);
     box-sizing: border-box;
@@ -2574,6 +2581,7 @@ Ending
     padding: 0.2rem 0.2rem 0.5rem 0.2rem;
     margin: 0.5rem auto;
     text-align: center;
+    z-index: 3;
   }
 
   .notification-back {
@@ -2607,5 +2615,14 @@ Ending
   }
   .news-image {
     width: 200px;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .icons-data {
+    margin: 4px 5px 5px auto;
+    padding: 0.3rem 0.45rem;
+    height: 2.5vh;
+    width: 1.5vw;
   }
 }

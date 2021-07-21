@@ -63,12 +63,12 @@ const bigData = [
 
     {
       id: 2,
-      question: "When did the World War 1 started?",
+      question: "What is the chemical makeup of water?",
       answers: [
-        ["27/06/1913", false],
-        ["11/11/1915", false],
-        ["09/08/1915", false],
-        ["28/07/1914", true],
+        ["CO2", false],
+        ["C12H6O2", false],
+        ["H30", false],
+        ["H20", true],
       ],
     },
     {
@@ -214,12 +214,12 @@ const bigData = [
     },
     {
       id: 17,
-      question: `In 1939, Britain and France declared war on Germany after it invaded which country?`,
+      question: `In Roman Numerals, what does XL equate to?`,
       answers: [
-        ["Czechoslovakia", false],
-        ["Austria", false],
-        ["Poland", true],
-        ["Hungary", false],
+        ["60", false],
+        ["15", false],
+        ["40", true],
+        ["90", false],
       ],
     },
     {

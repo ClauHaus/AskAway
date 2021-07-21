@@ -63,12 +63,12 @@ const bigDataSp = [
 
     {
       id: 2,
-      question: "Cuando comenzo la primer guerra mundial?",
+      question: "Cuál es la composición química del agua?",
       answers: [
-        ["27/06/1913", false],
-        ["11/11/1915", false],
-        ["09/08/1915", false],
-        ["28/07/1914", true],
+        ["CO2", false],
+        ["C12H6O2", false],
+        ["H30", false],
+        ["H20", true],
       ],
     },
     {
@@ -214,12 +214,12 @@ const bigDataSp = [
     },
     {
       id: 17,
-      question: `En 1939, Inglaterra y Francia declaran la guerra a Alemania luego de que este último invadiera a que otro país?`,
+      question: `En números romanos, a que equivale XL?`,
       answers: [
-        ["Czechoslovakia", false],
-        ["Austria", false],
-        ["Polonia", true],
-        ["Hungría", false],
+        ["60", false],
+        ["15", false],
+        ["40", true],
+        ["90", false],
       ],
     },
     {
@@ -581,7 +581,7 @@ const bigDataSp = [
     },
     {
       id: 13,
-      question: `El antiguo diso roman de la guerra era comúnmente conodico como...?`,
+      question: `El antiguo dios romano de la guerra era comúnmente conodico como...?`,
       answers: [
         ["Júpiter", false],
         ["Marte", true],

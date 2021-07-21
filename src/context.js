@@ -11,7 +11,7 @@ const AppContext = React.createContext();
 
 const initialState = {
   intro: true,
-  title:false,
+  title: false,
   modal: false,
   options: false,
   about: false,

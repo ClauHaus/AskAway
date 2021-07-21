@@ -60,17 +60,33 @@ const Credits = () => {
           </div>
         </header>
         <section className="credits" style={{ minHeight: "60vh" }}>
-          <p className="credits-text-up">
+          <p
+            className="credits-text-up"
+            style={{ textAlign: "center", color: "var(--dark-high)" }}
+          >
             Director, Producer, Designer, Programmer, Tester, Editor and
             Developer
           </p>
-          <p className="credits-text-up" style={{ marginTop: "-20px" }}>
+          <p
+            className="credits-text-up"
+            style={{
+              marginTop: "-20px",
+              textAlign: "center",
+            }}
+          >
             Claudio Aime
           </p>
           <div className="credits-container-image">
             <img src={clauhaus} alt="ClauHaus" className="clauhaus" />
           </div>
-          <p className="credits-text-up" style={{ marginTop: "-35px" }}>
+          <p
+            className="credits-text-up"
+            style={{
+              marginTop: "-35px",
+              textAlign: "center",
+              color: "var(--dark-high)",
+            }}
+          >
             Thank you very much for playing! If you want to contact me, you can
             use the links below, any feedback is more than welcome.
           </p>
